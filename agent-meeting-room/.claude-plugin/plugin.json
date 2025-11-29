@@ -3,5 +3,5 @@
   "version": "1.0.0",
   "description": "Tracks Claude Code sessions and agent processes in the Agent Meeting Room system",
   "author": "Sven",
-  "hooks": "${CLAUDE_PLUGIN_ROOT}/hooks"
+  "hooks": "${CLAUDE_PLUGIN_ROOT}/hooks/hooks.json"
 }
