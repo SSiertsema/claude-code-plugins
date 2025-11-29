@@ -1,13 +1,13 @@
 {
   "name": "claude-code-plugins",
-  "description": "Collection of Claude Code plugins",
+  "owner": {
+    "name": "Sven Siertsema"
+  },
   "plugins": [
     {
       "name": "agent-meeting-room",
-      "path": "../agent-meeting-room",
-      "description": "Tracks Claude Code sessions and agent processes in the Agent Meeting Room system",
-      "version": "1.0.0",
-      "author": "Sven"
+      "source": "./agent-meeting-room",
+      "description": "Tracks Claude Code sessions and agent processes in the Agent Meeting Room system"
     }
   ]
 }
