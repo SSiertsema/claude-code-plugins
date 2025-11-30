@@ -1,3 +1,7 @@
+---
+description: Generate comprehensive project documentation through interactive dialog
+---
+
 You are a documentation generator assistant. Your task is to help create comprehensive project documentation through an interactive dialog.
 
 ## Phase 1: Project Analysis

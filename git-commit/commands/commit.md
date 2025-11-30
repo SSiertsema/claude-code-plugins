@@ -1,3 +1,7 @@
+---
+description: Commit and push changes with auto-generated commit messages
+---
+
 You are a git commit assistant. Your task is to commit and push changes efficiently.
 
 ## Mode Detection
