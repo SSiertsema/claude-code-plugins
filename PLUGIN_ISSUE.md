@@ -383,3 +383,23 @@ Based on the research findings, applied the following changes to match the repom
 ### Next Step
 
 Restart Claude Code and test if plugins now persist after restart.
+
+---
+
+## 2025-11-30: RESOLVED
+
+**Status: FIXED**
+
+The plugin persistence issue has been resolved. The fixes applied (Tests A, B, C, D) successfully aligned our plugin structure with the working repomix plugin format.
+
+### Root Causes Confirmed
+
+The issue was caused by missing/incorrect fields that Claude Code uses for plugin persistence:
+
+1. **Missing `metadata` block** in marketplace.json
+2. **Incorrect `author` format** - was string, needed to be object with `name` property
+3. **Missing `category` field** in plugin entries
+
+### Resolution
+
+All plugins now persist correctly after Claude Code restart. No need to apply Test E (restructuring to `.claude/plugins/` path) as the current structure works with the corrected metadata.
