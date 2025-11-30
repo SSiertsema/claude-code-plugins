@@ -3,21 +3,28 @@
   "owner": {
     "name": "Sven Siertsema"
   },
+  "metadata": {
+    "description": "Collection of plugins for Claude Code",
+    "version": "1.0.0"
+  },
   "plugins": [
     {
       "name": "agent-meeting-room",
       "source": "./agent-meeting-room",
-      "description": "Tracks Claude Code sessions and agent processes in the Agent Meeting Room system"
+      "description": "Tracks Claude Code sessions and agent processes in the Agent Meeting Room system",
+      "category": "integration"
     },
     {
       "name": "documentation-generator",
       "source": "./documentation-generator",
-      "description": "Generate comprehensive project documentation through interactive dialog with templates"
+      "description": "Generate comprehensive project documentation through interactive dialog with templates",
+      "category": "productivity"
     },
     {
       "name": "git-commit",
       "source": "./git-commit",
-      "description": "Streamlined git commit and push with auto-generated commit messages"
+      "description": "Streamlined git commit and push with auto-generated commit messages",
+      "category": "productivity"
     }
   ]
 }

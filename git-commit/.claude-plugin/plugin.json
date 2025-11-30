@@ -2,6 +2,11 @@
   "name": "git-commit",
   "version": "1.0.0",
   "description": "Streamlined git commit and push with auto-generated commit messages",
-  "author": "Sven",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["git", "commit", "automation", "productivity"],
   "commands": "./commands"
 }

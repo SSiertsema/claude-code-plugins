@@ -2,6 +2,11 @@
   "name": "agent-meeting-room",
   "version": "1.0.0",
   "description": "Tracks Claude Code sessions and agent processes in the Agent Meeting Room system",
-  "author": "Sven",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["hooks", "tracking", "sessions", "agents"],
   "hooks": "${CLAUDE_PLUGIN_ROOT}/hooks/hooks.json"
 }
