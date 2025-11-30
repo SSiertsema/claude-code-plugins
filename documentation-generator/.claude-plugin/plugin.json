@@ -1,0 +1,7 @@
+{
+  "name": "documentation-generator",
+  "version": "1.0.0",
+  "description": "Generate comprehensive project documentation through interactive dialog with templates",
+  "author": "Sven",
+  "commands": "${CLAUDE_PLUGIN_ROOT}/commands"
+}

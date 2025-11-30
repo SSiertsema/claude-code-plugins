@@ -8,6 +8,11 @@
       "name": "agent-meeting-room",
       "source": "./agent-meeting-room",
       "description": "Tracks Claude Code sessions and agent processes in the Agent Meeting Room system"
+    },
+    {
+      "name": "documentation-generator",
+      "source": "./documentation-generator",
+      "description": "Generate comprehensive project documentation through interactive dialog with templates"
     }
   ]
 }
