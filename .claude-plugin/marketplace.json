@@ -25,6 +25,12 @@
       "source": "./git-commit",
       "description": "Streamlined git commit and push with auto-generated commit messages",
       "category": "productivity"
+    },
+    {
+      "name": "vue-reorder",
+      "source": "./vue-reorder",
+      "description": "Refactor Vue 3 SFCs for readability: reorder sections, organize script, improve naming",
+      "category": "vue"
     }
   ]
 }

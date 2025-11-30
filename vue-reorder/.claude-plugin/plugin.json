@@ -1,0 +1,12 @@
+{
+  "name": "vue-reorder",
+  "version": "1.0.0",
+  "description": "Refactor Vue 3 SFCs for readability: reorder sections, organize script, improve naming",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["vue", "refactor", "readability", "sfc", "composition-api"],
+  "commands": "./commands"
+}
