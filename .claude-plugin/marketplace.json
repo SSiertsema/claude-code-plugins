@@ -13,6 +13,11 @@
       "name": "documentation-generator",
       "source": "./documentation-generator",
       "description": "Generate comprehensive project documentation through interactive dialog with templates"
+    },
+    {
+      "name": "git-commit",
+      "source": "./git-commit",
+      "description": "Streamlined git commit and push with auto-generated commit messages"
     }
   ]
 }

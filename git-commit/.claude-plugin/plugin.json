@@ -1,0 +1,7 @@
+{
+  "name": "git-commit",
+  "version": "1.0.0",
+  "description": "Streamlined git commit and push with auto-generated commit messages",
+  "author": "Sven",
+  "commands": "${CLAUDE_PLUGIN_ROOT}/commands"
+}
