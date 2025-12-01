@@ -1,0 +1,12 @@
+{
+  "name": "owasp-security-audit",
+  "version": "1.0.0",
+  "description": "Multi-agent OWASP Top 10 security audit with technical and stakeholder reports",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["security", "owasp", "audit", "vulnerability", "multi-agent"],
+  "commands": "./commands"
+}

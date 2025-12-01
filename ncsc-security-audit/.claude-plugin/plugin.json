@@ -1,0 +1,7 @@
+{
+  "name": "ncsc-security-audit",
+  "version": "1.0.0",
+  "description": "Multi-agent NCSC ICT-beveiligingsrichtlijnen voor webapplicaties audit met technische en stakeholder rapporten",
+  "author": "Sven Siertsema",
+  "commands": "./commands"
+}

@@ -55,6 +55,18 @@
       "source": "./vue-development-skill",
       "description": "Vue 3/Nuxt 3 development skill with TDD workflow and QA-first approach. Produces JSON reports for agent handoff.",
       "category": "vue"
+    },
+    {
+      "name": "owasp-security-audit",
+      "source": "./owasp-security-audit",
+      "description": "Multi-agent OWASP Top 10 security audit with technical and stakeholder reports",
+      "category": "security"
+    },
+    {
+      "name": "ncsc-security-audit",
+      "source": "./ncsc-security-audit",
+      "description": "Multi-agent NCSC ICT-beveiligingsrichtlijnen audit met technische en stakeholder rapporten",
+      "category": "security"
     }
   ]
 }
