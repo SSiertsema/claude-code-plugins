@@ -15,6 +15,8 @@ Multi-agent OWASP Top 10 security audit for Claude Code that produces both techn
 /owasp-security-audit
 ```
 
+The command will first ask you to select a report language. English is the default, but you can specify any language supported by the LLM (Dutch, German, French, Spanish, Japanese, etc.).
+
 ## How It Works
 
 ### Phase 1: Discovery

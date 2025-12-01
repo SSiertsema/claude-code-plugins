@@ -6,12 +6,40 @@ description: Generate NCSC ICT-beveiligingsrichtlijnen security audit with techn
 
 You are initiating a multi-agent security audit based on the **NCSC ICT-beveiligingsrichtlijnen voor webapplicaties (Juli 2024)**. This audit will produce two reports: a technical report for developers and a non-technical summary for stakeholders.
 
+## Phase 0: Language Selection
+
+**IMPORTANT: Before starting the audit, ask the user which language they prefer for the reports.**
+
+Use the AskUserQuestion tool to ask:
+
+```
+Question: "In which language should the security reports be generated?"
+Options:
+- English (default)
+- Other (please specify)
+```
+
+If the user selects "Other", they can specify any language supported by the LLM (e.g., German, French, Spanish, Japanese, Chinese, etc.).
+
+Store the selected language and use it for:
+- All report content and headings
+- Finding descriptions and recommendations
+- Stakeholder-friendly explanations
+
+**Language Guidelines:**
+- Keep technical security terms in English (XSS, CSRF, SQL injection, SSRF, etc.) regardless of report language
+- Translate explanations, descriptions, and recommendations to the selected language
+- Reference NCSC guidelines with their original Dutch IDs (U/TV.01, U/WA.01, etc.) regardless of language
+- Adapt compliance references to the user's context where relevant
+
 ## Reference Documents
 
 Before proceeding, read the guidelines reference:
 - `templates/ncsc-guidelines.md` - Full NCSC guidelines with search patterns
 
 ## Phase 1: Discovery
+
+> **Note:** From this point forward, all agent outputs and reports should be in the user's selected language.
 
 ### Discovery Agent Task
 

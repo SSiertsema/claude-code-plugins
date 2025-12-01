@@ -6,6 +6,32 @@ description: Generate OWASP Top 10 security audit report using multi-agent analy
 
 You are orchestrating a comprehensive OWASP Top 10 security audit using three specialized agents working collaboratively. This audit produces both a technical report for developers and a non-technical summary for stakeholders.
 
+## Phase 0: Language Selection
+
+**IMPORTANT: Before starting the audit, ask the user which language they prefer for the reports.**
+
+Use the AskUserQuestion tool to ask:
+
+```
+Question: "In which language should the security reports be generated?"
+Options:
+- English (default)
+- Other (please specify)
+```
+
+If the user selects "Other", they can specify any language supported by the LLM (e.g., German, French, Spanish, Dutch, Japanese, Chinese, etc.).
+
+Store the selected language and use it for:
+- All report content and headings
+- Finding descriptions and recommendations
+- Stakeholder-friendly explanations
+
+**Language Guidelines:**
+- Keep technical security terms in English (XSS, CSRF, SQL injection, SSRF, etc.) regardless of report language
+- Translate explanations, descriptions, and recommendations to the selected language
+- Reference OWASP guidelines with their original IDs (A01, A02, etc.) regardless of language
+- Adapt compliance references to the user's context where relevant (e.g., GDPR, HIPAA, etc.)
+
 ## Overview
 
 This command triggers a 3-agent collaborative security audit:
@@ -18,6 +44,8 @@ The agents work iteratively, guideline by guideline, building consensus before p
 ---
 
 ## Phase 1: Solution Discovery
+
+> **Note:** From this point forward, all agent outputs and reports should be in the user's selected language.
 
 **Use the Task tool** to spawn the Discovery Agent with this prompt:
 

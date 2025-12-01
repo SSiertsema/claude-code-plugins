@@ -16,6 +16,8 @@ Multi-agent NCSC ICT-beveiligingsrichtlijnen voor webapplicaties audit voor Clau
 /ncsc-security-audit
 ```
 
+The command will first ask you to select a report language. English is the default, but you can specify any language supported by the LLM (Dutch, German, French, Spanish, Japanese, etc.).
+
 ## How It Works
 
 ### Fase 1: Discovery
