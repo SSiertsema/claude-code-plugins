@@ -31,6 +31,30 @@
       "source": "./vue-reorder",
       "description": "Refactor Vue 3 SFCs for readability: reorder sections, organize script, improve naming",
       "category": "vue"
+    },
+    {
+      "name": "js-refactor-logic",
+      "source": "./js-refactor-logic",
+      "description": "Refactor JavaScript logic: code splitting, design patterns, ES6+ modernization",
+      "category": "javascript"
+    },
+    {
+      "name": "ts-refactor-logic",
+      "source": "./ts-refactor-logic",
+      "description": "Refactor TypeScript logic: code splitting, type improvements, design patterns",
+      "category": "typescript"
+    },
+    {
+      "name": "vue-refactor-logic",
+      "source": "./vue-refactor-logic",
+      "description": "Refactor Vue 3 script logic: composables extraction, code splitting, Vue patterns",
+      "category": "vue"
+    },
+    {
+      "name": "vue-development-skill",
+      "source": "./vue-development-skill",
+      "description": "Vue 3/Nuxt 3 development skill with TDD workflow and QA-first approach. Produces JSON reports for agent handoff.",
+      "category": "vue"
     }
   ]
 }

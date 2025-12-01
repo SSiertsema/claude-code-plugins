@@ -1,0 +1,7 @@
+{
+  "name": "vue-development-skill",
+  "version": "1.0.0",
+  "description": "Vue 3/Nuxt 3 development skill with TDD workflow and QA-first approach. Produces JSON reports for agent handoff.",
+  "author": "claude-code-plugins",
+  "skills": "${CLAUDE_PLUGIN_ROOT}/skills"
+}
