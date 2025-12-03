@@ -8,5 +8,5 @@
   "repository": "https://github.com/SSiertsema/claude-code-plugins",
   "license": "MIT",
   "keywords": ["hooks", "tracking", "sessions", "agents"],
-  "hooks": "${CLAUDE_PLUGIN_ROOT}/hooks/hooks.json"
+  "hooks": "./hooks/hooks.json"
 }
