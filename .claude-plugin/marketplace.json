@@ -67,6 +67,12 @@
       "source": "./ncsc-security-audit",
       "description": "Multi-agent NCSC ICT-beveiligingsrichtlijnen audit met technische en stakeholder rapporten",
       "category": "security"
+    },
+    {
+      "name": "technical-specifications",
+      "source": "./technical-specifications",
+      "description": "Interactive agent for collecting and refining technical specifications through guided dialogue",
+      "category": "productivity"
     }
   ]
 }

@@ -1,0 +1,12 @@
+{
+  "name": "vue-refactor-logic",
+  "version": "1.0.0",
+  "description": "Refactor Vue 3 script logic: composables extraction, code splitting, Vue patterns",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["vue", "refactor", "composables", "composition-api", "design-patterns"],
+  "commands": "./commands"
+}

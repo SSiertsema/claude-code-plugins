@@ -1,0 +1,12 @@
+{
+  "name": "js-refactor-logic",
+  "version": "1.0.0",
+  "description": "Refactor JavaScript logic: code splitting, design patterns, ES6+ modernization",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["javascript", "refactor", "clean-code", "es6", "design-patterns"],
+  "commands": "./commands"
+}

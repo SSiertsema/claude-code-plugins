@@ -1,0 +1,12 @@
+{
+  "name": "ts-refactor-logic",
+  "version": "1.0.0",
+  "description": "Refactor TypeScript logic: code splitting, type improvements, design patterns",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["typescript", "refactor", "clean-code", "types", "design-patterns"],
+  "commands": "./commands"
+}

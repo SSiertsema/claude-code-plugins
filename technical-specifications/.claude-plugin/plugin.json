@@ -1,0 +1,7 @@
+{
+  "name": "technical-specifications",
+  "version": "1.0.0",
+  "description": "Interactive agent for collecting and refining technical specifications through guided dialogue",
+  "author": "Sven Siertsema",
+  "commands": "${CLAUDE_PLUGIN_ROOT}/commands"
+}
