@@ -73,6 +73,12 @@
       "source": "./technical-specifications",
       "description": "Interactive agent for collecting and refining technical specifications through guided dialogue",
       "category": "productivity"
+    },
+    {
+      "name": "user-story-generator",
+      "source": "./user-story-generator",
+      "description": "Generate INVEST-compliant user stories from functional specifications and personas with Gherkin acceptance criteria",
+      "category": "productivity"
     }
   ]
 }

@@ -1,0 +1,7 @@
+{
+  "name": "user-story-generator",
+  "version": "1.0.0",
+  "description": "Generate INVEST-compliant user stories from functional specifications and personas",
+  "author": "Sven Siertsema",
+  "commands": "${CLAUDE_PLUGIN_ROOT}/commands"
+}
