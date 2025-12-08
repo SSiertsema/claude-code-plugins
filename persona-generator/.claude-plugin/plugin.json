@@ -1,0 +1,7 @@
+{
+  "name": "persona-generator",
+  "version": "1.0.0",
+  "description": "Create detailed user personas through interactive dialogue for user story development",
+  "author": "Sven Siertsema",
+  "commands": "${CLAUDE_PLUGIN_ROOT}/commands"
+}

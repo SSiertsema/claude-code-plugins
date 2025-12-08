@@ -79,6 +79,12 @@
       "source": "./user-story-generator",
       "description": "Generate INVEST-compliant user stories from functional specifications and personas with Gherkin acceptance criteria",
       "category": "productivity"
+    },
+    {
+      "name": "persona-generator",
+      "source": "./persona-generator",
+      "description": "Create detailed user personas through interactive dialogue for user story development",
+      "category": "productivity"
     }
   ]
 }
