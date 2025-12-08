@@ -1,9 +1,9 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Vue Development Skill Report",
-  "description": "Handoff report for QA agent validation",
+  "description": "Report with TDD, QA checklist, and E2E validation results",
   "type": "object",
-  "required": ["id", "skill", "timestamp", "task_description", "files", "tdd", "qa", "e2e_scenarios", "ready_for_e2e"],
+  "required": ["id", "skill", "timestamp", "task_description", "files", "tdd", "qa", "e2e_validation", "completion"],
   "properties": {
     "id": {
       "type": "string",
@@ -24,9 +24,35 @@
       "type": "string",
       "description": "Human-readable description of what was implemented"
     },
+    "user_story": {
+      "type": "object",
+      "description": "Source user story (if provided)",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Story ID (e.g., US-001)"
+        },
+        "title": {
+          "type": "string",
+          "description": "Story title"
+        },
+        "persona": {
+          "type": "string",
+          "description": "Target persona/role"
+        },
+        "goal": {
+          "type": "string",
+          "description": "User goal (I want...)"
+        },
+        "benefit": {
+          "type": "string",
+          "description": "User benefit (So that...)"
+        }
+      }
+    },
     "files": {
       "type": "object",
-      "required": ["created", "modified", "test_files"],
+      "required": ["created", "modified", "test_files", "e2e_test_files"],
       "properties": {
         "created": {
           "type": "array",
@@ -41,7 +67,12 @@
         "test_files": {
           "type": "array",
           "items": { "type": "string" },
-          "description": "Test files created or modified"
+          "description": "Unit test files created or modified"
+        },
+        "e2e_test_files": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "E2E Playwright test files created (e.g., tests/e2e/us-001-user-login.spec.ts)"
         }
       }
     },
@@ -97,36 +128,96 @@
         }
       }
     },
-    "e2e_scenarios": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "required": ["description", "route", "actions", "expected"],
-        "properties": {
-          "description": {
-            "type": "string",
-            "description": "What the E2E test should verify"
-          },
-          "route": {
-            "type": "string",
-            "description": "URL route to navigate to"
-          },
-          "actions": {
-            "type": "array",
-            "items": { "type": "string" },
-            "description": "Steps to perform"
-          },
-          "expected": {
-            "type": "string",
-            "description": "Expected outcome"
+    "e2e_validation": {
+      "type": "object",
+      "required": ["test_file", "test_command", "executed", "acceptance_criteria", "passed", "failed", "status"],
+      "description": "E2E validation results from Playwright test execution",
+      "properties": {
+        "test_file": {
+          "type": "string",
+          "description": "Path to generated Playwright test file (e.g., tests/e2e/us-001-user-login.spec.ts)"
+        },
+        "test_command": {
+          "type": "string",
+          "description": "Command to run the E2E tests (e.g., npx playwright test tests/e2e/us-001-user-login.spec.ts)"
+        },
+        "executed": {
+          "type": "boolean",
+          "description": "Whether E2E tests were executed"
+        },
+        "acceptance_criteria": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "title", "gherkin", "status"],
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Acceptance criterion ID (e.g., AC1)"
+              },
+              "title": {
+                "type": "string",
+                "description": "Criterion title"
+              },
+              "gherkin": {
+                "type": "string",
+                "description": "Original Gherkin Given/When/Then"
+              },
+              "status": {
+                "type": "string",
+                "enum": ["PASS", "FAIL", "SKIPPED"],
+                "description": "Test result"
+              },
+              "failure_reason": {
+                "type": "string",
+                "description": "Reason for failure (if status is FAIL)"
+              }
+            }
           }
+        },
+        "passed": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of AC that passed"
+        },
+        "failed": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of AC that failed"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["PASS", "FAIL", "NOT_EXECUTED"],
+          "description": "Overall E2E validation status"
         }
-      },
-      "description": "E2E test scenarios for Playwright validation"
+      }
     },
-    "ready_for_e2e": {
-      "type": "boolean",
-      "description": "Whether the implementation is ready for E2E testing"
+    "completion": {
+      "type": "object",
+      "required": ["unit_tests", "qa_checklist", "e2e_validation", "overall"],
+      "description": "Summary of all validation gates",
+      "properties": {
+        "unit_tests": {
+          "type": "string",
+          "enum": ["PASS", "FAIL"],
+          "description": "Unit test status"
+        },
+        "qa_checklist": {
+          "type": "string",
+          "enum": ["PASS", "ACCEPTABLE", "NEEDS_WORK"],
+          "description": "QA checklist status"
+        },
+        "e2e_validation": {
+          "type": "string",
+          "enum": ["PASS", "FAIL", "NOT_EXECUTED"],
+          "description": "E2E validation status"
+        },
+        "overall": {
+          "type": "string",
+          "enum": ["COMPLETE", "INCOMPLETE"],
+          "description": "Overall completion status - COMPLETE only if all gates pass"
+        }
+      }
     }
   },
   "$defs": {
