@@ -2,6 +2,11 @@
   "name": "user-story-generator",
   "version": "1.0.0",
   "description": "Generate INVEST-compliant user stories from functional specifications and personas",
-  "author": "Sven Siertsema",
-  "commands": "${CLAUDE_PLUGIN_ROOT}/commands"
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["user-stories", "invest", "gherkin", "agile", "productivity"],
+  "commands": "./commands"
 }

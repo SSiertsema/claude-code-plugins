@@ -5,5 +5,8 @@
   "author": {
     "name": "Sven Siertsema"
   },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["security", "ncsc", "audit", "vulnerability", "multi-agent"],
   "commands": "./commands"
 }
