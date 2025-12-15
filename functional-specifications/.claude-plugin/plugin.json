@@ -1,0 +1,19 @@
+{
+  "name": "functional-specifications",
+  "version": "1.0.0",
+  "description": "Generate functional specifications from business case and personas through interactive dialogue",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": [
+    "functional-specifications",
+    "features",
+    "business-case",
+    "personas",
+    "requirements",
+    "productivity"
+  ],
+  "commands": "./commands"
+}

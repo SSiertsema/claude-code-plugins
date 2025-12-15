@@ -85,6 +85,12 @@
       "source": "./persona-generator",
       "description": "Create detailed user personas through interactive dialogue for user story development",
       "category": "productivity"
+    },
+    {
+      "name": "functional-specifications",
+      "source": "./functional-specifications",
+      "description": "Generate functional specifications from business case and personas through interactive dialogue",
+      "category": "productivity"
     }
   ]
 }
