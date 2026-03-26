@@ -1,0 +1,12 @@
+{
+  "name": "persona-management",
+  "version": "1.0.0",
+  "description": "Create user personas through interactive dialogue. Generates personas from a business case or guided questioning, with iterative review.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["personas", "user-research", "business-case", "dialogue", "productivity"],
+  "skills": "./skills"
+}

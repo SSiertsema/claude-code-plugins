@@ -109,6 +109,12 @@
       "source": "./skill-manager",
       "description": "Create, update, rename, and delete skills with structured interview process and shared foundation compliance",
       "category": "productivity"
+    },
+    {
+      "name": "persona-management",
+      "source": "./persona-management",
+      "description": "Create user personas through interactive dialogue from a business case or guided questioning, with iterative review",
+      "category": "productivity"
     }
   ]
 }
