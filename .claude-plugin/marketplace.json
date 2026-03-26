@@ -91,6 +91,24 @@
       "source": "./functional-specifications",
       "description": "Generate functional specifications from business case and personas through interactive dialogue",
       "category": "productivity"
+    },
+    {
+      "name": "business-case-management",
+      "source": "./business-case-management",
+      "description": "Generate, update, review, delete, and transform business cases in four formats (one-pager, lean canvas, short-form, full)",
+      "category": "productivity"
+    },
+    {
+      "name": "xplore",
+      "source": "./xplore",
+      "description": "Interactively explore a user's idea through structured questioning until all dimensions are covered",
+      "category": "productivity"
+    },
+    {
+      "name": "skill-manager",
+      "source": "./skill-manager",
+      "description": "Create, update, rename, and delete skills with structured interview process and shared foundation compliance",
+      "category": "productivity"
     }
   ]
 }

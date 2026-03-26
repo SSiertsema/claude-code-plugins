@@ -1,0 +1,12 @@
+{
+  "name": "skill-manager",
+  "version": "2.0.0",
+  "description": "Create, update, rename, and delete skills with structured interview process and shared foundation compliance",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["skill-management", "conversation", "generation", "productivity"],
+  "skills": "./skills"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "business-case-management",
+  "version": "1.0.0",
+  "description": "Generate, update, review, delete, and transform business cases in four formats (one-pager, lean canvas, short-form, full)",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["business-case", "generation", "lean-canvas", "productivity"],
+  "skills": "./skills"
+}

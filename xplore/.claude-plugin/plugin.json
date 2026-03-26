@@ -1,0 +1,12 @@
+{
+  "name": "xplore",
+  "version": "1.0.0",
+  "description": "Interactively explore a user's idea through structured questioning until all dimensions are covered",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["idea-exploration", "interview", "conversation", "productivity"],
+  "skills": "./skills"
+}
