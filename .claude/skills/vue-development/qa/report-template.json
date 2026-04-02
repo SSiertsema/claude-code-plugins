@@ -1,0 +1,246 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Vue Development Skill Report",
+  "description": "Report with TDD, QA checklist, and E2E validation results",
+  "type": "object",
+  "required": ["id", "skill", "timestamp", "task_description", "files", "tdd", "qa", "e2e_validation", "completion"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "UUID v4 for traceability",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "skill": {
+      "type": "string",
+      "const": "vue-development",
+      "description": "Skill identifier"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO-8601 timestamp of report generation"
+    },
+    "task_description": {
+      "type": "string",
+      "description": "Human-readable description of what was implemented"
+    },
+    "user_story": {
+      "type": "object",
+      "description": "Source user story (if provided)",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Story ID (e.g., US-001)"
+        },
+        "title": {
+          "type": "string",
+          "description": "Story title"
+        },
+        "persona": {
+          "type": "string",
+          "description": "Target persona/role"
+        },
+        "goal": {
+          "type": "string",
+          "description": "User goal (I want...)"
+        },
+        "benefit": {
+          "type": "string",
+          "description": "User benefit (So that...)"
+        }
+      }
+    },
+    "files": {
+      "type": "object",
+      "required": ["created", "modified", "test_files", "e2e_test_files"],
+      "properties": {
+        "created": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Files created during this task"
+        },
+        "modified": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Existing files modified"
+        },
+        "test_files": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Unit test files created or modified"
+        },
+        "e2e_test_files": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "E2E Playwright test files created (e.g., tests/e2e/us-001-user-login.spec.ts)"
+        }
+      }
+    },
+    "tdd": {
+      "type": "object",
+      "required": ["tests_written_first", "test_command", "tests_passing", "coverage_estimate"],
+      "properties": {
+        "tests_written_first": {
+          "type": "boolean",
+          "description": "Whether tests were written before implementation"
+        },
+        "test_command": {
+          "type": "string",
+          "description": "Command to run the tests"
+        },
+        "tests_passing": {
+          "type": "boolean",
+          "description": "Whether all tests are passing"
+        },
+        "coverage_estimate": {
+          "type": "string",
+          "enum": ["high", "medium", "low"],
+          "description": "Estimated test coverage level"
+        }
+      }
+    },
+    "qa": {
+      "type": "object",
+      "required": ["score", "status", "checklist"],
+      "properties": {
+        "score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10,
+          "description": "QA score (0-10)"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["PASS", "ACCEPTABLE", "NEEDS_WORK"],
+          "description": "Overall QA status"
+        },
+        "checklist": {
+          "type": "object",
+          "required": ["component_quality", "reactivity", "composables", "nuxt_specific", "typescript", "unit_tests"],
+          "properties": {
+            "component_quality": { "$ref": "#/$defs/checklistCategory" },
+            "reactivity": { "$ref": "#/$defs/checklistCategory" },
+            "composables": { "$ref": "#/$defs/checklistCategory" },
+            "nuxt_specific": { "$ref": "#/$defs/checklistCategory" },
+            "typescript": { "$ref": "#/$defs/checklistCategory" },
+            "unit_tests": { "$ref": "#/$defs/checklistCategory" }
+          }
+        }
+      }
+    },
+    "e2e_validation": {
+      "type": "object",
+      "required": ["test_file", "test_command", "executed", "acceptance_criteria", "passed", "failed", "status"],
+      "description": "E2E validation results from Playwright test execution",
+      "properties": {
+        "test_file": {
+          "type": "string",
+          "description": "Path to generated Playwright test file (e.g., tests/e2e/us-001-user-login.spec.ts)"
+        },
+        "test_command": {
+          "type": "string",
+          "description": "Command to run the E2E tests (e.g., npx playwright test tests/e2e/us-001-user-login.spec.ts)"
+        },
+        "executed": {
+          "type": "boolean",
+          "description": "Whether E2E tests were executed"
+        },
+        "acceptance_criteria": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "title", "gherkin", "status"],
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Acceptance criterion ID (e.g., AC1)"
+              },
+              "title": {
+                "type": "string",
+                "description": "Criterion title"
+              },
+              "gherkin": {
+                "type": "string",
+                "description": "Original Gherkin Given/When/Then"
+              },
+              "status": {
+                "type": "string",
+                "enum": ["PASS", "FAIL", "SKIPPED"],
+                "description": "Test result"
+              },
+              "failure_reason": {
+                "type": "string",
+                "description": "Reason for failure (if status is FAIL)"
+              }
+            }
+          }
+        },
+        "passed": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of AC that passed"
+        },
+        "failed": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of AC that failed"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["PASS", "FAIL", "NOT_EXECUTED"],
+          "description": "Overall E2E validation status"
+        }
+      }
+    },
+    "completion": {
+      "type": "object",
+      "required": ["unit_tests", "qa_checklist", "e2e_validation", "overall"],
+      "description": "Summary of all validation gates",
+      "properties": {
+        "unit_tests": {
+          "type": "string",
+          "enum": ["PASS", "FAIL"],
+          "description": "Unit test status"
+        },
+        "qa_checklist": {
+          "type": "string",
+          "enum": ["PASS", "ACCEPTABLE", "NEEDS_WORK"],
+          "description": "QA checklist status"
+        },
+        "e2e_validation": {
+          "type": "string",
+          "enum": ["PASS", "FAIL", "NOT_EXECUTED"],
+          "description": "E2E validation status"
+        },
+        "overall": {
+          "type": "string",
+          "enum": ["COMPLETE", "INCOMPLETE"],
+          "description": "Overall completion status - COMPLETE only if all gates pass"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "checklistCategory": {
+      "type": "object",
+      "required": ["passed", "total", "issues"],
+      "properties": {
+        "passed": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of items passed"
+        },
+        "total": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Total applicable items (0 if N/A)"
+        },
+        "issues": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "List of issues found or 'N/A' notes"
+        }
+      }
+    }
+  }
+}
