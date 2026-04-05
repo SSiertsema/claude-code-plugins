@@ -1,0 +1,12 @@
+{
+  "name": "survey-design",
+  "version": "1.0.0",
+  "description": "Design survey questionnaires with sampling plans, bias review, and analysis plans. Export to Qualtrics (QSF), XLSForm, SurveyJS, or CSV. Also analyzes provided survey results with statistical methods. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["survey-design", "questionnaire", "nps", "csat", "market-research", "qualtrics", "xlsform"],
+  "skills": "./skills"
+}

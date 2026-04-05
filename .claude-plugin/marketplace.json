@@ -145,6 +145,12 @@
       "source": "./industry-benchmarking",
       "description": "Autonomous industry benchmarking comparing performance against P25/P50/P75 and best-in-class. Gap analysis, composite scorecards, maturity assessment, and improvement roadmaps with Mermaid diagrams and optional PNG export.",
       "category": "strategy"
+    },
+    {
+      "name": "survey-design",
+      "source": "./survey-design",
+      "description": "Design survey questionnaires with sampling plans, bias review, and analysis plans. Export to Qualtrics (QSF), XLSForm, SurveyJS, or CSV. Analyzes provided results with NPS/CSAT/CES/SUS scoring. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
     }
   ]
 }
