@@ -34,6 +34,17 @@ Use this skill when:
 
 ---
 
+## Input handling
+
+Follow shared foundation §7 — interview mode. If the user story is missing or incomplete (missing narrative, acceptance criteria, or technical constraints), enter interview mode to gather the missing elements before proceeding. Skill-specific dimensions:
+
+| Dimension | Required |
+|---|---|
+| Narrative (As a/I want/So that) | Yes |
+| Acceptance criteria (Gherkin Given/When/Then) | Yes |
+| Technical constraints | No (inferred from codebase) |
+| Component scope (what to build) | Yes |
+
 ## Input: User Story Format
 
 This skill accepts user stories with Gherkin acceptance criteria:

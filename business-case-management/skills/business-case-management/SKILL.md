@@ -77,7 +77,7 @@ Ask the user to choose. Present these options:
 
 1. Ask for format (if not specified)
 2. Analyze input against the chosen format's required sections
-3. If gaps exist: interview the user — **one question at a time**, no opinions, no suggestions, user's language. Summarize progress every 3-5 turns
+3. If gaps exist: enter interview mode (§7) to gather missing information
 4. Generate the business case
 5. Present for approval
 6. Ask storage location (default: `/documentatie/business/business-case-[format].md`)
@@ -116,16 +116,9 @@ Ask the user to choose. Present these options:
 - **Creativity level**: `medium` — may propose content within context, user approves everything
 - **Language**: Respond and generate in the user's language unless specified otherwise
 
-## Interview rules
+## Interview mode
 
-When input is insufficient for the chosen format:
-
-1. Ask **one question at a time**
-2. Follow natural conversation flow
-3. Summarize every 3-5 turns
-4. Do not evaluate, critique, or suggest — only gather information
-5. Use open, closed, and deepening questions
-6. No leading questions
+Follow shared foundation §7 — interview mode. When input is insufficient for the chosen format, enter interview mode to gather the missing information. The skill-specific dimensions to gather depend on the chosen format's required sections.
 
 ## Failure behavior
 

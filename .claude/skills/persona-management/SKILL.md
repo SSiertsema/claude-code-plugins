@@ -43,7 +43,15 @@ Ask the user to provide the business case. Make clear they can either:
 - Reference a file path (e.g., `/docs/business-case.md`)
 - Paste the content directly in the chat
 
-If the user has no business case, proceed with interactive questioning to gather context about: the application, target audience, problems it solves, and user needs.
+If the user has no business case or provides insufficient input, enter interview mode (§7) to gather context. Skill-specific dimensions:
+
+| Dimension | Required |
+|---|---|
+| Application/product description | Yes |
+| Target audience | Yes |
+| Problems it solves / user needs | Yes |
+| Market and user segments | No |
+| Value proposition | No |
 
 ### 4. Analyze business case
 
@@ -55,7 +63,7 @@ Focus exclusively on what is relevant for personas:
 
 ### 5. Handle insufficient information
 
-If the business case lacks detail, propose assumptions based on what IS available. Present each assumption for user confirmation. If the user rejects assumptions, ask questions to fill the gaps.
+If the business case lacks detail, propose assumptions based on what IS available. Present each assumption for user confirmation. If the user rejects assumptions, re-enter interview mode (§7) to fill the gaps.
 
 ### 6. Ask count
 
@@ -160,8 +168,7 @@ Present the full persona. Ask for explicit approval. Only after approval, save t
 
 ## Rules
 
-- Ask **one question at a time** — never front-load
-- Summarize understanding every 3-5 turns
+- Follow shared foundation §7 interview rules when gathering information
 - Respond in the language agreed in Phase 1
 - Goals, needs, and pain points must be grounded in the business case or confirmed information
 - Identity details (name, age, scenarios) may be invented but must be consistent with the target audience
@@ -171,10 +178,10 @@ Present the full persona. Ask for explicit approval. Only after approval, save t
 
 | Situation | Behavior |
 |---|---|
-| No business case | Proceed with interactive questioning |
-| Business case too vague | Propose assumptions for confirmation |
+| No business case | Enter interview mode (§7) to gather context |
+| Business case too vague | Propose assumptions for confirmation; if rejected, enter interview mode (§7) |
 | No intent specified | Default to generate mode |
 | Update without existing persona | Ask user to provide persona (file path or pasted) |
 | Negative persona requested | "This skill generates personas representing your target audience. Negative personas are outside scope." |
 | User rejects proposal | Ask what should change and iterate |
-| User rejects all assumptions | Fall back to interactive questioning |
+| User rejects all assumptions | Enter interview mode (§7) to gather information directly |

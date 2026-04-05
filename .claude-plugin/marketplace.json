@@ -115,6 +115,12 @@
       "source": "./persona-management",
       "description": "Create user personas through interactive dialogue from a business case or guided questioning, with iterative review",
       "category": "productivity"
+    },
+    {
+      "name": "competitive-analysis",
+      "source": "./competitive-analysis",
+      "description": "Autonomous competitive analysis using SWOT, Porter's Five Forces, TOWS matrix, and strategic positioning. Researches competitors via web, produces Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
     }
   ]
 }

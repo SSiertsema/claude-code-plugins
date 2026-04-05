@@ -190,15 +190,54 @@ Every skill separates input into three categories:
 
 | Situation | Default behavior |
 |---|---|
-| Content missing | **Reject** — return structured error |
+| Content missing or insufficient | **Interview** — enter interview mode to gather required input |
 | Context missing | **Proceed** with neutral defaults, state defaults used |
 | Constraints missing | **Proceed** with skill defaults, state defaults used |
-| Input is ambiguous | **Proceed** if impact is low; **ask** if impact is high |
+| Input is ambiguous | **Proceed** if impact is low; **interview** if impact is high |
 | Input is out of scope | **Reject** — state why and suggest the correct skill if known |
+
+### Interview mode
+
+When a skill receives no input, insufficient input, or vague input, it enters interview mode to gather the minimum information needed to proceed. This is a universal fallback — every skill must support it.
+
+#### Two entry modes
+
+1. **Sufficient input**: Analyze input, proceed with the skill's processing rules
+2. **No input or sparse input**: Enter interview mode to gather required information
+
+#### Interview rules
+
+1. Ask **one question at a time** — never front-load multiple questions
+2. Follow the natural flow of the conversation — do not rigidly follow a fixed order
+3. When an answer touches multiple dimensions, acknowledge what was covered
+4. Use follow-up questions to go deeper before moving on
+5. Summarize progress every 3-5 turns
+6. **Do not evaluate, critique, or give opinions** — only gather information
+7. **Do not suggest solutions, alternatives, or improvements** — only gather information
+8. Respond in the same language the user uses
+
+#### Question style
+
+- Use open questions to explore: "What does... look like?"
+- Use closed questions to confirm: "So the target is...?"
+- Use deepening questions when an answer is vague: "Can you tell me more about what you mean by...?"
+- Do not use leading questions that imply a judgment
+
+#### What to gather
+
+Each skill defines its own required and optional input (§13 `required_input`, `optional_input`). Interview mode gathers the **required input** at minimum. Optional input improves the result but is not blocking.
+
+#### Exit criteria
+
+Exit interview mode when all required input fields can be satisfied. Do not over-interview ��� gather what is needed, then proceed with the skill's processing rules.
+
+#### When interview is not possible
+
+If the skill's required input cannot reasonably be gathered through conversation (e.g., the skill requires a source code file), fall back to the structured error format below.
 
 ### Structured error format
 
-When a skill cannot proceed:
+When a skill cannot proceed and interview mode cannot resolve the gap:
 
 ```
 ## Cannot proceed

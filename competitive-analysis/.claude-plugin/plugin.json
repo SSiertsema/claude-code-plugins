@@ -1,0 +1,12 @@
+{
+  "name": "competitive-analysis",
+  "version": "1.0.0",
+  "description": "Autonomous competitive analysis using SWOT, Porter's Five Forces, and TOWS strategy matrix. Researches competitors and industry data via web, produces rated assessments with Mermaid diagrams and optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["competitive-analysis", "swot", "porters-five-forces", "tows", "strategy", "market-research"],
+  "skills": "./skills"
+}

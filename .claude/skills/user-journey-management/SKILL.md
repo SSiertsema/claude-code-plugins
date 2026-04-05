@@ -29,12 +29,17 @@ Check each persona for: goals, motivations, behaviors, pain points, emotional dr
 
 ### 4. Interview for gaps
 
-If input is incomplete, interview the user to fill gaps:
-- Ask **one question at a time**
-- Do not evaluate, critique, or suggest — only gather information
-- Summarize progress every 3-5 turns
-- Respond in the user's language
-- Only proceed when gaps are sufficiently covered
+If input is incomplete, enter interview mode (§7) to fill gaps. Skill-specific dimensions:
+
+| Dimension | Required |
+|---|---|
+| Value proposition | Yes |
+| Target audience | Yes |
+| Business goals | Yes |
+| Persona goals and motivations | Yes |
+| Persona pain points and emotional drivers | Yes |
+| Touchpoints / channels | No |
+| Existing journey context | No |
 
 ### 5. Ask output path
 
@@ -133,10 +138,10 @@ Present the complete journey map(s). Save only after explicit user approval.
 
 | Situation | Behavior |
 |---|---|
-| Missing business case | Ask user to provide (file path or paste) |
-| Missing personas | Ask user to provide; suggest `persona-management` skill |
-| Personas lack goals/motivations | Interview to fill gaps |
-| Business case lacks value proposition | Interview to fill gaps |
+| Missing business case | Enter interview mode (§7) to gather business context; or ask user to provide file path / paste |
+| Missing personas | Enter interview mode (§7) to gather persona context; suggest `persona-management` skill as alternative |
+| Personas lack goals/motivations | Enter interview mode (§7) to fill gaps |
+| Business case lacks value proposition | Enter interview mode (§7) to fill gaps |
 | Scenario doesn't connect to persona goals | Flag and propose alternative |
 | User rejects proposed scenarios | Ask what should change and iterate |
 | Out-of-scope request | Reject with suggestion to use appropriate skill |

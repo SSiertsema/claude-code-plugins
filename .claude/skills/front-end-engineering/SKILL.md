@@ -31,10 +31,21 @@ A **complete user story** serving as the contract between assigner and assignee.
 3. **Technical constraints** — Any technical requirements or limitations
 4. **Definition of done** — What "complete" means
 
+## Input handling
+
+Follow shared foundation §7 — interview mode. If no user story is provided or the story is incomplete, enter interview mode to gather the missing elements. Skill-specific dimensions:
+
+| Dimension | Required |
+|---|---|
+| Narrative (As a/I want/So that) | Yes |
+| Acceptance criteria (testable conditions) | Yes |
+| Technical constraints | No (inferred from codebase) |
+| Definition of done | No (use skill defaults) |
+
 ## Phase 1 — Analyze
 
-1. **Validate completeness.** If the user story is missing required elements or has vague/untestable acceptance criteria:
-   - **Reject** with a report listing what is missing and what is vague. No suggestions.
+1. **Validate completeness.** If the user story is still missing required elements after interview mode (§7):
+   - **Reject** with a report listing what is missing and what is vague.
    - Stop processing.
 
 2. **Scope check.** If the story requires backend code, database schemas, DevOps/CI, or API design:
@@ -97,8 +108,8 @@ Produce a **Test Report**:
 
 | Situation | Action |
 |---|---|
-| Incomplete user story | Reject: list missing elements and vague criteria. No suggestions. |
+| Incomplete user story | Enter interview mode (§7) to gather missing elements; reject only if gaps remain after interview |
 | Non-front-end work required | Reject: list out-of-scope elements. |
 | No codebase detected | Ask which framework to use. |
 | Ambiguous framework | Ask user to clarify. |
-| Not a user story | Reject: "This skill requires a well-formed user story as input." |
+| Not a user story | Enter interview mode (§7) to help the user formulate a user story; reject only if input remains out of scope |
