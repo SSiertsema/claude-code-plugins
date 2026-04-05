@@ -58,13 +58,20 @@ Present detected scope:
 
 Ask the user to confirm or adjust. Also ask:
 
-> "Would you like PNG images of the diagrams? This requires `@mermaid-js/mermaid-cli` (mmdc). I can check if it's installed or install it for you."
+> "Would you like rendered diagram images in the report? This requires `@mermaid-js/mermaid-cli` (mmdc). Without it, diagrams appear as Mermaid code blocks."
 
-If the user wants PNGs:
+**Diagram render mode:**
+
+| Mode | Report contains | `.mmd` source files | Requires mmdc |
+|---|---|---|---|
+| `code` (default) | Mermaid code blocks | No | No |
+| `image` | `![](path.png)` image references only | Yes (alongside PNGs) | Yes |
+
+If the user wants image mode:
 1. Check if `mmdc` is available via Bash: `which mmdc 2>/dev/null`
 2. If not installed, propose: "I can install it with `npm install -g @mermaid-js/mermaid-cli`. Shall I proceed?"
 3. Only install after explicit user approval
-4. If the user declines installation, proceed with Mermaid code blocks only
+4. If the user declines installation, fall back to `code` mode
 
 ### 4. Ask output path
 
@@ -305,14 +312,16 @@ xychart-beta
     bar [val1, val2, val3, val4, val5, val6]
 ```
 
-## Phase 10 — PNG Export (if requested)
+## Phase 10 — Diagram Rendering
 
-If the user opted for PNG images:
+### Code mode (default)
+Include Mermaid code blocks directly in the report. No external files needed.
 
+### Image mode
 1. Write each Mermaid diagram to a `.mmd` file in the output directory
 2. Run `mmdc -i [file].mmd -o [file].png -t neutral -b transparent` for each
-3. Include the PNG file paths in the report
-4. Keep the Mermaid code blocks in the report as well (for portability)
+3. In the report, embed images only: `![TAM/SAM/SOM](tam-sam-som-circles.png)`
+4. Do NOT include Mermaid code blocks in the report — the `.mmd` source files serve as the editable source
 
 File naming:
 - `tam-sam-som-circles.mmd` / `.png`
@@ -411,8 +420,8 @@ Present for user approval. Save only after explicit confirmation.
 | Top-down and bottom-up diverge >15% | Flag divergence, analyze causes, present both with explanation |
 | No pricing data found | Use analogies or comparable products, label as `[Estimated]` |
 | Market too new for reliable data | Use proxy indicators and analog markets, label methodology |
-| mmdc not installed and user declines | Proceed with Mermaid code blocks only |
-| mmdc rendering fails | Report error, keep Mermaid code blocks |
+| mmdc not installed and user declines | Fall back to `code` mode (Mermaid code blocks in report) |
+| mmdc rendering fails | Report error, fall back to `code` mode for failed diagram |
 | Out-of-scope request | "This skill performs market sizing (TAM/SAM/SOM). [Request] is outside scope." |
 
 ## Self-check

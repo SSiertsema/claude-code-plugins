@@ -58,13 +58,20 @@ Present the detected scope to the user for confirmation:
 
 Ask the user to confirm or adjust. Also ask:
 
-> "Would you like PNG images of the diagrams? This requires `@mermaid-js/mermaid-cli` (mmdc). I can check if it's installed or install it for you."
+> "Would you like rendered diagram images in the report? This requires `@mermaid-js/mermaid-cli` (mmdc). Without it, diagrams appear as Mermaid code blocks."
 
-If the user wants PNGs:
+**Diagram render mode:**
+
+| Mode | Report contains | `.mmd` source files | Requires mmdc |
+|---|---|---|---|
+| `code` (default) | Mermaid code blocks | No | No |
+| `image` | `![](path.png)` image references only | Yes (alongside PNGs) | Yes |
+
+If the user wants image mode:
 1. Check if `mmdc` is available via Bash: `which mmdc 2>/dev/null`
 2. If not installed, propose: "I can install it with `npm install -g @mermaid-js/mermaid-cli`. Shall I proceed?"
 3. Only install after explicit user approval
-4. If the user declines installation, proceed with Mermaid code blocks only
+4. If the user declines installation, fall back to `code` mode
 
 ### 4. Ask output path
 
@@ -284,14 +291,16 @@ Synthesize all findings into a prioritized action plan.
 
 Every action must trace back to a specific finding from the analysis. No generic advice.
 
-## Phase 9 — PNG Export (if requested)
+## Phase 9 — Diagram Rendering
 
-If the user opted for PNG images:
+### Code mode (default)
+Include Mermaid code blocks directly in the report. No external files needed.
 
+### Image mode
 1. Write each Mermaid diagram to a `.mmd` file in the output directory
 2. Run `mmdc -i [file].mmd -o [file].png -t neutral -b transparent` for each
-3. Include the PNG file paths in the report
-4. Keep the Mermaid code blocks in the report as well (for portability)
+3. In the report, embed images only: `![Porter's Five Forces](porters-five-forces.png)`
+4. Do NOT include Mermaid code blocks in the report — the `.mmd` source files serve as the editable source
 
 File naming:
 - `porters-five-forces.mmd` / `.png`
@@ -366,8 +375,8 @@ Present for user approval. Save only after explicit confirmation.
 | Cannot find sufficient data via web | Produce partial output, clearly label gaps and low-confidence findings |
 | Competitor data unavailable | Note the gap, proceed with available competitors, label as `[Limited data]` |
 | Industry not identifiable | Enter interview mode — ask user about the industry/market |
-| mmdc not installed and user declines install | Proceed with Mermaid code blocks only, skip PNG export |
-| mmdc rendering fails | Report the error, keep Mermaid code blocks, skip failed PNG |
+| mmdc not installed and user declines install | Fall back to `code` mode (Mermaid code blocks in report) |
+| mmdc rendering fails | Report the error, fall back to `code` mode for failed diagram |
 | Web search returns no results | State the gap, use available data, label confidence as low |
 | User provides conflicting scope | Present the conflict, ask user to resolve |
 | Out-of-scope request | "This skill performs competitive analysis. [Request] is outside scope." |

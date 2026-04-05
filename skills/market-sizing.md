@@ -150,9 +150,11 @@ Generate 6 Mermaid diagrams:
 5. Top-down vs bottom-up comparison (flowchart) — both paths to convergence
 6. Sensitivity analysis (xychart) — key assumption impact
 
-### Phase 10 — PNG Export (if requested)
+### Phase 10 — Diagram Rendering
 
-Write `.mmd` files, render via `mmdc`, include PNG paths. Keep Mermaid code blocks for portability.
+Two modes:
+- **`code`** (default): Mermaid code blocks in report, no external files
+- **`image`**: Render `.mmd` → `.png` via `mmdc`, embed `![](path.png)` in report, no code blocks. `.mmd` source files stored alongside for editability
 
 ### Phase 11 — Report Assembly
 
@@ -217,7 +219,7 @@ Assemble complete report with all sections. Present for approval. Save only afte
 5. **Top-down vs bottom-up** — Mermaid flowchart showing both calculation paths
 6. **Sensitivity analysis** — Mermaid xychart showing assumption impact
 
-All diagrams output as Mermaid code blocks. Optionally rendered to PNG.
+In `code` mode: diagrams appear as Mermaid code blocks. In `image` mode: diagrams rendered to PNG via `mmdc`, embedded as `![](path.png)`, with `.mmd` source files alongside.
 
 ---
 

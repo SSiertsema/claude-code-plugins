@@ -147,10 +147,11 @@ Research via WebSearch and WebFetch. Do not ask the user for industry data.
 2. Every action traces to a specific finding (TOWS quadrant, force, SWOT item)
 3. Include priority, timeframe, and expected impact
 
-### Phase 9 — PNG Export (if requested)
+### Phase 9 — Diagram Rendering
 
-1. Write `.mmd` files, render via `mmdc`, include PNG paths in report
-2. Keep Mermaid code blocks for portability
+Two modes:
+- **`code`** (default): Mermaid code blocks in report, no external files
+- **`image`**: Render `.mmd` → `.png` via `mmdc`, embed `![](path.png)` in report, no code blocks. `.mmd` source files stored alongside for editability
 
 ### Phase 10 — Report Assembly
 
@@ -214,7 +215,7 @@ Research via WebSearch and WebFetch. Do not ask the user for industry data.
 4. **Competitive positioning map** — Mermaid quadrant chart with 2-axis plot
 5. **Industry attractiveness** — Mermaid pie chart with force intensity scores
 
-All diagrams output as Mermaid code blocks. Optionally rendered to PNG if user requests and `mmdc` is available.
+In `code` mode: diagrams appear as Mermaid code blocks. In `image` mode: diagrams rendered to PNG via `mmdc`, embedded as `![](path.png)`, with `.mmd` source files alongside.
 
 ---
 
