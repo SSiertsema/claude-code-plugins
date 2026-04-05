@@ -1,0 +1,12 @@
+{
+  "name": "trend-analysis",
+  "version": "1.0.0",
+  "description": "Autonomous trend analysis combining quantitative data and qualitative intelligence. Researches trends via web, produces PESTEL scans, trend classification, impact assessment, weak signals, scenario sketches, and Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["trend-analysis", "pestel", "horizon-scanning", "weak-signals", "scenario-planning", "strategy"],
+  "skills": "./skills"
+}

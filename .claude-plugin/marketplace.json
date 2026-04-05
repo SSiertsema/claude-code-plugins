@@ -127,6 +127,12 @@
       "source": "./market-sizing",
       "description": "Autonomous TAM/SAM/SOM market sizing with top-down and bottom-up triangulation. Researches market data via web, produces growth projections, segmentation breakdowns, and Mermaid diagrams with optional PNG export.",
       "category": "strategy"
+    },
+    {
+      "name": "trend-analysis",
+      "source": "./trend-analysis",
+      "description": "Autonomous trend analysis with PESTEL scans, trend classification (megatrend/trend/fad), impact assessment, weak signals, scenario sketches, and Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
     }
   ]
 }
