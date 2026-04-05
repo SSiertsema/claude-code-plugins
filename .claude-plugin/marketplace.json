@@ -150,7 +150,7 @@
       "name": "survey-design",
       "source": "./survey-design",
       "description": "Design survey questionnaires with sampling plans, bias review, and analysis plans. Export to Qualtrics (QSF), XLSForm, SurveyJS, or CSV. Analyzes provided results with NPS/CSAT/CES/SUS scoring. Mermaid diagrams with optional PNG export.",
-      "category": "strategy"
+      "category": "research"
     }
   ]
 }
