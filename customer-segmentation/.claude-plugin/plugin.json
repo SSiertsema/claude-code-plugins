@@ -1,0 +1,12 @@
+{
+  "name": "customer-segmentation",
+  "version": "1.0.0",
+  "description": "Autonomous customer segmentation using multiple dimensions (demographic, psychographic, behavioral, needs-based, value-based, firmographic). Researches market data via web, produces segment profiles, MASDA validation, targeting and positioning recommendations, and Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["customer-segmentation", "targeting", "positioning", "stp", "market-research", "strategy"],
+  "skills": "./skills"
+}

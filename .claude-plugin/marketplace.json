@@ -133,6 +133,12 @@
       "source": "./trend-analysis",
       "description": "Autonomous trend analysis with PESTEL scans, trend classification (megatrend/trend/fad), impact assessment, weak signals, scenario sketches, and Mermaid diagrams with optional PNG export.",
       "category": "strategy"
+    },
+    {
+      "name": "customer-segmentation",
+      "source": "./customer-segmentation",
+      "description": "Autonomous customer segmentation with multi-dimensional profiling, MASDA validation, targeting matrix, positioning map, and activation roadmap. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
     }
   ]
 }
