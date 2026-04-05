@@ -75,7 +75,7 @@ If the user wants image mode:
 
 ### 4. Ask output path
 
-Ask where to save the analysis report. Default: `/documentatie/business/market-sizing-[subject].md`
+Ask where to save the analysis report. Default: `/documentation/[case]/market-sizing/`
 
 ## Phase 2 — Research
 

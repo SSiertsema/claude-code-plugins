@@ -49,7 +49,7 @@
 | **Geographic scope** | Region or global | Global |
 | **Analysis depth** | Quick scan, standard, or deep dive | Standard |
 | **PNG export** | Whether to render diagrams as PNG images | No (Mermaid code blocks only) |
-| **Output path** | Where to save the report | `/documentatie/business/competitive-analysis-[subject].md` |
+| **Output path** | Where to save the report | `/documentation/[case]/competitive-analysis/` |
 
 ## Input schema
 

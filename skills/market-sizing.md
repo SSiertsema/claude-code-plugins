@@ -50,7 +50,7 @@
 | **Time horizon** | Projection period in years | 5 years |
 | **Known competitors** | Named competitors for validation | Researched autonomously |
 | **PNG export** | Whether to render diagrams as PNG images | No |
-| **Output path** | Where to save the report | `/documentatie/business/market-sizing-[subject].md` |
+| **Output path** | Where to save the report | `/documentation/[case]/market-sizing/` |
 
 ## Input schema
 

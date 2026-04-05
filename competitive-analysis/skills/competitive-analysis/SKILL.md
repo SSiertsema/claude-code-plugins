@@ -75,7 +75,7 @@ If the user wants image mode:
 
 ### 4. Ask output path
 
-Ask where to save the analysis report. Default: `/documentatie/business/competitive-analysis-[subject].md`
+Ask where to save the analysis report. Default: `/documentation/[case]/competitive-analysis/`
 
 ## Phase 2 — Research
 
