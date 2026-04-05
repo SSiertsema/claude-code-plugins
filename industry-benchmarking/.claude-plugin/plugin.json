@@ -1,0 +1,12 @@
+{
+  "name": "industry-benchmarking",
+  "version": "1.0.0",
+  "description": "Autonomous industry benchmarking comparing performance metrics against industry P25/P50/P75 and best-in-class. Produces gap analysis, composite scorecards, peer comparison, maturity assessment, and improvement roadmaps with Mermaid diagrams and optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["benchmarking", "gap-analysis", "kpi", "performance", "scorecard", "strategy"],
+  "skills": "./skills"
+}

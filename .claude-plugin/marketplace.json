@@ -139,6 +139,12 @@
       "source": "./customer-segmentation",
       "description": "Autonomous customer segmentation with multi-dimensional profiling, MASDA validation, targeting matrix, positioning map, and activation roadmap. Mermaid diagrams with optional PNG export.",
       "category": "strategy"
+    },
+    {
+      "name": "industry-benchmarking",
+      "source": "./industry-benchmarking",
+      "description": "Autonomous industry benchmarking comparing performance against P25/P50/P75 and best-in-class. Gap analysis, composite scorecards, maturity assessment, and improvement roadmaps with Mermaid diagrams and optional PNG export.",
+      "category": "strategy"
     }
   ]
 }
