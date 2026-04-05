@@ -1,0 +1,12 @@
+{
+  "name": "market-sizing",
+  "version": "1.0.0",
+  "description": "Autonomous TAM/SAM/SOM market sizing using top-down and bottom-up approaches with triangulation. Researches market data via web, produces growth projections, segmentation breakdowns, and Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["market-sizing", "tam", "sam", "som", "market-research", "strategy"],
+  "skills": "./skills"
+}

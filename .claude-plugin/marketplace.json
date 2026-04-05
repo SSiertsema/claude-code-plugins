@@ -121,6 +121,12 @@
       "source": "./competitive-analysis",
       "description": "Autonomous competitive analysis using SWOT, Porter's Five Forces, TOWS matrix, and strategic positioning. Researches competitors via web, produces Mermaid diagrams with optional PNG export.",
       "category": "strategy"
+    },
+    {
+      "name": "market-sizing",
+      "source": "./market-sizing",
+      "description": "Autonomous TAM/SAM/SOM market sizing with top-down and bottom-up triangulation. Researches market data via web, produces growth projections, segmentation breakdowns, and Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
     }
   ]
 }
