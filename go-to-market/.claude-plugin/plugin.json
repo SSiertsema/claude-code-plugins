@@ -1,0 +1,12 @@
+{
+  "name": "go-to-market",
+  "version": "1.0.0",
+  "description": "Autonomous go-to-market strategy skill creating launch plans for products, features, and market expansions. Covers market definition, positioning, pricing, channel strategy, 90-day launch plan, and success metrics. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["go-to-market", "gtm", "launch", "pricing", "positioning", "channels", "product-led-growth"],
+  "skills": "./skills"
+}

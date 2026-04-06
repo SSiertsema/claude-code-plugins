@@ -199,6 +199,42 @@
       "source": "./financial-forecasting",
       "description": "Autonomous financial forecasting with revenue, expense, cash flow, P&L projections, and unit economics. Multiple methods (driver-based, bottom-up, top-down). Scenario modeling and sensitivity analysis with Mermaid diagrams and optional PNG export.",
       "category": "strategy"
+    },
+    {
+      "name": "vision-crafting",
+      "source": "./vision-crafting",
+      "description": "Autonomous vision statement crafting using Golden Circle, Moore's Positioning, Working Backwards (PR/FAQ), and Product Vision Board. Multi-level alignment, quality scoring, and anti-vision positioning. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "okr-definition",
+      "source": "./okr-definition",
+      "description": "Autonomous OKR definition with cascading/alignment across company, team, and individual levels. Committed vs aspirational classification, 0-1.0 scoring, CFR companion framework, and 20-mistake quality validation. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "theme-roadmapping",
+      "source": "./theme-roadmapping",
+      "description": "Autonomous theme-based product roadmapping with Now/Next/Later, time-horizon, and swimlane formats. Strategic themes, initiative mapping, audience-specific views (executive, team, customer), and dependency analysis. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "prioritization",
+      "source": "./prioritization",
+      "description": "Autonomous prioritization with RICE, ICE, Value vs Effort, Kano, and Weighted Scoring frameworks. Cross-framework comparison, conflict resolution, and Now/Next/Later bucket assignment. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "opportunity-scoring",
+      "source": "./opportunity-scoring",
+      "description": "Autonomous opportunity scoring using Ulwick's Opportunity Score (importance vs satisfaction), Teresa Torres' Opportunity-Solution Tree, and multi-criteria weighted scoring. JTBD-framed outcomes with priority landscapes. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "go-to-market",
+      "source": "./go-to-market",
+      "description": "Autonomous go-to-market strategy with ICP/personas, positioning and messaging, pricing/packaging, channel strategy (PLG/SLG/hybrid), 90-day launch plan, rollout waves, and success metrics. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
     }
   ]
 }

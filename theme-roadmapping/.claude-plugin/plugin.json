@@ -1,0 +1,12 @@
+{
+  "name": "theme-roadmapping",
+  "version": "1.0.0",
+  "description": "Autonomous theme-based product roadmapping organizing work into strategic themes with initiatives. Supports multiple formats (Now/Next/Later, time-horizon, swimlane). Produces audience-specific views (executive, team, customer). Can import from OKR and vision outputs.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["roadmap", "themes", "now-next-later", "product-strategy", "initiatives"],
+  "skills": "./skills"
+}

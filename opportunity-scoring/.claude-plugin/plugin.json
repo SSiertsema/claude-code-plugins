@@ -1,0 +1,12 @@
+{
+  "name": "opportunity-scoring",
+  "version": "1.0.0",
+  "description": "Autonomous opportunity scoring skill evaluating product opportunities using Ulwick's Opportunity Score (importance vs satisfaction from JTBD), Teresa Torres' Opportunity-Solution Tree, and multi-criteria weighted scoring. Produces opportunity registers, priority landscapes, and solution mapping. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["opportunity-scoring", "jtbd", "opportunity-solution-tree", "ulwick", "odi"],
+  "skills": "./skills"
+}

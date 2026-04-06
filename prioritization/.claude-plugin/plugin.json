@@ -1,0 +1,12 @@
+{
+  "name": "prioritization",
+  "version": "1.0.0",
+  "description": "Autonomous prioritization skill applying multiple frameworks (RICE, ICE, Value vs Effort, Kano, Weighted Scoring, Now/Next/Later) to rank items. Produces priority-ranked lists, framework comparison, and Now/Next/Later bucket assignment. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["prioritization", "rice", "ice", "now-next-later", "kano", "value-effort", "weighted-scoring"],
+  "skills": "./skills"
+}

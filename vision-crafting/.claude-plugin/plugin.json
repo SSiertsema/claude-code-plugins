@@ -1,0 +1,12 @@
+{
+  "name": "vision-crafting",
+  "version": "1.0.0",
+  "description": "Autonomous vision statement crafting using Golden Circle, Moore's Positioning, Amazon Working Backwards (PR/FAQ), and Product Vision Board. Multi-level alignment (company → product → feature), quality scoring, and anti-vision positioning. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["vision", "positioning", "golden-circle", "working-backwards", "vision-board", "elevator-pitch"],
+  "skills": "./skills"
+}

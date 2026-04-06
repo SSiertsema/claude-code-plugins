@@ -1,0 +1,12 @@
+{
+  "name": "okr-definition",
+  "version": "1.0.0",
+  "description": "Autonomous OKR definition creating Objectives and Key Results at company, team, and individual levels. Supports cascading and alignment approaches. Scoring (0-1.0 scale), committed vs aspirational classification, CFR companion framework. Can import from vision-crafting output.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["okr", "objectives", "key-results", "goal-setting", "alignment", "cfr"],
+  "skills": "./skills"
+}
