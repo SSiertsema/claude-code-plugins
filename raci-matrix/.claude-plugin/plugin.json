@@ -1,0 +1,12 @@
+{
+  "name": "raci-matrix",
+  "version": "1.0.0",
+  "description": "Autonomous RACI matrix creation with variant support (RASCI, RACI-VS, DACI, RAPID). Validates against 15 anti-patterns, produces workload analysis, decision clarity scoring, governance health assessment, and communication plan skeleton. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["raci", "rasci", "daci", "rapid", "responsibility-matrix", "governance", "accountability"],
+  "skills": "./skills"
+}

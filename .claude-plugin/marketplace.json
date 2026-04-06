@@ -163,6 +163,12 @@
       "source": "./influence-diagramming",
       "description": "Autonomous influence diagramming mapping relationships, influence flows, and power dynamics between stakeholders. Produces influence matrices, centrality analysis, coalition detection, and strategic recommendations with Mermaid diagrams and optional PNG export.",
       "category": "strategy"
+    },
+    {
+      "name": "raci-matrix",
+      "source": "./raci-matrix",
+      "description": "Autonomous RACI matrix creation with variant support (RASCI, RACI-VS, DACI, RAPID). Validates against 15 anti-patterns, produces workload analysis, governance health scoring, and communication plan skeleton. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
     }
   ]
 }
