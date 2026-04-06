@@ -1,0 +1,12 @@
+{
+  "name": "influence-diagramming",
+  "version": "1.0.0",
+  "description": "Autonomous influence diagramming mapping relationships, influence flows, and power dynamics between stakeholders. Produces influence matrices, network diagrams, centrality analysis, coalition detection, and strategic recommendations with Mermaid diagrams and optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["influence-diagramming", "network-analysis", "centrality", "coalition", "power-dynamics", "stakeholder"],
+  "skills": "./skills"
+}

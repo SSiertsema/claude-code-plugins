@@ -157,6 +157,12 @@
       "source": "./stakeholder-mapping",
       "description": "Autonomous stakeholder mapping using Power/Interest Grid, Salience Model, Engagement Assessment, and Onion Diagram. Produces stakeholder registers, engagement strategies, and communication plans with Mermaid diagrams and optional PNG export.",
       "category": "strategy"
+    },
+    {
+      "name": "influence-diagramming",
+      "source": "./influence-diagramming",
+      "description": "Autonomous influence diagramming mapping relationships, influence flows, and power dynamics between stakeholders. Produces influence matrices, centrality analysis, coalition detection, and strategic recommendations with Mermaid diagrams and optional PNG export.",
+      "category": "strategy"
     }
   ]
 }
