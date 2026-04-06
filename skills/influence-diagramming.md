@@ -14,6 +14,7 @@
 | **Tone** | `neutral` |
 | **Audience** | `stakeholder` |
 | **Output format** | `markdown` |
+| **Mixins** | `[diagram-rendering, autonomous-research]` |
 
 ---
 
@@ -73,7 +74,7 @@ input:
       type: list[string]
       enum: [change_management, risk, communication, coalition_building]
       default: all
-    render_mode:
+    render_mode:  # See diagram-rendering mixin
       type: string
       enum: [code, image]
       default: code
@@ -101,11 +102,11 @@ input:
 2. If insufficient → interview mode (§7): gather project context at minimum
 3. Check for stakeholder mapping output — if provided, will import stakeholders
 4. Confirm scope with user (project, stakeholder source, focus areas)
-5. Ask diagram render mode (`code`/`image`) — if `image`, verify mmdc availability
+5. Ask diagram render mode (per diagram-rendering mixin)
 6. Ask output path (default: `/documentation/[case]/influence-diagramming/`)
 
 ### Phase 2 — Research
-7. WebSearch/WebFetch for typical influence dynamics in this project/industry type
+7. WebSearch/WebFetch (per autonomous-research mixin) for typical influence dynamics in this project/industry type
 8. Research common power structures and organizational politics patterns
 9. Research best practices for influence management in this domain
 10. Research known challenges with stakeholder influence in similar contexts
@@ -223,7 +224,7 @@ input:
 | 3 | Centrality Comparison Chart | xychart-beta | Degree/betweenness/closeness for top 10 stakeholders |
 | 4 | Coalition Map | flowchart | Coalition subgraphs with stance, bridges, swing members |
 
-In `code` mode: Mermaid code blocks. In `image` mode: PNG via `mmdc`, `![](path.png)`, `.mmd` alongside.
+Rendering per diagram-rendering mixin.
 
 ---
 
@@ -242,9 +243,9 @@ In `code` mode: Mermaid code blocks. In `image` mode: PNG via `mmdc`, `![](path.
 [] Influence pathways with bottlenecks and single points of failure
 [] Strategic recommendations cover all 6 categories
 [] Every recommendation traces to specific network finding
-[] All 4 Mermaid diagrams render valid syntax
-[] Sources listed for major claims
-[] Assumptions explicitly labeled
+[] All 4 Mermaid diagrams render valid syntax (per diagram-rendering mixin)
+[] Sources listed for major claims (per autonomous-research mixin)
+[] Assumptions explicitly labeled (per autonomous-research mixin)
 [] No fabricated relationships, politics, or centrality scores
 ```
 
@@ -260,8 +261,8 @@ In `code` mode: Mermaid code blocks. In `image` mode: PNG via `mmdc`, `![](path.
 | Stakeholder mapping output malformed | Ask user to verify, attempt partial import |
 | No meaningful relationships identifiable | Report limitation, use role-based inference with `[Assumption]` labels |
 | Network too sparse for centrality | Calculate available metrics, note limitations |
-| mmdc not installed / declined | Fall back to `code` mode |
-| mmdc rendering fails | Report error, fall back to `code` mode |
+| Diagram rendering fails | Per diagram-rendering mixin |
+| Web research insufficient | Per autonomous-research mixin |
 | Out-of-scope request | "This skill analyzes influence relationships between stakeholders. [Request] is outside scope." |
 
 ---
@@ -279,7 +280,9 @@ In `code` mode: Mermaid code blocks. In `image` mode: PNG via `mmdc`, `![](path.
 - [ ] Bottlenecks and single points of failure identified with mitigation
 - [ ] Every recommendation references specific network analysis finding
 - [ ] No fabricated relationships, politics, attitudes, or centrality scores
-- [ ] All 4 diagrams render valid Mermaid syntax
+- [ ] All 4 diagrams render valid Mermaid syntax (per diagram-rendering mixin)
+- [ ] Sources listed for major claims (per autonomous-research mixin)
+- [ ] Assumptions explicitly labeled (per autonomous-research mixin)
 
 ---
 

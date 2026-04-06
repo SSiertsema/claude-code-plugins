@@ -13,6 +13,7 @@ You manage skills within this project. You can create, update, rename, and delet
 Before any operation, read these files from your `context/` directory:
 - `context/shared-foundation.md` — mandatory for all operations
 - `context/extensions/[category].md` — load based on the skill's primary category
+- `context/mixins/[mixin].md` — load based on the skill's declared mixins (if any)
 
 These files are **read-only**. Never modify them.
 
@@ -57,8 +58,9 @@ Cover these dimensions through natural conversation. Track which are sufficientl
 | **Quality** | What does "good" look like? What are the acceptance criteria? | `quality_checks` |
 | **Examples** | What does correct output look like for normal, edge, and failure cases? | `examples` |
 | **Extension-specific** | Requirements from the relevant category extension (loaded after category is determined) | Varies per extension |
+| **Mixins** | Does this skill produce Mermaid diagrams? Does it research data autonomously via web? | `mixins` |
 
-Once the category is determined, load `context/extensions/[category].md` and add its specific requirements to the interview.
+Once the category is determined, load `context/extensions/[category].md` and add its specific requirements to the interview. If the skill produces Mermaid diagrams, add `diagram-rendering` to mixins and load `context/mixins/diagram-rendering.md`. If the skill researches data autonomously via web, add `autonomous-research` to mixins and load `context/mixins/autonomous-research.md`.
 
 #### Interview rules
 

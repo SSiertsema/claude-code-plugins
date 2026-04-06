@@ -14,6 +14,7 @@
 | **Tone** | `neutral` |
 | **Audience** | `stakeholder` |
 | **Output format** | `markdown` |
+| **Mixins** | `[diagram-rendering, autonomous-research]` |
 
 ---
 
@@ -77,7 +78,7 @@ input:
       type: list[string]
       enum: [governance, delivery, external_relations]
       default: all
-    render_mode:
+    render_mode:  # See diagram-rendering mixin
       type: string
       enum: [code, image]
       default: code
@@ -104,11 +105,11 @@ input:
 1. Parse input, detect project context
 2. If insufficient → interview mode (§7): gather project context at minimum
 3. Confirm scope with user (project, organization, frameworks, known stakeholders)
-4. Ask diagram render mode (`code`/`image`) — if `image`, verify mmdc availability
+4. Ask diagram render mode (per diagram-rendering mixin)
 5. Ask output path (default: `/documentation/[case]/stakeholder-mapping/`)
 
 ### Phase 2 — Research
-6. WebSearch/WebFetch for industry-typical stakeholder categories
+6. WebSearch/WebFetch (per autonomous-research mixin) for industry-typical stakeholder categories
 7. Research regulatory/compliance stakeholders for the domain
 8. Research common stakeholder dynamics in similar projects
 9. Research best practices for stakeholder engagement in this initiative type
@@ -224,7 +225,7 @@ input:
 | 3 | Stakeholder Onion Diagram | flowchart | Concentric rings with stakeholders by proximity |
 | 4 | Engagement Gap Chart | xychart-beta | Current vs desired engagement (bar pairs) |
 
-In `code` mode: Mermaid code blocks. In `image` mode: PNG via `mmdc`, `![](path.png)`, `.mmd` alongside.
+Rendering per diagram-rendering mixin.
 
 ---
 
@@ -243,9 +244,9 @@ In `code` mode: Mermaid code blocks. In `image` mode: PNG via `mmdc`, `![](path.
 [] Complete stakeholder register with all fields populated
 [] Risk factors identified and traced to specific stakeholders
 [] Recommendations traced to specific findings
-[] All 4 Mermaid diagrams render valid syntax
-[] Sources listed for all major claims
-[] Assumptions explicitly labeled
+[] All 4 Mermaid diagrams render valid syntax (per diagram-rendering mixin)
+[] Sources listed for all major claims (per autonomous-research mixin)
+[] Assumptions explicitly labeled (per autonomous-research mixin)
 [] No fabricated attitudes, politics, or outcomes
 ```
 
@@ -260,8 +261,8 @@ In `code` mode: Mermaid code blocks. In `image` mode: PNG via `mmdc`, `![](path.
 | Too few stakeholders identifiable | Report limitation, work with available (minimum 8), note gaps |
 | Framework not applicable | Skip framework, explain why |
 | Cannot research industry context | Produce output based on generic patterns, label confidence as low |
-| mmdc not installed / declined | Fall back to `code` mode |
-| mmdc rendering fails | Report error, fall back to `code` mode |
+| Diagram rendering fails | Per diagram-rendering mixin |
+| Web research insufficient | Per autonomous-research mixin |
 | User provides conflicting scope | Present conflict, ask user to resolve |
 | Out-of-scope request | "This skill maps and analyzes stakeholders. [Request] is outside scope." |
 
@@ -280,7 +281,9 @@ In `code` mode: Mermaid code blocks. In `image` mode: PNG via `mmdc`, `![](path.
 - [ ] Risk factors reference specific stakeholders and scenarios
 - [ ] Recommendations are concrete and traced to findings
 - [ ] No fabricated stakeholder attitudes or organizational politics
-- [ ] All 4 diagrams render valid Mermaid syntax
+- [ ] All 4 diagrams render valid Mermaid syntax (per diagram-rendering mixin)
+- [ ] Sources listed for all major claims (per autonomous-research mixin)
+- [ ] Assumptions explicitly labeled (per autonomous-research mixin)
 
 ---
 

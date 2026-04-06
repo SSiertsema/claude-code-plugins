@@ -341,6 +341,9 @@ Default: `markdown`
 ### Priority
 `critical` | `high` | `medium` | `low`
 
+### Mixins
+`diagram-rendering` | `autonomous-research`
+
 ---
 
 ## 11. Rule precedence
@@ -406,6 +409,7 @@ Every skill must define these fields:
 | `quality_checks` | Yes | Acceptance criteria specific to this skill |
 | `examples` | Yes | Representative cases (normal, edge, failure) |
 | `version` | Yes | Semantic version (e.g., `1.0.0`) |
+| `mixins` | No | List of cross-cutting capabilities from `context/mixins/` (e.g., `[diagram-rendering, autonomous-research]`) |
 
 ---
 
@@ -432,14 +436,17 @@ Minimum: 5 normal, 3 edge, 2 failure cases per skill.
 1. Read this foundation
 2. Declare the skill's primary category
 3. Read the corresponding skill-type extension in `extensions/`
-4. The skill inherits ALL rules from foundation + extension
-5. The skill only defines what is UNIQUE to it
-6. If a rule needs an override, state and justify it explicitly
+4. If the skill produces Mermaid diagrams, add `diagram-rendering` to mixins and read `mixins/diagram-rendering.md`
+5. If the skill researches data autonomously via web, add `autonomous-research` to mixins and read `mixins/autonomous-research.md`
+6. The skill inherits ALL rules from foundation + extension + declared mixins
+7. The skill only defines what is UNIQUE to it
+8. If a rule needs an override, state and justify it explicitly
 
 **When reviewing a skill:**
 1. Check category declaration
 2. Check compliance with foundation rules
 3. Check compliance with the relevant extension
-4. Check that overrides are explicit and justified
-5. Check that output contract is compatible with formatting standards
-6. Run test cases
+4. Check compliance with declared mixins
+5. Check that overrides are explicit and justified
+6. Check that output contract is compatible with formatting standards
+7. Run test cases

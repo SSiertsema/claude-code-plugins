@@ -14,6 +14,7 @@
 | **Tone** | `neutral` |
 | **Audience** | `stakeholder` |
 | **Output format** | `markdown` |
+| **Mixins** | `[diagram-rendering]` |
 
 ---
 
@@ -102,7 +103,7 @@ input:
       original_research_questions: list[string]
       framework: string
   common:
-    render_mode:
+    render_mode:  # See diagram-rendering mixin
       type: string
       enum: [code, image]
       default: code
@@ -131,7 +132,7 @@ input:
 2. If insufficient, enter interview mode (§7)
 3. Confirm scope with user
 4. Ask export format (Qualtrics QSF / XLSForm / SurveyJS / CSV / none)
-5. Ask diagram render mode and output path
+5. Ask diagram render mode (per diagram-rendering mixin) and output path
 6. Define 3-7 research questions mapped to survey questions
 7. Select framework(s) (NPS/CSAT/CES/SUS/Kano/MaxDiff/Van Westendorp/custom)
 8. Construct questionnaire: funnel structure, 10-25 questions, skip logic
@@ -238,7 +239,7 @@ Plus export file in selected format.
 2. Framework score breakdown (xychart)
 3. Cross-tab comparison (xychart)
 
-In `code` mode: Mermaid code blocks. In `image` mode: PNG via `mmdc`, `![](path.png)`, `.mmd` alongside.
+Rendering per diagram-rendering mixin.
 
 ---
 
@@ -258,7 +259,7 @@ In `code` mode: Mermaid code blocks. In `image` mode: PNG via `mmdc`, `![](path.
 [] Pre-test protocol included
 [] Informed consent included
 [] Export file produced (if requested)
-[] Diagrams render valid Mermaid syntax
+[] Diagrams render valid Mermaid syntax (per diagram-rendering mixin)
 ```
 
 ### Analyze mode
@@ -270,7 +271,7 @@ In `code` mode: Mermaid code blocks. In `image` mode: PNG via `mmdc`, `![](path.
 [] Findings ranked by significance
 [] Recommendations tied to findings
 [] Limitations stated
-[] Diagrams render valid Mermaid syntax
+[] Diagrams render valid Mermaid syntax (per diagram-rendering mixin)
 ```
 
 ---
@@ -286,8 +287,7 @@ In `code` mode: Mermaid code blocks. In `image` mode: PNG via `mmdc`, `![](path.
 | Insufficient data for tests | Report limitation, use available methods |
 | Export format unknown | Present 5 options, ask user |
 | Framework not applicable | Suggest appropriate framework, confirm |
-| mmdc not installed / declined | Fall back to `code` mode |
-| mmdc rendering fails | Report error, fall back to `code` mode |
+| Diagram rendering fails | Per diagram-rendering mixin |
 | Out-of-scope request | "This skill designs surveys and analyzes results. [Request] is outside scope." |
 
 ---
@@ -305,7 +305,7 @@ In `code` mode: Mermaid code blocks. In `image` mode: PNG via `mmdc`, `![](path.
 - [ ] Framework scores calculated with correct formula (analyze)
 - [ ] Statistical significance reported where applicable (analyze)
 - [ ] No fabricated results, data, or p-values
-- [ ] All diagrams render valid Mermaid syntax
+- [ ] All diagrams render valid Mermaid syntax (per diagram-rendering mixin)
 
 ---
 

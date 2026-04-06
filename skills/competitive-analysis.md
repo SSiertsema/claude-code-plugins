@@ -13,6 +13,7 @@
 | **Tone** | `neutral` |
 | **Audience** | `stakeholder` |
 | **Output format** | `markdown` |
+| **Mixins** | `[diagram-rendering, autonomous-research]` |
 
 ---
 
@@ -74,7 +75,7 @@ input:
       type: string
       enum: [quick_scan, standard, deep_dive]
       default: standard
-    png_export:
+    png_export:  # See diagram-rendering mixin
       type: boolean
       default: false
       dependency: "@mermaid-js/mermaid-cli (mmdc)"
@@ -98,12 +99,12 @@ Interview dimensions: subject (required), industry/market (required), geographic
 Then:
 1. Detect subject, industry, geographic scope, and any named competitors
 2. Present detected scope for user confirmation
-3. Ask if PNG export is desired; if yes, check/offer to install `mmdc`
+3. Ask diagram render mode (per diagram-rendering mixin)
 4. Ask for output path
 
 ### Phase 2 — Research (autonomous)
 
-Research via WebSearch and WebFetch. Do not ask the user for industry data.
+Research via WebSearch and WebFetch per autonomous-research mixin. Do not ask the user for industry data.
 
 1. **PESTEL scan**: Political, Economic, Social, Technological, Environmental, Legal factors
 2. **Competitor identification**: If not provided, research and identify 3-5 key competitors. Present for user confirmation.
@@ -149,9 +150,7 @@ Research via WebSearch and WebFetch. Do not ask the user for industry data.
 
 ### Phase 9 — Diagram Rendering
 
-Two modes:
-- **`code`** (default): Mermaid code blocks in report, no external files
-- **`image`**: Render `.mmd` → `.png` via `mmdc`, embed `![](path.png)` in report, no code blocks. `.mmd` source files stored alongside for editability
+Per diagram-rendering mixin.
 
 ### Phase 10 — Report Assembly
 
@@ -215,7 +214,7 @@ Two modes:
 4. **Competitive positioning map** — Mermaid quadrant chart with 2-axis plot
 5. **Industry attractiveness** — Mermaid pie chart with force intensity scores
 
-In `code` mode: diagrams appear as Mermaid code blocks. In `image` mode: diagrams rendered to PNG via `mmdc`, embedded as `![](path.png)`, with `.mmd` source files alongside.
+In `code` mode: Mermaid code blocks. In `image` mode: PNG via `mmdc` per diagram-rendering mixin.
 
 ---
 
@@ -226,7 +225,7 @@ In `code` mode: diagrams appear as Mermaid code blocks. In `image` mode: diagram
 [] Every SWOT item is specific, fact-based, and sourced
 [] SWOT quadrants have 3-5 items each
 [] TOWS strategies are concrete and actionable (not generic)
-[] All five Mermaid diagrams are included
+[] All five Mermaid diagrams are included (per diagram-rendering mixin)
 [] Strategic actions trace back to specific findings
 [] Sources are listed for all major claims
 [] Assumptions are explicitly labeled
@@ -246,9 +245,7 @@ In `code` mode: diagrams appear as Mermaid code blocks. In `image` mode: diagram
 | Cannot find sufficient data via web | Produce partial output, clearly label gaps and low-confidence findings |
 | Competitor data unavailable | Note the gap, proceed with available competitors, label as `[Limited data]` |
 | Industry not identifiable | Enter interview mode — ask about the industry/market |
-| mmdc not installed and user declines | Proceed with Mermaid code blocks only |
-| mmdc rendering fails | Report error, keep Mermaid code blocks |
-| Web search returns no results | State the gap, label confidence as low |
+| mmdc / web search failures | See `diagram-rendering` and `autonomous-research` mixins |
 | User provides conflicting scope | Present conflict, ask user to resolve |
 | Out-of-scope request | "This skill performs competitive analysis. [Request] is outside scope." |
 
@@ -265,7 +262,7 @@ In `code` mode: diagrams appear as Mermaid code blocks. In `image` mode: diagram
 - [ ] Assumptions explicitly labeled as `[Assumption]`
 - [ ] No fabricated statistics, market data, or financial figures
 - [ ] Report is internally consistent (SWOT items flow into TOWS strategies flow into actions)
-- [ ] Diagrams render valid Mermaid syntax
+- [ ] Diagrams render valid Mermaid syntax (per diagram-rendering mixin)
 
 ---
 

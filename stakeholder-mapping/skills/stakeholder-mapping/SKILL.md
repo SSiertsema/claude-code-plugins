@@ -52,30 +52,11 @@ Present the detected scope to the user for confirmation:
 **Frameworks**: [Power/Interest Grid, Salience Model, Engagement Assessment, Onion Diagram]
 ```
 
-Ask the user to confirm or adjust. Also ask:
-
-> "Would you like rendered diagram images in the report? This requires `@mermaid-js/mermaid-cli` (mmdc). Without it, diagrams appear as Mermaid code blocks."
-
-**Diagram render mode:**
-
-| Mode | Report contains | `.mmd` source files | Requires mmdc |
-|---|---|---|---|
-| `code` (default) | Mermaid code blocks | No | No |
-| `image` | `![](path.png)` image references only | Yes (alongside PNGs) | Yes |
-
-If the user wants image mode:
-1. Check if `mmdc` is available via Bash: `which mmdc 2>/dev/null`
-2. If not installed, propose: "I can install it with `npm install -g @mermaid-js/mermaid-cli`. Shall I proceed?"
-3. Only install after explicit user approval
-4. If the user declines installation, fall back to `code` mode
-
-### 4. Ask output path
-
-Ask where to save the report. Default: `/documentation/[case]/stakeholder-mapping/`
+Ask the user to confirm or adjust. Ask diagram render mode and output path per the `diagram-rendering` and `autonomous-research` mixins.
 
 ## Phase 2 — Research
 
-Use WebSearch and WebFetch to gather data. Research autonomously — do not ask the user for stakeholder information they would need to look up.
+Use WebSearch and WebFetch per the `autonomous-research` mixin.
 
 ### 2a. Industry stakeholder patterns
 
@@ -375,14 +356,7 @@ Place actual stakeholders in their proximity layer based on directional classifi
 | 3 | Stakeholder Onion | flowchart | Concentric rings by proximity |
 | 4 | Engagement Gap Chart | xychart-beta | Current vs desired engagement levels |
 
-### Code mode (default)
-Include Mermaid code blocks directly in the report.
-
-### Image mode
-1. Write each diagram to a `.mmd` file in the output directory
-2. Run `mmdc -i [file].mmd -o [file].png -t neutral -b transparent` for each
-3. In the report, embed images only: `![Power/Interest Grid](power-interest-grid.png)`
-4. Do NOT include Mermaid code blocks — the `.mmd` source files serve as editable source
+Render diagrams per the `diagram-rendering` mixin.
 
 File naming:
 - `power-interest-grid.mmd` / `.png`
@@ -446,10 +420,8 @@ Present for user approval. Save only after explicit confirmation.
 
 ## Generation rules
 
-- **Facts**: Must come from web research or project context — never fabricate stakeholder attitudes or organizational politics
-- **Assumptions**: Always label explicitly as `[Assumption]`
+Per the `autonomous-research` mixin, plus:
 - **Assessments**: Must be justified with evidence — never score a dimension without supporting rationale
-- **Sources**: Every major claim must reference its web source or project context
 - **Specificity**: "CFO controls budget approval and has blocked 2 similar initiatives" not "has high power"
 - **Language**: Respond and generate in the user's language unless specified otherwise
 
@@ -462,8 +434,7 @@ Present for user approval. Save only after explicit confirmation.
 | Too few stakeholders identifiable | Report limitation, work with available (minimum 8), note gaps |
 | Framework not applicable | Skip framework, explain why |
 | Cannot research industry context | Produce output based on generic stakeholder patterns, label confidence as low |
-| mmdc not installed and user declines | Fall back to `code` mode |
-| mmdc rendering fails | Report error, fall back to `code` mode for failed diagram |
+| mmdc / web search failures | See `diagram-rendering` and `autonomous-research` mixins |
 | User provides conflicting scope | Present conflict, ask user to resolve |
 | Out-of-scope request | "This skill maps and analyzes stakeholders. [Request] is outside scope." |
 

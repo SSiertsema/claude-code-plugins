@@ -54,30 +54,13 @@ Present detected scope:
 **Time horizon**: [N years]
 ```
 
-Ask the user to confirm or adjust. Also ask:
+Ask the user to confirm or adjust.
 
-> "Would you like rendered diagram images in the report? This requires `@mermaid-js/mermaid-cli` (mmdc). Without it, diagrams appear as Mermaid code blocks."
-
-**Diagram render mode:**
-
-| Mode | Report contains | `.mmd` source files | Requires mmdc |
-|---|---|---|---|
-| `code` (default) | Mermaid code blocks | No | No |
-| `image` | `![](path.png)` image references only | Yes (alongside PNGs) | Yes |
-
-If the user wants image mode:
-1. Check if `mmdc` is available via Bash: `which mmdc 2>/dev/null`
-2. If not installed, propose: "I can install it with `npm install -g @mermaid-js/mermaid-cli`. Shall I proceed?"
-3. Only install after explicit user approval
-4. If the user declines installation, fall back to `code` mode
-
-### 4. Ask output path
-
-Ask where to save the analysis report. Default: `/documentation/[case]/trend-analysis/`
+Ask diagram render mode and output path per the `diagram-rendering` and `autonomous-research` mixins.
 
 ## Phase 2 — Research
 
-Use WebSearch and WebFetch to gather data. Research autonomously — do not ask the user for trend data.
+Use WebSearch and WebFetch per the `autonomous-research` mixin.
 
 ### 2a. Macro-environmental data (PESTEL)
 
@@ -276,14 +259,7 @@ xychart-beta
 
 ## Phase 9 — Diagram Rendering
 
-### Code mode (default)
-Include Mermaid code blocks directly in the report. No external files needed.
-
-### Image mode
-1. Write each Mermaid diagram to a `.mmd` file in the output directory
-2. Run `mmdc -i [file].mmd -o [file].png -t neutral -b transparent` for each
-3. In the report, embed images only: `![Trend Radar](trend-radar.png)`
-4. Do NOT include Mermaid code blocks in the report — the `.mmd` source files serve as the editable source
+Render diagrams per the `diagram-rendering` mixin.
 
 File naming:
 - `trend-radar.mmd` / `.png`
@@ -345,13 +321,11 @@ Present for user approval. Save only after explicit confirmation.
 
 ## Generation rules
 
-- **Facts**: Must come from web research — never fabricate trend data, statistics, or growth rates
-- **Assumptions**: Always label explicitly as `[Assumption]`
+Per the `autonomous-research` mixin, plus:
 - **Classifications**: Every trend must be classified with explicit criteria (duration, breadth, depth, drivers)
 - **Ratings**: Impact scores must be justified with evidence — never rate without supporting data
 - **Weak signals**: Report honestly — if none found, say so. Do not fabricate early indicators.
 - **Scenarios**: Must be grounded in identified uncertainties — not generic futures
-- **Sources**: Every trend must reference its web source with publication date
 - **Prioritization**: 8-12 key trends maximum. Ruthlessly prioritize — a 50-trend list is useless.
 - **Causation**: Distinguish correlation from causation explicitly when trends co-occur
 - **Language**: Respond and generate in the user's language unless specified otherwise
@@ -366,8 +340,7 @@ Present for user approval. Save only after explicit confirmation.
 | Data older than 18 months | Flag with `[Dated: YYYY]`, proceed with caveat |
 | No weak signals found | State "No weak signals detected in sources surveyed." Do not fabricate. |
 | Trend data contradicts across sources | Present both perspectives with sources, note the contradiction |
-| mmdc not installed and user declines | Fall back to `code` mode (Mermaid code blocks in report) |
-| mmdc rendering fails | Report error, fall back to `code` mode for failed diagram |
+| mmdc / web search failures | See `diagram-rendering` and `autonomous-research` mixins |
 | Out-of-scope request | "This skill performs trend analysis. [Request] is outside scope." |
 
 ## Self-check

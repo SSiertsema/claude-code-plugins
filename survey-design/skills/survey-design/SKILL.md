@@ -75,26 +75,9 @@ Present detected scope:
 
 The survey will always be produced in human-readable markdown. The export format is an additional machine-readable output.
 
-### 5. Ask diagram render mode
+### 5. Ask diagram render mode and output path
 
-> "Would you like rendered diagram images in the report? This requires `@mermaid-js/mermaid-cli` (mmdc). Without it, diagrams appear as Mermaid code blocks."
-
-**Diagram render mode:**
-
-| Mode | Report contains | `.mmd` source files | Requires mmdc |
-|---|---|---|---|
-| `code` (default) | Mermaid code blocks | No | No |
-| `image` | `![](path.png)` image references only | Yes (alongside PNGs) | Yes |
-
-If the user wants image mode:
-1. Check if `mmdc` is available via Bash: `which mmdc 2>/dev/null`
-2. If not installed, propose installation
-3. Only install after explicit user approval
-4. If declined, fall back to `code` mode
-
-### 6. Ask output path
-
-Default: `/documentation/[case]/survey-design/`
+Ask diagram render mode and output path per the `diagram-rendering` mixin. Default output path: `/documentation/[case]/survey-design/`
 
 ---
 
@@ -452,14 +435,7 @@ xychart-beta
 
 ## Diagram Rendering (both modes)
 
-### Code mode (default)
-Include Mermaid code blocks directly in the report.
-
-### Image mode
-1. Write `.mmd` files in the output directory
-2. Run `mmdc -i [file].mmd -o [file].png -t neutral -b transparent`
-3. Embed images only: `![Question Flow](question-flow.png)`
-4. Keep `.mmd` source files alongside
+Render diagrams per the `diagram-rendering` mixin.
 
 **Design mode files:**
 - `question-flow.mmd` / `.png`
@@ -573,8 +549,7 @@ Present for user approval. Save only after explicit confirmation.
 | Insufficient data for statistical tests | Report limitation, use available methods, state confidence |
 | Export format unknown | Present the 5 options, ask user to choose |
 | Framework not applicable to objective | Suggest appropriate framework, confirm with user |
-| mmdc not installed and user declines | Fall back to `code` mode |
-| mmdc rendering fails | Report error, fall back to `code` mode |
+| mmdc failures | See `diagram-rendering` mixin |
 | Out-of-scope request | "This skill designs surveys and analyzes results. [Request] is outside scope." |
 
 ## Self-check

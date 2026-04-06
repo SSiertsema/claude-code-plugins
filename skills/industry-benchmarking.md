@@ -13,6 +13,7 @@
 | **Tone** | `neutral` |
 | **Audience** | `stakeholder` |
 | **Output format** | `markdown` |
+| **Mixins** | `[diagram-rendering, autonomous-research]` |
 
 ---
 
@@ -87,7 +88,7 @@ input:
     known_peers:
       type: list[string]
       description: "Companies to include in peer group"
-    render_mode:
+    render_mode:  # See diagram-rendering mixin
       type: string
       enum: [code, image]
       default: code
@@ -106,12 +107,12 @@ input:
 2. If insufficient, enter interview mode (§7) to gather subject, industry, size/stage
 3. Detect scope
 4. Present scope for user confirmation
-5. Ask about diagram render mode
+5. Ask about diagram render mode (per diagram-rendering mixin)
 6. Ask for output path
 
 ### Phase 2 — Research (autonomous)
 
-Research via WebSearch and WebFetch:
+Research via WebSearch and WebFetch (per autonomous-research mixin):
 1. Industry benchmark data from reports, analyst firms, public filings
 2. Peer group identification (8-15 peers by size, geography, model, maturity)
 3. Present peer group for user confirmation
@@ -226,7 +227,7 @@ Assemble complete report. Present for approval. Save only after explicit confirm
 4. **Prioritization matrix** — Mermaid quadrant: impact vs effort
 5. **Maturity heatmap** — Mermaid xychart: maturity level across dimensions
 
-In `code` mode: diagrams as Mermaid code blocks. In `image` mode: PNG via `mmdc`, embedded as `![](path.png)`, `.mmd` source files alongside.
+Rendering per diagram-rendering mixin.
 
 ---
 
@@ -242,7 +243,7 @@ In `code` mode: diagrams as Mermaid code blocks. In `image` mode: PNG via `mmdc`
 [] Severity classification applied (Critical/Warning/Info per percentile band)
 [] Every gap has root-cause context and actionable recommendation
 [] Action plan has specific, time-bound targets
-[] All 5 Mermaid diagrams included and render valid syntax
+[] All 5 Mermaid diagrams included and render valid syntax (per diagram-rendering mixin)
 [] Every benchmark value sourced with publication date
 [] Assumptions explicitly labeled
 [] No fabricated data
@@ -263,8 +264,8 @@ In `code` mode: diagrams as Mermaid code blocks. In `image` mode: PNG via `mmdc`
 | Insufficient data for percentile ranking | Use available data, label confidence |
 | Data older than 18 months | Flag with `[Dated: YYYY]` |
 | Peer group too small (<5) | Expand criteria, explain trade-off |
-| mmdc not installed and user declines | Fall back to `code` mode |
-| mmdc rendering fails | Report error, fall back to `code` mode |
+| Diagram rendering fails | Per diagram-rendering mixin |
+| Web research insufficient | Per autonomous-research mixin |
 | Out-of-scope request | "This skill performs industry benchmarking. [Request] is outside scope." |
 
 ---
@@ -281,7 +282,9 @@ In `code` mode: diagrams as Mermaid code blocks. In `image` mode: PNG via `mmdc`
 - [ ] Action plan targets are specific and time-bound
 - [ ] Data from last 18-24 months or flagged
 - [ ] All data sourced with publication dates
-- [ ] All 5 diagrams render valid Mermaid syntax
+- [ ] All 5 diagrams render valid Mermaid syntax (per diagram-rendering mixin)
+- [ ] All data sourced with publication dates (per autonomous-research mixin)
+- [ ] Assumptions explicitly labeled (per autonomous-research mixin)
 - [ ] No fabricated data
 
 ---

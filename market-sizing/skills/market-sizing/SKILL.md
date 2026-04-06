@@ -56,30 +56,13 @@ Present detected scope:
 **Approach**: Top-down + bottom-up with triangulation
 ```
 
-Ask the user to confirm or adjust. Also ask:
+Ask the user to confirm or adjust.
 
-> "Would you like rendered diagram images in the report? This requires `@mermaid-js/mermaid-cli` (mmdc). Without it, diagrams appear as Mermaid code blocks."
-
-**Diagram render mode:**
-
-| Mode | Report contains | `.mmd` source files | Requires mmdc |
-|---|---|---|---|
-| `code` (default) | Mermaid code blocks | No | No |
-| `image` | `![](path.png)` image references only | Yes (alongside PNGs) | Yes |
-
-If the user wants image mode:
-1. Check if `mmdc` is available via Bash: `which mmdc 2>/dev/null`
-2. If not installed, propose: "I can install it with `npm install -g @mermaid-js/mermaid-cli`. Shall I proceed?"
-3. Only install after explicit user approval
-4. If the user declines installation, fall back to `code` mode
-
-### 4. Ask output path
-
-Ask where to save the analysis report. Default: `/documentation/[case]/market-sizing/`
+Ask diagram render mode and output path per the `diagram-rendering` and `autonomous-research` mixins.
 
 ## Phase 2 — Research
 
-Use WebSearch and WebFetch to gather data. Research autonomously — do not ask the user for market data.
+Use WebSearch and WebFetch per the `autonomous-research` mixin.
 
 ### 2a. Industry data
 
@@ -314,14 +297,7 @@ xychart-beta
 
 ## Phase 10 — Diagram Rendering
 
-### Code mode (default)
-Include Mermaid code blocks directly in the report. No external files needed.
-
-### Image mode
-1. Write each Mermaid diagram to a `.mmd` file in the output directory
-2. Run `mmdc -i [file].mmd -o [file].png -t neutral -b transparent` for each
-3. In the report, embed images only: `![TAM/SAM/SOM](tam-sam-som-circles.png)`
-4. Do NOT include Mermaid code blocks in the report — the `.mmd` source files serve as the editable source
+Render diagrams per the `diagram-rendering` mixin.
 
 File naming:
 - `tam-sam-som-circles.mmd` / `.png`
@@ -400,11 +376,8 @@ Present for user approval. Save only after explicit confirmation.
 
 ## Generation rules
 
-- **Facts**: Must come from web research — never fabricate market data, statistics, or financial figures
-- **Assumptions**: Always label explicitly as `[Assumption]` with impact rating (High/Medium/Low)
+Per the `autonomous-research` mixin, plus:
 - **Calculations**: Show full formulas and input values — every number must be traceable
-- **Sources**: Every data point must reference its web source with publication date
-- **Data freshness**: Use data from last 18-24 months. Flag older data with `[Dated: YYYY]`
 - **Both approaches**: ALWAYS calculate top-down AND bottom-up. Never use only one.
 - **SOM grounding**: SOM must tie to go-to-market capacity — never use arbitrary % of SAM
 - **Language**: Respond and generate in the user's language unless specified otherwise
@@ -420,8 +393,7 @@ Present for user approval. Save only after explicit confirmation.
 | Top-down and bottom-up diverge >15% | Flag divergence, analyze causes, present both with explanation |
 | No pricing data found | Use analogies or comparable products, label as `[Estimated]` |
 | Market too new for reliable data | Use proxy indicators and analog markets, label methodology |
-| mmdc not installed and user declines | Fall back to `code` mode (Mermaid code blocks in report) |
-| mmdc rendering fails | Report error, fall back to `code` mode for failed diagram |
+| mmdc / web search failures | See `diagram-rendering` and `autonomous-research` mixins |
 | Out-of-scope request | "This skill performs market sizing (TAM/SAM/SOM). [Request] is outside scope." |
 
 ## Self-check

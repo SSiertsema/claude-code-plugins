@@ -13,6 +13,7 @@
 | **Tone** | `neutral` |
 | **Audience** | `stakeholder` |
 | **Output format** | `markdown` |
+| **Mixins** | `[diagram-rendering, autonomous-research]` |
 
 ---
 
@@ -81,7 +82,7 @@ input:
     competitors:
       type: list[string]
       description: "Named competitors for validation"
-    png_export:
+    png_export:  # See diagram-rendering mixin
       type: boolean
       default: false
       dependency: "@mermaid-js/mermaid-cli (mmdc)"
@@ -100,12 +101,12 @@ input:
 2. If insufficient, enter interview mode (§7) to gather subject and industry at minimum
 3. Detect scope: subject, industry, geography, segments, pricing
 4. Present scope for user confirmation
-5. Ask about PNG export; check/offer mmdc installation if requested
+5. Ask diagram render mode (per diagram-rendering mixin)
 6. Ask for output path
 
 ### Phase 2 — Research (autonomous)
 
-Research via WebSearch and WebFetch. Do not ask the user for market data.
+Research via WebSearch and WebFetch per autonomous-research mixin. Do not ask the user for market data.
 
 1. Industry revenue data (global, regional) from reports
 2. Customer counts and segmentation data
@@ -152,9 +153,7 @@ Generate 6 Mermaid diagrams:
 
 ### Phase 10 — Diagram Rendering
 
-Two modes:
-- **`code`** (default): Mermaid code blocks in report, no external files
-- **`image`**: Render `.mmd` → `.png` via `mmdc`, embed `![](path.png)` in report, no code blocks. `.mmd` source files stored alongside for editability
+Per diagram-rendering mixin.
 
 ### Phase 11 — Report Assembly
 
@@ -219,7 +218,7 @@ Assemble complete report with all sections. Present for approval. Save only afte
 5. **Top-down vs bottom-up** — Mermaid flowchart showing both calculation paths
 6. **Sensitivity analysis** — Mermaid xychart showing assumption impact
 
-In `code` mode: diagrams appear as Mermaid code blocks. In `image` mode: diagrams rendered to PNG via `mmdc`, embedded as `![](path.png)`, with `.mmd` source files alongside.
+In `code` mode: Mermaid code blocks. In `image` mode: PNG via `mmdc` per diagram-rendering mixin.
 
 ---
 
@@ -232,7 +231,7 @@ In `code` mode: diagrams appear as Mermaid code blocks. In `image` mode: diagram
 [] SOM grounded in go-to-market capacity (not arbitrary %)
 [] Growth projections include CAGR source
 [] Segmentation breakdown included (not just aggregate)
-[] All 6 Mermaid diagrams included and render valid syntax
+[] All 6 Mermaid diagrams included and render valid syntax (per diagram-rendering mixin)
 [] Every data point sourced with publication date
 [] Assumptions explicitly labeled with impact rating
 [] Data freshness: all data from last 18-24 months or flagged
@@ -254,8 +253,7 @@ In `code` mode: diagrams appear as Mermaid code blocks. In `image` mode: diagram
 | Top-down and bottom-up diverge >15% | Flag divergence, analyze causes, present both with explanation |
 | No pricing data found | Use analogies or comparable products, label as `[Estimated]` |
 | Market too new for reliable data | Use proxy indicators and analog markets, label methodology |
-| mmdc not installed and user declines | Proceed with Mermaid code blocks only |
-| mmdc rendering fails | Report error, keep Mermaid code blocks |
+| mmdc / web search failures | See `diagram-rendering` and `autonomous-research` mixins |
 | Out-of-scope request | "This skill performs market sizing (TAM/SAM/SOM). [Request] is outside scope." |
 
 ---
@@ -271,7 +269,7 @@ In `code` mode: diagrams appear as Mermaid code blocks. In `image` mode: diagram
 - [ ] All data from last 18-24 months or explicitly flagged as dated
 - [ ] Assumptions listed with impact rating (High/Medium/Low)
 - [ ] Validation uses at least 3 independent cross-checks
-- [ ] All 6 diagrams render valid Mermaid syntax
+- [ ] All 6 diagrams render valid Mermaid syntax (per diagram-rendering mixin)
 - [ ] No fabricated market data, statistics, or financial figures
 - [ ] Report internally consistent (SAM < TAM, SOM < SAM)
 

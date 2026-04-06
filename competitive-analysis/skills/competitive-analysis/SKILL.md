@@ -56,30 +56,13 @@ Present the detected scope to the user for confirmation:
 **Analysis depth**: [quick scan / standard / deep dive]
 ```
 
-Ask the user to confirm or adjust. Also ask:
+Ask the user to confirm or adjust.
 
-> "Would you like rendered diagram images in the report? This requires `@mermaid-js/mermaid-cli` (mmdc). Without it, diagrams appear as Mermaid code blocks."
-
-**Diagram render mode:**
-
-| Mode | Report contains | `.mmd` source files | Requires mmdc |
-|---|---|---|---|
-| `code` (default) | Mermaid code blocks | No | No |
-| `image` | `![](path.png)` image references only | Yes (alongside PNGs) | Yes |
-
-If the user wants image mode:
-1. Check if `mmdc` is available via Bash: `which mmdc 2>/dev/null`
-2. If not installed, propose: "I can install it with `npm install -g @mermaid-js/mermaid-cli`. Shall I proceed?"
-3. Only install after explicit user approval
-4. If the user declines installation, fall back to `code` mode
-
-### 4. Ask output path
-
-Ask where to save the analysis report. Default: `/documentation/[case]/competitive-analysis/`
+Ask diagram render mode and output path per the `diagram-rendering` and `autonomous-research` mixins.
 
 ## Phase 2 — Research
 
-Use WebSearch and WebFetch to gather data. Research autonomously — do not ask the user for industry knowledge.
+Use WebSearch and WebFetch per the `autonomous-research` mixin.
 
 ### 2a. PESTEL context scan
 
@@ -293,14 +276,7 @@ Every action must trace back to a specific finding from the analysis. No generic
 
 ## Phase 9 — Diagram Rendering
 
-### Code mode (default)
-Include Mermaid code blocks directly in the report. No external files needed.
-
-### Image mode
-1. Write each Mermaid diagram to a `.mmd` file in the output directory
-2. Run `mmdc -i [file].mmd -o [file].png -t neutral -b transparent` for each
-3. In the report, embed images only: `![Porter's Five Forces](porters-five-forces.png)`
-4. Do NOT include Mermaid code blocks in the report — the `.mmd` source files serve as the editable source
+Render diagrams per the `diagram-rendering` mixin.
 
 File naming:
 - `porters-five-forces.mmd` / `.png`
@@ -359,10 +335,8 @@ Present for user approval. Save only after explicit confirmation.
 
 ## Generation rules
 
-- **Facts**: Must come from web research — never fabricate market data, statistics, or financial figures
-- **Assumptions**: Always label explicitly as `[Assumption]`
+Per the `autonomous-research` mixin, plus:
 - **Ratings**: Must be justified with evidence — never rate a force without supporting data
-- **Sources**: Every major claim must reference its web source
 - **Specificity**: "12% cost advantage in logistics" not "good supply chain"
 - **Language**: Respond and generate in the user's language unless specified otherwise
 
@@ -375,9 +349,7 @@ Present for user approval. Save only after explicit confirmation.
 | Cannot find sufficient data via web | Produce partial output, clearly label gaps and low-confidence findings |
 | Competitor data unavailable | Note the gap, proceed with available competitors, label as `[Limited data]` |
 | Industry not identifiable | Enter interview mode — ask user about the industry/market |
-| mmdc not installed and user declines install | Fall back to `code` mode (Mermaid code blocks in report) |
-| mmdc rendering fails | Report the error, fall back to `code` mode for failed diagram |
-| Web search returns no results | State the gap, use available data, label confidence as low |
+| mmdc / web search failures | See `diagram-rendering` and `autonomous-research` mixins |
 | User provides conflicting scope | Present the conflict, ask user to resolve |
 | Out-of-scope request | "This skill performs competitive analysis. [Request] is outside scope." |
 

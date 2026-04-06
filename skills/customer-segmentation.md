@@ -13,6 +13,7 @@
 | **Tone** | `neutral` |
 | **Audience** | `stakeholder` |
 | **Output format** | `markdown` |
+| **Mixins** | `[diagram-rendering, autonomous-research]` |
 
 ---
 
@@ -80,7 +81,7 @@ input:
     known_segments:
       type: list[string]
       description: "Existing segments to include or validate"
-    render_mode:
+    render_mode:  # See diagram-rendering mixin
       type: string
       enum: [code, image]
       default: code
@@ -100,12 +101,12 @@ input:
 2. If insufficient, enter interview mode (§7) to gather subject, industry, B2B/B2C
 3. Detect scope
 4. Present scope for user confirmation
-5. Ask about diagram render mode; check/offer mmdc if image mode
+5. Ask diagram render mode (per diagram-rendering mixin)
 6. Ask for output path
 
 ### Phase 2 — Research (autonomous)
 
-Research via WebSearch and WebFetch. Do not ask the user for customer data.
+Research via WebSearch and WebFetch per autonomous-research mixin. Do not ask the user for customer data.
 
 1. Market and demographic/firmographic data
 2. Behavioral and needs data (purchase patterns, JTBD, pain points)
@@ -153,9 +154,7 @@ Generate 5 Mermaid diagrams:
 
 ### Phase 11 — Diagram Rendering
 
-Two modes:
-- **`code`** (default): Mermaid code blocks in report, no external files
-- **`image`**: Render `.mmd` → `.png` via `mmdc`, embed `![](path.png)` in report, no code blocks. `.mmd` source files stored alongside for editability
+Per diagram-rendering mixin.
 
 ### Phase 12 — Report Assembly
 
@@ -218,7 +217,7 @@ Assemble complete report with all sections. Present for approval. Save only afte
 4. **Positioning map** — Mermaid quadrant chart on 2 differentiating axes
 5. **Segment comparison** — Mermaid xychart comparing attributes across segments
 
-In `code` mode: diagrams appear as Mermaid code blocks. In `image` mode: diagrams rendered to PNG via `mmdc`, embedded as `![](path.png)`, with `.mmd` source files alongside.
+In `code` mode: Mermaid code blocks. In `image` mode: PNG via `mmdc` per diagram-rendering mixin.
 
 ---
 
@@ -234,7 +233,7 @@ In `code` mode: diagrams appear as Mermaid code blocks. In `image` mode: diagram
 [] Targeting assessment with scores and recommendations
 [] Positioning recommendations with value proposition per segment
 [] Activation roadmap connects to marketing, product, pricing, channels
-[] All 5 Mermaid diagrams included and render valid syntax
+[] All 5 Mermaid diagrams included and render valid syntax (per diagram-rendering mixin)
 [] Every data point sourced with publication date
 [] Assumptions explicitly labeled
 [] No fabricated customer data or statistics
@@ -254,8 +253,7 @@ In `code` mode: diagrams appear as Mermaid code blocks. In `image` mode: diagram
 | Data older than 18 months | Flag with `[Dated: YYYY]`, proceed with caveat |
 | Too few differentiating factors | Produce fewer segments (minimum 3) with explanation |
 | Segment fails MASDA validation | Report failure, explain which criteria failed, propose adjustment |
-| mmdc not installed and user declines | Fall back to `code` mode |
-| mmdc rendering fails | Report error, fall back to `code` mode |
+| mmdc / web search failures | See `diagram-rendering` and `autonomous-research` mixins |
 | Out-of-scope request | "This skill performs customer segmentation. [Request] is outside scope." |
 
 ---
@@ -273,7 +271,7 @@ In `code` mode: diagrams appear as Mermaid code blocks. In `image` mode: diagram
 - [ ] Activation roadmap actionable per segment
 - [ ] All data sourced with publication dates
 - [ ] No fabricated data
-- [ ] All 5 diagrams render valid Mermaid syntax
+- [ ] All 5 diagrams render valid Mermaid syntax (per diagram-rendering mixin)
 
 ---
 

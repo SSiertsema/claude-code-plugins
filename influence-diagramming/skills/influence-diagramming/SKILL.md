@@ -52,30 +52,11 @@ Present the detected scope to the user for confirmation:
 **Focus**: [areas]
 ```
 
-Ask the user to confirm or adjust. Also ask:
-
-> "Would you like rendered diagram images in the report? This requires `@mermaid-js/mermaid-cli` (mmdc). Without it, diagrams appear as Mermaid code blocks."
-
-**Diagram render mode:**
-
-| Mode | Report contains | `.mmd` source files | Requires mmdc |
-|---|---|---|---|
-| `code` (default) | Mermaid code blocks | No | No |
-| `image` | `![](path.png)` image references only | Yes (alongside PNGs) | Yes |
-
-If the user wants image mode:
-1. Check if `mmdc` is available via Bash: `which mmdc 2>/dev/null`
-2. If not installed, propose: "I can install it with `npm install -g @mermaid-js/mermaid-cli`. Shall I proceed?"
-3. Only install after explicit user approval
-4. If the user declines installation, fall back to `code` mode
-
-### 4. Ask output path
-
-Ask where to save the report. Default: `/documentation/[case]/influence-diagramming/`
+Ask the user to confirm or adjust. Ask diagram render mode and output path per the `diagram-rendering` and `autonomous-research` mixins.
 
 ## Phase 2 — Research
 
-Use WebSearch and WebFetch to gather data. Research autonomously.
+Use WebSearch and WebFetch per the `autonomous-research` mixin.
 
 ### 2a. Influence dynamics research
 
@@ -424,14 +405,7 @@ Show coalitions as subgraphs with stance label and combined influence. Mark lead
 - `centrality-chart.mmd` / `.png`
 - `coalition-map.mmd` / `.png`
 
-### Code mode (default)
-Include Mermaid code blocks directly in the report.
-
-### Image mode
-1. Write each diagram to a `.mmd` file in the output directory
-2. Run `mmdc -i [file].mmd -o [file].png -t neutral -b transparent` for each
-3. In the report, embed images only: `![Influence Network](influence-network.png)`
-4. Do NOT include Mermaid code blocks — the `.mmd` source files serve as editable source
+Render diagrams per the `diagram-rendering` mixin.
 
 ## Phase 11 — Report Assembly and Approval
 
@@ -484,10 +458,8 @@ Present for user approval. Save only after explicit confirmation.
 
 ## Generation rules
 
-- **Facts**: Must come from web research or stakeholder mapping input — never fabricate actual relationships or politics
-- **Assumptions**: Always label explicitly as `[Assumption]`
+Per the `autonomous-research` mixin, plus:
 - **Assessments**: Must be justified — never assign influence strength without rationale
-- **Sources**: Every major claim must reference its web source or input data
 - **Specificity**: "CTO controls architecture decisions and has veto power over technology choices" not "has high influence"
 - **Centrality**: Calculate from actual relationship data — never fabricate scores
 - **Language**: Respond and generate in the user's language unless specified otherwise
@@ -502,8 +474,7 @@ Present for user approval. Save only after explicit confirmation.
 | Stakeholder mapping output malformed | Ask user to verify, attempt partial import |
 | No meaningful relationships identifiable | Report limitation, use role-based inference with `[Assumption]` labels |
 | Network too sparse for centrality | Calculate available metrics, note limitations |
-| mmdc not installed and user declines | Fall back to `code` mode |
-| mmdc rendering fails | Report error, fall back to `code` mode for failed diagram |
+| mmdc / web search failures | See `diagram-rendering` and `autonomous-research` mixins |
 | Out-of-scope request | "This skill analyzes influence relationships between stakeholders. [Request] is outside scope." |
 
 ## Self-check

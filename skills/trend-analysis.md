@@ -13,6 +13,7 @@
 | **Tone** | `neutral` |
 | **Audience** | `stakeholder` |
 | **Output format** | `markdown` |
+| **Mixins** | `[diagram-rendering, autonomous-research]` |
 
 ---
 
@@ -75,7 +76,7 @@ input:
     known_trends:
       type: list[string]
       description: "Specific trends to include"
-    render_mode:
+    render_mode:  # See diagram-rendering mixin
       type: string
       enum: [code, image]
       default: code
@@ -95,12 +96,12 @@ input:
 2. If insufficient, enter interview mode (§7) to gather subject and industry
 3. Detect scope: subject, industry, geography, categories, time horizon
 4. Present scope for user confirmation
-5. Ask about diagram render mode; check/offer mmdc if image mode requested
+5. Ask diagram render mode (per diagram-rendering mixin)
 6. Ask for output path
 
 ### Phase 2 — Research (autonomous)
 
-Research via WebSearch and WebFetch. Do not ask the user for trend data.
+Research via WebSearch and WebFetch per autonomous-research mixin. Do not ask the user for trend data.
 
 1. Macro-environmental data across all PESTEL categories
 2. Industry-specific technology, consumer, competitive, and business model trends
@@ -139,9 +140,7 @@ Generate 6 Mermaid diagrams:
 
 ### Phase 9 — Diagram Rendering
 
-Two modes:
-- **`code`** (default): Mermaid code blocks in report, no external files
-- **`image`**: Render `.mmd` → `.png` via `mmdc`, embed `![](path.png)` in report, no code blocks. `.mmd` source files stored alongside for editability
+Per diagram-rendering mixin.
 
 ### Phase 10 — Report Assembly
 
@@ -201,7 +200,7 @@ Assemble complete report with all sections. Present for approval. Save only afte
 5. **Scenario matrix** — Mermaid quadrant chart with 2x2 future scenarios
 6. **PESTEL heat map** — Mermaid xychart showing average impact per PESTEL category
 
-In `code` mode: diagrams appear as Mermaid code blocks. In `image` mode: diagrams rendered to PNG via `mmdc`, embedded as `![](path.png)`, with `.mmd` source files alongside.
+In `code` mode: Mermaid code blocks. In `image` mode: PNG via `mmdc` per diagram-rendering mixin.
 
 ---
 
@@ -215,7 +214,7 @@ In `code` mode: diagrams appear as Mermaid code blocks. In `image` mode: diagram
 [] Weak signals section present (even if "none detected")
 [] Scenarios grounded in identified critical uncertainties
 [] Strategic recommendations trace to specific trends
-[] All 6 Mermaid diagrams included and render valid syntax
+[] All 6 Mermaid diagrams included and render valid syntax (per diagram-rendering mixin)
 [] Every data point sourced with publication date
 [] Assumptions explicitly labeled
 [] Correlation vs causation distinguished where applicable
@@ -235,8 +234,7 @@ In `code` mode: diagrams appear as Mermaid code blocks. In `image` mode: diagram
 | Data older than 18 months | Flag with `[Dated: YYYY]`, proceed with caveat |
 | No weak signals found | State "No weak signals detected in sources surveyed." Do not fabricate. |
 | Trend data contradicts across sources | Present both perspectives with sources, note the contradiction |
-| mmdc not installed and user declines | Fall back to `code` mode |
-| mmdc rendering fails | Report error, fall back to `code` mode for failed diagram |
+| mmdc / web search failures | See `diagram-rendering` and `autonomous-research` mixins |
 | Out-of-scope request | "This skill performs trend analysis. [Request] is outside scope." |
 
 ---
@@ -253,7 +251,7 @@ In `code` mode: diagrams appear as Mermaid code blocks. In `image` mode: diagram
 - [ ] All data sourced with publication dates
 - [ ] Correlation vs causation explicitly distinguished
 - [ ] Strategic recommendations actionable and traceable to trends
-- [ ] All 6 diagrams render valid Mermaid syntax
+- [ ] All 6 diagrams render valid Mermaid syntax (per diagram-rendering mixin)
 - [ ] No fabricated data
 
 ---
