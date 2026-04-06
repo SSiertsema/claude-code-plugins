@@ -1,0 +1,12 @@
+{
+  "name": "cost-benefit-analysis",
+  "version": "1.0.0",
+  "description": "Autonomous cost-benefit analysis with NPV, BCR, IRR, payback period, and break-even calculations. Multi-alternative comparison, sensitivity analysis with scenarios, intangible monetization, and risk assessment. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["cost-benefit-analysis", "npv", "bcr", "irr", "payback-period", "sensitivity-analysis", "financial-analysis"],
+  "skills": "./skills"
+}

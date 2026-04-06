@@ -1,0 +1,12 @@
+{
+  "name": "value-proposition-canvas",
+  "version": "1.0.0",
+  "description": "Autonomous Value Proposition Canvas using Strategyzer's framework. Customer Profiles (jobs, pains, gains), Value Maps (products, pain relievers, gain creators), fit assessment with scoring, and multi-segment support. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["value-proposition-canvas", "customer-profile", "value-map", "fit-assessment", "strategyzer"],
+  "skills": "./skills"
+}

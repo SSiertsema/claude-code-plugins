@@ -169,6 +169,18 @@
       "source": "./raci-matrix",
       "description": "Autonomous RACI matrix creation with variant support (RASCI, RACI-VS, DACI, RAPID). Validates against 15 anti-patterns, produces workload analysis, governance health scoring, and communication plan skeleton. Mermaid diagrams with optional PNG export.",
       "category": "strategy"
+    },
+    {
+      "name": "value-proposition-canvas",
+      "source": "./value-proposition-canvas",
+      "description": "Autonomous Value Proposition Canvas using Strategyzer's framework. Customer Profiles (jobs, pains, gains), Value Maps (products, pain relievers, gain creators), fit assessment with scoring, and multi-segment support. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "cost-benefit-analysis",
+      "source": "./cost-benefit-analysis",
+      "description": "Autonomous cost-benefit analysis with NPV, BCR, IRR, payback period, and break-even calculations. Multi-alternative comparison, sensitivity analysis with scenarios, intangible monetization, and risk assessment. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
     }
   ]
 }
