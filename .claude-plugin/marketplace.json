@@ -151,6 +151,12 @@
       "source": "./survey-design",
       "description": "Design survey questionnaires with sampling plans, bias review, and analysis plans. Export to Qualtrics (QSF), XLSForm, SurveyJS, or CSV. Analyzes provided results with NPS/CSAT/CES/SUS scoring. Mermaid diagrams with optional PNG export.",
       "category": "research"
+    },
+    {
+      "name": "stakeholder-mapping",
+      "source": "./stakeholder-mapping",
+      "description": "Autonomous stakeholder mapping using Power/Interest Grid, Salience Model, Engagement Assessment, and Onion Diagram. Produces stakeholder registers, engagement strategies, and communication plans with Mermaid diagrams and optional PNG export.",
+      "category": "strategy"
     }
   ]
 }

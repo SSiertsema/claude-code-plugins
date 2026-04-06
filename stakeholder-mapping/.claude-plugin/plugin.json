@@ -1,0 +1,12 @@
+{
+  "name": "stakeholder-mapping",
+  "version": "1.0.0",
+  "description": "Autonomous stakeholder mapping using Power/Interest Grid, Salience Model, Engagement Assessment, and Onion Diagram. Researches stakeholder landscape via web, produces registers, engagement strategies, and communication plans with Mermaid diagrams and optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["stakeholder-mapping", "power-interest-grid", "salience-model", "engagement", "communication-plan", "strategy"],
+  "skills": "./skills"
+}
