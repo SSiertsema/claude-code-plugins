@@ -1,0 +1,12 @@
+{
+  "name": "roi-modeling",
+  "version": "1.0.0",
+  "description": "Autonomous ROI modeling with 6 variants (basic, annualized, risk-adjusted, expected, multi-period, intangibles). Industry-specific models (IT TCO, Marketing ROAS/CAC/CLV, Training Phillips, Product R&D). Scenario modeling and sensitivity analysis with Mermaid diagrams and optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["roi", "return-on-investment", "tco", "roas", "phillips", "sensitivity-analysis", "financial"],
+  "skills": "./skills"
+}

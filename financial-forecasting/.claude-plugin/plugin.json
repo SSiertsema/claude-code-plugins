@@ -1,0 +1,12 @@
+{
+  "name": "financial-forecasting",
+  "version": "1.0.0",
+  "description": "Autonomous financial forecasting with revenue, expense, cash flow, P&L projections, and unit economics. Supports straight-line, growth rate, driver-based, bottom-up, top-down, and hybrid methods. Scenario modeling and sensitivity analysis with Mermaid diagrams and optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["financial-forecasting", "revenue", "p&l", "cash-flow", "unit-economics", "scenario-modeling", "budgeting"],
+  "skills": "./skills"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "problem-solution-fit",
+  "version": "1.0.0",
+  "description": "Autonomous problem-solution fit analysis using Lean Startup PSF, Customer Forces Canvas, DVF assessment, Riskiest Assumption Testing, and Evidence Quality Ladder. Produces fit scorecards, assumption registers, validation experiment designs, and pivot/persevere recommendations. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["problem-solution-fit", "lean-startup", "dvf", "assumption-testing", "validation", "pivot-persevere"],
+  "skills": "./skills"
+}

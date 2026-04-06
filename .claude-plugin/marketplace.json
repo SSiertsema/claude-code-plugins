@@ -181,6 +181,24 @@
       "source": "./cost-benefit-analysis",
       "description": "Autonomous cost-benefit analysis with NPV, BCR, IRR, payback period, and break-even calculations. Multi-alternative comparison, sensitivity analysis with scenarios, intangible monetization, and risk assessment. Mermaid diagrams with optional PNG export.",
       "category": "strategy"
+    },
+    {
+      "name": "roi-modeling",
+      "source": "./roi-modeling",
+      "description": "Autonomous ROI modeling with 6 variants (basic, annualized, risk-adjusted, expected, multi-period, intangibles). Industry-specific models (IT TCO, Marketing ROAS/CAC/CLV, Training Phillips, Product R&D). Scenario modeling and sensitivity analysis with Mermaid diagrams and optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "problem-solution-fit",
+      "source": "./problem-solution-fit",
+      "description": "Autonomous problem-solution fit analysis using Lean Startup PSF, Customer Forces Canvas, DVF assessment, Riskiest Assumption Testing, and Evidence Quality Ladder. Fit scorecards, validation experiment designs, and pivot/persevere recommendations. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "financial-forecasting",
+      "source": "./financial-forecasting",
+      "description": "Autonomous financial forecasting with revenue, expense, cash flow, P&L projections, and unit economics. Multiple methods (driver-based, bottom-up, top-down). Scenario modeling and sensitivity analysis with Mermaid diagrams and optional PNG export.",
+      "category": "strategy"
     }
   ]
 }
