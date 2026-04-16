@@ -235,6 +235,12 @@
       "source": "./go-to-market",
       "description": "Autonomous go-to-market strategy with ICP/personas, positioning and messaging, pricing/packaging, channel strategy (PLG/SLG/hybrid), 90-day launch plan, rollout waves, and success metrics. Mermaid diagrams with optional PNG export.",
       "category": "strategy"
+    },
+    {
+      "name": "readme-generator",
+      "source": "./readme-generator",
+      "description": "Generate a comprehensive README.md by analyzing the codebase and validating findings with the user. Detects monorepos and generates root + sub-package README's.",
+      "category": "productivity"
     }
   ]
 }

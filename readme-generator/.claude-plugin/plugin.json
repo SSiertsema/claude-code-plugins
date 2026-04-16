@@ -1,0 +1,12 @@
+{
+  "name": "readme-generator",
+  "version": "1.0.0",
+  "description": "Generate a comprehensive README.md by analyzing the codebase and validating findings with the user. Detects monorepos and generates root + sub-package README's.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["readme", "documentation", "generation", "monorepo"],
+  "skills": "./skills"
+}

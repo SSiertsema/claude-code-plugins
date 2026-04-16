@@ -59,6 +59,7 @@ Cover these dimensions through natural conversation. Track which are sufficientl
 | **Examples** | What does correct output look like for normal, edge, and failure cases? | `examples` |
 | **Extension-specific** | Requirements from the relevant category extension (loaded after category is determined) | Varies per extension |
 | **Mixins** | Does this skill produce Mermaid diagrams? Does it research data autonomously via web? | `mixins` |
+| **Distribution** | Should this be a local skill (`.claude/skills/` only) or a distributable plugin (plugin directory + marketplace registration)? | `distribution_mode` |
 
 Once the category is determined, load `context/extensions/[category].md` and add its specific requirements to the interview. If the skill produces Mermaid diagrams, add `diagram-rendering` to mixins and load `context/mixins/diagram-rendering.md`. If the skill researches data autonomously via web, add `autonomous-research` to mixins and load `context/mixins/autonomous-research.md`.
 
@@ -122,6 +123,9 @@ After the interview, produce a **Skill Summary** in the language of the conversa
 ### Quality criteria
 [what "good" means for this skill]
 
+### Distribution mode
+[local / plugin]
+
 ### Extension requirements
 [additional requirements from the category extension]
 
@@ -135,7 +139,7 @@ Wait for explicit approval before proceeding to Phase 2. If the user requests ch
 
 ### Phase 2 — Generate
 
-Generate two files:
+Generate files based on the chosen distribution mode:
 
 **File 1 — Specification** (`skills/[name].md`):
 Full skill documentation with all sections required by shared-foundation §13. Include:
@@ -150,7 +154,7 @@ Full skill documentation with all sections required by shared-foundation §13. I
 - Quality checks
 - Examples: at least 5 normal, 3 edge, 2 failure cases
 
-**File 2 — Executable skill** (`.claude/skills/[name]/SKILL.md`):
+**File 2 — Executable skill** (SKILL.md):
 ```yaml
 ---
 name: [kebab-case-name]
@@ -159,6 +163,33 @@ argument-hint: "[example argument]"
 ---
 ```
 Followed by concise behavioral instructions optimized for LLM execution. This is a distilled version of the specification — not a copy.
+
+#### Distribution modes
+
+**Local** — skill is only available in this project:
+- Specification: `skills/[name].md`
+- Executable: `.claude/skills/[name]/SKILL.md`
+
+**Plugin** — skill is distributable and installable on other devices:
+- Specification: `skills/[name].md`
+- Executable (local runtime): `.claude/skills/[name]/SKILL.md`
+- Executable (distribution): `[name]/skills/[name]/SKILL.md`
+- Plugin manifest: `[name]/.claude-plugin/plugin.json`
+- Marketplace: register in `.claude-plugin/marketplace.json`
+
+The plugin manifest follows this format:
+```json
+{
+  "name": "[name]",
+  "version": "1.0.0",
+  "description": "[description]",
+  "author": { "name": "Sven Siertsema" },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["[relevant]", "[keywords]"],
+  "skills": "./skills"
+}
+```
 
 Propose test cases and iterate with the user.
 
@@ -206,28 +237,38 @@ Wait for explicit approval before proceeding.
 
 ### Phase 2 — Apply
 
-1. Apply changes to **both files**, keeping them synchronized
-2. Validate the updated skill against foundation + extension
-3. Auto-correct validation failures, report changes
-4. If conflicting: ask the user to choose
-5. Present changes, save after approval
+1. Detect distribution mode (check if `[name]/.claude-plugin/plugin.json` exists)
+2. Apply changes to **all skill files**, keeping them synchronized (local + plugin if applicable)
+3. Validate the updated skill against foundation + extension
+4. Auto-correct validation failures, report changes
+5. If conflicting: ask the user to choose
+6. Present changes, save after approval
 
 ## Rename
 
 1. Confirm current name and new name
-2. Rename `skills/[old].md` → `skills/[new].md`
-3. Rename `.claude/skills/[old]/` → `.claude/skills/[new]/`
-4. Update `name` field in both files
-5. Update internal references
+2. Detect distribution mode (check if `[old]/.claude-plugin/plugin.json` exists)
+3. Rename `skills/[old].md` → `skills/[new].md`
+4. Rename `.claude/skills/[old]/` → `.claude/skills/[new]/`
+5. If plugin mode:
+   - Rename `[old]/` → `[new]/`
+   - Update `[new]/.claude-plugin/plugin.json` name field
+   - Update `[new]/skills/` directory: `[old]/` → `[new]/`
+   - Update `.claude-plugin/marketplace.json` entry (name, source)
+6. Update `name` field in all files
+7. Update internal references
 
 ## Delete
 
 1. Confirm which skill to delete
-2. Show what will be deleted:
+2. Detect distribution mode (check if `[name]/.claude-plugin/plugin.json` exists)
+3. Show what will be deleted:
    - `skills/[name].md`
    - `.claude/skills/[name]/` (entire directory)
-3. Ask for **explicit confirmation**
-4. Delete only after confirmation
+   - If plugin mode: `[name]/` (entire plugin directory)
+   - If plugin mode: entry in `.claude-plugin/marketplace.json`
+4. Ask for **explicit confirmation**
+5. Delete only after confirmation
 
 ## Operation summary
 
@@ -245,11 +286,17 @@ After every operation, produce:
 ### Status
 Complete / Partial
 
+### Distribution mode
+[local / plugin]
+
 ### Files affected
 | File | Action |
 |---|---|
 | `skills/[name].md` | [created / updated / renamed / deleted] |
 | `.claude/skills/[name]/SKILL.md` | [created / updated / renamed / deleted] |
+| `[name]/.claude-plugin/plugin.json` | [created / updated / renamed / deleted] (plugin only) |
+| `[name]/skills/[name]/SKILL.md` | [created / updated / renamed / deleted] (plugin only) |
+| `.claude-plugin/marketplace.json` | [updated] (plugin only) |
 
 ### Validation
 [Pass / Pass with corrections]
