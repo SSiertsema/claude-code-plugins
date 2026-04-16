@@ -1,0 +1,65 @@
+gantt
+    title Software Preparation Disciplines - Optimal Timeline
+    dateFormat  YYYY-MM-DD
+    axisFormat  %b %d
+    excludes    weekends
+
+    section Phase 1 - Vision
+    Market Research              :p1a, 2026-01-05, 5d
+    Stakeholder Identification   :p1b, 2026-01-05, 5d
+    Business Case Development    :p1c, after p1b, 7d
+    Product Strategy             :p1d, after p1c, 5d
+    GATE Go No-Go                :milestone, m1, after p1d, 0d
+
+    section Phase 2 - Exploration
+    Ideation                     :p2a, after m1, 7d
+    User Research                :p2b, after m1, 7d
+    Feasibility Study            :p2c, after p2a, 5d
+    Compliance Analysis          :p2d, after p2a, 5d
+    Risk Management              :p2e, after p2c, 3d
+    Proof of Concept             :p2f, after p2e, 7d
+    GATE Validated Concept       :milestone, m2, after p2f, 0d
+
+    section Phase 3 - Requirements
+    Persona Development          :p3a, after m2, 5d
+    Business Requirements        :p3b, after m2, 5d
+    User Journey Mapping         :p3c, after p3a, 5d
+    Functional Specification     :p3d, after p3c, 7d
+    Non-Functional Requirements  :p3e, after p3c, 5d
+    User Story Writing           :p3f, after p3d, 5d
+    Requirements Prioritization  :p3g, after p3f, 3d
+    Requirements Traceability    :p3h, after p3g, 2d
+    GATE Approved Requirements   :milestone, m3, after p3h, 0d
+
+    section Phase 5a - Architecture early
+    Solution Architecture        :p5a, after p3b, 7d
+    Security Architecture        :p5b, after p5a, 5d
+    Data Architecture            :p5c, after p5a, 5d
+    Infrastructure Design        :p5d, after p5a, 5d
+
+    section Phase 4 - Experience Design
+    Information Architecture     :p4a, after p3d, 5d
+    Interaction Design           :p4b, after p4a, 5d
+    Accessibility Design         :p4c, after p4a, 5d
+    Visual UI Design             :p4d, after p4b, 5d
+    Prototyping                  :p4e, after p4d, 5d
+    Usability Testing            :p4f, after p4e, 5d
+    GATE Validated Designs       :milestone, m4, after p4f, 0d
+
+    section Phase 5b - Architecture late
+    Integration Design           :p5e, after p5b, 5d
+    Technical Specification      :p5f, after p5e, 7d
+    GATE Technical Blueprint     :milestone, m5, after p5f, 0d
+
+    section Phase 6 - Planning
+    Scope Definition WBS         :p6a, after m3, 5d
+    Legal Review                 :p6b, after m3, 5d
+    Definition of Done           :p6c, after m3, 3d
+    Estimation and Planning      :p6d, after p6a, 5d
+    Vendor and Procurement       :p6e, after p6a, 5d
+    QA Planning                  :p6f, after p6a, 5d
+    Resource and Team Planning   :p6g, after p6d, 3d
+    Documentation Strategy       :p6h, after p6f, 3d
+    Change Management Planning   :p6i, after p6g, 3d
+    Stakeholder Comms Planning   :p6j, after p6g, 3d
+    GATE Ready to Build          :milestone, m6, after p6i, 0d
