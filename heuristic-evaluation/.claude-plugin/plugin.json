@@ -1,0 +1,12 @@
+{
+  "name": "heuristic-evaluation",
+  "version": "1.0.0",
+  "description": "Evaluate a UI against Nielsen's 10 usability heuristics (or alternate heuristic sets: Norman, Shneiderman, mobile, accessibility, conversational). Per finding: location, heuristic violated, Nielsen severity (0-4: cosmetic → catastrophic), evidence, impact, and concrete recommendation. Supports single-evaluator autonomous mode and multi-evaluator aggregation. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["heuristic-evaluation", "nielsen", "usability", "10-heuristics", "discount-usability", "severity-rating"],
+  "skills": "./skills"
+}

@@ -487,6 +487,18 @@
       "source": "./gestalt-principle-application",
       "description": "Apply Gestalt principles (proximity / similarity / closure / continuity / common fate / figure-ground / common region / connectedness) as a design or audit checklist. Per principle: verdict (applied-well / at-risk / violation / insufficient-detail), evidence, impact, concrete recommendation, and before/after. Cross-checks under contrast, zoom, motion, color-blind, SR. Mermaid diagrams with optional PNG export.",
       "category": "strategy"
+    },
+    {
+      "name": "heuristic-evaluation",
+      "source": "./heuristic-evaluation",
+      "description": "Evaluate a UI against Nielsen's 10 usability heuristics (or Norman / Shneiderman / mobile / a11y / conversational / custom sets). Per finding: location, heuristic violated, Nielsen severity (0-4), evidence, impact, concrete recommendation, effort. Supports single-evaluator autonomous mode + multi-evaluator aggregation. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "cognitive-walkthrough",
+      "source": "./cognitive-walkthrough",
+      "description": "Task-based cognitive walkthrough. Simulates a novice user through a specific task; per step answers the four CW questions (goal match / action visibility / action-effect link / progress feedback). 'No' answers become findings with severity and recommendations. Task-completion prediction + multi-persona variants. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
     }
   ]
 }

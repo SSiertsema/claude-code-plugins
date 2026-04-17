@@ -1,0 +1,12 @@
+{
+  "name": "cognitive-walkthrough",
+  "version": "1.0.0",
+  "description": "Task-based cognitive walkthrough: simulate a novice user completing a task, step by step. Per step: answer the four CW questions (goal match, action visibility, action-effect link, progress feedback). Produces pass/fail per question with rationale, usability issues with severity, and prioritized recommendations. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["cognitive-walkthrough", "task-based-evaluation", "novice-user", "usability", "four-questions"],
+  "skills": "./skills"
+}
