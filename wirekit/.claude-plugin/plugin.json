@@ -1,0 +1,12 @@
+{
+  "name": "wirekit",
+  "version": "0.1.0",
+  "description": "Wirekit — Balsamiq-sketch wireframe design system. Reusable HTML + CSS + block library for mid-fi wireframes. Referenced by wireframing skill (and optionally others). Classless pattern — semantic HTML styled via data-region / data-state / data-placeholder attributes. SVG wavy-border filter for hand-drawn feel. Vendored webfonts (Caveat + Patrick Hand). Print-friendly. Not a skill — a library.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["wireframe", "balsamiq", "design-system", "sketch", "library", "mid-fi", "html", "css"],
+  "type": "library"
+}

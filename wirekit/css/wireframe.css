@@ -1,0 +1,380 @@
+/* ==========================================================
+   Wirekit — wireframe.css
+   Balsamiq-sketch aesthetic for mid-fi wireframes
+   v0.1.0 — MIT License
+   ========================================================== */
+
+/* --- Fonts ---
+   v0.1 uses Google Fonts CDN for convenience.
+   v1.0 target: vendored woff2 in fonts/ directory.
+   See fonts/README.md for vendoring plan. */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Patrick+Hand&display=swap');
+
+:root {
+  /* Color palette — strict grayscale + single amber accent for annotations */
+  --wk-bg: #fdfcf7;
+  --wk-ink: #2d2d2d;
+  --wk-secondary: #9b9b9b;
+  --wk-accent: #e8a93d;
+  --wk-placeholder: #e8e4d9;
+  --wk-annotation: #fff3c4;
+  --wk-error: #c0392b;
+
+  /* Typography */
+  --wk-font-primary: 'Caveat', 'Patrick Hand', cursive;
+  --wk-font-secondary: 'Patrick Hand', 'Caveat', cursive;
+
+  /* Layout */
+  --wk-max-width: 1280px;
+  --wk-gap: 1.5rem;
+  --wk-pad: 1.5rem;
+
+  /* Wavy filter — referenced across multiple selectors.
+     Path relative to THIS CSS file. */
+  --wk-wavy: url('../svg/filters.svg#wavy');
+  --wk-wavy-bold: url('../svg/filters.svg#wavy-bold');
+}
+
+/* Reset */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  background: var(--wk-bg);
+  color: var(--wk-ink);
+  font-family: var(--wk-font-primary);
+  font-size: 22px;
+  line-height: 1.4;
+  margin: 0 auto;
+  padding: 2rem;
+  max-width: var(--wk-max-width);
+}
+
+/* ------------------------------------------------
+   Regions — data-region="LABEL"
+   Wavy dashed border + label badge + light rotation
+   ------------------------------------------------ */
+
+[data-region] {
+  position: relative;
+  padding: var(--wk-pad);
+  margin: var(--wk-gap) 0;
+}
+
+[data-region]::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border: 2px dashed var(--wk-ink);
+  filter: var(--wk-wavy);
+  pointer-events: none;
+}
+
+[data-region]::after {
+  content: attr(data-region);
+  position: absolute;
+  top: -10px;
+  right: 16px;
+  background: var(--wk-bg);
+  padding: 0 8px;
+  font-family: var(--wk-font-secondary);
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: var(--wk-secondary);
+  text-transform: uppercase;
+}
+
+body[data-regions="hidden"] [data-region]::after {
+  display: none;
+}
+
+[data-region]:nth-of-type(odd)  { transform: rotate(0.25deg); }
+[data-region]:nth-of-type(even) { transform: rotate(-0.3deg); }
+
+/* ------------------------------------------------
+   Typography
+   ------------------------------------------------ */
+
+h1 { font-size: 52px; font-weight: 700; margin: 0 0 0.5rem; }
+h2 { font-size: 36px; font-weight: 700; margin: 0 0 0.5rem; }
+h3 { font-size: 28px; font-weight: 400; margin: 0 0 0.5rem; }
+p  { margin: 0.5rem 0; }
+
+/* Placeholder convention: .placeholder class OR data-placeholder attribute */
+.placeholder,
+[data-placeholder] {
+  font-style: italic;
+  color: var(--wk-secondary);
+}
+
+.placeholder::before,
+[data-placeholder]::before { content: "[ "; }
+.placeholder::after,
+[data-placeholder]::after  { content: " ]"; }
+
+/* ------------------------------------------------
+   Image / media placeholder
+   ------------------------------------------------ */
+
+.img-placeholder {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--wk-placeholder);
+  border: 2px dashed var(--wk-secondary);
+  min-height: 180px;
+  font-family: var(--wk-font-secondary);
+  font-size: 18px;
+  color: var(--wk-secondary);
+  overflow: hidden;
+}
+
+.img-placeholder::before,
+.img-placeholder::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.img-placeholder::before {
+  background: linear-gradient(
+    to top right,
+    transparent calc(50% - 1px),
+    var(--wk-secondary) 50%,
+    transparent calc(50% + 1px)
+  );
+}
+
+.img-placeholder::after {
+  background: linear-gradient(
+    to bottom right,
+    transparent calc(50% - 1px),
+    var(--wk-secondary) 50%,
+    transparent calc(50% + 1px)
+  );
+}
+
+.img-placeholder > span {
+  position: relative;
+  z-index: 1;
+  background: var(--wk-placeholder);
+  padding: 4px 12px;
+}
+
+/* ------------------------------------------------
+   Navigation
+   ------------------------------------------------ */
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 2rem;
+  font-family: var(--wk-font-primary);
+  font-size: 24px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--wk-ink);
+  text-decoration: none;
+  border-bottom: 2px dashed transparent;
+}
+
+nav a:hover { border-bottom-color: var(--wk-ink); }
+
+/* ------------------------------------------------
+   Buttons / CTAs with data-state visualizers
+   ------------------------------------------------ */
+
+button, .cta, a.cta {
+  display: inline-block;
+  font-family: var(--wk-font-primary);
+  font-size: 22px;
+  font-weight: 700;
+  background: var(--wk-bg);
+  color: var(--wk-ink);
+  border: 2px solid var(--wk-ink);
+  padding: 10px 28px;
+  cursor: pointer;
+  position: relative;
+  filter: var(--wk-wavy);
+  text-decoration: none;
+}
+
+button:hover, .cta:hover { background: var(--wk-placeholder); }
+
+button[data-state="loading"]::after { content: " ⌛"; }
+button[data-state="success"]::after { content: " ✓"; }
+button[data-state="error"]::after   { content: " ✗"; color: var(--wk-error); }
+button[data-state="disabled"],
+button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ------------------------------------------------
+   Forms
+   ------------------------------------------------ */
+
+label {
+  display: block;
+  font-family: var(--wk-font-primary);
+  font-size: 22px;
+  margin: 1rem 0 0.25rem;
+}
+
+input, select, textarea {
+  font-family: var(--wk-font-secondary);
+  font-size: 18px;
+  background: var(--wk-bg);
+  color: var(--wk-ink);
+  border: 2px dashed var(--wk-ink);
+  padding: 8px 12px;
+  width: 100%;
+  max-width: 420px;
+}
+
+textarea { min-height: 80px; }
+
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid var(--wk-accent);
+  outline-offset: 2px;
+}
+
+/* ------------------------------------------------
+   Annotations — sticky-note style
+   Use <aside class="annotation"> in margin
+   ------------------------------------------------ */
+
+.annotation {
+  background: var(--wk-annotation);
+  border: 1px solid var(--wk-accent);
+  padding: 12px 16px;
+  margin: 1rem 0;
+  font-family: var(--wk-font-secondary);
+  font-size: 15px;
+  color: var(--wk-ink);
+  box-shadow: 2px 3px 4px rgba(0,0,0,0.1);
+  transform: rotate(-0.6deg);
+}
+
+.annotation::before { content: "📝  "; }
+.annotation strong { font-weight: 700; }
+
+/* ------------------------------------------------
+   Layout utilities
+   ------------------------------------------------ */
+
+.wk-main-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.wk-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--wk-gap);
+}
+
+.wk-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+/* Description list for key-value */
+dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.25rem 1rem;
+  margin: 1rem 0;
+}
+dt { font-family: var(--wk-font-secondary); font-size: 18px; color: var(--wk-secondary); }
+dd { margin: 0; font-family: var(--wk-font-primary); font-size: 22px; }
+
+/* ------------------------------------------------
+   Example / screen index list
+   ------------------------------------------------ */
+
+.wk-screen-index {
+  list-style: none;
+  padding: 0;
+}
+
+.wk-screen-index li { margin: 0.75rem 0; }
+
+.wk-screen-index li a {
+  display: block;
+  padding: 1rem 1.5rem;
+  border: 2px dashed var(--wk-ink);
+  color: var(--wk-ink);
+  text-decoration: none;
+  font-family: var(--wk-font-primary);
+  font-size: 26px;
+  filter: var(--wk-wavy);
+}
+
+.wk-screen-index li a:hover { background: var(--wk-placeholder); }
+
+.wk-screen-index li a small {
+  display: block;
+  font-family: var(--wk-font-secondary);
+  font-size: 14px;
+  color: var(--wk-secondary);
+  margin-top: 4px;
+}
+
+/* ------------------------------------------------
+   Viewport indicator (optional dev helper)
+   ------------------------------------------------ */
+
+.wk-viewport-indicator {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background: var(--wk-ink);
+  color: var(--wk-bg);
+  padding: 4px 10px;
+  font-family: var(--wk-font-secondary);
+  font-size: 12px;
+  letter-spacing: 2px;
+  z-index: 100;
+}
+
+.wk-viewport-indicator::before { content: "DESKTOP"; }
+
+@media (max-width: 1280px) { .wk-viewport-indicator::before { content: "LAPTOP"; } }
+@media (max-width: 1024px) { .wk-viewport-indicator::before { content: "TABLET"; } }
+@media (max-width: 768px)  {
+  .wk-viewport-indicator::before { content: "MOBILE"; }
+  .wk-main-grid, .wk-two-col { grid-template-columns: 1fr; }
+  body { padding: 1rem; font-size: 20px; }
+  h1 { font-size: 40px; }
+  h2 { font-size: 30px; }
+}
+
+/* ------------------------------------------------
+   A11y skip link
+   ------------------------------------------------ */
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  background: var(--wk-accent);
+  color: var(--wk-ink);
+  padding: 8px 16px;
+  z-index: 200;
+  border: 2px solid var(--wk-ink);
+}

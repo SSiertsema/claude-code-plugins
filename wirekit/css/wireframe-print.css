@@ -1,0 +1,48 @@
+/* ==========================================================
+   Wirekit — wireframe-print.css
+   Optional stylesheet for print-based review sessions.
+   Include AFTER wireframe.css:
+     <link rel="stylesheet" href="wirekit/css/wireframe.css">
+     <link rel="stylesheet" href="wirekit/css/wireframe-print.css" media="print">
+   ========================================================== */
+
+@media print {
+  body {
+    padding: 1cm;
+    max-width: none;
+    font-size: 14pt;
+  }
+
+  h1 { font-size: 28pt; }
+  h2 { font-size: 22pt; }
+  h3 { font-size: 18pt; }
+
+  /* Hide viewport indicator + annotations by default on print
+     (annotations can be toggled on via body[data-print-annotations="show"]) */
+  .wk-viewport-indicator { display: none !important; }
+
+  body:not([data-print-annotations="show"]) .annotation { display: none; }
+
+  /* Region labels always visible on print for review clarity */
+  [data-region]::after { display: block !important; }
+
+  /* Regions break cleanly across pages */
+  [data-region] {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* No rotation on print — cleaner output */
+  [data-region] { transform: none !important; }
+  .annotation { transform: none !important; }
+
+  /* Filters can render slowly / poorly in print — fall back to clean dashed */
+  [data-region]::before,
+  button, .cta,
+  .wk-screen-index li a {
+    filter: none !important;
+  }
+
+  /* Skip links hidden on print */
+  .skip-link { display: none; }
+}

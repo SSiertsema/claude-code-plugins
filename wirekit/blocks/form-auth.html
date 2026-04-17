@@ -1,0 +1,32 @@
+<!--
+  block: form-auth
+  Use: login / signup / password reset forms
+  Variants: login (default), signup (add name field), reset (email only)
+-->
+<section data-region="AUTH FORM" aria-label="Sign in">
+  <h2 data-placeholder>Form heading — Sign in / Sign up</h2>
+  <p data-placeholder>Brief intro: 10 words explaining what happens next.</p>
+
+  <form>
+    <label for="auth-email">Email address</label>
+    <input type="email" id="auth-email" autocomplete="email" placeholder="you@example.com">
+
+    <label for="auth-password">Password</label>
+    <input type="password" id="auth-password" autocomplete="current-password">
+
+    <p style="margin-top: 1.5rem;">
+      <button type="submit" data-state="idle">Sign in</button>
+    </p>
+
+    <p style="font-family: var(--wk-font-secondary); font-size: 16px;">
+      <a href="#" data-placeholder>Forgot password?</a>
+      &nbsp;·&nbsp;
+      <a href="#" data-placeholder>Create an account</a>
+    </p>
+  </form>
+
+  <aside class="annotation">
+    <strong>States to design:</strong> idle, loading (on submit), success (redirect), error (bad creds, locked account, rate-limit).
+    See <em>error-handling-design</em> for message patterns.
+  </aside>
+</section>

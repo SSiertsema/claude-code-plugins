@@ -487,6 +487,12 @@
       "source": "./gestalt-principle-application",
       "description": "Apply Gestalt principles (proximity / similarity / closure / continuity / common fate / figure-ground / common region / connectedness) as a design or audit checklist. Per principle: verdict (applied-well / at-risk / violation / insufficient-detail), evidence, impact, concrete recommendation, and before/after. Cross-checks under contrast, zoom, motion, color-blind, SR. Mermaid diagrams with optional PNG export.",
       "category": "strategy"
+    },
+    {
+      "name": "wirekit",
+      "source": "./wirekit",
+      "description": "Wirekit — Balsamiq-sketch wireframe design system (library, not a skill). Reusable HTML + CSS + block library for mid-fi wireframes with hand-drawn aesthetic. Classless pattern: semantic HTML styled via data-region / data-state / data-placeholder attributes. SVG wavy-border filter, vendorable webfonts (Caveat + Patrick Hand), print-friendly, MIT licensed. Referenced by the wireframing skill (upcoming). v0.1.0.",
+      "category": "library"
     }
   ]
 }
