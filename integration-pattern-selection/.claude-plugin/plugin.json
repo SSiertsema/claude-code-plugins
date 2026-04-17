@@ -1,0 +1,12 @@
+{
+  "name": "integration-pattern-selection",
+  "version": "1.0.0",
+  "description": "Select integration pattern between services: synchronous (request-response, RPC), asynchronous (message queue, pub/sub, event streaming), saga (orchestration vs choreography), CQRS boundary, transactional outbox, change-data-capture (CDC), polling, webhook callback. Per pattern: when-to-use / trade-offs / failure modes / idempotency + retry semantics. Produces recommendation with consistency + coupling + observability trade-offs. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["integration-pattern", "saga", "choreography", "orchestration", "outbox", "cdc"],
+  "skills": "./skills"
+}

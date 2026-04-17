@@ -1,0 +1,12 @@
+{
+  "name": "rate-limiting-throttling-strategy",
+  "version": "1.0.0",
+  "description": "Design rate-limiting + throttling + backpressure strategy. Algorithms (fixed window / sliding window / token bucket / leaky bucket / concurrency limits), enforcement layers (CDN / API gateway / service / DB), scope (per-IP / per-API-key / per-user / per-tenant / global), response contract (429 + Retry-After + RateLimit-* headers per IETF draft), tier + quota model, burst handling, fair queueing, backpressure propagation, circuit breaker + bulkhead + shed-load. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["rate-limit", "throttling", "token-bucket", "backpressure", "circuit-breaker"],
+  "skills": "./skills"
+}

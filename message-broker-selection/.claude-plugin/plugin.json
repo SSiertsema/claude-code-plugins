@@ -1,0 +1,12 @@
+{
+  "name": "message-broker-selection",
+  "version": "1.0.0",
+  "description": "Select a message broker (Apache Kafka / RabbitMQ / NATS / AWS SQS+SNS / Google Pub/Sub / Azure Service Bus / Redis Streams / Apache Pulsar / AWS Kinesis) based on throughput, ordering, durability, delivery guarantees, replay, fan-out, operational model, cost. Per broker: strengths / weaknesses / delivery semantics / ordering guarantees / operational burden. Recommendation with trade-offs and escape hatch. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["message-broker", "kafka", "rabbitmq", "nats", "sqs", "pubsub"],
+  "skills": "./skills"
+}

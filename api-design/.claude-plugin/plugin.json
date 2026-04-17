@@ -1,0 +1,12 @@
+{
+  "name": "api-design",
+  "version": "1.0.0",
+  "description": "Design an API by selecting style (REST / GraphQL / gRPC / WebSocket / SSE / tRPC) and applying per-style best practices. REST: resource modeling + URI design + verbs + status codes + HATEOAS awareness + pagination + filtering + sorting. GraphQL: schema-first + resolvers + query complexity + N+1 avoidance via dataloaders + persisted queries. gRPC: proto contracts + streaming modes + deadline propagation. Produces style recommendation with trade-offs, endpoint/schema design, error taxonomy, pagination + filtering strategy, versioning handoff. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["api-design", "rest", "graphql", "grpc", "websocket", "integration"],
+  "skills": "./skills"
+}

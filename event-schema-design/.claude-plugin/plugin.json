@@ -1,0 +1,12 @@
+{
+  "name": "event-schema-design",
+  "version": "1.0.0",
+  "description": "Design event schemas for event-driven systems: envelope (CloudEvents 1.0) + payload (JSON Schema / Avro / Protobuf), naming (past-tense domain.aggregate.action.v1), keys + ordering, versioning (additive / upcasting / parallel-topic), schema registry (Confluent / Apicurio), compatibility modes (backward / forward / full / none). Event types (fact vs delta, domain vs integration), idempotency keys, causation + correlation ids, PII handling. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["event-schema", "cloudevents", "avro", "protobuf", "schema-registry"],
+  "skills": "./skills"
+}

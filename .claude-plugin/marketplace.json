@@ -769,6 +769,60 @@
       "source": "./disaster-recovery-planning",
       "description": "DR per service: RPO + RTO tiered by criticality, strategy from backup+restore (cheap, slow) through pilot-light / warm-standby / hot-standby to multi-region active-active (expensive, zero-downtime). Backup policy (3-2-1 + immutability). Failover runbooks + drills (tabletop / partial / full / surprise). Compliance (DORA / HIPAA / SOC 2 / ISO 22301).",
       "category": "architecture"
+    },
+    {
+      "name": "api-design",
+      "source": "./api-design",
+      "description": "Design an API by selecting style (REST / GraphQL / gRPC / WebSocket / SSE / tRPC / hybrid) against consumer profile + caching + real-time + typing + browser-reachability + team expertise. Per style: resource modeling / schema / RPC surface, pagination (cursor / offset / keyset), filtering + sorting + sparse fields, RFC 7807 error taxonomy, cross-cutting (auth + idempotency + ETag). Hands off versioning / rate-limit / webhook / contract to companion skills.",
+      "category": "architecture"
+    },
+    {
+      "name": "api-contract-specification",
+      "source": "./api-contract-specification",
+      "description": "Machine-readable API contract in OpenAPI 3.1 (REST), AsyncAPI 3.0 (events), GraphQL SDL, or Protobuf 3 (gRPC). Skeleton + operations + reusable components + RFC 7807 Problem envelope + security schemes + examples per operation. Contract-first. Lint rules per format (Spectral / Redocly / graphql-schema-linter / buf lint + breaking).",
+      "category": "architecture"
+    },
+    {
+      "name": "event-schema-design",
+      "source": "./event-schema-design",
+      "description": "Event schemas with CloudEvents 1.0 envelope + JSON Schema / Avro / Protobuf payload. Past-tense reverse-DNS naming, fact vs delta + domain vs integration classification, partition-key + ordering + idempotency-key, schema-registry compatibility mode (backward / forward / full / none), additive evolution + parallel-topic / upcasting for breaking changes, PII marking + GDPR crypto-erasure.",
+      "category": "architecture"
+    },
+    {
+      "name": "message-broker-selection",
+      "source": "./message-broker-selection",
+      "description": "Select a message broker (Kafka / RabbitMQ / NATS+JetStream / SQS+SNS / Pub/Sub / Service Bus / Redis Streams / Pulsar / Kinesis) on throughput + ordering + delivery guarantee + replay + fan-out + durability + ops burden + cloud fit + cost + ecosystem. Per broker: strengths / weaknesses / delivery semantics. Hybrid splits per workload class. Managed vs self-hosted explicit.",
+      "category": "architecture"
+    },
+    {
+      "name": "integration-pattern-selection",
+      "source": "./integration-pattern-selection",
+      "description": "Select integration pattern between services: sync request-response, async queue / pub-sub / streaming, saga orchestration vs choreography, transactional outbox, CDC, polling, webhook, async RPC. Anti-pattern checks (dual-write → outbox, 2PC → saga, sync chains, retry without idempotency, no DLQ). Idempotency + DLQ + circuit breaker mandatory for async.",
+      "category": "architecture"
+    },
+    {
+      "name": "third-party-api-evaluation",
+      "source": "./third-party-api-evaluation",
+      "description": "Evaluate a third-party API across 11 dimensions — functional coverage, contract stability, reliability (SLA + status page + MTTR), security (SOC2 / ISO27001 / PCI / HIPAA / GDPR DPA), rate limits, pricing at forecast, data residency, support + docs, lock-in, exit strategy, operational fit. Weighted scoring vs alternatives including build-in-house. Risk register + PoC plan. Not legal advice.",
+      "category": "architecture"
+    },
+    {
+      "name": "webhook-design",
+      "source": "./webhook-design",
+      "description": "Webhook design (outbound / inbound / both). Event catalog + request envelope with HMAC-SHA256 signature + timestamp + versioned prefix, retry with exponential backoff + jitter + ceiling + DLQ, replay + redelivery endpoint, subscription-management CRUD + test + secret rotation, receiver idempotency guidance, versioning with parallel window + RFC 8594 sunset, per-endpoint rate limiting, observability.",
+      "category": "architecture"
+    },
+    {
+      "name": "rate-limiting-throttling-strategy",
+      "source": "./rate-limiting-throttling-strategy",
+      "description": "Rate-limiting + throttling + backpressure strategy. Algorithm (token bucket / leaky / sliding window / GCRA / concurrency), layered scope (global > per-tenant > per-user > per-IP > per-endpoint), enforcement (CDN → gateway → service → data), IETF RateLimit-* + Retry-After + RFC 7807 body, tier + quota model, circuit breaker + bulkhead + adaptive concurrency, Redis / Envoy / gateway-native storage.",
+      "category": "architecture"
+    },
+    {
+      "name": "api-versioning-strategy",
+      "source": "./api-versioning-strategy",
+      "description": "API versioning strategy per style — REST (URL path / header / media-type / evolutionary date-pinned), GraphQL (@deprecated + additive schema), gRPC (package versioning + buf breaking), events (hand-off to event-schema). Breaking vs non-breaking taxonomy. Deprecation lifecycle (announced → deprecated → sunset → removed) with RFC 8594 Deprecation + Sunset headers, parallel windows per consumer type (public 12–24mo / partner 6–12mo / internal 1–3mo), multi-channel communication.",
+      "category": "architecture"
     }
   ]
 }

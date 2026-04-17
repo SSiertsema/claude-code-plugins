@@ -1,0 +1,12 @@
+{
+  "name": "api-contract-specification",
+  "version": "1.0.0",
+  "description": "Produce a machine-readable API contract: OpenAPI 3.1 for REST, AsyncAPI 3.0 for event/streaming, GraphQL SDL for GraphQL, proto files for gRPC. Resource / operation coverage, schema with examples, error responses, security schemes, servers, tags, reusable components. Contract-first workflow: spec before code. Lint rules (Spectral / Redocly) checklist. Versioning hand-off. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["openapi", "asyncapi", "graphql-sdl", "proto", "contract-first"],
+  "skills": "./skills"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "webhook-design",
+  "version": "1.0.0",
+  "description": "Design inbound + outbound webhooks: event catalog + payload (CloudEvents optional), delivery semantics (at-least-once), retry strategy (exponential backoff + jitter + max attempts + retry-after honored), DLQ, replay + redelivery endpoint, security (HMAC signature + timestamp + replay window, mTLS, rotating secrets, IP allowlist), idempotency on receiver, subscription management API, versioning, rate limiting, observability (delivery log + per-endpoint stats). Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["webhook", "callback", "hmac", "retry", "idempotency"],
+  "skills": "./skills"
+}

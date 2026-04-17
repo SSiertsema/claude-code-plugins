@@ -1,0 +1,12 @@
+{
+  "name": "api-versioning-strategy",
+  "version": "1.0.0",
+  "description": "Select an API versioning strategy: URL path (v1/), header (Accept / custom), media type (application/vnd+json), query param, or evolutionary (no versioning + additive). Per style: when-to-use / trade-offs / client ergonomics. Breaking vs non-breaking change taxonomy. Deprecation policy with Sunset + Deprecation headers (RFC 8594 / draft), parallel-version windows, migration docs, consumer communication. Applies to REST / GraphQL / gRPC / event schemas. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["api-versioning", "deprecation", "sunset-header", "evolvability"],
+  "skills": "./skills"
+}

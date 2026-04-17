@@ -1,0 +1,12 @@
+{
+  "name": "third-party-api-evaluation",
+  "version": "1.0.0",
+  "description": "Evaluate a third-party API for integration fit across functional coverage, contract stability, reliability (SLA + status page + incident history), security (auth, PCI/SOC2/ISO27001), rate limits + quotas, pricing + cost scaling, data residency + GDPR, support + docs quality, lock-in risk, exit strategy. Produces scored evaluation matrix against alternatives, risk register, proof-of-concept plan. Mermaid diagrams with optional PNG export. Not legal / contractual advice.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["third-party-api", "vendor-evaluation", "integration", "lock-in", "sla"],
+  "skills": "./skills"
+}
