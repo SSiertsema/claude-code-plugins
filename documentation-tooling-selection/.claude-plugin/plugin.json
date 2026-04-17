@@ -1,0 +1,12 @@
+{
+  "name": "documentation-tooling-selection",
+  "version": "1.0.0",
+  "description": "Select documentation tooling for the adopted strategy: static site generators (Docusaurus / MkDocs / Astro / Nextra / VitePress), developer portals (Backstage TechDocs / Port), wikis (Confluence / Notion / Outline), API reference tools (Redoc / Scalar / Stoplight / Swagger UI), learning platforms, single-page vs docs-as-code. Criteria: docs-as-code fit, versioning, search, localization, publishing pipeline, theming, plugin ecosystem, cost, lock-in. Hand-off to documentation-strategy for IA decisions.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["docs-tooling", "docusaurus", "mkdocs", "backstage", "docs-as-code"],
+  "skills": "./skills"
+}

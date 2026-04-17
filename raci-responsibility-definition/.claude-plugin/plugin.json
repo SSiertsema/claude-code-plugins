@@ -1,0 +1,12 @@
+{
+  "name": "raci-responsibility-definition",
+  "version": "1.0.0",
+  "description": "Define roles + responsibilities via RACI / RAPID / DACI matrices. RACI: Responsible / Accountable / Consulted / Informed. RAPID: Recommend / Agree / Perform / Input / Decide. DACI: Driver / Approver / Contributors / Informed. Guidance on choosing the right framework, activity decomposition, avoiding RACI-bloat, decision-rights clarity, combining with team topology. Not a staffing plan.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["raci", "rapid", "daci", "responsibility", "decision-rights"],
+  "skills": "./skills"
+}

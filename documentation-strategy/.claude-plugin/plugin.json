@@ -1,0 +1,12 @@
+{
+  "name": "documentation-strategy",
+  "version": "1.0.0",
+  "description": "Design a documentation strategy: audience map (end-users / API consumers / operators / future maintainers / newcomers / leadership), Diátaxis framework (tutorials / how-to guides / reference / explanation), information architecture for docs, living-documentation + docs-as-code, review + maintenance process with owners + staleness alerts, findability + navigation + search, localization + accessibility, metrics (views / helpfulness / staleness / support deflection). Distinct from tooling selection.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["documentation-strategy", "diataxis", "docs-as-code", "information-architecture"],
+  "skills": "./skills"
+}

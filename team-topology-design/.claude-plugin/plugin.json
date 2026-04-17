@@ -1,0 +1,12 @@
+{
+  "name": "team-topology-design",
+  "version": "1.0.0",
+  "description": "Design team topology using Team Topologies (stream-aligned / platform / enabling / complicated-subsystem) + interaction modes (collaboration / X-as-a-service / facilitating). Cognitive-load assessment, team boundaries aligned with bounded contexts, team API definition, reverse-Conway maneuvers, team-of-teams patterns, collaboration-tool selection. Anti-patterns (feature teams hiding cognitive debt, shared-services bottlenecks, too-wide stream-aligned scope). Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["team-topologies", "team-design", "cognitive-load", "reverse-conway"],
+  "skills": "./skills"
+}

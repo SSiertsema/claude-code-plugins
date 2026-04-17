@@ -1,0 +1,12 @@
+{
+  "name": "onboarding-plan",
+  "version": "1.0.0",
+  "description": "Design an onboarding plan for engineers / designers / PMs joining a team. Structured phases (pre-day-1 / day-1 / week-1 / month-1 / month-3), scope (access + environment + context + first contributions + ramp-up checkpoints), buddy + mentor roles, knowledge-sharing artifacts (team API, architecture walk, onboarding wiki), feedback loops (30/60/90 check-ins), DEI + accessibility considerations, onboarding-health metrics. Outputs reusable template + first-hire-specific plan.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["onboarding", "ramp-up", "mentorship", "dei", "team"],
+  "skills": "./skills"
+}

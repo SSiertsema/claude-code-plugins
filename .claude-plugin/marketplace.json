@@ -949,6 +949,36 @@
       "source": "./non-functional-test-planning",
       "description": "Performance + security test plan. Perf: types (load/stress/soak/spike/scalability/volume/capacity), workload modeling from analytics, SLO-aligned thresholds, baseline + trend, tools (k6/Gatling/Locust/JMeter), isolated prod-like env, chaos. Sec: SAST + SCA + secret + container + IaC in CI; DAST nightly; IAST + fuzzing + pentest + red team; AuthN/Z tests; threat-model coverage check; vuln SLAs by severity; bug bounty; compliance-aligned (SOC2/PCI/HIPAA/GDPR/ISO27001). Not a certified audit.",
       "category": "planning"
+    },
+    {
+      "name": "team-topology-design",
+      "source": "./team-topology-design",
+      "description": "Team topology via Team Topologies — four types only (stream-aligned / platform / enabling / complicated-subsystem) with three interaction modes (collaboration / X-as-a-Service / facilitating). Cognitive-load assessment per stream team (intrinsic / extraneous / germane). Domain-aligned boundaries (DDD hand-off). Team API per team (purpose + services + contact + SLO + intake + interaction modes). Reverse-Conway when needed. Anti-patterns flagged (platform ticket-desk, permanent enabling, feature-team-over-contexts).",
+      "category": "planning"
+    },
+    {
+      "name": "onboarding-plan",
+      "source": "./onboarding-plan",
+      "description": "Onboarding plan pre-day-1 through month-3. Distinct roles (manager ≠ buddy ≠ mentor). Graduated first contributions (doc → small bug → feature → independent story → shipped feature). Knowledge scope (technical / product / process / domain). 30/60/90 check-ins + reverse-onboarding doc. DEI + accessibility deliberate. Metrics (time-to-first-PR, 6/12mo retention). Produces reusable template + per-hire plan.",
+      "category": "planning"
+    },
+    {
+      "name": "raci-responsibility-definition",
+      "source": "./raci-responsibility-definition",
+      "description": "Responsibility / decision-rights matrices. RACI (Responsible / Accountable / Consulted / Informed — exactly one A per row) for ongoing activities. RAPID (Recommend / Agree / Perform / Input / Decide — one D + sparing A) for consequential decisions. DACI for lighter single-decision. Anti-patterns (multiple As, all-Cs paralysis, same-person R+A bottleneck, generic rows, wrong-framework-for-question). Quarterly review + owner + version. Not a staffing plan.",
+      "category": "planning"
+    },
+    {
+      "name": "documentation-strategy",
+      "source": "./documentation-strategy",
+      "description": "Docs strategy audience-first (end-users / API consumers / operators / maintainers / newcomers / leadership / regulators) with Diátaxis framework (tutorials / how-to / reference / explanation — distinct, not mixed). IA + findability + versioning. Docs-as-code with CI-tested links + code samples. Review + maintenance (owner + cadence + staleness alerts + twice-yearly prune). Accessibility + localization. Metrics (traffic + helpfulness + zero-result searches + staleness + support-deflection). Legal / compliance docs separated.",
+      "category": "planning"
+    },
+    {
+      "name": "documentation-tooling-selection",
+      "source": "./documentation-tooling-selection",
+      "description": "Docs tooling selection. Categories: static generators (Docusaurus / MkDocs Material / Astro Starlight / Nextra / VitePress / Hugo / Sphinx), dev portals (Backstage TechDocs / Port / Cortex), wikis (Confluence / Notion / Outline / GitBook), API ref (Redoc / Scalar / Stoplight / Swagger UI / Mintlify / ReadMe), LMS. Weighted criteria (docs-as-code fit / versioning / search / l10n / UX / publishing / theming / plugins / perf / cost / exit). Per-audience recommendation. Lock-in + exit analyzed.",
+      "category": "planning"
     }
   ]
 }
