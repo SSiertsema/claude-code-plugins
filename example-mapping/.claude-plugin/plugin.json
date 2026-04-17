@@ -1,0 +1,12 @@
+{
+  "name": "example-mapping",
+  "version": "1.0.0",
+  "description": "Run an example-mapping session (Matt Wynne) for story refinement. Produces structured output with four card types — yellow (story), blue (rules / acceptance criteria), green (concrete examples), red (questions / unknowns). Session outputs: story ready-or-not verdict, open questions, shared understanding artifact. Facilitates 25-30 min workshops before dev. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["example-mapping", "matt-wynne", "story-refinement", "bdd", "shared-understanding"],
+  "skills": "./skills"
+}

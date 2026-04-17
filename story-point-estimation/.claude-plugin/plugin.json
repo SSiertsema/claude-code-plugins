@@ -1,0 +1,12 @@
+{
+  "name": "story-point-estimation",
+  "version": "1.0.0",
+  "description": "Apply story-point methodology to estimate work. Defines what points mean (complexity × uncertainty × effort), establishes calibration via reference stories, applies Fibonacci progression reflecting exponential uncertainty, forecasts via velocity, and surfaces common anti-patterns (hours-to-points conversion, velocity-as-productivity, inflation across teams). Distinct from planning-poker-protocol (the HOW of a session); this is the criteria and methodology.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["story-points", "relative-estimation", "fibonacci", "velocity", "calibration", "agile-estimation"],
+  "skills": "./skills"
+}

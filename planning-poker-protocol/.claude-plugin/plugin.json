@@ -1,0 +1,12 @@
+{
+  "name": "planning-poker-protocol",
+  "version": "1.0.0",
+  "description": "Facilitate a planning poker estimation session. Produces session agenda, facilitator guide, per-item estimation template (description → silent card selection → reveal → outlier discussion → re-vote → consensus), Fibonacci card set, anti-anchoring rules, and outcome log (final estimate + discussion notes + open questions per item). Two modes: facilitation (live session structure) and documentation (record completed session). Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["planning-poker", "estimation", "fibonacci", "facilitation", "scrum", "agile-planning"],
+  "skills": "./skills"
+}

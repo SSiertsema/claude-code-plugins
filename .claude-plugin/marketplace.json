@@ -571,6 +571,36 @@
       "source": "./acceptance-criteria-writing",
       "description": "Write, audit, or split acceptance criteria for a user story. Given/When/Then (Gherkin) default + rule-based + mixed formats. Systematic coverage (happy path + negative + edge + boundary + a11y + optional performance/security/data/integration). INVEST at story + AC level. SPIDR split (Spike / Path / Interface / Data / Rule) when story too big. Scenario outlines for parametric data. Mermaid coverage pie + split diagrams with optional PNG export.",
       "category": "strategy"
+    },
+    {
+      "name": "planning-poker-protocol",
+      "source": "./planning-poker-protocol",
+      "description": "Facilitate a planning-poker estimation session with anti-anchoring protocol (silent card selection → reveal → outlier discussion driven by extremes → re-vote → converge or park). Fibonacci default cards, reference-story calibration, timeboxed per item, per-item outcome log, session-level summary with follow-ups. Facilitation + documentation modes. Surfaces common anti-patterns. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "story-point-estimation",
+      "source": "./story-point-estimation",
+      "description": "Story-point methodology — what points mean (complexity × uncertainty × effort), Fibonacci-progression rationale, team-specific reference-story calibration, velocity-based forecasting as range (mean / min / max / std), anti-pattern surfacing (hours-to-points, velocity-as-productivity, cross-team comparison, inflation). Four modes: estimate / calibrate / forecast / audit. Distinct from planning-poker-protocol (this is the criteria). Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "story-mapping",
+      "source": "./story-mapping",
+      "description": "Jeff Patton story mapping. Horizontal backbone of user activities (4-10), vertical sub-stories / tasks prioritized top-to-bottom, horizontal release slices with walking skeleton first then thickening releases. Reveals narrative gaps, over-detail, orphan stories, broken walking skeleton. Optional persona / platform / risk / dependency annotations. Feeds user-story-generator and planning-poker-protocol. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "example-mapping",
+      "source": "./example-mapping",
+      "description": "Matt Wynne example-mapping for pre-dev story refinement. 25-30 min four-card workshop: yellow (story), blue (rules), green (concrete examples), red (questions). Ready-or-not verdict (READY / MARGINAL / NOT READY) with rationale. Post-session actions for reds. Draft acceptance criteria feed into acceptance-criteria-writing. Facilitation + documentation modes. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "story-splitting",
+      "source": "./story-splitting",
+      "description": "Split oversized user stories using SPIDR (Spike / Path / Interface / Data / Rule) or Richard Lawrence's 9-pattern catalog. Vertical value-slicing with V-test gating (reject horizontal technical slices). Post-split INVEST check per sub-story. Recommended order (walking skeleton → risk-reducing → value → quick wins → edges). Flags when NOT to split. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
     }
   ]
 }

@@ -1,0 +1,12 @@
+{
+  "name": "story-splitting",
+  "version": "1.0.0",
+  "description": "Split oversized user stories using SPIDR (Spike / Path / Interface / Data / Rule) and Richard Lawrence's 9-pattern catalog (workflow steps / business-rule variations / simple-first / variations in data / data-entry methods / defer performance / operations / break-out spikes / major effort). Produces split proposal with rationale per split, post-split INVEST check, value-slicing verification (each sub-story independently valuable), and recommended order. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["story-splitting", "spidr", "richard-lawrence", "invest", "vertical-slicing", "value-slicing"],
+  "skills": "./skills"
+}

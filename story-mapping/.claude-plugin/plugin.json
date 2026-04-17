@@ -1,0 +1,12 @@
+{
+  "name": "story-mapping",
+  "version": "1.0.0",
+  "description": "Build a user story map (Jeff Patton). Horizontal backbone of user activities, vertical sub-stories ordered by priority, release slices cutting across. Produces narrative ordering, walking-skeleton first slice, and 2-3 subsequent releases. Reveals gaps in flow + over-detail in certain steps. Distinct from backlog (which hides narrative). Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["story-mapping", "jeff-patton", "walking-skeleton", "release-slicing", "narrative-backbone"],
+  "skills": "./skills"
+}
