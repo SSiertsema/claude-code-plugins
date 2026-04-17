@@ -1,0 +1,12 @@
+{
+  "name": "affinity-diagramming",
+  "version": "1.0.0",
+  "description": "Bottom-up thematic clustering of unstructured items (research notes, interview quotes, brainstorm ideas, feedback, observations) using the KJ method. Discovers emergent themes, assigns items to clusters with evidence traceability, identifies patterns and insights, flags outliers, and prioritizes clusters by signal strength. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["affinity-diagramming", "kj-method", "clustering", "synthesis", "research-synthesis", "thematic-analysis"],
+  "skills": "./skills"
+}

@@ -241,6 +241,36 @@
       "source": "./readme-generator",
       "description": "Generate a comprehensive README.md by analyzing the codebase and validating findings with the user. Detects monorepos and generates root + sub-package README's.",
       "category": "productivity"
+    },
+    {
+      "name": "brainstorming",
+      "source": "./brainstorming",
+      "description": "Brainstorming and brainwriting skill applying classic rules, 6-3-5, reverse brainstorming, SCAMPER, round-robin, nominal group technique, silent brainstorming, crazy 8s, and HMW. Autonomous, facilitation, or documentation mode. Affinity clustering, multi-criteria evaluation, and Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "mind-mapping",
+      "source": "./mind-mapping",
+      "description": "Generate a hierarchical mind map around a central topic with 5-8 main branches and configurable depth. Autonomous, transformation, or expansion mode. Classic, concept-map, and tree styles. Produces Mermaid mindmap diagrams with optional PNG export, a synced nested outline, and a per-branch keyword index.",
+      "category": "strategy"
+    },
+    {
+      "name": "concept-sketching",
+      "source": "./concept-sketching",
+      "description": "Generate low-fidelity concept sketches for a design challenge as structured concept briefs, storyboard panels, low-fi wireflows (Mermaid), key touchpoint specs, and annotations. Produces 2-4 variants side-by-side with comparison table. Autonomous, comparison, and elaboration modes. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "affinity-diagramming",
+      "source": "./affinity-diagramming",
+      "description": "Bottom-up thematic clustering of unstructured items (research notes, interview quotes, brainstorm ideas, feedback) using the KJ method. Discovers emergent themes with evidence traceability, identifies patterns/tensions/gaps, flags outliers, and prioritizes clusters by signal strength. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "hmw-framing",
+      "source": "./hmw-framing",
+      "description": "Transform a problem, pain point, insight, or research finding into 'How might we...' questions for ideation. Deconstructs input, applies multiple HMW lenses, produces 3-6 variants with scope and wording checks, recommends a best variant, and optionally breaks broad HMWs into sub-HMWs. Mermaid diagram with optional PNG export.",
+      "category": "strategy"
     }
   ]
 }

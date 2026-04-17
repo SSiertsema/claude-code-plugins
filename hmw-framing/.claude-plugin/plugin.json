@@ -1,0 +1,12 @@
+{
+  "name": "hmw-framing",
+  "version": "1.0.0",
+  "description": "Transform a problem statement, pain point, insight, or research finding into 'How might we...' (HMW) questions for ideation. Deconstructs the input, applies multiple HMW lenses (amp the good, remove the bad, explore opposite, question assumption, unexpected resource, analogy, adjective change, POV shift, status-quo break, scale up/down), produces 3-6 variants with scope and wording quality checks, recommends a best variant, and optionally breaks down broad HMWs into sub-HMWs. Mermaid diagram with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["hmw", "how-might-we", "reframing", "problem-framing", "ideation", "design-thinking"],
+  "skills": "./skills"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "brainstorming",
+  "version": "1.0.0",
+  "description": "Brainstorming and brainwriting skill applying classic rules, 6-3-5, reverse brainstorming, SCAMPER, round-robin, nominal group technique, silent brainstorming, crazy 8s, and HMW. Generates, facilitates, or documents idea sessions with affinity clustering, multi-criteria evaluation, top-N prioritization, and Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["brainstorming", "brainwriting", "ideation", "scamper", "6-3-5", "crazy-8s", "affinity-clustering", "hmw"],
+  "skills": "./skills"
+}

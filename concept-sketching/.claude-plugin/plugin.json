@@ -1,0 +1,12 @@
+{
+  "name": "concept-sketching",
+  "version": "1.0.0",
+  "description": "Generate low-fidelity concept sketches for a design challenge as structured concept briefs, storyboard panels, low-fi wireflows (Mermaid), key touchpoint specs, and annotations. Produces 2-4 variants side-by-side for comparison. Three modes: autonomous, comparison, elaboration. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["concept-sketching", "storyboard", "wireflow", "low-fi", "design", "ideation", "concept-design"],
+  "skills": "./skills"
+}

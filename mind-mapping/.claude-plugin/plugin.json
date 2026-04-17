@@ -1,0 +1,12 @@
+{
+  "name": "mind-mapping",
+  "version": "1.0.0",
+  "description": "Generate hierarchical mind maps around a central topic with 5-8 main branches and configurable depth. Three modes: autonomous (from topic), transformation (from notes/transcript), or expansion (extend partial map). Produces Mermaid mindmap diagrams with optional PNG export, synced nested outline, and per-branch keyword index. Supports classic, concept-map, and tree styles.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["mind-mapping", "concept-map", "ideation", "decomposition", "outlining", "buzan", "mermaid"],
+  "skills": "./skills"
+}
