@@ -1,0 +1,12 @@
+{
+  "name": "license-compatibility-analysis",
+  "version": "1.0.0",
+  "description": "Analyze open-source + third-party licenses in a codebase for compatibility with the intended distribution model. Inventories direct + transitive dependencies, classifies licenses (permissive / weak-copyleft / strong-copyleft / proprietary / unknown), detects incompatibilities (e.g., GPL in MIT-licensed SaaS, AGPL reach), notes NOTICE + attribution obligations, patent grant differences, commercial vs non-commercial restrictions, AI-model-weight license specifics, SBOM references. Produces evidence-backed findings. Not legal advice — engineering/compliance input for legal counsel.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["license-compatibility", "oss-license", "copyleft", "sbom", "compliance"],
+  "skills": "./skills"
+}

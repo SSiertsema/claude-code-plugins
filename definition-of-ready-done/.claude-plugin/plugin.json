@@ -1,0 +1,12 @@
+{
+  "name": "definition-of-ready-done",
+  "version": "1.0.0",
+  "description": "Define Definition of Ready (DoR) + Definition of Done (DoD) + acceptance-criteria standardization. DoR: criteria a backlog item must meet before entering a sprint. DoD: criteria for the increment to be considered done. Per-level DoD (story / sprint / release). Acceptance criteria format (Given-When-Then / checklist / example-mapping), team-level vs org-level DoD, exceptions + waiver process. Self-assessment checklist before committing / shipping. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["definition-of-done", "definition-of-ready", "acceptance-criteria", "quality", "agile"],
+  "skills": "./skills"
+}

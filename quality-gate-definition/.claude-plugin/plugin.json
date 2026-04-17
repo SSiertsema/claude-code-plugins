@@ -1,0 +1,12 @@
+{
+  "name": "quality-gate-definition",
+  "version": "1.0.0",
+  "description": "Define quality gates in the delivery pipeline: per-stage gates (commit / build / merge / deploy / release), objective pass/fail criteria, automation where possible, manual approval where needed (who, when, what's approved), escape-hatch + waiver process, sprint exit criteria, review process for PRs / design / security. Distinct from DoR/DoD (team agreement) — gates are enforceable pipeline checkpoints. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["quality-gate", "pipeline", "review-process", "sprint-exit", "approval"],
+  "skills": "./skills"
+}

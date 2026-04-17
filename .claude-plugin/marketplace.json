@@ -889,6 +889,24 @@
       "source": "./scope-statement-writing",
       "description": "Scope statement — purpose, SMART objectives with success criteria, deliverables with acceptance, explicit in-scope, explicit out-of-scope (highest-leverage section preventing creep arguments), assumptions with confirm-by dates, constraints (budget / time / people / regulatory / technical), boundaries (organizational / geographic / temporal / technical / segments), stakeholders + approval authority, scope-change protocol, coverage check with WBS, open questions. Distinct from business case / WBS / stakeholder map.",
       "category": "planning"
+    },
+    {
+      "name": "license-compatibility-analysis",
+      "source": "./license-compatibility-analysis",
+      "description": "Open-source + third-party license compatibility analysis. Inventory via Syft / licensee / pip-licenses / go-licenses / cargo-deny / nuget-license, SPDX identifiers, 10-class classification (permissive / weak copyleft / strong copyleft / network copyleft / source-available / CC / public-domain / proprietary / dual / unknown), compatibility matrix vs distribution model (SaaS / on-prem / SDK / mobile / model weights), AGPL+SSPL distinguished from GPL, attribution + NOTICE obligations, patent grants, AI model/data licenses, risk rating Block/Review/Obligation/Clear, remediation options. Not legal advice.",
+      "category": "planning"
+    },
+    {
+      "name": "definition-of-ready-done",
+      "source": "./definition-of-ready-done",
+      "description": "Definition of Ready (short enforceable pre-commit gate) + Definition of Done at three levels (story / sprint / release). DoR: value + AC + deps + designs + NFRs + data + size + blockers. Story-DoD: merge + CI + SAST + tests + observability + PO accept. Sprint-DoD: retro + demo + notes. Release-DoD: regression + perf + security + a11y + i18n + migration + runbooks + on-call + rollback + compliance. Team-vs-org layering. Waiver protocol with expiry. Living doc with quarterly review. Anti-patterns flagged.",
+      "category": "planning"
+    },
+    {
+      "name": "quality-gate-definition",
+      "source": "./quality-gate-definition",
+      "description": "Enforceable quality gates per pipeline stage (pre-commit / CI on PR / code review / security review / design review / build+sign+SBOM / staging / canary / prod / post-release) with per-gate spec (purpose, trigger, objective criteria, fail-closed behavior, automation, named reviewer, timeouts, waiver with expiry, evidence for audit). Risk-profile-aware tightening. Waiver process + volume review. Metrics (pass rate / time-in-gate / waivers / escapes / flakes). Distinct from DoR/DoD (gates are machinery; DoR/DoD are commitments).",
+      "category": "planning"
     }
   ]
 }
