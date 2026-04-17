@@ -1,0 +1,12 @@
+{
+  "name": "timeline-estimation",
+  "version": "1.0.0",
+  "description": "Timeline estimation for a project, release, or initiative using three-point (PERT), analogous, parametric, and velocity-based techniques. Integrates with dependency-mapping for critical-path timelines. Produces optimistic / most-likely / pessimistic date ranges, schedule contingency recommendations, milestone plan, sensitivity against top duration drivers, and Mermaid Gantt plus range diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["timeline-estimation", "pert", "three-point", "critical-path", "schedule", "milestones", "velocity"],
+  "skills": "./skills"
+}

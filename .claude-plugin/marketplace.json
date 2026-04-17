@@ -283,6 +283,30 @@
       "source": "./empathy-mapping",
       "description": "Empathy mapping for a persona or user segment across 6 quadrants (Dave Gray) or classic 4-quadrant (XPLANE). Synthesis mode extracts from research; autonomous mode infers with labeled assumptions. Surfaces tensions, evidence gaps, 3-5 synthesized insights, and top pain/gain highlights. Mermaid diagrams with optional PNG export.",
       "category": "strategy"
+    },
+    {
+      "name": "build-vs-buy-analysis",
+      "source": "./build-vs-buy-analysis",
+      "description": "Structured build vs buy (vs hybrid / open-source / rent / non-consumption) analysis for a capability. Evaluates 7 criteria (strategic fit, TCO, time to value, control, risk, switching cost, opportunity cost) with weighted scoring tied to strategic importance. Produces scored decision matrix, TCO breakdown with ranges, recommendation with trade-off and risk, and reversal conditions. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "dependency-mapping",
+      "source": "./dependency-mapping",
+      "description": "Map dependencies between components, teams, deliverables, systems, or tasks. Every edge carries direction and type (hard-blocking / soft-blocking / enabling / data). Detects cycles with classification, surfaces hubs/sources/sinks, identifies single points of failure with blast radius, and computes critical path when durations are supplied. Mermaid flowchart and Gantt diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "cost-estimation",
+      "source": "./cost-estimation",
+      "description": "Cost estimation using three-point (PERT), analogous, parametric, and bottom-up techniques with optimistic / most-likely / pessimistic ranges. Produces category breakdown, risk-based contingency (10-40%), confidence labeling, and sensitivity analysis on top 3 cost drivers. Mermaid diagrams for cost breakdown, range, and sensitivity with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "timeline-estimation",
+      "source": "./timeline-estimation",
+      "description": "Timeline estimation using three-point (PERT), analogous, parametric, and velocity-based techniques with O/M/P date ranges. Integrates with dependency-mapping for critical-path timelines, translates working days to calendar dates respecting holidays and freezes, recommends buffer, defines milestones with entry criteria, and assesses deadline probability when a deadline is supplied. Mermaid Gantt and range diagrams with optional PNG export.",
+      "category": "strategy"
     }
   ]
 }

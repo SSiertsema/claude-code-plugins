@@ -1,0 +1,12 @@
+{
+  "name": "build-vs-buy-analysis",
+  "version": "1.0.0",
+  "description": "Structured build vs buy (vs hybrid / open-source / rent) analysis for a capability or component. Evaluates options on TCO, strategic fit, time-to-value, control, risk, switching cost, and opportunity cost. Produces a scored decision matrix, a recommendation with rationale, a reversal-conditions clause (when to revisit), and Mermaid diagrams for decision matrix and cost-over-time comparison with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["build-vs-buy", "make-or-buy", "procurement", "tco", "decision-matrix", "strategic-sourcing"],
+  "skills": "./skills"
+}

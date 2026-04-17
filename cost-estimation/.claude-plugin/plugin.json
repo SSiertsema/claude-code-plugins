@@ -1,0 +1,12 @@
+{
+  "name": "cost-estimation",
+  "version": "1.0.0",
+  "description": "Cost estimation using multiple techniques — three-point (PERT), analogous, parametric, and bottom-up — with explicit confidence and ranges (optimistic / most-likely / pessimistic). Produces a cost breakdown by category (development, operations, people, infrastructure, contingency), sensitivity analysis against key drivers, and Mermaid diagrams for cost breakdown and range with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["cost-estimation", "pert", "three-point", "parametric", "bottom-up", "tco", "contingency"],
+  "skills": "./skills"
+}

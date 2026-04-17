@@ -1,0 +1,12 @@
+{
+  "name": "dependency-mapping",
+  "version": "1.0.0",
+  "description": "Identify and visualize dependencies across components, teams, deliverables, systems, or tasks. Produces a dependency graph with direction and type (hard/soft, blocking/enabling), detects cycles and bottlenecks, computes critical path, and identifies single points of failure. Renders Mermaid flowchart and Gantt-like dependency diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["dependency-mapping", "critical-path", "bottlenecks", "cycle-detection", "systems-mapping", "project-planning"],
+  "skills": "./skills"
+}
