@@ -1,0 +1,12 @@
+{
+  "name": "support-rollback-planning",
+  "version": "1.0.0",
+  "description": "Plan post-launch support model + rollback strategy. Support: tiers (L1/L2/L3) + coverage + on-call rotation + escalation + SLAs per severity + hypercare window + runbook coverage. Rollback: strategy (feature flag off / deploy previous artifact / data roll-back / progressive-delivery abort), rollback triggers (SLO burn / error spike / manual kill-switch), rehearsal, communication during rollback, post-rollback action. Distinct from disaster-recovery-planning (infrastructure DR) and system-error-handling-strategy (runtime errors).",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["support", "rollback", "hypercare", "on-call", "kill-switch"],
+  "skills": "./skills"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "communication-plan",
+  "version": "1.0.0",
+  "description": "Stakeholder communication plan — communication matrix (who / what / when / how / owner), reporting cadence (exec / sponsor / team / customer / regulator), dashboard design principles per audience, status-report templates (RAG + highlights + risks + asks), escalation paths (trigger / route / timeline), feedback-loop design (office hours / retros / surveys / open channels). Tailors style per audience. Hand-offs to demo-showcase-planning + change-impact-assessment + training-adoption-planning.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["communication-plan", "stakeholder", "reporting", "escalation", "feedback"],
+  "skills": "./skills"
+}

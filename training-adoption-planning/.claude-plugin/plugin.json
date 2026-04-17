@@ -1,0 +1,12 @@
+{
+  "name": "training-adoption-planning",
+  "version": "1.0.0",
+  "description": "Plan training materials + adoption measurement for a change / new tool / new process. Learning-needs analysis per audience, content mix (docs / videos / live workshops / office hours / in-product tours / guided learning paths), delivery pipeline (content authoring + review + publishing), adoption metrics (activation / retention / NPS / support tickets avoided), reinforcement (ADKAR R-step), change-champion network, localization + accessibility. Hand-offs to change-impact-assessment + documentation-strategy + communication-plan.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["training", "adoption", "change-management", "enablement", "reinforcement"],
+  "skills": "./skills"
+}

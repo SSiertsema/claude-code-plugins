@@ -1,0 +1,12 @@
+{
+  "name": "change-impact-assessment",
+  "version": "1.0.0",
+  "description": "Assess the impact of a proposed change across stakeholders, systems, processes, data, training, compliance, risk. Dimensions: magnitude + reach + reversibility + urgency. Uses ADKAR or Prosci frames where helpful. Produces impact matrix + affected parties + risk-adjusted recommendations + go/no-go inputs. Not organizational-change execution — hand off to training / comms / support-rollback skills.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["change-impact", "adkar", "prosci", "stakeholder-impact", "risk"],
+  "skills": "./skills"
+}

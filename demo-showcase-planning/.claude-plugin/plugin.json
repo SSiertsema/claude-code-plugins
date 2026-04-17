@@ -1,0 +1,12 @@
+{
+  "name": "demo-showcase-planning",
+  "version": "1.0.0",
+  "description": "Plan demos + showcases — purpose (discovery / feedback / alignment / sales / celebration), audience, agenda, narrative arc, demo script (golden-path focus), recovery plan if demo fails, environment + data prep, rehearsal cadence, feedback capture mechanism, follow-up actions. Covers sprint review / customer advisory board / investor update / internal show-and-tell. Hand-offs to communication-plan + training-adoption-planning + change-impact-assessment.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["demo", "showcase", "sprint-review", "feedback-capture", "narrative"],
+  "skills": "./skills"
+}

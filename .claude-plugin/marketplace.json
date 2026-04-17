@@ -979,6 +979,36 @@
       "source": "./documentation-tooling-selection",
       "description": "Docs tooling selection. Categories: static generators (Docusaurus / MkDocs Material / Astro Starlight / Nextra / VitePress / Hugo / Sphinx), dev portals (Backstage TechDocs / Port / Cortex), wikis (Confluence / Notion / Outline / GitBook), API ref (Redoc / Scalar / Stoplight / Swagger UI / Mintlify / ReadMe), LMS. Weighted criteria (docs-as-code fit / versioning / search / l10n / UX / publishing / theming / plugins / perf / cost / exit). Per-audience recommendation. Lock-in + exit analyzed.",
       "category": "planning"
+    },
+    {
+      "name": "change-impact-assessment",
+      "source": "./change-impact-assessment",
+      "description": "Change impact across seven dimensions (stakeholder / systems / process / data / training / compliance / financial). Classification frames (ADKAR / Prosci 7-step / Kotter 8-step / lightweight). Magnitude × reach matrix. Reversibility (reversible / mostly / hard / one-way) + urgency with 2x scrutiny rule for irreversible. Risk register with mitigations + owners. Sequencing + dependencies. Go/no-go inputs checklist (not the decision itself).",
+      "category": "planning"
+    },
+    {
+      "name": "training-adoption-planning",
+      "source": "./training-adoption-planning",
+      "description": "Training + adoption planning. Learning-needs analysis per audience with ADKAR gaps. Content mix (docs / videos / workshops / office hours / in-product tours / learning paths / certification / peer coaching / sandbox / cheat sheets) 2–4 per audience. Staged rollout (champions → power users → all → admins → reinforcement). Change-champion network. Reinforcement 3+ months post-launch. Adoption metrics on behavior (activation / retention / task success / support trend) not attendance.",
+      "category": "planning"
+    },
+    {
+      "name": "support-rollback-planning",
+      "source": "./support-rollback-planning",
+      "description": "Post-launch support + rollback planning. Support: L1/L2/L3 tiers + coverage (business/24x5/24x7) + humane on-call rotation + severity × SLA (S1 <15min/<4h; S2 <1bd/<5bd; S3/S4) + hypercare window with DRI + runbook-per-alert. Rollback: path per deployment model (feature flag/canary/blue-green/rolling/big-bang) + automated + manual triggers + rehearsal MTTR measurement + comms within 5 min + blameless RCA. Non-reversible changes flagged with compensating controls.",
+      "category": "planning"
+    },
+    {
+      "name": "communication-plan",
+      "source": "./communication-plan",
+      "description": "Stakeholder communication plan. Matrix (who / what / when / how / owner) per audience (exec / leadership / team / customer-facing / external customers / partners / regulators / legal). Tailored style per audience. Reporting cadence (daily/weekly/biweekly/monthly/quarterly). Structured templates (RAG + highlights + risks + asks). Dashboards focused (5–8 metrics). Named escalation routes with SLAs. Bidirectional feedback loops with close-the-loop. Crisis / incident comms (speed > polish, single source, IC, post-mortem).",
+      "category": "planning"
+    },
+    {
+      "name": "demo-showcase-planning",
+      "source": "./demo-showcase-planning",
+      "description": "Demo + showcase planning. Purpose-first framing (discovery / feedback / alignment / sales / celebration / training). Audience-adapted narrative arc (hook / context / demo 60% / insights / ask / Q&A time-boxed). Demo script per segment with fallback. Failure recovery break-glass paths (pre-recorded backups, reset scripts). Rehearsal cadence (content review T-1w, dry-runs T-3d + T-1d, check T-30min). Structured feedback capture (scribe + survey + 1-week close-the-loop). Accessibility (captions + screen readers + post-session content).",
+      "category": "planning"
     }
   ]
 }
