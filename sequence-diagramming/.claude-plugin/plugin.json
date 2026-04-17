@@ -1,0 +1,12 @@
+{
+  "name": "sequence-diagramming",
+  "version": "1.0.0",
+  "description": "Produce UML sequence diagrams for flows between actors / services / components. Scope the flow (one primary + alternate paths), identify participants + lifelines, capture synchronous vs asynchronous messages, activation bars, returns, alternatives + loops + parallel fragments, timing notes, self-calls, creation + destruction. Mermaid sequenceDiagram syntax with PNG export via diagram-rendering mixin.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["uml", "sequence-diagram", "mermaid", "flow", "interaction"],
+  "skills": "./skills"
+}

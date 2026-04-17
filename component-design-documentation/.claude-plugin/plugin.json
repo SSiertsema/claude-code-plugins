@@ -1,0 +1,12 @@
+{
+  "name": "component-design-documentation",
+  "version": "1.0.0",
+  "description": "Document a software component: purpose + responsibilities + public interface + internal structure + collaborators + data model + state + errors + concurrency + observability hooks + non-functional characteristics + open questions. Works at service / module / library granularity. Produces a design doc suitable for review before build. Mermaid diagrams (component, class sketch, sequence excerpts) with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["component-design", "design-doc", "module", "service", "documentation"],
+  "skills": "./skills"
+}

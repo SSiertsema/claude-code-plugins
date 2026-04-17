@@ -1,0 +1,12 @@
+{
+  "name": "configuration-management-design",
+  "version": "1.0.0",
+  "description": "Design configuration management for a service: key catalog + types + defaults + validation, precedence order (flags > env > file > defaults), source selection (env var / file / remote config / feature flag service), secrets separation (12-factor + vault / KMS), hot-reload vs restart-required, schema validation at boundary, config drift detection, feature flags vs business config vs infra config. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["configuration", "config-management", "feature-flags", "12-factor", "secrets"],
+  "skills": "./skills"
+}

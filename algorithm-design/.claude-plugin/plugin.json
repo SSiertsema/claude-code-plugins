@@ -1,0 +1,12 @@
+{
+  "name": "algorithm-design",
+  "version": "1.0.0",
+  "description": "Design an algorithm for a specific problem: problem statement + inputs + outputs + constraints, invariants, candidate approaches with time + space complexity, edge cases, correctness argument (loop invariant / induction / preservation), failure modes, pseudocode, test cases. Considers in-place vs extra memory, parallelizability, numerical stability. Produces a design for review before coding. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["algorithm", "complexity", "correctness", "pseudocode", "invariants"],
+  "skills": "./skills"
+}

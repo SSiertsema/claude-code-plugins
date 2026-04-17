@@ -823,6 +823,60 @@
       "source": "./api-versioning-strategy",
       "description": "API versioning strategy per style — REST (URL path / header / media-type / evolutionary date-pinned), GraphQL (@deprecated + additive schema), gRPC (package versioning + buf breaking), events (hand-off to event-schema). Breaking vs non-breaking taxonomy. Deprecation lifecycle (announced → deprecated → sunset → removed) with RFC 8594 Deprecation + Sunset headers, parallel windows per consumer type (public 12–24mo / partner 6–12mo / internal 1–3mo), multi-channel communication.",
       "category": "architecture"
+    },
+    {
+      "name": "component-design-documentation",
+      "source": "./component-design-documentation",
+      "description": "Review-ready design document for a single component (service / module / library): purpose + context + bounded responsibilities, public interface before internals, collaborators (direction + protocol), data + state machine, errors mapped to external codes, concurrency + ordering, observability hooks, NFR targets (latency / throughput / availability) with strategy, security, config, tests, trade-offs + rejected alternatives, open questions. Hands off to contract / schema / error-strategy / config skills.",
+      "category": "architecture"
+    },
+    {
+      "name": "interface-specification",
+      "source": "./interface-specification",
+      "description": "Specify an internal code-level interface (module API / library / port) — signatures with preconditions + postconditions + invariants + error taxonomy (category + recovery) + time/space complexity + concurrency + idempotency + lifetime/ownership + stability label (stable/experimental/deprecated/internal). Mandatory examples: happy + edge + failure. Testability + alternative designs. Distinct from api-contract-specification (network APIs).",
+      "category": "architecture"
+    },
+    {
+      "name": "algorithm-design",
+      "source": "./algorithm-design",
+      "description": "Algorithm design pre-implementation: problem + inputs/outputs + constraints, ≥2 candidate approaches compared on time+space+stability+in-place+parallelism, chosen approach with loop/data/global invariants, language-neutral pseudocode, correctness argument (invariant / induction / preservation / reduction), edge-case catalog, worst/avg/space complexity, numerical + concurrency concerns, property-based + boundary + performance + fuzz tests, parallelization + out-of-core + streaming variants.",
+      "category": "architecture"
+    },
+    {
+      "name": "sequence-diagramming",
+      "source": "./sequence-diagramming",
+      "description": "UML sequence diagrams via Mermaid — participants ordered by call direction, sync (->>) vs async (-)) vs return (-->>) messages, fragments (alt/opt/loop/par/critical) over duplicated diagrams, activation bars sparingly, notes for timing/SLA/assumptions, creation/destruction for dynamic participants. One flow per diagram. Shared sub-flows extracted. PNG export via diagram-rendering mixin.",
+      "category": "architecture"
+    },
+    {
+      "name": "class-module-diagramming",
+      "source": "./class-module-diagramming",
+      "description": "Structural UML diagrams via Mermaid — classes / interfaces / enums with visibility, stereotypes (aggregate-root / value-object / port / adapter), relationships correctly distinguished (inheritance --|>, implementation ..|>, composition *--, aggregation o--, association --, dependency ..>), multiplicities, package / module views via graph subgraphs with layer + bounded-context rules. One purpose per diagram. Trivial members omitted.",
+      "category": "architecture"
+    },
+    {
+      "name": "system-error-handling-strategy",
+      "source": "./system-error-handling-strategy",
+      "description": "System-level error strategy — 8-class taxonomy (programmer / validation / domain / transient / resource-exhaustion / poison / external-contract / unknown) with per-class strategy (fail-fast / 4xx / retry+budget / shed-load / DLQ / circuit-break / pin+escalate / fail-safe). Retry budgets with deadline propagation, breaker states + thresholds, timeout cascade rule, idempotency patterns, propagation + translation at layer boundaries (no stack leaks), DLQ per source, SLO-burn alerts, user-vs-operator messages, runbook coupling.",
+      "category": "architecture"
+    },
+    {
+      "name": "logging-tracing-design",
+      "source": "./logging-tracing-design",
+      "description": "Component logging + tracing — structured JSON log schema (timestamp RFC 3339, level, service, env, version, trace_id, span_id, tenant_id, error), OpenTelemetry spans + attributes (HTTP/DB/messaging/rpc/exception semantic conventions) + events + links, W3C Trace Context propagation (traceparent + tracestate + baggage) over HTTP/gRPC/async headers, OTLP export to collector (avoid vendor lock-in), head+tail sampling (100% errors + slow, 1-10% happy), log↔trace linking, PII redaction fail-closed, retention tiers (hot 24-72h / warm 30d / cold 90d-7y).",
+      "category": "architecture"
+    },
+    {
+      "name": "configuration-management-design",
+      "source": "./configuration-management-design",
+      "description": "Service configuration — key catalog per category (infra / business tunables / feature flags) with type + default + validation + scope + reload, precedence (flags > env > remote > file > defaults), per-category source (env / vault+KMS / remote-config / flag service), start-up schema validation fail-fast, secrets never in repo via External Secrets Operator + workload identity + rotation + audit, hot-reload only where safe, config drift fingerprint + alerts, feature-flag categories (release/ops/experiment/permission/big) with owner + removal plan + quarterly cleanup.",
+      "category": "architecture"
+    },
+    {
+      "name": "dependency-injection-planning",
+      "source": "./dependency-injection-planning",
+      "description": "DI planning — constructor injection default, setter/param/ambient where justified, one composition root at main/Program.cs/app.module.ts/bootstrap, lifetimes per dep (singleton / scoped-per-request / transient / per-tenant / per-conversation) with thread-safety rules, framework choice (manual for Go/Rust, Spring for Java, NestJS for TS, FastAPI Depends for Python, built-in DI for .NET), ports + adapters with deterministic ports (Clock / RNG / IdGen / HttpClient), lifecycle hooks, circular-dep prevention via seam extraction.",
+      "category": "architecture"
     }
   ]
 }

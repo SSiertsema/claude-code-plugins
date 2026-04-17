@@ -1,0 +1,12 @@
+{
+  "name": "dependency-injection-planning",
+  "version": "1.0.0",
+  "description": "Plan dependency injection: injection styles (constructor / setter / method-parameter / property), composition root location, lifetimes + scopes (singleton / scoped / transient / per-request / per-tenant), framework-based vs pure DI (Spring / Guice / Dagger / .NET DI / FastAPI Depends / NestJS / manual), port-adapter boundaries, testability (stubs, fakes, deterministic ports like Clock / RNG / IdGen), lifecycle (start-stop / dispose), circular-dependency detection. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["dependency-injection", "composition-root", "testability", "lifetimes", "ports-adapters"],
+  "skills": "./skills"
+}

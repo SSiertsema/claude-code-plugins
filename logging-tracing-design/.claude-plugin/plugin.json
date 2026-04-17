@@ -1,0 +1,12 @@
+{
+  "name": "logging-tracing-design",
+  "version": "1.0.0",
+  "description": "Design logging + distributed tracing for a service or system. Structured logging (JSON schema, log levels, correlation ids), OpenTelemetry tracing (W3C Trace Context propagation, span attributes + events + links, sampling strategy — head vs tail, rate-based vs probabilistic), log-to-trace linking via trace_id, PII redaction, retention + cost control, log ingestion targets. Component-level responsibility distinct from observability-strategy (system-wide). Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["logging", "tracing", "opentelemetry", "structured-logs", "sampling"],
+  "skills": "./skills"
+}

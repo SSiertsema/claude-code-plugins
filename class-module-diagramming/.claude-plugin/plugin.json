@@ -1,0 +1,12 @@
+{
+  "name": "class-module-diagramming",
+  "version": "1.0.0",
+  "description": "Produce UML class + module diagrams for structural design: classes / interfaces / enums, attributes + methods with visibility, relationships (inheritance / implementation / composition / aggregation / association / dependency), multiplicities, package / module boundaries. Covers when to show classes vs packages vs components. Mermaid classDiagram syntax with PNG export via diagram-rendering mixin.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["uml", "class-diagram", "module", "structure", "mermaid"],
+  "skills": "./skills"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "interface-specification",
+  "version": "1.0.0",
+  "description": "Specify an interface between components / modules: signatures with types, pre- and post-conditions, invariants, error taxonomy, idempotency + concurrency semantics, complexity + performance bounds, lifetime + ownership rules, stability guarantees (stable / experimental / deprecated), examples with expected outputs. Works for internal module APIs, library APIs, function contracts. Distinct from `api-contract-specification` (external network APIs). Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["interface", "contract", "preconditions", "postconditions", "invariants"],
+  "skills": "./skills"
+}

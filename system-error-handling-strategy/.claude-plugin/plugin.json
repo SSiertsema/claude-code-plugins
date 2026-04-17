@@ -1,0 +1,12 @@
+{
+  "name": "system-error-handling-strategy",
+  "version": "1.0.0",
+  "description": "System-level error-handling strategy: error classification (programmer / validation / domain-rejection / transient-dependency / resource-exhaustion / poison-data / external-contract / unknown), per-class strategy (fail-fast / retry with budget / compensate / circuit-break / shed-load / dead-letter / escalate), propagation + translation across layers + contexts, idempotency + retry safety, partial-failure + timeout budgets, observability + alerting, user-facing vs operator-facing errors, incident-response coupling. Distinct from UX error-handling-design. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["error-handling", "resilience", "retry", "circuit-breaker", "dead-letter"],
+  "skills": "./skills"
+}
