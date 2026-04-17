@@ -1,0 +1,10 @@
+{
+  "name": "logical-data-modeling",
+  "version": "1.0.0",
+  "description": "Logical data model — technology-agnostic detail: normalized entities with all attributes, data types (generic), keys (primary / foreign / natural), constraints, relationships with cardinality + referential-integrity rules. Applies normalization (1NF-3NF typically). Sits between conceptual and physical. Mermaid ERD with optional PNG export.",
+  "author": {"name": "Sven Siertsema"},
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["logical-data-model", "normalization", "primary-key", "foreign-key", "erd"],
+  "skills": "./skills"
+}

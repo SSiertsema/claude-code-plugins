@@ -1,0 +1,10 @@
+{
+  "name": "physical-data-modeling",
+  "version": "1.0.0",
+  "description": "Physical data model — vendor-specific schema with platform types (VARCHAR / JSONB / BIGINT / UUID), indexes (B-tree / hash / GIN / GiST), partitioning (range / list / hash), sharding strategy, storage parameters, de-normalization choices driven by query patterns, constraint enforcement, and DDL. Platform-specific (Postgres / MySQL / MongoDB / DynamoDB / Cassandra / BigQuery / Snowflake). Mermaid + DDL output.",
+  "author": {"name": "Sven Siertsema"},
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["physical-data-model", "schema", "indexes", "partitioning", "sharding", "ddl"],
+  "skills": "./skills"
+}

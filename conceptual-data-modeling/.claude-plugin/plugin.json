@@ -1,0 +1,10 @@
+{
+  "name": "conceptual-data-modeling",
+  "version": "1.0.0",
+  "description": "High-level conceptual data model — business-level entities and relationships in domain language, without technology or normalization concerns. Captures entities, relationships, cardinality, business rules. Precedes logical and physical models. Mermaid ERD with optional PNG export.",
+  "author": {"name": "Sven Siertsema"},
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["conceptual-data-model", "erd", "domain-model", "entity-relationship"],
+  "skills": "./skills"
+}

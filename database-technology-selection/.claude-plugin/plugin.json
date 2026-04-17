@@ -1,0 +1,10 @@
+{
+  "name": "database-technology-selection",
+  "version": "1.0.0",
+  "description": "Select database technology for a given use case. Evaluates across DB classes (relational / document / wide-column / key-value / graph / time-series / search / vector / cache / analytical / ledger / newSQL) and maps to specific products. Criteria: consistency model, scale envelope, query patterns, schema flexibility, ops complexity, cost, ecosystem. Recommendation with reversal conditions. Mermaid diagrams with optional PNG export.",
+  "author": {"name": "Sven Siertsema"},
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["database-selection", "relational", "document", "graph", "time-series", "vector-db", "newsql"],
+  "skills": "./skills"
+}

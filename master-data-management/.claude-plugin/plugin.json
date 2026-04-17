@@ -1,0 +1,10 @@
+{
+  "name": "master-data-management",
+  "version": "1.0.0",
+  "description": "Design Master Data Management. Identifies master entities (customer / product / location / employee / vendor), chooses MDM architecture (registry / consolidation / coexistence / centralized), designs matching / merging / survivorship rules, defines stewardship + governance, integrates with source systems (hub-and-spoke / federated). Mermaid diagrams with optional PNG export.",
+  "author": {"name": "Sven Siertsema"},
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["mdm", "master-data", "golden-record", "entity-resolution", "survivorship"],
+  "skills": "./skills"
+}

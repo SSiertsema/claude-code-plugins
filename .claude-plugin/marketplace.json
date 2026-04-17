@@ -679,6 +679,54 @@
       "source": "./secrets-management-design",
       "description": "Secrets management: vault selection (Vault / AWS-Secrets-Manager / GCP / Azure Key Vault / Doppler / 1Password / Infisical), per-type lifecycle (DB creds dynamic, cloud credentials via OIDC federation, API keys rotated, certs via ACME, JWT keys scheduled), injection patterns ranked (sidecar > file > env), environment separation, CI/CD OIDC federation, break-glass procedure. Mermaid diagrams with optional PNG export.",
       "category": "architecture"
+    },
+    {
+      "name": "conceptual-data-modeling",
+      "source": "./conceptual-data-modeling",
+      "description": "High-level conceptual data model — business entities + relationships in domain language, no technology or normalization. First of three modeling layers (conceptual → logical → physical). Mermaid ERD with optional PNG export.",
+      "category": "architecture"
+    },
+    {
+      "name": "logical-data-modeling",
+      "source": "./logical-data-modeling",
+      "description": "Logical data model — normalized + detailed but technology-agnostic. Generic types, primary + foreign + natural keys, constraints, referential integrity cascade. 3NF default. M:N via junction entities. Mermaid ERD with optional PNG export.",
+      "category": "architecture"
+    },
+    {
+      "name": "physical-data-modeling",
+      "source": "./physical-data-modeling",
+      "description": "Physical data model — vendor-specific (Postgres / MySQL / MongoDB / DynamoDB / Cassandra / BigQuery / Snowflake) with platform types, indexes (B-tree / hash / GIN / GiST / composite / covering / partial), partitioning (range / list / hash), sharding, de-normalization, constraint enforcement, DDL output.",
+      "category": "architecture"
+    },
+    {
+      "name": "database-technology-selection",
+      "source": "./database-technology-selection",
+      "description": "Select DB class + product using DB-specific criteria. 12 classes: relational / document / wide-column / key-value / graph / time-series / search / vector / cache / analytical / ledger / NewSQL. Embraces polyglot persistence.",
+      "category": "architecture"
+    },
+    {
+      "name": "data-governance-policy",
+      "source": "./data-governance-policy",
+      "description": "Data governance: stewardship (owner / steward / custodian / consumer), 6-dimension quality SLAs (accuracy / completeness / timeliness / consistency / validity / uniqueness), classification-driven access + purpose-based, lifecycle (retention / archival / destruction), lineage + metadata catalog, change + issue management, GDPR / CCPA / HIPAA / SOX alignment.",
+      "category": "architecture"
+    },
+    {
+      "name": "master-data-management",
+      "source": "./master-data-management",
+      "description": "MDM for reusable entities (customer / product / vendor / location / employee). Architecture (registry / consolidation / coexistence / centralized), matching rules (deterministic + probabilistic thresholds), survivorship per attribute, integration (hub-spoke / federated / CDC), stewardship with SLA.",
+      "category": "architecture"
+    },
+    {
+      "name": "data-migration-strategy",
+      "source": "./data-migration-strategy",
+      "description": "Data migration plan across 5 strategies (big-bang / phased / parallel-run / strangler-fig / CDC-plus-switchover) and 8 phases (source → target → mapping → execution → cutover → validation → rollback → post-migration). Pitfalls catalog. Reconciliation mandatory.",
+      "category": "architecture"
+    },
+    {
+      "name": "event-sourcing-cqrs-design",
+      "source": "./event-sourcing-cqrs-design",
+      "description": "Event sourcing + CQRS design (independent, often combined). ES: events-as-facts per aggregate stream, event store selection, schema versioning + upcasting, snapshotting, replay, temporal queries. CQRS: command vs query separation, eventual-consistency projections. GDPR via crypto-erasure / redaction / separation / retention.",
+      "category": "architecture"
     }
   ]
 }

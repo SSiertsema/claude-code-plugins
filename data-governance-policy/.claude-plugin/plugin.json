@@ -1,0 +1,10 @@
+{
+  "name": "data-governance-policy",
+  "version": "1.0.0",
+  "description": "Design data governance policy — stewardship (owner per domain), quality standards (accuracy / completeness / timeliness / consistency / validity / uniqueness), access control (data-classification-driven), lifecycle (retention / archival / destruction), lineage + metadata catalog, change / issue management. Aligns with GDPR / CCPA / sector regulations. Mermaid diagrams with optional PNG export.",
+  "author": {"name": "Sven Siertsema"},
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["data-governance", "stewardship", "data-quality", "lineage", "metadata-catalog"],
+  "skills": "./skills"
+}

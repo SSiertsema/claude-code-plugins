@@ -1,0 +1,10 @@
+{
+  "name": "event-sourcing-cqrs-design",
+  "version": "1.0.0",
+  "description": "Design event-sourcing and/or CQRS. Event store selection, event schema (immutable facts), aggregate boundaries, projection/read-model design, command vs query separation, consistency boundaries, snapshotting, versioning / upcasting, replay capability, compliance implications (GDPR right-to-delete in immutable store). Mermaid diagrams with optional PNG export.",
+  "author": {"name": "Sven Siertsema"},
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["event-sourcing", "cqrs", "event-store", "projection", "aggregate", "upcasting"],
+  "skills": "./skills"
+}

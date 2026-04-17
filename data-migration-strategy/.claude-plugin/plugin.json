@@ -1,0 +1,10 @@
+{
+  "name": "data-migration-strategy",
+  "version": "1.0.0",
+  "description": "Plan data migration (one-time or ongoing). Source + target analysis, mapping + transformation rules, strategy selection (big-bang / phased / parallel-run / strangler-fig), cutover plan, rollback, data validation, downtime management, incremental vs full load, CDC. Covers compliance + observability + post-migration reconciliation. Mermaid diagrams with optional PNG export.",
+  "author": {"name": "Sven Siertsema"},
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["data-migration", "etl", "cdc", "strangler-fig", "cutover", "reconciliation"],
+  "skills": "./skills"
+}
