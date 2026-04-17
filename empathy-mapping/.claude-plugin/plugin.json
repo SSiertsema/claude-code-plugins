@@ -1,0 +1,12 @@
+{
+  "name": "empathy-mapping",
+  "version": "1.0.0",
+  "description": "Empathy mapping for a persona or user segment across 6 quadrants (Think & Feel / See / Hear / Say & Do / Pains / Gains — Dave Gray updated) or classic 4-quadrant (Says / Thinks / Does / Feels). Synthesis mode extracts from research; autonomous mode infers with labeled assumptions. Produces key insights, pain/gain highlights, evidence traceability, and Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["empathy-mapping", "user-research", "xplane", "dave-gray", "persona-research", "qualitative-synthesis"],
+  "skills": "./skills"
+}

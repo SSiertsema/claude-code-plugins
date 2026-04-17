@@ -271,6 +271,18 @@
       "source": "./hmw-framing",
       "description": "Transform a problem, pain point, insight, or research finding into 'How might we...' questions for ideation. Deconstructs input, applies multiple HMW lenses, produces 3-6 variants with scope and wording checks, recommends a best variant, and optionally breaks broad HMWs into sub-HMWs. Mermaid diagram with optional PNG export.",
       "category": "strategy"
+    },
+    {
+      "name": "jtbd-analysis",
+      "source": "./jtbd-analysis",
+      "description": "Jobs-to-be-Done analysis for a product, feature, market, or segment. Produces formal main job statement, related/emotional/social jobs, Ulwick desired outcome statements, forces-of-progress analysis, competitive alternatives including non-consumption, and underserved-outcome opportunity signals. Synthesis or autonomous mode. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "empathy-mapping",
+      "source": "./empathy-mapping",
+      "description": "Empathy mapping for a persona or user segment across 6 quadrants (Dave Gray) or classic 4-quadrant (XPLANE). Synthesis mode extracts from research; autonomous mode infers with labeled assumptions. Surfaces tensions, evidence gaps, 3-5 synthesized insights, and top pain/gain highlights. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
     }
   ]
 }

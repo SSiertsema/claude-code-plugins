@@ -1,0 +1,12 @@
+{
+  "name": "jtbd-analysis",
+  "version": "1.0.0",
+  "description": "Jobs-to-be-Done analysis for a product, feature, market, or user segment. Produces a formal main job statement, related/emotional/social jobs, Ulwick-style desired outcome statements, forces-of-progress analysis (push/pull/anxiety/habit), competitive alternatives (including non-consumption), and underserved-outcome opportunity signals. Two modes: synthesis (from supplied research) or autonomous (from product context with labeled assumptions). Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["jtbd", "jobs-to-be-done", "ulwick", "desired-outcomes", "forces-of-progress", "competitive-alternatives", "user-research"],
+  "skills": "./skills"
+}
