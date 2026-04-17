@@ -1,0 +1,10 @@
+{
+  "name": "secrets-management-design",
+  "version": "1.0.0",
+  "description": "Design secrets management: vault selection (Vault / AWS Secrets Manager / GCP Secret Manager / Azure Key Vault / Doppler / 1Password), secret lifecycle (generation / distribution / rotation / revocation), access control (per-service / per-env), injection pattern (env var / file / sidecar / API fetch), audit, CI/CD integration, break-glass procedure. Mermaid diagrams with optional PNG export.",
+  "author": {"name": "Sven Siertsema"},
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["secrets-management", "vault", "secret-rotation", "just-in-time-secrets", "sops"],
+  "skills": "./skills"
+}

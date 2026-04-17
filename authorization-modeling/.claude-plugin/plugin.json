@@ -1,0 +1,10 @@
+{
+  "name": "authorization-modeling",
+  "version": "1.0.0",
+  "description": "Design authorization model (RBAC / ABAC / ReBAC / PBAC). Per resource type + action: who is allowed under what conditions. Role hierarchy, attribute policies, relationship graphs, policy decision/enforcement points. Produces policy catalog + decision flow + integration pattern (sync check vs distributed policy). Mermaid diagrams with optional PNG export.",
+  "author": {"name": "Sven Siertsema"},
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["authorization", "rbac", "abac", "rebac", "pbac", "policy", "pdp", "pep", "zanzibar"],
+  "skills": "./skills"
+}

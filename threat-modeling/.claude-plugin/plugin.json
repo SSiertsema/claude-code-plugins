@@ -1,0 +1,10 @@
+{
+  "name": "threat-modeling",
+  "version": "1.0.0",
+  "description": "Systematic threat modeling using STRIDE (default) or PASTA methodology. Decomposes system, identifies trust boundaries, enumerates threats per element (spoofing / tampering / repudiation / information disclosure / denial of service / elevation of privilege), assesses likelihood + impact, maps to mitigations. Produces threat-inventory with controls, residual risk, and prioritized action plan. Mermaid diagrams with optional PNG export.",
+  "author": {"name": "Sven Siertsema"},
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["threat-modeling", "stride", "pasta", "security-architecture", "trust-boundaries", "attack-tree"],
+  "skills": "./skills"
+}

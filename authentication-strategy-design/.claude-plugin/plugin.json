@@ -1,0 +1,10 @@
+{
+  "name": "authentication-strategy-design",
+  "version": "1.0.0",
+  "description": "Design authentication strategy. Selects among password / MFA / SSO (SAML, OIDC, OAuth2) / passwordless (WebAuthn / magic link / passkey) / mTLS / API keys / JWT-bearer / session-cookie. Per user population (customer / employee / partner / service-to-service) chooses appropriate mechanism with threat-model rationale. Covers lifecycle (registration / auth / recovery / rotation / revocation). Mermaid diagrams with optional PNG export.",
+  "author": {"name": "Sven Siertsema"},
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["authentication", "sso", "oidc", "oauth2", "saml", "webauthn", "passkey", "mtls"],
+  "skills": "./skills"
+}

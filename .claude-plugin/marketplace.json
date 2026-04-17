@@ -637,6 +637,48 @@
       "source": "./architecture-tradeoff-analysis",
       "description": "ATAM-inspired structured trade-off analysis. Prioritizes quality attributes, identifies classic trade-off dimensions (CAP / PACELC / latency-vs-throughput / consistency-vs-availability / cost-vs-performance / coupling-vs-cohesion / etc.), scores options per attribute, runs sensitivity analysis identifying priority swaps that flip recommendation. Output frames as 'recommendation X, gaining Y, at cost Z' — not single-winner reduction. Surfaces non-obvious patterns (second-order, team-level, time-horizon). Mermaid diagrams with optional PNG export.",
       "category": "architecture"
+    },
+    {
+      "name": "threat-modeling",
+      "source": "./threat-modeling",
+      "description": "STRIDE (default) or PASTA threat modeling. Decomposes system, identifies trust boundaries, enumerates threats per element systematically (Spoofing / Tampering / Repudiation / Information-disclosure / DoS / Elevation-of-privilege), scores likelihood × impact, maps to mitigations. Optional attack trees. Residual risk accounting. Mermaid diagrams with optional PNG export.",
+      "category": "architecture"
+    },
+    {
+      "name": "attack-surface-analysis",
+      "source": "./attack-surface-analysis",
+      "description": "Inventory and analyze attack surface across 9 categories (network-facing / APIs / auth / client-side / supply chain / physical / human-social / side channels / admin-debug). Per element: exposure + auth + protocol + data sensitivity + CVEs + monitoring. Ranks reductions (remove > restrict > monitor > harden > patch) by risk-per-effort. Mermaid diagrams with optional PNG export.",
+      "category": "architecture"
+    },
+    {
+      "name": "authentication-strategy-design",
+      "source": "./authentication-strategy-design",
+      "description": "Authentication strategy per user population. Selects mechanism (password / MFA / SSO OIDC-SAML-OAuth2 / passwordless WebAuthn-passkey-magic-link / mTLS / API keys / JWT / session cookie). Covers lifecycle (registration → recovery → rotation → revocation). Maps threats to mitigations. Mermaid diagrams with optional PNG export.",
+      "category": "architecture"
+    },
+    {
+      "name": "authorization-modeling",
+      "source": "./authorization-modeling",
+      "description": "Authorization model (RBAC / ABAC / ReBAC Zanzibar-style / PBAC). Per resource × action × subject: allowed conditions. PDP / PEP / PAP / PIP architecture with central-vs-distributed trade-off. Common patterns: tenant isolation, delegation, break-glass with audit, GDPR purpose-based access. Mermaid diagrams with optional PNG export.",
+      "category": "architecture"
+    },
+    {
+      "name": "encryption-strategy",
+      "source": "./encryption-strategy",
+      "description": "Encryption strategy across all data states (at-rest / in-transit / in-use / E2E). Per category: algorithm + key length + key management + rotation. Key hierarchy HSM → KMS → KEKs → envelope-DEKs → data. TLS 1.3 config, crypto agility, post-quantum readiness. Regulatory alignment (FIPS / PCI / GDPR / HIPAA). Mermaid diagrams with optional PNG export.",
+      "category": "architecture"
+    },
+    {
+      "name": "zero-trust-architecture",
+      "source": "./zero-trust-architecture",
+      "description": "Zero-trust architecture per NIST SP 800-207 / BeyondCorp. Never-trust-always-verify. Identity-centric + device-centric + context-aware access. PEP at every boundary. Micro-segmentation. Continuous verification. Migration roadmap from perimeter to ZT. ZTNA / SASE / service mesh / BeyondCorp patterns. Mermaid diagrams with optional PNG export.",
+      "category": "architecture"
+    },
+    {
+      "name": "secrets-management-design",
+      "source": "./secrets-management-design",
+      "description": "Secrets management: vault selection (Vault / AWS-Secrets-Manager / GCP / Azure Key Vault / Doppler / 1Password / Infisical), per-type lifecycle (DB creds dynamic, cloud credentials via OIDC federation, API keys rotated, certs via ACME, JWT keys scheduled), injection patterns ranked (sidecar > file > env), environment separation, CI/CD OIDC federation, break-glass procedure. Mermaid diagrams with optional PNG export.",
+      "category": "architecture"
     }
   ]
 }

@@ -1,0 +1,10 @@
+{
+  "name": "attack-surface-analysis",
+  "version": "1.0.0",
+  "description": "Inventory and analyze the attack surface of a system — all externally accessible interaction points (network-facing endpoints, APIs, credentials, supply-chain, physical access, human channels). Per surface element: exposure, accessibility, authentication required, known CVEs, data sensitivity reached, monitoring. Produces reduction recommendations ranked by risk-per-effort. Mermaid diagrams with optional PNG export.",
+  "author": {"name": "Sven Siertsema"},
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["attack-surface", "exposure-analysis", "hardening", "security-architecture"],
+  "skills": "./skills"
+}

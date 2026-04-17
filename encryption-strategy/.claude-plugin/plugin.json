@@ -1,0 +1,10 @@
+{
+  "name": "encryption-strategy",
+  "version": "1.0.0",
+  "description": "Design encryption strategy covering at-rest, in-transit, in-use, and end-to-end. Per data category + location: algorithm / protocol / key length / key management / rotation cadence. Key hierarchy (KMS / HSM / envelope encryption). Cipher suite selection, certificate management, PFS, cryptographic agility. Regulatory alignment (FIPS, PCI, GDPR). Mermaid diagrams with optional PNG export.",
+  "author": {"name": "Sven Siertsema"},
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["encryption", "kms", "hsm", "envelope-encryption", "tls", "e2ee", "crypto-agility"],
+  "skills": "./skills"
+}

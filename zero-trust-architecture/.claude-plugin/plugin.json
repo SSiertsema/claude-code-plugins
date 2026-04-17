@@ -1,0 +1,10 @@
+{
+  "name": "zero-trust-architecture",
+  "version": "1.0.0",
+  "description": "Design zero-trust architecture (BeyondCorp / NIST SP 800-207). Never-trust-always-verify: every request authenticated, authorized, and encrypted regardless of network location. Identity-centric + device-centric + context-aware access. PEP at every boundary. Micro-segmentation. Continuous verification. Mermaid diagrams with optional PNG export.",
+  "author": {"name": "Sven Siertsema"},
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["zero-trust", "beyondcorp", "nist-sp-800-207", "microsegmentation", "continuous-verification"],
+  "skills": "./skills"
+}
