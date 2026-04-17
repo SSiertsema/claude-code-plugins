@@ -1,0 +1,12 @@
+{
+  "name": "impact-analysis",
+  "version": "1.0.0",
+  "description": "Analyze the impact of a proposed change across a traceability graph. Identifies affected artifacts (requirements / stories / tests / deployed services / dependent teams / external consumers), computes blast radius, estimates effort and risk, suggests phasing, and produces a stakeholder-communication plan. Consumes traceability-matrix output.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["impact-analysis", "blast-radius", "change-management", "what-if", "dependency-chain"],
+  "skills": "./skills"
+}

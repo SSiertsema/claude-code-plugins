@@ -1,0 +1,12 @@
+{
+  "name": "traceability-matrix",
+  "version": "1.0.0",
+  "description": "Build a requirements traceability matrix linking goals → requirements → stories → tests → deployed artifacts. Assigns stable IDs, captures forward + backward links, computes coverage per direction, flags orphans, and exports to Markdown + CSV. Supports audit / regulated contexts (ISO 13485, IEC 62304, FDA, aerospace, automotive).",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["traceability-matrix", "rtm", "requirements-management", "audit", "iso-13485", "iec-62304"],
+  "skills": "./skills"
+}

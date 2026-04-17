@@ -421,6 +421,30 @@
       "source": "./maintainability-criteria",
       "description": "Define CI-checkable maintainability criteria: complexity caps, test coverage per layer with critical paths named, documentation requirements, modularity rules, review gates, non-zero refactoring budget, dependency policy with SLAs, deprecation playbook, and legacy tolerance with drawdown schedule. Mermaid diagrams with optional PNG export.",
       "category": "strategy"
+    },
+    {
+      "name": "traceability-matrix",
+      "source": "./traceability-matrix",
+      "description": "Build a requirements traceability matrix linking goals → requirements → stories → tests → deployed artifacts with stable IDs, controlled link types (implements / verifies / validates / satisfies / mitigates / decided-by), forward + backward views, per-direction coverage with explicit orphan lists, change-impact helpers, regulatory overlay, and Markdown + CSV exports. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "impact-analysis",
+      "source": "./impact-analysis",
+      "description": "Analyze the impact of a proposed change across a traceability graph. Names affected artifacts (no 'many'), classifies blast radius (local / cross-team / external / enterprise), scores change-level risk per factor (reversibility / detection / blast / schedule / compliance), estimates effort per team, proposes phased rollout with gates and rollback, plans communication per audience, and surfaces residual uncertainties for discovery. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "coverage-analysis",
+      "source": "./coverage-analysis",
+      "description": "Compute multi-dimensional coverage (Req→Test / Goal→E2E / Risk→Control / NFR→Implementation / Regulatory→Control / Abuse-case→Control). Detects false coverage (tests without assertions, trivial assertions, mocked system-under-test), identifies duplicated coverage, computes risk-weighted %, and produces prioritized gap-analysis actions. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "baseline-management",
+      "source": "./baseline-management",
+      "description": "Capture, compare, release, and roll back named baselines of a requirements / artifact set. Released baselines immutable with content hashes. Diff classifies changes as backward-compatible / breaking / editorial. Evidence bundle per released baseline. Append-only audit trail. Supports ISO 13485 / IEC 62304 / FDA / aerospace / automotive retention requirements. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
     }
   ]
 }

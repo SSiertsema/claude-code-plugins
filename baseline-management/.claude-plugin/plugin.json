@@ -1,0 +1,12 @@
+{
+  "name": "baseline-management",
+  "version": "1.0.0",
+  "description": "Capture, compare, and release baselines of requirements / specs / artifacts over time. Supports named baselines tied to milestones (e.g., release v2.1, audit date, phase gate), diff between baselines (added / removed / changed items), impact metrics per diff, evidence preservation per baseline, and rollback protection. Essential for audit (ISO 13485, IEC 62304, aerospace, automotive) and change-control processes.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["baseline-management", "configuration-management", "change-control", "snapshot", "audit-trail"],
+  "skills": "./skills"
+}

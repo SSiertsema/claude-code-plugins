@@ -1,0 +1,12 @@
+{
+  "name": "coverage-analysis",
+  "version": "1.0.0",
+  "description": "Compute multi-dimensional coverage over a traceability graph: requirements-to-tests, goals-to-E2E, risks-to-controls, NFR-to-implementation, regulatory-clause-to-control. Identifies gaps, heat-maps by artifact type, surfaces false-coverage (tests without assertions, tests duplicating coverage), and proposes prioritized gap-closure actions. Consumes traceability-matrix output.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["coverage-analysis", "test-coverage", "requirements-coverage", "gap-analysis", "false-coverage"],
+  "skills": "./skills"
+}
