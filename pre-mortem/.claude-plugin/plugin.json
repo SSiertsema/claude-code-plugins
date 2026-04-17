@@ -1,0 +1,12 @@
+{
+  "name": "pre-mortem",
+  "version": "1.0.0",
+  "description": "Pre-mortem analysis (Gary Klein). Imagine the project has already failed, then retrospectively identify why. Elicits 10-20 failure modes across categories (strategic, execution, market, technical, organizational, external), clusters and scores by impact-to-failure, proposes preventive actions per top cluster, and exports risks to risk-register / fmea / mitigation-strategy-planning. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["pre-mortem", "gary-klein", "failure-analysis", "prospective-hindsight", "risk-elicitation"],
+  "skills": "./skills"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "fmea",
+  "version": "1.0.0",
+  "description": "Failure Mode and Effects Analysis for a process or system. Enumerates failure modes per function, scores Severity × Occurrence × Detection (1-10 each) to compute Risk Priority Number (RPN) and Action Priority (AIAG-VDA). Identifies critical modes, recommends actions, and re-scores post-action. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["fmea", "dfmea", "pfmea", "rpn", "failure-mode", "action-priority", "aiag-vda"],
+  "skills": "./skills"
+}

@@ -325,6 +325,42 @@
       "source": "./control-framework-mapping",
       "description": "Map controls against frameworks (ISO 27001, SOC 2, NIST CSF, NIST 800-53, CIS v8, PCI-DSS v4, HIPAA Security Rule, NIS2, ISO 27701, ISO 42001). Produces control inventory, mapping matrix, coverage counts, gap analysis with recommended controls and effort, maturity scoring, and cross-framework consolidation flagging high-leverage controls. Not a certified audit. Mermaid diagrams with optional PNG export.",
       "category": "strategy"
+    },
+    {
+      "name": "risk-matrix",
+      "source": "./risk-matrix",
+      "description": "Classic qualitative likelihood × impact risk matrix with 5×5 (or 3×3) grid, anchored scales, risk-appetite-adjusted thresholds, and explicit response recommendation (avoid / reduce / transfer / accept) per risk. Mermaid heat map with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "fmea",
+      "source": "./fmea",
+      "description": "Failure Mode and Effects Analysis (PFMEA / DFMEA). Per function: modes, effects, causes, controls, S/O/D scores (1-10 anchored), RPN, and AIAG-VDA Action Priority. Recommends actions targeting Severity/Occurrence/Detection with expected post-action scores and re-score delta. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "monte-carlo-simulation",
+      "source": "./monte-carlo-simulation",
+      "description": "Monte Carlo simulation for cost / schedule / outcome uncertainty. Accepts input variables with distributions (triangular, PERT, uniform, normal, log-normal, discrete), runs 10k iterations, and produces P10-P95 percentiles, probability of meeting a threshold, sensitivity tornado, and contingency recommendation. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "risk-register",
+      "source": "./risk-register",
+      "description": "Persistent risk register. Stable IDs, inherent + residual scoring, controls, response strategy, review cadence, history, and multiple views (top risks, by owner, by category, overdue, recently changed). Ingests from risk-matrix, fmea, monte-carlo-simulation, pre-mortem. Markdown + CSV export. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "mitigation-strategy-planning",
+      "source": "./mitigation-strategy-planning",
+      "description": "Plan mitigations for a set of risks. Response per risk (avoid / reduce / transfer / accept), concrete actions with owner / effort / cost / expected residual, cost-benefit check, roadmap (quick wins / structural / long-term), acceptance & transfer registers, and decision register feeding risk-register. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "pre-mortem",
+      "source": "./pre-mortem",
+      "description": "Gary Klein pre-mortem. Stipulate failure at a horizon and retrospectively identify why. Elicits 10-20 failure modes across categories, clusters and scores Impact × Likelihood, produces preventive actions with leading indicators, and exports risks to risk-register / fmea / mitigation-strategy-planning. Autonomous mode + facilitator guide. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
     }
   ]
 }

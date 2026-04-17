@@ -1,0 +1,12 @@
+{
+  "name": "mitigation-strategy-planning",
+  "version": "1.0.0",
+  "description": "Plan mitigation strategies for a set of risks. Selects response per risk (avoid / reduce / transfer / accept), designs concrete actions with owner / effort / cost / expected residual impact, runs cost-benefit check against expected loss reduction, sequences actions into a roadmap (quick wins / structural / long-term), and tracks a decision register. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["mitigation", "risk-response", "avoid-reduce-transfer-accept", "cost-benefit", "risk-treatment"],
+  "skills": "./skills"
+}

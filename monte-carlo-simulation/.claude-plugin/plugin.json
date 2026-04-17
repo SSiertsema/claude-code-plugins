@@ -1,0 +1,12 @@
+{
+  "name": "monte-carlo-simulation",
+  "version": "1.0.0",
+  "description": "Monte Carlo simulation for cost, schedule, or outcome uncertainty. Accepts input variables with distributions (triangular, normal, uniform, PERT, discrete), runs 10k iterations, and produces percentile outputs (P10/P50/P80/P90/P95), probability of meeting target, sensitivity tornado chart, and recommended contingency. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["monte-carlo", "simulation", "probabilistic", "p50", "p80", "tornado-chart", "risk-quantification"],
+  "skills": "./skills"
+}

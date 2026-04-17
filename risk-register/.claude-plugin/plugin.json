@@ -1,0 +1,12 @@
+{
+  "name": "risk-register",
+  "version": "1.0.0",
+  "description": "Create and maintain a persistent risk register. Each risk has ID, statement, category, owner, likelihood, impact, score/level, response strategy, current controls, residual risk, review cadence, status, and history. Supports ingesting risks from risk-matrix, fmea, monte-carlo-simulation, and pre-mortem. Exports to Markdown and CSV. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["risk-register", "risk-management", "residual-risk", "review-cadence", "controls"],
+  "skills": "./skills"
+}

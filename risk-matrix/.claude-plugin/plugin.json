@@ -1,0 +1,12 @@
+{
+  "name": "risk-matrix",
+  "version": "1.0.0",
+  "description": "Classic likelihood × impact risk matrix for a supplied set of risks. Assigns qualitative likelihood (rare / unlikely / possible / likely / almost-certain) and impact (negligible / minor / moderate / major / catastrophic), computes risk score and level (low / medium / high / critical), plots the heat map, and recommends response type (accept / reduce / transfer / avoid) per cell. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["risk-matrix", "risk-assessment", "likelihood-impact", "heat-map", "risk-response"],
+  "skills": "./skills"
+}
