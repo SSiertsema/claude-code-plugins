@@ -1,0 +1,12 @@
+{
+  "name": "decision-table-creation",
+  "version": "1.0.0",
+  "description": "Express complex business rules as decision tables. Per rule: combination of condition values (Y/N/don't-care) mapping to actions. Supports limited-entry (boolean), extended-entry (value-based), and mixed tables. Detects inconsistency (contradictory rules), redundancy (duplicate coverage), and incompleteness (gaps in condition space). Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["decision-table", "business-rules", "dmn", "condition-action", "rule-completeness"],
+  "skills": "./skills"
+}

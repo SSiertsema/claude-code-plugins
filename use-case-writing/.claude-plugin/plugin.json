@@ -1,0 +1,12 @@
+{
+  "name": "use-case-writing",
+  "version": "1.0.0",
+  "description": "Write formal UML-style use cases. Per use case: name, actor(s), preconditions, postconditions, trigger, main success scenario (numbered steps), alternate flows, exception flows, special requirements, frequency. Supports brief, casual, and fully-dressed formats (Cockburn). Includes use-case diagram showing actor-usecase relationships. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["use-case", "uml", "cockburn", "fully-dressed", "main-success-scenario", "alternate-flow"],
+  "skills": "./skills"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "acceptance-criteria-writing",
+  "version": "1.0.0",
+  "description": "Write or audit acceptance criteria for a user story, feature, or requirement. Produces Given/When/Then (Gherkin) scenarios with systematic coverage (happy path / negative / edge / boundary / accessibility / performance), checks INVEST per story, and splits criteria when story is too large (SPIDR). Complements user-story-generator — this is the AC-depth skill. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["acceptance-criteria", "given-when-then", "gherkin", "bdd", "invest", "spidr"],
+  "skills": "./skills"
+}

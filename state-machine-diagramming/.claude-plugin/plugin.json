@@ -1,0 +1,12 @@
+{
+  "name": "state-machine-diagramming",
+  "version": "1.0.0",
+  "description": "Domain-entity state machine modeling. For a business object (order, user account, subscription, document, claim, shipment), enumerate lifecycle states, transitions with triggers + guards + effects, terminal states, and invariants per state. Distinct from state-transition-mapping (UI component states). Supports event-driven and condition-driven transitions, parallel regions, and sub-states. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["state-machine", "domain-entity", "lifecycle", "fsm", "order-states", "workflow-states"],
+  "skills": "./skills"
+}

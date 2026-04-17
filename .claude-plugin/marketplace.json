@@ -541,6 +541,36 @@
       "source": "./context-diagramming",
       "description": "Produce system context diagram — highest-level view with system as single box, external entities (person / user-group / software-system / organization) around it, labeled data + interaction flows, and explicit in-scope / out-of-scope. Supports C4 Level 1 (default), classic context diagram, DFD Level 0 styles. Mermaid flowchart with optional PNG export.",
       "category": "strategy"
+    },
+    {
+      "name": "use-case-writing",
+      "source": "./use-case-writing",
+      "description": "Write formal UML-style use cases (Cockburn conventions). Brief / casual / fully-dressed formats. Per UC: primary actor + supporting actors, stakeholders & interests, preconditions, postconditions, trigger, numbered main success scenario, alternate flows indexed to steps, exception flows, special requirements, frequency, priority. Cockburn level (summary / user-goal / subfunction). UML use-case diagram. Mermaid with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "state-machine-diagramming",
+      "source": "./state-machine-diagramming",
+      "description": "Domain-entity state machine modeling. Distinct from UI state-transition-mapping: this is the business lifecycle of entities (Order / User / Subscription / Document / Claim). Per state: invariants + allowed/disallowed ops + entry/exit effects. Per transition: trigger + guard + effect + rollback + idempotency. Flat / hierarchical (sub-states) / parallel (orthogonal regions). Transition matrix + explicit invalid transitions + side-effect catalog. Mermaid stateDiagram-v2 with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "decision-table-creation",
+      "source": "./decision-table-creation",
+      "description": "Express complex business rules as decision tables. Limited-entry (Y/N) / extended-entry (valued) / mixed. Per rule: condition values → actions. Verifies completeness (all combinations covered or impossible), consistency (no overlapping rules with different outcomes), redundancy (no duplicates). Explicit default / otherwise rule. Optional DMN XML emission with hit policy (UNIQUE / FIRST / PRIORITY / ANY / COLLECT). Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "data-dictionary-definition",
+      "source": "./data-dictionary-definition",
+      "description": "Structured catalog of data entities and attributes. Per entity: source of truth, owner, sensitivity, retention, volume. Per attribute: type (string / integer / decimal / boolean / date / timestamp / enum / reference / json / array), format, nullable, constraints, source, mandatory PII classification (none / identifier / quasi-identifier / sensitive / health / financial / biometric / children's / Art-9), masking rule, validation rules. Typed relationships with cardinality + FK + cascade. Governance + versioning. Mermaid ERD with optional PNG export. Markdown + CSV export.",
+      "category": "strategy"
+    },
+    {
+      "name": "acceptance-criteria-writing",
+      "source": "./acceptance-criteria-writing",
+      "description": "Write, audit, or split acceptance criteria for a user story. Given/When/Then (Gherkin) default + rule-based + mixed formats. Systematic coverage (happy path + negative + edge + boundary + a11y + optional performance/security/data/integration). INVEST at story + AC level. SPIDR split (Spike / Path / Interface / Data / Rule) when story too big. Scenario outlines for parametric data. Mermaid coverage pie + split diagrams with optional PNG export.",
+      "category": "strategy"
     }
   ]
 }

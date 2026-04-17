@@ -1,0 +1,12 @@
+{
+  "name": "data-dictionary-definition",
+  "version": "1.0.0",
+  "description": "Define a data dictionary — structured catalog of data entities + attributes with types, constraints, formats, sources, PII classification, default values, validation rules, relationships, and version history. Distinct from taxonomy-design (content classification) and site-mapping (pages): this is the domain data model vocabulary. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["data-dictionary", "data-model", "entity-attribute", "schema", "pii-classification", "data-governance"],
+  "skills": "./skills"
+}
