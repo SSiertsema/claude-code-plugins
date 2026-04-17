@@ -1,0 +1,12 @@
+{
+  "name": "goal-decomposition",
+  "version": "1.0.0",
+  "description": "Decompose strategic goals into sub-goals and operational / measurable criteria. Builds a goal tree (vision → strategic → tactical → operational) with parent-child relationships, measurable criteria per goal, owners, timelines, and dependencies. Supports GQM (Goal-Question-Metric), i* actor goals, and means-ends decomposition. Feeds okr-definition, metric-definition, and roadmap skills. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["goal-decomposition", "goal-tree", "gqm", "means-ends", "strategic-planning", "gore"],
+  "skills": "./skills"
+}

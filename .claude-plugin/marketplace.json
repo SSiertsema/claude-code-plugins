@@ -523,6 +523,24 @@
       "source": "./mental-model-diagramming",
       "description": "Indi Young-style mental model diagramming. Captures user thinking / doing / feeling in a problem domain, grouped into 4-10 vertical 'towers' = task spaces. Per tower: think / do / feel / guiding-principles rows with evidence or `[Assumed]`. Optional feature alignment under towers surfaces opportunity gaps (towers without features) and misalignments (features without towers). Distinct from empathy-mapping (individual) and jtbd-analysis (formal job). Mermaid diagrams with optional PNG export.",
       "category": "strategy"
+    },
+    {
+      "name": "business-process-modeling",
+      "source": "./business-process-modeling",
+      "description": "Model business processes using BPMN 2.0 conventions. Produces structured specs with events / activities / gateways / flows / pools-and-lanes / data-objects / annotations. Three modes: as-is / to-be / gap. Per activity: lane / type / I-O / SLA / exceptions. Per gateway: type / condition / branches. Exception handling with trigger / handler / compensation. Mermaid swimlane flowchart + optional BPMN XML emission.",
+      "category": "strategy"
+    },
+    {
+      "name": "goal-decomposition",
+      "source": "./goal-decomposition",
+      "description": "Decompose strategic goals into measurable operational sub-goals. Four methods: goal-tree / GQM / i-star / means-ends. Per goal: level, parent, contribution type (necessary / sufficient / contributing), success criteria, owner (required at ops), horizon, measure, dependencies, risks. Surfaces conflicts with resolution notes. SMART check at operational leaves. Feeds okr-definition + metric-definition. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "context-diagramming",
+      "source": "./context-diagramming",
+      "description": "Produce system context diagram — highest-level view with system as single box, external entities (person / user-group / software-system / organization) around it, labeled data + interaction flows, and explicit in-scope / out-of-scope. Supports C4 Level 1 (default), classic context diagram, DFD Level 0 styles. Mermaid flowchart with optional PNG export.",
+      "category": "strategy"
     }
   ]
 }

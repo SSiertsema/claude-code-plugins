@@ -1,0 +1,12 @@
+{
+  "name": "business-process-modeling",
+  "version": "1.0.0",
+  "description": "Model business processes using BPMN 2.0 conventions. Produces process models with events (start / intermediate / end), activities (tasks / subprocesses), gateways (exclusive / parallel / inclusive / event-based), sequence + message flows, pools + lanes (actors / systems), data objects, and annotations. Current-state (as-is) and future-state (to-be) modes with gap analysis between. Renders Mermaid flowcharts approximating BPMN and optionally emits BPMN XML for dedicated tools. Optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["bpmn", "business-process", "process-modeling", "swim-lane", "as-is", "to-be"],
+  "skills": "./skills"
+}

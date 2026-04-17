@@ -1,0 +1,12 @@
+{
+  "name": "context-diagramming",
+  "version": "1.0.0",
+  "description": "Produce a system context diagram — the highest-level view showing the system boundary plus external entities (actors / other systems / organizations) with labeled data + interaction flows. Defines what's in scope and out of scope. Similar intent to C4 model Level 1 / traditional context diagrams / data flow diagram Level 0. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["context-diagram", "c4-model-level-1", "system-boundary", "external-entities", "scope-definition"],
+  "skills": "./skills"
+}
