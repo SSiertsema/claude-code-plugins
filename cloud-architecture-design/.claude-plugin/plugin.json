@@ -1,0 +1,10 @@
+{
+  "name": "cloud-architecture-design",
+  "version": "1.0.0",
+  "description": "Cloud architecture design for AWS / Azure / GCP (or multi-cloud). Selects compute paradigm (containers / VMs / serverless / managed services), regions + availability zones, storage tiers, networking topology (VPC / subnets / peering), identity (IAM), managed services fit-for-purpose. Cost-optimization, reserved capacity, and landing-zone foundation. Mermaid diagrams with optional PNG export.",
+  "author": {"name": "Sven Siertsema"},
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["cloud-architecture", "aws", "gcp", "azure", "landing-zone", "multi-cloud", "well-architected"],
+  "skills": "./skills"
+}

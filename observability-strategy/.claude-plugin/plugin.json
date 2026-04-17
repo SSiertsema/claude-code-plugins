@@ -1,0 +1,10 @@
+{
+  "name": "observability-strategy",
+  "version": "1.0.0",
+  "description": "Design observability strategy across three pillars (metrics / logs / traces) plus events + profiles. Tool selection (Prometheus+Grafana / Datadog / New Relic / Honeycomb / OpenTelemetry native / ELK / Loki / Tempo / Jaeger / Pyroscope). Structured logging standard, metric naming + cardinality, distributed tracing with OTel, alerting philosophy (on SLO burn, not on symptoms), dashboards per audience. Mermaid diagrams with optional PNG export.",
+  "author": {"name": "Sven Siertsema"},
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["observability", "metrics", "logs", "traces", "opentelemetry", "prometheus", "slo-alerting"],
+  "skills": "./skills"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "networking-design",
+  "version": "1.0.0",
+  "description": "Network design for cloud / hybrid / on-prem. VPC / VNet / VPC structure, subnet segmentation (public / private / data), CIDR planning, routing, peering / Transit Gateway / hub-spoke, NAT + egress control, DNS strategy (Route53 / Cloud DNS / Azure DNS), private endpoints for managed services, load balancers (L4 / L7 / global), CDN, VPN + Direct Connect for on-prem, service mesh network topology. Mermaid diagrams with optional PNG export.",
+  "author": {"name": "Sven Siertsema"},
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["networking", "vpc", "subnet", "cidr", "dns", "cdn", "load-balancer", "service-mesh"],
+  "skills": "./skills"
+}

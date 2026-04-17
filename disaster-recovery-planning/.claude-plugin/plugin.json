@@ -1,0 +1,10 @@
+{
+  "name": "disaster-recovery-planning",
+  "version": "1.0.0",
+  "description": "Plan disaster recovery. Per critical service: declared RPO (recovery point objective) + RTO (recovery time objective); DR strategy selection (backup-restore / pilot-light / warm-standby / hot-standby / multi-region active-active); backup policy (frequency, retention, testing); failover procedure + runbook; regular DR drills; compliance alignment (business-continuity regulations). Mermaid diagrams with optional PNG export.",
+  "author": {"name": "Sven Siertsema"},
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["disaster-recovery", "rpo", "rto", "dr-drill", "backup", "failover", "business-continuity"],
+  "skills": "./skills"
+}

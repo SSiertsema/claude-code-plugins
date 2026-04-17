@@ -1,0 +1,10 @@
+{
+  "name": "environment-strategy",
+  "version": "1.0.0",
+  "description": "Design environment strategy (dev / staging / prod, possibly more). Per-environment: purpose, data, access, isolation, naming, parity with prod, refresh cadence, teardown policy. Ephemeral environments per PR. Cost management. Prevents 'works-on-my-machine' and cross-env pollution. Mermaid diagrams with optional PNG export.",
+  "author": {"name": "Sven Siertsema"},
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["environments", "dev-staging-prod", "ephemeral-environments", "prod-parity", "preview-environments"],
+  "skills": "./skills"
+}

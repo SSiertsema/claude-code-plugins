@@ -727,6 +727,48 @@
       "source": "./event-sourcing-cqrs-design",
       "description": "Event sourcing + CQRS design (independent, often combined). ES: events-as-facts per aggregate stream, event store selection, schema versioning + upcasting, snapshotting, replay, temporal queries. CQRS: command vs query separation, eventual-consistency projections. GDPR via crypto-erasure / redaction / separation / retention.",
       "category": "architecture"
+    },
+    {
+      "name": "cloud-architecture-design",
+      "source": "./cloud-architecture-design",
+      "description": "Cloud architecture for AWS / Azure / GCP / multi-cloud applying Well-Architected pillars. Compute paradigm, regions + AZ, network topology, identity, storage, managed services, landing zone foundation, cost optimization.",
+      "category": "architecture"
+    },
+    {
+      "name": "iac-planning",
+      "source": "./iac-planning",
+      "description": "Infrastructure as Code plan: tool (Terraform / OpenTofu / Pulumi / CDK / Bicep), layered modules, remote state with locking, environment separation (workspaces / directories / accounts), CI/CD OIDC integration, policy-as-code (OPA / Checkov / tfsec), drift detection.",
+      "category": "architecture"
+    },
+    {
+      "name": "cicd-pipeline-design",
+      "source": "./cicd-pipeline-design",
+      "description": "CI/CD pipeline source → build → test → security → artifact → deploy → verify → notify. Tool selection, quality gates (unit / integration / E2E / SAST / SCA / container / license), artifact signing + SLSA provenance, deployment strategies (rolling / blue-green / canary / progressive / feature flags). OIDC federation.",
+      "category": "architecture"
+    },
+    {
+      "name": "environment-strategy",
+      "source": "./environment-strategy",
+      "description": "Environment strategy: per-env purpose + data + access + isolation + prod-parity + refresh + teardown. Ephemeral per-PR preview environments. Data strategy (synthetic / anonymized / never-raw-prod). Cost management via tagging + auto-stop + ephemeral lifecycle.",
+      "category": "architecture"
+    },
+    {
+      "name": "networking-design",
+      "source": "./networking-design",
+      "description": "Network design for cloud / hybrid. Non-overlapping CIDR plan, VPC structure, subnet tiering (public / private / data per AZ), routing (IGW / NAT / TGW), hub-spoke topology, DNS strategy, private endpoints for managed services, load balancers (L4 / L7 / global), CDN, hybrid (VPN / Direct Connect), service mesh.",
+      "category": "architecture"
+    },
+    {
+      "name": "observability-strategy",
+      "source": "./observability-strategy",
+      "description": "Observability across 3 pillars (metrics / logs / traces) + events + profiles. OpenTelemetry default. Tool selection (Datadog / Prometheus+Grafana / Honeycomb / Splunk). Structured logging, metric cardinality discipline, distributed tracing with W3C Trace Context + sampling, SLO-burn alerting (not symptoms), dashboards per audience.",
+      "category": "architecture"
+    },
+    {
+      "name": "disaster-recovery-planning",
+      "source": "./disaster-recovery-planning",
+      "description": "DR per service: RPO + RTO tiered by criticality, strategy from backup+restore (cheap, slow) through pilot-light / warm-standby / hot-standby to multi-region active-active (expensive, zero-downtime). Backup policy (3-2-1 + immutability). Failover runbooks + drills (tabletop / partial / full / surprise). Compliance (DORA / HIPAA / SOC 2 / ISO 22301).",
+      "category": "architecture"
     }
   ]
 }

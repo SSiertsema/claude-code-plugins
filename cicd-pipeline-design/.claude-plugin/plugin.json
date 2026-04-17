@@ -1,0 +1,10 @@
+{
+  "name": "cicd-pipeline-design",
+  "version": "1.0.0",
+  "description": "Design CI/CD pipeline: source → build → test → security-scan → artifact → deploy → verify → rollback. Tool selection (GitHub Actions / GitLab / Jenkins / CircleCI / Buildkite / Azure Pipelines / Tekton / Argo). Pipeline stages, quality gates (tests / SAST / SCA / license / container scan), artifact management, deployment strategy (blue-green / canary / rolling / progressive), observability integration, secrets via OIDC federation. Mermaid diagrams with optional PNG export.",
+  "author": {"name": "Sven Siertsema"},
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["cicd", "pipeline", "github-actions", "gitlab-ci", "blue-green", "canary", "progressive-delivery"],
+  "skills": "./skills"
+}

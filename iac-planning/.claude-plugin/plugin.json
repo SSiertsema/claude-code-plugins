@@ -1,0 +1,10 @@
+{
+  "name": "iac-planning",
+  "version": "1.0.0",
+  "description": "Infrastructure as Code planning. Tool selection (Terraform / OpenTofu / Pulumi / CloudFormation / CDK / Bicep), module design + reusability, state management (remote backend + locking), environment separation via workspaces / directories / accounts, CI/CD integration, drift detection, policy-as-code (OPA / Sentinel / Checkov), secrets handling. Mermaid diagrams with optional PNG export.",
+  "author": {"name": "Sven Siertsema"},
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["iac", "terraform", "opentofu", "pulumi", "cdk", "policy-as-code", "drift-detection"],
+  "skills": "./skills"
+}
