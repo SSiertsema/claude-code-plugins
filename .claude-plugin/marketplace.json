@@ -907,6 +907,24 @@
       "source": "./quality-gate-definition",
       "description": "Enforceable quality gates per pipeline stage (pre-commit / CI on PR / code review / security review / design review / build+sign+SBOM / staging / canary / prod / post-release) with per-gate spec (purpose, trigger, objective criteria, fail-closed behavior, automation, named reviewer, timeouts, waiver with expiry, evidence for audit). Risk-profile-aware tightening. Waiver process + volume review. Metrics (pass rate / time-in-gate / waivers / escapes / flakes). Distinct from DoR/DoD (gates are machinery; DoR/DoD are commitments).",
       "category": "planning"
+    },
+    {
+      "name": "release-planning",
+      "source": "./release-planning",
+      "description": "Release planning with Gantt + critical-path analysis. Cadence selection (continuous / weekly / monthly / release-train / milestone / hybrid) with trade-offs. WBS-to-release allocation (smallest-release-that-makes-sense; dependencies respected; risk front-loaded). Critical path named with slack per off-CP package. Explicit buffers (project 15-30% CP / feeding 10-20% / per-package contingency 30-50% on high-risk). External dependencies + constraints + freeze windows. SemVer vs CalVer. Freezes + dress rehearsals + post-release monitoring calendar.",
+      "category": "planning"
+    },
+    {
+      "name": "vendor-evaluation-matrix",
+      "source": "./vendor-evaluation-matrix",
+      "description": "Weighted vendor evaluation across capability / reliability / security+compliance / TCO at forecast / commercial terms / implementation / viability / support / data residency+GDPR / exit-strategy+lock-in. Scoring 1-5 with evidence per score; unknowns marked [unknown]. 3-year TCO including integration + operate + change + exit + hidden costs. SLA expressed as our requirements. Multi-dimensional vendor risk (financial / operational / concentration / fourth-party / key-person). Exit-strategy per vendor. Not legal advice.",
+      "category": "planning"
+    },
+    {
+      "name": "rfp-rfi-creation",
+      "source": "./rfp-rfi-creation",
+      "description": "Produce RFI (discover, 2w response) / RFP (solution+pricing, 4-8w) / RFQ (commodity quote, 1-2w) solicitation documents. Standard sections with numbered requirement IDs, disclosed scoring rubric with weights, fair Q&A process (consolidated to all bidders), realistic 8-12w RFP timeline, T&C section flagged legal-review-required, vendor-diversity considerations. Produces draft solicitation + internal process memo (evaluation committee / scoring runbook / issuance-risk / legal checklist).",
+      "category": "planning"
     }
   ]
 }

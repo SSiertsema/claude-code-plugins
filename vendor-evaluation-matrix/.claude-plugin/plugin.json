@@ -1,0 +1,12 @@
+{
+  "name": "vendor-evaluation-matrix",
+  "version": "1.0.0",
+  "description": "Evaluate vendors on weighted criteria (capability fit / reliability / security + compliance / total cost of ownership / commercial terms / implementation complexity / vendor viability / support + partnership / data residency + GDPR / exit strategy + lock-in). TCO: direct + integration + change + operate + exit costs. SLA definition with vendors: uptime + response + resolution + credits + exclusions. Vendor risk assessment (financial / operational / concentration / fourth-party). Produces weighted scorecard + risk register + recommendation. Not legal or procurement advice.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["vendor-evaluation", "tco", "sla", "vendor-risk", "procurement"],
+  "skills": "./skills"
+}

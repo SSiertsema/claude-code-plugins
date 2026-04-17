@@ -1,0 +1,12 @@
+{
+  "name": "rfp-rfi-creation",
+  "version": "1.0.0",
+  "description": "Produce RFI (Request for Information) / RFP (Request for Proposal) / RFQ (Request for Quote) documents. Choice of instrument by intent (RFI = discover, RFP = solution + pricing, RFQ = commodity pricing). Required sections: introduction + business context + evaluation criteria + functional + non-functional requirements + commercial asks + security + compliance asks + SLA asks + timeline + submission instructions + Q&A process + confidentiality. Scoring rubric + weightings. Not legal advice.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["rfp", "rfi", "rfq", "procurement", "tender"],
+  "skills": "./skills"
+}

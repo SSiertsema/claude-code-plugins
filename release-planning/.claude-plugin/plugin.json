@@ -1,0 +1,12 @@
+{
+  "name": "release-planning",
+  "version": "1.0.0",
+  "description": "Plan releases across time: select release cadence (continuous / weekly / train / milestone-based), build Gantt with critical-path analysis, identify dependencies + constraints + resourcing, map WBS work packages + features to releases, buffer strategy, risk-adjusted scheduling, release tags + versioning (SemVer / CalVer), freeze windows, dress rehearsal. Hand-offs to estimation + WBS + DoD skills. Mermaid Gantt + dependency diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["release-planning", "gantt", "critical-path", "cadence", "versioning"],
+  "skills": "./skills"
+}
