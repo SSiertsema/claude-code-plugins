@@ -1,0 +1,12 @@
+{
+  "name": "ab-hypothesis-framing",
+  "version": "1.0.0",
+  "description": "Frame A/B tests and experiments with falsifiable hypothesis, variant specification, primary/secondary/guardrail metrics, minimum-detectable-effect, sample size estimation, duration estimate, decision rule, and risk register. Addresses p-hacking and peeking controls. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["ab-test", "experimentation", "hypothesis", "sample-size", "guardrail-metrics", "mde", "p-hacking"],
+  "skills": "./skills"
+}

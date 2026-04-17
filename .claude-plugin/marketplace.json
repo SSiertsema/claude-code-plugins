@@ -361,6 +361,24 @@
       "source": "./pre-mortem",
       "description": "Gary Klein pre-mortem. Stipulate failure at a horizon and retrospectively identify why. Elicits 10-20 failure modes across categories, clusters and scores Impact × Likelihood, produces preventive actions with leading indicators, and exports risks to risk-register / fmea / mitigation-strategy-planning. Autonomous mode + facilitator guide. Mermaid diagrams with optional PNG export.",
       "category": "strategy"
+    },
+    {
+      "name": "rapid-prototyping",
+      "source": "./rapid-prototyping",
+      "description": "Plan a rapid prototype to validate one specific assumption. Classifies the assumption (desirability / feasibility / viability / usability / technical / data), selects the cheapest technique (paper, wireflow, Wizard of Oz, concierge, landing-page, spike, pretotype), declares what will and will NOT be proven, pre-commits success / kill criteria, fixes a timebox, sequences follow-on work, and flags validity risks. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "ab-hypothesis-framing",
+      "source": "./ab-hypothesis-framing",
+      "description": "Frame A/B tests with falsifiable hypothesis, variants, pre-committed primary/secondary/guardrail metrics, MDE, sample size (formula shown), duration spanning a weekly cycle, peek policy, pre-committed decision rule, validity risks with mitigations, and ethics review. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "metric-definition",
+      "source": "./metric-definition",
+      "description": "Design a coherent metric system: one user-value North Star, 3-5 decomposing input drivers, leading vs lagging per driver with time lag, guardrails with tolerances, counter-metrics per leading metric, and per-metric operational definitions (formula, source, population, exclusions, owner, cadence). Measurement readiness flags instrumentation gaps. Mermaid metric tree with optional PNG export.",
+      "category": "strategy"
     }
   ]
 }

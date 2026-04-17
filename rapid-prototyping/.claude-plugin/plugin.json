@@ -1,0 +1,12 @@
+{
+  "name": "rapid-prototyping",
+  "version": "1.0.0",
+  "description": "Plan a rapid prototype to validate a specific assumption. Selects fidelity and technique (paper sketch, wireflow, click-through, Wizard of Oz, concierge MVP, technical spike, data spike, landing-page test), defines what the prototype will and will NOT prove, sets timebox and success/kill criteria, identifies participants, and sequences follow-on work. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["rapid-prototyping", "mvp", "wizard-of-oz", "concierge", "spike", "landing-page-test", "validation"],
+  "skills": "./skills"
+}

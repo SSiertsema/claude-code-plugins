@@ -1,0 +1,12 @@
+{
+  "name": "metric-definition",
+  "version": "1.0.0",
+  "description": "Define a metric tree for a product / initiative / team: North Star, input drivers, leading vs lagging, guardrails, counter-metrics. Produces per-metric operational definition (precise formula, data source, population, exclusions), target/threshold/range, review cadence, and ownership. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["metrics", "kpi", "north-star", "okr-metrics", "guardrails", "metric-tree", "leading-lagging"],
+  "skills": "./skills"
+}
