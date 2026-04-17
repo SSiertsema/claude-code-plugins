@@ -1,0 +1,12 @@
+{
+  "name": "test-strategy-plan",
+  "version": "1.0.0",
+  "description": "Produce a project test strategy + test plan. Strategy: testing objectives, quality goals, scope (in/out), test levels (unit / integration / contract / system / acceptance / exploratory), environments, entry/exit criteria per level, risk-based testing, tools, roles, governance. Plan: test schedules, resource allocation, test case prioritization, traceability matrix to requirements. Includes defect management process (classification, triage cadence, SLAs, root-cause categories). Hand-offs to automation / data / performance / security test skills. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["test-strategy", "test-plan", "defect-management", "traceability", "qa"],
+  "skills": "./skills"
+}

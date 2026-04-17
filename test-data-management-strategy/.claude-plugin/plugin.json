@@ -1,0 +1,12 @@
+{
+  "name": "test-data-management-strategy",
+  "version": "1.0.0",
+  "description": "Test data management strategy — synthetic (generated via factories / faker / constraints) vs masked (from prod with PII redaction / tokenization / pseudonymization) vs subset (curated prod-like slice) vs frozen-dataset approaches. GDPR + HIPAA compliance rails (never raw prod PII in lower envs). Lifecycle: generation + seeding + reset + refresh. Determinism + reproducibility. Fixture factories + golden datasets. Storage + versioning of reference data. Env-to-env promotion. Not legal advice. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["test-data", "synthetic", "data-masking", "tokenization", "gdpr"],
+  "skills": "./skills"
+}

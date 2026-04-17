@@ -925,6 +925,30 @@
       "source": "./rfp-rfi-creation",
       "description": "Produce RFI (discover, 2w response) / RFP (solution+pricing, 4-8w) / RFQ (commodity quote, 1-2w) solicitation documents. Standard sections with numbered requirement IDs, disclosed scoring rubric with weights, fair Q&A process (consolidated to all bidders), realistic 8-12w RFP timeline, T&C section flagged legal-review-required, vendor-diversity considerations. Produces draft solicitation + internal process memo (evaluation committee / scoring runbook / issuance-risk / legal checklist).",
       "category": "planning"
+    },
+    {
+      "name": "test-strategy-plan",
+      "source": "./test-strategy-plan",
+      "description": "Test strategy + plan. Measurable objectives linked to business drivers, distinct test levels (unit / component / contract / integration / system-E2E / UAT / exploratory / NFR hand-off), environment matrix, objective entry/exit per level, risk-based prioritization (probability × impact driving depth), tools per level, whole-team governance, requirement → test case → result traceability, cadence + schedule + UAT, defect management (severity × priority + triage cadence + SLAs + RCA categories), metrics dashboards.",
+      "category": "planning"
+    },
+    {
+      "name": "test-automation-strategy",
+      "source": "./test-automation-strategy",
+      "description": "Automation + regression strategy. ROI-driven candidate selection, pyramid discipline (~70/15/8/5/2 for unit/component/integration/contract/E2E) with ice-cream-cone anti-pattern flagged, framework + tooling per level (one-per-level rule), shared fixtures + page objects, flakiness policy (detect/quarantine/root-cause/30-day age-out), CI integration (shard+parallel, timeouts, matrix, PR <10min), regression strategies (full/nightly/impact-based TIA/smoke+full/prod canary), contract testing with Pact, visual + a11y automation.",
+      "category": "planning"
+    },
+    {
+      "name": "test-data-management-strategy",
+      "source": "./test-data-management-strategy",
+      "description": "Test data strategy — synthetic (factories/faker/constraints) vs masked (redact/tokenize/pseudonymize/generalize/noise/synthesis) vs curated subset vs golden datasets vs third-party sandbox. Core rule: never raw prod PII in lower envs. Per-env matrix + masking per PII class (direct/quasi-id/regulated-PCI-SSN) + re-identification risk analysis (k-anonymity / l-diversity). Lifecycle (generate/seed/reset/refresh). Deterministic seeds for perf. Governance + 0-PII-incident target. Not legal advice.",
+      "category": "planning"
+    },
+    {
+      "name": "non-functional-test-planning",
+      "source": "./non-functional-test-planning",
+      "description": "Performance + security test plan. Perf: types (load/stress/soak/spike/scalability/volume/capacity), workload modeling from analytics, SLO-aligned thresholds, baseline + trend, tools (k6/Gatling/Locust/JMeter), isolated prod-like env, chaos. Sec: SAST + SCA + secret + container + IaC in CI; DAST nightly; IAST + fuzzing + pentest + red team; AuthN/Z tests; threat-model coverage check; vuln SLAs by severity; bug bounty; compliance-aligned (SOC2/PCI/HIPAA/GDPR/ISO27001). Not a certified audit.",
+      "category": "planning"
     }
   ]
 }

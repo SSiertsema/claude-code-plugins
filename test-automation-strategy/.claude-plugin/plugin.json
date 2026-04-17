@@ -1,0 +1,12 @@
+{
+  "name": "test-automation-strategy",
+  "version": "1.0.0",
+  "description": "Test automation strategy — candidate selection (ROI-driven, stable-first, high-value flows), pyramid discipline (thick unit/component, thin E2E), framework + tooling per level, flakiness policy (quarantine + root-cause + budget), shared test fixtures + factories, page-object / component-object patterns, CI integration (sharding + parallelism + timeouts), regression strategy (full / nightly / impact-based), visual / accessibility automation, contract testing (Pact). Distinct from overall test strategy (see test-strategy-plan). Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["test-automation", "regression", "pact", "flakiness", "e2e"],
+  "skills": "./skills"
+}

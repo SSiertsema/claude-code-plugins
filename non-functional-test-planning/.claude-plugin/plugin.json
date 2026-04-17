@@ -1,0 +1,12 @@
+{
+  "name": "non-functional-test-planning",
+  "version": "1.0.0",
+  "description": "Plan non-functional tests for performance + security. Performance: load / stress / soak / spike / scalability profiles, workload modeling, SLO-aligned thresholds, baseline-vs-regression, tooling (k6 / Gatling / Locust / JMeter). Security: SAST + SCA + DAST + IAST + container + IaC scanning, penetration testing cadence, authN / authZ test cases, secret scanning, dependency-risk (vulnerabilities + licenses), threat-model coverage check. Hand-offs to test-strategy + test-data + threat-modeling. Not a certified audit. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["performance-test", "security-test", "sast", "dast", "load-test"],
+  "skills": "./skills"
+}
