@@ -1,0 +1,12 @@
+{
+  "name": "work-breakdown-structure",
+  "version": "1.0.0",
+  "description": "Create a work breakdown structure (WBS) from scope + deliverables. Hierarchical decomposition (100% rule, mutually exclusive siblings), work-package sizing (8/80 rule), deliverable-oriented vs phase-oriented vs responsibility-oriented decomposition, WBS dictionary entries, milestone identification, intra-WBS dependencies, numbering (1.1.2.3). Outputs: tree view + WBS dictionary + milestones + top-level dependencies. Not a schedule — hand off to release-planning / Gantt for timing. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["wbs", "work-breakdown", "deliverables", "decomposition", "milestones"],
+  "skills": "./skills"
+}

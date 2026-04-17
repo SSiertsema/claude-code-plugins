@@ -877,6 +877,18 @@
       "source": "./dependency-injection-planning",
       "description": "DI planning — constructor injection default, setter/param/ambient where justified, one composition root at main/Program.cs/app.module.ts/bootstrap, lifetimes per dep (singleton / scoped-per-request / transient / per-tenant / per-conversation) with thread-safety rules, framework choice (manual for Go/Rust, Spring for Java, NestJS for TS, FastAPI Depends for Python, built-in DI for .NET), ports + adapters with deterministic ports (Clock / RNG / IdGen / HttpClient), lifecycle hooks, circular-dep prevention via seam extraction.",
       "category": "architecture"
+    },
+    {
+      "name": "work-breakdown-structure",
+      "source": "./work-breakdown-structure",
+      "description": "WBS from scope + deliverables. Enforces 100% rule, mutually exclusive siblings, deliverable-oriented nodes, 8/80-hour sizing, depth-by-need (3–5 levels). Decomposition axes (deliverable / phase / responsibility / hybrid) consistent within branches. WBS dictionary per node (description, deliverable, acceptance, size, deps, risks). Milestones distinct from work. Intra-WBS dependencies + coverage matrix. Anti-patterns flagged.",
+      "category": "planning"
+    },
+    {
+      "name": "scope-statement-writing",
+      "source": "./scope-statement-writing",
+      "description": "Scope statement — purpose, SMART objectives with success criteria, deliverables with acceptance, explicit in-scope, explicit out-of-scope (highest-leverage section preventing creep arguments), assumptions with confirm-by dates, constraints (budget / time / people / regulatory / technical), boundaries (organizational / geographic / temporal / technical / segments), stakeholders + approval authority, scope-change protocol, coverage check with WBS, open questions. Distinct from business case / WBS / stakeholder map.",
+      "category": "planning"
     }
   ]
 }

@@ -1,0 +1,12 @@
+{
+  "name": "scope-statement-writing",
+  "version": "1.0.0",
+  "description": "Produce a scope statement: project purpose, objectives with success criteria, deliverables + acceptance, explicit in-scope and out-of-scope lists, assumptions, constraints, exclusions, boundaries (organizational / geographic / temporal / technical), key stakeholders, approval authority. Scope-change protocol. Distinct from WBS (structural decomposition) and from business case (investment rationale). Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["scope", "scope-statement", "boundaries", "in-scope", "out-of-scope"],
+  "skills": "./skills"
+}
