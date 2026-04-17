@@ -1,0 +1,12 @@
+{
+  "name": "error-handling-design",
+  "version": "1.0.0",
+  "description": "Design end-to-end error handling for a product. Produces error taxonomy (validation / permission / network / third-party / server / data / rate-limit / deprecation), per-error message spec (plain-language / next action / technical code), prevention strategy, recovery flow, logging/observability handoff, and error-budget tie-in. Content tone and i18n guidance included. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["error-handling", "error-messages", "recovery-flows", "error-taxonomy", "ux-writing"],
+  "skills": "./skills"
+}

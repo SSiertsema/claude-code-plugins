@@ -445,6 +445,48 @@
       "source": "./baseline-management",
       "description": "Capture, compare, release, and roll back named baselines of a requirements / artifact set. Released baselines immutable with content hashes. Diff classifies changes as backward-compatible / breaking / editorial. Evidence bundle per released baseline. Append-only audit trail. Supports ISO 13485 / IEC 62304 / FDA / aerospace / automotive retention requirements. Mermaid diagrams with optional PNG export.",
       "category": "strategy"
+    },
+    {
+      "name": "site-mapping",
+      "source": "./site-mapping",
+      "description": "Design a hierarchical site map with stable IDs, page types (entry / hub / detail / list / funnel / utility / legal / error), URL patterns, access levels, and nav placement. Surfaces orphans, near-duplicate pages, depth violations, and dead ends. Modes: autonomous / inventory / audit. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "user-flow-diagramming",
+      "source": "./user-flow-diagramming",
+      "description": "Diagram user flows at the UI-task level. Per step: actor, action, input, system response, pre/postconditions, errors, transitions. Distinguishes happy path / edge cases / error paths with recovery / abandonment. All decisions have explicit branches. Instrumentation events named. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "micro-interaction-design",
+      "source": "./micro-interaction-design",
+      "description": "Design micro-interactions with Dan Saffer's trigger / rules / feedback / loops-and-modes model. Per interaction: multiple triggers with a11y equivalents, rules (input / state / side effects / timing / concurrency), multi-channel feedback per state, and modes with required entry / indicator / exit. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "state-transition-mapping",
+      "source": "./state-transition-mapping",
+      "description": "Map UI state machines for a component / screen / flow. Exhaustive states (idle / loading / success / error / empty / partial / stale / offline / disabled), typed transitions with triggers / guards / actions / rollback, invalid-state detection, deadlock prevention, and a11y per state. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "error-handling-design",
+      "source": "./error-handling-design",
+      "description": "End-to-end error handling design: stable taxonomy (validation / permission / network / third-party / server / data / rate-limit / capacity / compliance / safety), per-error message spec (plain-language / next action / technical code), prevention strategy, recovery flows, a11y, observability handoff, and i18n. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "progressive-disclosure-planning",
+      "source": "./progressive-disclosure-planning",
+      "description": "Plan layered information architecture: L1 primary / L2 secondary / L3 on-demand / L4 power-user. Classifies content items, assigns reveal mechanisms with trigger + exit + focus, ensures discoverability for hidden content, differentiates per user segment, and validates against Nielsen / Norman heuristics. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "gestalt-principle-application",
+      "source": "./gestalt-principle-application",
+      "description": "Apply Gestalt principles (proximity / similarity / closure / continuity / common fate / figure-ground / common region / connectedness) as a design or audit checklist. Per principle: verdict (applied-well / at-risk / violation / insufficient-detail), evidence, impact, concrete recommendation, and before/after. Cross-checks under contrast, zoom, motion, color-blind, SR. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
     }
   ]
 }

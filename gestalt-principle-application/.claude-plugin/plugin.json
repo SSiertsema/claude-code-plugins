@@ -1,0 +1,12 @@
+{
+  "name": "gestalt-principle-application",
+  "version": "1.0.0",
+  "description": "Apply Gestalt principles (proximity / similarity / closure / continuity / common fate / figure-ground / common region / connectedness) as a design / audit checklist against a layout or component. Produces per-principle finding with severity (violation / at-risk / applied-well), improvement recommendation, and before/after description. Works on descriptions or reviews — no image input required.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["gestalt", "visual-hierarchy", "proximity", "similarity", "design-review", "perception"],
+  "skills": "./skills"
+}

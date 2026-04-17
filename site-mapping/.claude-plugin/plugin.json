@@ -1,0 +1,12 @@
+{
+  "name": "site-mapping",
+  "version": "1.0.0",
+  "description": "Design a hierarchical site map for a web or app product. Produces page inventory with stable IDs, parent-child hierarchy, page types (hub / detail / utility / legal / entry / funnel), URL pattern per page, primary navigation placement, and access level. Surfaces orphan pages, redundant pages, and depth violations. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["site-map", "information-architecture", "ia", "url-structure", "navigation-hierarchy"],
+  "skills": "./skills"
+}

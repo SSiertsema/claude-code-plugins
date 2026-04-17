@@ -1,0 +1,12 @@
+{
+  "name": "micro-interaction-design",
+  "version": "1.0.0",
+  "description": "Design micro-interactions using Dan Saffer's four-part model (trigger / rules / feedback / loops & modes). Produces per-interaction spec (the smallest units of UX: toggles, validation, save, pull-to-refresh, notifications) with accessibility and performance considerations. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["micro-interaction", "dan-saffer", "feedback", "trigger-rules-feedback-loops", "micro-ux"],
+  "skills": "./skills"
+}

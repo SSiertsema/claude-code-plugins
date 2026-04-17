@@ -1,0 +1,12 @@
+{
+  "name": "user-flow-diagramming",
+  "version": "1.0.0",
+  "description": "Diagram user flows for a task or journey. Produces flow specification (actors, entry point, steps, decision points, outcomes), flow types (happy path / edge cases / error recovery / abandonment), per-step metadata (screen / action / system response / data / conditions), and instrumented measurement points. Distinct from wireframing (no screen layouts) and user-journey-management (UI-level, not strategic journey). Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["user-flow", "flowchart", "task-flow", "decision-points", "happy-path", "error-path"],
+  "skills": "./skills"
+}

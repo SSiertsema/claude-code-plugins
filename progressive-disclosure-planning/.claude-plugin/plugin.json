@@ -1,0 +1,12 @@
+{
+  "name": "progressive-disclosure-planning",
+  "version": "1.0.0",
+  "description": "Plan progressive disclosure for a surface — what to show first, what to hide, what to reveal on demand. Produces layered information architecture (primary / secondary / on-demand / power-user), user-type differentiation (novice / intermediate / expert), reveal triggers (action / state / time / tenure), and discoverability mechanisms. Covers Norman / Nielsen heuristics and platform conventions. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["progressive-disclosure", "layered-ui", "power-user", "discoverability", "information-hierarchy"],
+  "skills": "./skills"
+}

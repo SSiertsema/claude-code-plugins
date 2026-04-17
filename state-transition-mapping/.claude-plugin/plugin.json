@@ -1,0 +1,12 @@
+{
+  "name": "state-transition-mapping",
+  "version": "1.0.0",
+  "description": "Map UI state machines for a component, screen, or flow. Enumerates states (idle / loading / success / error / empty / partial), transitions with triggers and guards, terminal vs transient states, and invalid-state detection. Produces visual state chart + acceptance criteria per state. Distinct from user-flow-diagramming (task-level) and micro-interaction-design (interaction-level). Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["state-machine", "fsm", "ui-states", "transitions", "empty-state", "error-state", "loading-state"],
+  "skills": "./skills"
+}
