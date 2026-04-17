@@ -1,0 +1,12 @@
+{
+  "name": "system-decomposition",
+  "version": "1.0.0",
+  "description": "C4 Level 2 (containers) and Level 3 (components) system decomposition. Per container: name, purpose, technology, responsibilities, APIs exposed, data stores. Per component: role within container, collaborators. Relationships between containers and components with protocol + purpose. Distinct from context-diagramming (C4 L1) and code-level diagrams (L4). Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["c4-model", "system-decomposition", "containers", "components", "architecture", "simon-brown"],
+  "skills": "./skills"
+}

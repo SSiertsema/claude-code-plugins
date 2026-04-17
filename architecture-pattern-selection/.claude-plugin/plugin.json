@@ -1,0 +1,12 @@
+{
+  "name": "architecture-pattern-selection",
+  "version": "1.0.0",
+  "description": "Select an architectural pattern (monolith / modular monolith / microservices / event-driven / serverless / CQRS / service-based / space-based) based on system context. Produces decision framework on team size, complexity, scale, latency, consistency, change frequency, observability needs. Per pattern: when-to-use / when-not / key trade-offs / reversal difficulty. Recommendation with trade-offs accepted and reversibility notes. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["architecture-pattern", "monolith", "microservices", "event-driven", "serverless", "cqrs"],
+  "skills": "./skills"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "adr-writing",
+  "version": "1.0.0",
+  "description": "Write Architecture Decision Records. Supports Michael Nygard format (Title / Status / Context / Decision / Consequences) and Y-statement format (In the context of X, facing Y, we decided Z, achieving A, accepting B). Per ADR: stable ID, status (proposed / accepted / deprecated / superseded), supersession chain, index/log. Review cadence + integration with traceability-matrix. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["adr", "architecture-decision-record", "nygard", "y-statement", "decision-log"],
+  "skills": "./skills"
+}

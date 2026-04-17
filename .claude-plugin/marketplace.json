@@ -601,6 +601,42 @@
       "source": "./story-splitting",
       "description": "Split oversized user stories using SPIDR (Spike / Path / Interface / Data / Rule) or Richard Lawrence's 9-pattern catalog. Vertical value-slicing with V-test gating (reject horizontal technical slices). Post-split INVEST check per sub-story. Recommended order (walking skeleton → risk-reducing → value → quick wins → edges). Flags when NOT to split. Mermaid diagrams with optional PNG export.",
       "category": "strategy"
+    },
+    {
+      "name": "system-decomposition",
+      "source": "./system-decomposition",
+      "description": "C4 Level 2 + Level 3 system decomposition. Per container: technology, purpose, responsibilities, APIs exposed + consumed, data stores, deployment, scaling, tenant model, ownership. Per container relationship: protocol + purpose + synchronicity + failure mode + rate. L3 scopes to one container with typed components (controller / service / repository / adapter). Avoids L4 code details. Mermaid diagrams with optional PNG export.",
+      "category": "architecture"
+    },
+    {
+      "name": "adr-writing",
+      "source": "./adr-writing",
+      "description": "Write, review, supersede, or index Architecture Decision Records. Michael Nygard format (default) + Y-statement alternative. Immutable once accepted — supersession chain preserves old ADRs. Status lifecycle (Proposed / Accepted / Deprecated / Superseded). ADR log with chronological index + supersession chains visible. Review mode flags stale ADRs + missing consequences. Integrates with traceability-matrix. Mermaid timeline with optional PNG export.",
+      "category": "architecture"
+    },
+    {
+      "name": "technology-evaluation-matrix",
+      "source": "./technology-evaluation-matrix",
+      "description": "Evaluate ≥3 technology options (frameworks / DBs / languages / SaaS / libraries) using a weighted scoring matrix. 10 default criteria (fit / maturity / community / TCO / learning curve / integration / licensing / vendor risk / performance / security) + context-specific additions. Per-cell score + rationale + confidence + source. Sensitivity analysis varying top-2 weights ±20%. Recommendation with runner-up + trade-off + risk + reversal conditions. Mermaid diagrams with optional PNG export.",
+      "category": "architecture"
+    },
+    {
+      "name": "architecture-pattern-selection",
+      "source": "./architecture-pattern-selection",
+      "description": "Select architectural pattern (monolith / modular monolith / microservices / event-driven / serverless / CQRS / service-based / space-based) based on team size + scale + latency + consistency + change frequency. Monolith-first bias. Evaluates against decision factors. Supports hybrid combinations per subsystem. Evolution roadmap with concrete triggers. Mermaid diagrams with optional PNG export.",
+      "category": "architecture"
+    },
+    {
+      "name": "ddd-strategic-modeling",
+      "source": "./ddd-strategic-modeling",
+      "description": "Domain-Driven Design strategic patterns. Identifies subdomains (core / supporting / generic) with investment strategy, bounded contexts with ubiquitous language glossary per context (cross-context term differences surfaced), and typed context-map relationships (Evans' 9 patterns: shared kernel / customer-supplier / conformist / ACL / open host / published language / separate ways / BBM / partnership). Conway's Law alignment check. Mermaid context map + subdomain investment quadrant with optional PNG export.",
+      "category": "architecture"
+    },
+    {
+      "name": "architecture-tradeoff-analysis",
+      "source": "./architecture-tradeoff-analysis",
+      "description": "ATAM-inspired structured trade-off analysis. Prioritizes quality attributes, identifies classic trade-off dimensions (CAP / PACELC / latency-vs-throughput / consistency-vs-availability / cost-vs-performance / coupling-vs-cohesion / etc.), scores options per attribute, runs sensitivity analysis identifying priority swaps that flip recommendation. Output frames as 'recommendation X, gaining Y, at cost Z' — not single-winner reduction. Surfaces non-obvious patterns (second-order, team-level, time-horizon). Mermaid diagrams with optional PNG export.",
+      "category": "architecture"
     }
   ]
 }

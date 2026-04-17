@@ -1,0 +1,12 @@
+{
+  "name": "ddd-strategic-modeling",
+  "version": "1.0.0",
+  "description": "Domain-Driven Design strategic patterns. Identifies bounded contexts + core/supporting/generic subdomains; produces context map with relationships (shared kernel / customer-supplier / conformist / anti-corruption layer / open host / published language / separate ways / big-ball-of-mud / partnership). Establishes ubiquitous language per context. Distinct from tactical DDD (value objects / aggregates / entities). Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["ddd", "bounded-context", "context-map", "ubiquitous-language", "subdomain", "eric-evans"],
+  "skills": "./skills"
+}

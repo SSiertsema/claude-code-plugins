@@ -1,0 +1,12 @@
+{
+  "name": "technology-evaluation-matrix",
+  "version": "1.0.0",
+  "description": "Evaluate technology options (frameworks, databases, languages, SaaS tools, libraries) using a weighted scoring matrix. Criteria: fit for requirement, maturity, community + ecosystem, cost (licensing + operational + TCO), learning curve, integration, licensing compatibility, vendor risk, performance characteristics, security posture. Per option: score + rationale per criterion. Recommendation with trade-offs and reversal conditions. Distinct from build-vs-buy (which compares build / buy / non-consumption); this picks between comparable options. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["technology-evaluation", "weighted-scoring", "vendor-selection", "stack-choice", "trade-off-matrix"],
+  "skills": "./skills"
+}

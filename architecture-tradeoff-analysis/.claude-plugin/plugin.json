@@ -1,0 +1,12 @@
+{
+  "name": "architecture-tradeoff-analysis",
+  "version": "1.0.0",
+  "description": "Systematic analysis of architecture trade-offs across classic dimensions (CAP theorem, PACELC, latency vs throughput, consistency vs availability, cost vs performance, coupling vs cohesion, flexibility vs simplicity, build vs buy). Per decision: options with attribute impact, prioritization of quality attributes for the use case, sensitivity analysis, and explicit trade-off acceptance. Simplified ATAM-style output. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["tradeoff-analysis", "atam", "cap-theorem", "pacelc", "quality-attributes", "architecture-decisions"],
+  "skills": "./skills"
+}
