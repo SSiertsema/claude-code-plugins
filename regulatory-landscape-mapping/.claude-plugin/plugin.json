@@ -1,0 +1,12 @@
+{
+  "name": "regulatory-landscape-mapping",
+  "version": "1.0.0",
+  "description": "Map the regulatory landscape for a product, service, or business in one or more jurisdictions. Produces an inventory of applicable regulations (mandatory, voluntary standards, industry codes), classifies by domain (privacy, security, financial, sectoral, accessibility, environmental, employment), assesses applicability, severity of non-compliance, and deadlines. Surfaces overlaps, conflicts between regimes, and upcoming changes. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["regulatory", "compliance", "jurisdiction", "gdpr", "iso", "pci-dss", "regulatory-landscape", "landscape-mapping"],
+  "skills": "./skills"
+}

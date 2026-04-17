@@ -1,0 +1,12 @@
+{
+  "name": "data-flow-diagramming",
+  "version": "1.0.0",
+  "description": "Privacy-focused data flow diagramming. Maps sources, flows, processors, storage, cross-border transfers, retention, and deletion for personal data. Classifies data categories (personal, special category, children's, biometric, financial), assigns GDPR legal basis per flow, flags high-risk points (third-country transfers, profiling, automated decisions), and produces a Mermaid data flow diagram plus RoPA-style register. Feeds DPIA work and aligns with control-framework-mapping.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["data-flow", "dfd", "privacy", "gdpr", "ropa", "dpia", "privacy-engineering", "cross-border-transfers"],
+  "skills": "./skills"
+}

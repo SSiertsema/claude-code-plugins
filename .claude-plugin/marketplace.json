@@ -307,6 +307,24 @@
       "source": "./timeline-estimation",
       "description": "Timeline estimation using three-point (PERT), analogous, parametric, and velocity-based techniques with O/M/P date ranges. Integrates with dependency-mapping for critical-path timelines, translates working days to calendar dates respecting holidays and freezes, recommends buffer, defines milestones with entry criteria, and assesses deadline probability when a deadline is supplied. Mermaid Gantt and range diagrams with optional PNG export.",
       "category": "strategy"
+    },
+    {
+      "name": "regulatory-landscape-mapping",
+      "source": "./regulatory-landscape-mapping",
+      "description": "Map the regulatory landscape for a product/service/business across jurisdictions. Inventories regulations by domain (privacy, security, sectoral, payments, AI, consumer, accessibility, ESG, tax, export-control), assesses applicability and severity, surfaces overlaps and conflicts, flags upcoming changes, and scores net risk. Not legal advice. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "data-flow-diagramming",
+      "source": "./data-flow-diagramming",
+      "description": "Privacy-focused data flow diagramming. Maps entities, flows, data categories, GDPR legal basis, retention, and cross-border transfers. Flags high-risk conditions (special-category, children's data, international transfers, automated decisions), produces a RoPA-style register, and identifies DPIA needs. Not legal advice. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "control-framework-mapping",
+      "source": "./control-framework-mapping",
+      "description": "Map controls against frameworks (ISO 27001, SOC 2, NIST CSF, NIST 800-53, CIS v8, PCI-DSS v4, HIPAA Security Rule, NIS2, ISO 27701, ISO 42001). Produces control inventory, mapping matrix, coverage counts, gap analysis with recommended controls and effort, maturity scoring, and cross-framework consolidation flagging high-leverage controls. Not a certified audit. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
     }
   ]
 }
