@@ -1,0 +1,12 @@
+{
+  "name": "content-inventory-audit",
+  "version": "1.0.0",
+  "description": "Inventory and audit existing content (pages, articles, media, components) for a site or product. Produces structured inventory with metadata (URL, title, type, last-updated, author, status, tags, word count, media count), quality audit (accuracy, freshness, completeness, relevance, findability), gap analysis vs user needs, and per-item recommended action (keep / update / merge / delete / migrate). Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["content-inventory", "content-audit", "content-strategy", "cms", "freshness", "gap-analysis"],
+  "skills": "./skills"
+}

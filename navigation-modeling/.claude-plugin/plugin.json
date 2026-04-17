@@ -1,0 +1,12 @@
+{
+  "name": "navigation-modeling",
+  "version": "1.0.0",
+  "description": "Model navigation for a site or app. Selects navigation pattern (hub-and-spoke / hierarchical / flat / faceted / sequential / hybrid), designs primary + secondary + utility + contextual + footer navigation, adapts mobile vs desktop with declared breakpoints, defines active-state / transitions / persistence behaviors. Cross-references site-mapping + taxonomy-design. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["navigation", "ia", "menu-design", "hub-and-spoke", "faceted-navigation", "mobile-nav"],
+  "skills": "./skills"
+}

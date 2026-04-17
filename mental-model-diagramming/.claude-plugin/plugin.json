@@ -1,0 +1,12 @@
+{
+  "name": "mental-model-diagramming",
+  "version": "1.0.0",
+  "description": "Indi Young-style mental model diagramming. Captures user thinking / feelings / actions around a problem domain, grouped into 'towers' (task spaces) with supporting features below. Produces ground-level rows (user behaviors + reactions + guiding principles) + feature-alignment rows (existing + proposed + gap). Distinct from empathy mapping (domain-level, not individual). Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["mental-model", "indi-young", "user-research-synthesis", "task-space", "opportunity-mapping"],
+  "skills": "./skills"
+}

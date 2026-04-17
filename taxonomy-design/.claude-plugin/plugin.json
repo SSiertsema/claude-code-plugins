@@ -1,0 +1,12 @@
+{
+  "name": "taxonomy-design",
+  "version": "1.0.0",
+  "description": "Design a taxonomy / controlled vocabulary for content or data. Produces term list with definitions, parent-child hierarchy (or flat / faceted), synonyms and related terms, usage rules, scope notes, versioning, and governance (who adds / changes terms). Supports hierarchical, faceted, and polyhierarchical structures. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["taxonomy", "controlled-vocabulary", "classification", "tagging", "faceted-classification", "ontology"],
+  "skills": "./skills"
+}

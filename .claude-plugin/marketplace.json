@@ -499,6 +499,30 @@
       "source": "./cognitive-walkthrough",
       "description": "Task-based cognitive walkthrough. Simulates a novice user through a specific task; per step answers the four CW questions (goal match / action visibility / action-effect link / progress feedback). 'No' answers become findings with severity and recommendations. Task-completion prediction + multi-persona variants. Mermaid diagrams with optional PNG export.",
       "category": "strategy"
+    },
+    {
+      "name": "content-inventory-audit",
+      "source": "./content-inventory-audit",
+      "description": "Inventory + audit existing content for a site / product. Per item: metadata (URL, type, last-updated, author, tags, word count, media, links, traffic), 5 quality dimensions (accuracy / freshness / completeness / relevance / findability), gap analysis vs user needs, recommended action (keep / update / merge / rewrite / archive / delete / migrate / cannot-assess) + effort. Prioritization across 4 buckets. Markdown + CSV export. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "taxonomy-design",
+      "source": "./taxonomy-design",
+      "description": "Design a controlled vocabulary / taxonomy. Supports hierarchical / flat / faceted / polyhierarchical structures. Per term: scope note + exclusions + BT/NT/RT/UF/USE relationships + usage rules + examples + status + version. Governance declared (owner / change process / deprecation / versioning). Usability validation (findability / coverage / balance / depth / breadth). Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "navigation-modeling",
+      "source": "./navigation-modeling",
+      "description": "Model navigation for a site / app. Selects pattern (hub-spoke / hierarchical / flat / faceted / sequential / hybrid). Designs primary / secondary / utility / contextual / footer areas with per-item spec (destination / position / visibility / active-state). State behavior per item type. Mobile treated as first-class. Accessibility baked in (landmarks / aria-current / keyboard / target / contrast). Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "mental-model-diagramming",
+      "source": "./mental-model-diagramming",
+      "description": "Indi Young-style mental model diagramming. Captures user thinking / doing / feeling in a problem domain, grouped into 4-10 vertical 'towers' = task spaces. Per tower: think / do / feel / guiding-principles rows with evidence or `[Assumed]`. Optional feature alignment under towers surfaces opportunity gaps (towers without features) and misalignments (features without towers). Distinct from empathy-mapping (individual) and jtbd-analysis (formal job). Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
     }
   ]
 }
