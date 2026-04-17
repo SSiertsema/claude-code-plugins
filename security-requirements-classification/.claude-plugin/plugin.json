@@ -1,0 +1,12 @@
+{
+  "name": "security-requirements-classification",
+  "version": "1.0.0",
+  "description": "Classify data and functionality by sensitivity and derive security requirements. Produces data-classification tiers, per-tier required controls (authn / authz / encryption / logging / retention / access review), CIA triad impact, abuse cases, and mapping to control-framework-mapping / data-flow-diagramming. Not a security audit. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["security-requirements", "data-classification", "cia-triad", "abuse-cases", "authn-authz"],
+  "skills": "./skills"
+}

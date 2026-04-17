@@ -1,0 +1,12 @@
+{
+  "name": "performance-budgeting",
+  "version": "1.0.0",
+  "description": "Define performance budgets for a product, page, flow, or service. Sets targets for latency (p50/p95/p99), throughput, payload sizes (JS/CSS/images), CPU/memory, cold-start, and Core Web Vitals (LCP/INP/CLS). Produces per-component allocation, measurement plan, budget-violation action policy, and degradation strategy. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["performance-budget", "core-web-vitals", "latency-targets", "lcp-inp-cls", "p95", "p99", "throughput"],
+  "skills": "./skills"
+}

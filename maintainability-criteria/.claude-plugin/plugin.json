@@ -1,0 +1,12 @@
+{
+  "name": "maintainability-criteria",
+  "version": "1.0.0",
+  "description": "Define maintainability criteria for a codebase or service: code complexity caps (cyclomatic, cognitive, file size), test coverage thresholds (unit / integration / E2E), documentation requirements, modularity rules, review gates, refactoring budget, dependency policy, and deprecation playbook. Wires to CI checks and review process. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["maintainability", "code-quality", "complexity", "test-coverage", "technical-debt", "deprecation"],
+  "skills": "./skills"
+}

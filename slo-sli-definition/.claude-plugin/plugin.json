@@ -1,0 +1,12 @@
+{
+  "name": "slo-sli-definition",
+  "version": "1.0.0",
+  "description": "Define internal Service Level Objectives and Indicators (SRE / Google-style). Per user-journey: identify critical SLIs (availability / latency / correctness / freshness / durability), set SLO targets tighter than customer SLA, compute error budget, define burn-rate alerts (fast / slow), and wire to policy (freeze / relax / page). Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["slo", "sli", "sre", "error-budget", "burn-rate", "reliability", "availability"],
+  "skills": "./skills"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "scalability-modeling",
+  "version": "1.0.0",
+  "description": "Model scalability for a service: current + projected load (RPS / QPS / concurrent users / data volume / events), bottleneck identification (CPU / memory / DB / network / queue), scaling strategy (vertical / horizontal / partitioning / caching / read-replica / async), capacity plan per growth scenario, and cost model. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["scalability", "capacity-planning", "bottleneck-analysis", "horizontal-scaling", "partitioning", "caching"],
+  "skills": "./skills"
+}

@@ -379,6 +379,48 @@
       "source": "./metric-definition",
       "description": "Design a coherent metric system: one user-value North Star, 3-5 decomposing input drivers, leading vs lagging per driver with time lag, guardrails with tolerances, counter-metrics per leading metric, and per-metric operational definitions (formula, source, population, exclusions, owner, cadence). Measurement readiness flags instrumentation gaps. Mermaid metric tree with optional PNG export.",
       "category": "strategy"
+    },
+    {
+      "name": "performance-budgeting",
+      "source": "./performance-budgeting",
+      "description": "Define performance budgets (latency percentiles, throughput, payload sizes, Core Web Vitals) with per-component allocations that sum, measurement plan (RUM/synthetic/CI/load test), violation policy (warn/block/rollback/page), degradation strategy, and device/network/geography segmentation. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "sla-definition",
+      "source": "./sla-definition",
+      "description": "Define customer-facing Service Level Agreements: per-tier availability, performance commitments, support response times by severity, remedy schedule (credits with claim procedure), explicit exclusions, measurement methodology, and reporting cadence. Distinguishes SLA (external) from SLO (internal, tighter). Not legal advice. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "slo-sli-definition",
+      "source": "./slo-sli-definition",
+      "description": "Define internal SRE-style Service Level Objectives and Indicators per user-journey (availability, latency, correctness, freshness, durability, throughput). Sets SLO tighter than any SLA with buffer, error budget (time + events), fast + slow burn-rate alerts, and policy wiring budget state to concrete actions. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "scalability-modeling",
+      "source": "./scalability-modeling",
+      "description": "Model scalability for a service across multiple growth scenarios. Identifies the dominant bottleneck per scenario (CPU/memory/DB/cache/queue/network/external API), proposes scaling strategies targeting that specific bottleneck, produces a capacity plan with readiness, a cost model with cost-per-unit-of-load, and risks at scale. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "security-requirements-classification",
+      "source": "./security-requirements-classification",
+      "description": "Classify data and functional assets by sensitivity, score CIA impact, derive per-tier required controls (authn/authz/encryption/logging/retention/review/masking/monitoring), write functional security requirements with test-how + failure-mode, generate abuse cases, and map requirements to framework control IDs. Not a security audit. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "accessibility-requirements",
+      "source": "./accessibility-requirements",
+      "description": "Define accessibility requirements against WCAG 2.2 AA (default), AAA, EN 301 549, EAA, Section 508, ADA. Produces per-feature Given/When/Then criteria, assistive-technology support matrix per platform, combined automated + manual + AT + user-testing plan, and remediation priority for existing products. Not a conformance audit. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
+    },
+    {
+      "name": "maintainability-criteria",
+      "source": "./maintainability-criteria",
+      "description": "Define CI-checkable maintainability criteria: complexity caps, test coverage per layer with critical paths named, documentation requirements, modularity rules, review gates, non-zero refactoring budget, dependency policy with SLAs, deprecation playbook, and legacy tolerance with drawdown schedule. Mermaid diagrams with optional PNG export.",
+      "category": "strategy"
     }
   ]
 }

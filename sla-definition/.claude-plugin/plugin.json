@@ -1,0 +1,12 @@
+{
+  "name": "sla-definition",
+  "version": "1.0.0",
+  "description": "Define customer-facing Service Level Agreements: availability targets, performance commitments, support response times, credit/remedy schedule, exclusions, measurement methodology, and reporting cadence. Distinguishes SLA (external commercial) from SLO (internal). Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["sla", "service-level-agreement", "uptime", "availability", "credits", "support-response"],
+  "skills": "./skills"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "accessibility-requirements",
+  "version": "1.0.0",
+  "description": "Define accessibility requirements targeting WCAG 2.2 AA (default) or AAA, EN 301 549, and EAA obligations. Produces per-feature acceptance criteria (keyboard, screen reader, contrast, focus, ARIA, reduced motion, captions), assistive-technology matrix, automated + manual test plan, and remediation priority. Mermaid diagrams with optional PNG export.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["accessibility", "wcag", "a11y", "eaa", "en-301-549", "section-508", "assistive-technology"],
+  "skills": "./skills"
+}
