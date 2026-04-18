@@ -1,0 +1,12 @@
+{
+  "name": "wireframing",
+  "version": "1.0.0",
+  "description": "Scaffold a Vue 3 + Vite + TypeScript wireframe application using the @for-the-people-initiative/wireframe-kit design system (~112 hand-drawn Rough.js components — Button, Card, Hero, Form, DataTable, etc.). Produces a runnable app with vue-router, one .vue file per screen, auto-discovered routes via import.meta.glob, and a global screen-picker nav. Embeds component catalogue + import patterns + setup conventions (CSS + SCSS imports + WireframePlugin registration). Distinct from concept-sketching (lower-fi exploratory storyboards) and user-flow-diagramming (steps not screens). No real images or copy — Image components render placeholder boxes regardless of src.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["wireframing", "wireframe", "vue", "vue3", "vite", "wireframe-kit", "mockup", "low-fi", "design-system"],
+  "skills": "./skills"
+}

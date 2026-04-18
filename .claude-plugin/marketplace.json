@@ -459,6 +459,12 @@
       "category": "strategy"
     },
     {
+      "name": "wireframing",
+      "source": "./wireframing",
+      "description": "Scaffold a runnable Vue 3 + Vite + TypeScript wireframe app using the @for-the-people-initiative/wireframe-kit design system (~112 hand-drawn Rough.js components, monochrome). Boilerplate copied verbatim; one PascalCase.Page.vue per screen auto-discovered via import.meta.glob with screen-picker nav. Embeds v1.0.0 component catalogue + import patterns. Intent-only placeholders (no Lorem Ipsum, no real images). Mid-fi only — defers colour/typography to visual design and hi-fi to prototyping.",
+      "category": "strategy"
+    },
+    {
       "name": "micro-interaction-design",
       "source": "./micro-interaction-design",
       "description": "Design micro-interactions with Dan Saffer's trigger / rules / feedback / loops-and-modes model. Per interaction: multiple triggers with a11y equivalents, rules (input / state / side effects / timing / concurrency), multi-channel feedback per state, and modes with required entry / indicator / exit. Mermaid diagrams with optional PNG export.",
