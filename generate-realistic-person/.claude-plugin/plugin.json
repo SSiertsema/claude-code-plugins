@@ -1,12 +1,12 @@
 {
   "name": "generate-realistic-person",
-  "version": "1.0.0",
-  "description": "Generate a complete fictional present-day person profile (demographics, work, family, social life, health, personality, beliefs, motivations, hobbies, hour-by-hour weekday and weekend) for use as input in simulation and research scenarios.",
+  "version": "1.1.0",
+  "description": "Generate a simulation-ready fictional present-day person profile. Combines a narrative layer (demographics, work, family, social life, health, personality, beliefs, motivations, hobbies) with an explicit behavioral layer (decision style, behavioral thresholds, scenario response, stress response, trust model, social influence, value-behavior tensions, action readiness, adaptability, routine dependency, priority logic, certainty markers, stable vs. dynamic traits, triggers, inhibitors, information processing style, likely first response, recovery pattern) plus hour-by-hour weekday and weekend. Works fully autonomously or accepts any subset of constraints.",
   "author": {
     "name": "Sven Siertsema"
   },
   "repository": "https://github.com/SSiertsema/claude-code-plugins",
   "license": "MIT",
-  "keywords": ["persona", "fictional-person", "simulation", "research", "scenario", "generation"],
+  "keywords": ["persona", "fictional-person", "simulation", "agent-based-modeling", "synthetic-populations", "scenario", "behavioral-layer", "research", "generation"],
   "skills": "./skills"
 }
