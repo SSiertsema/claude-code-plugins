@@ -461,7 +461,7 @@
     {
       "name": "wireframing",
       "source": "./wireframing",
-      "description": "Scaffold a runnable Vue 3 + Vite + TypeScript wireframe app using the @for-the-people-initiative/wireframe-kit design system (~112 hand-drawn Rough.js components, monochrome). Boilerplate copied verbatim; one PascalCase.Page.vue per screen auto-discovered via import.meta.glob with screen-picker nav. Embeds v1.0.0 component catalogue + import patterns. Intent-only placeholders (no Lorem Ipsum, no real images). Mid-fi only — defers colour/typography to visual design and hi-fi to prototyping.",
+      "description": "Scaffold a runnable Vue 3 + Vite + TypeScript wireframe app using the @for-the-people-initiative/wireframe-kit design system v1.0.1+ (hand-drawn Rough.js components, monochrome). Boilerplate copied verbatim; one PascalCase.Page.vue per screen wrapped in the platform-appropriate device frame (PhoneFrame / TabletFrame / DesktopFrame / DeviceFrame), auto-discovered via import.meta.glob. Click-through wired via router.push on CTAs / tabs / back / row actions (from flow spec or conversational elicitation); Demo controls on Home for unreachable entry points; screen-picker fallback nav. Plain generic placeholder copy by default (bracketed opt-in). No Lorem Ipsum, no real images. Floating elements get background: var(--wf-surface). Mid-fi only — defers colour/typography to visual design and hi-fi to prototyping.",
       "category": "strategy"
     },
     {

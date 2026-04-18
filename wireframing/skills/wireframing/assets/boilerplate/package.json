@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@for-the-people-initiative/wireframe-kit": "^1.0.0",
+    "@for-the-people-initiative/wireframe-kit": "^1.0.1",
     "vue": "^3.5.0",
     "vue-router": "^4.4.0"
   },
