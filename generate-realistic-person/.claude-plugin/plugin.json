@@ -1,0 +1,12 @@
+{
+  "name": "generate-realistic-person",
+  "version": "1.0.0",
+  "description": "Generate a complete fictional present-day person profile (demographics, work, family, social life, health, personality, beliefs, motivations, hobbies, hour-by-hour weekday and weekend) for use as input in simulation and research scenarios.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["persona", "fictional-person", "simulation", "research", "scenario", "generation"],
+  "skills": "./skills"
+}

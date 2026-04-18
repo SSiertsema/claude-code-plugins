@@ -1015,6 +1015,12 @@
       "source": "./demo-showcase-planning",
       "description": "Demo + showcase planning. Purpose-first framing (discovery / feedback / alignment / sales / celebration / training). Audience-adapted narrative arc (hook / context / demo 60% / insights / ask / Q&A time-boxed). Demo script per segment with fallback. Failure recovery break-glass paths (pre-recorded backups, reset scripts). Rehearsal cadence (content review T-1w, dry-runs T-3d + T-1d, check T-30min). Structured feedback capture (scribe + survey + 1-week close-the-loop). Accessibility (captions + screen readers + post-session content).",
       "category": "planning"
+    },
+    {
+      "name": "generate-realistic-person",
+      "source": "./generate-realistic-person",
+      "description": "Generate a complete fictional present-day person profile (demographics, work, family, social life, health, personality, beliefs, motivations, hobbies, hour-by-hour weekday and weekend) for use as input in simulation and research scenarios. Works fully autonomously or accepts any subset of constraints.",
+      "category": "productivity"
     }
   ]
 }
