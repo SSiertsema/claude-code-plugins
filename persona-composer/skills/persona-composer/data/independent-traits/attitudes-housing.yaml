@@ -1,0 +1,21 @@
+# Attitudes — housing
+
+- id: wanhoop-stedelijk-koop
+  label: Wanhoop over woningmarkt (stedelijk koop-onhaalbaar, huur-pieken)
+  tags: { age: [25-40], ses: [midden], region: [G4, middelgroot] }
+
+- id: trots-eigen-huis
+  label: Trots op eigen koophuis (investering, stabiliteit, eindelijk-eigen)
+  tags: { age: [30-70], ses: [midden, hoog] }
+
+- id: boos-op-beleid
+  label: Boos op woningbeleid (te veel migratie / te weinig bouwen / stikstof-blokkade)
+  tags: { age: [30-70], ses: [all] }
+
+- id: pro-sociale-huur
+  label: Sociale huur als recht (corporatie-vertrouwen, anti-liberalisering)
+  tags: { age: [30-80], ses: [laag, midden], political: [PvdA, SP, GL] }
+
+- id: pragmatisch-accepterend
+  label: 'Pragmatisch accepterend — wacht af, verhuist als moet'
+  tags: { age: [40-75], ses: [all] }

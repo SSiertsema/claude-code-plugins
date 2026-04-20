@@ -1,0 +1,29 @@
+# Attitudes — technology
+
+- id: enthousiast-early-adopter
+  label: Early adopter (nieuwe apps proberen, AI-experimenteren, smart home)
+  tags: { age: [20-50], ses: [midden, hoog] }
+
+- id: pragmatisch-gebruiker
+  label: Pragmatisch (gebruikt wat werkt, weinig fomo over nieuwe tech)
+  tags: { age: [30-70], ses: [all] }
+
+- id: skeptisch-big-tech
+  label: Sceptisch over Big Tech (privacy, algoritmes, verslaving, mentale gezondheid)
+  tags: { age: [25-65], ses: [midden, hoog] }
+
+- id: digitaal-beperkt
+  label: Beperkt digitaal — alleen noodzakelijk (DigiD, bank, WhatsApp)
+  tags: { age: [60-95], ses: [laag, midden] }
+
+- id: ambivalent-ouder
+  label: Zorgen over effecten op kinderen (schermtijd, social media, games)
+  tags: { age: [30-55], ses: [all], bundle-affinity: [parenthood-partnership-timepoverty-ppt-002, ppt-003, caregiving-boundary-cgb-002] }
+
+- id: ai-kritisch
+  label: AI-skeptisch — werk-verdringing, hallucinaties, ethiek
+  tags: { age: [25-65], ses: [midden, hoog], occupation: [creative, teacher, researcher] }
+
+- id: ai-pragmatisch
+  label: AI als tool — ChatGPT/Claude voor schrijven, coderen, plannen
+  tags: { age: [20-55], ses: [midden, hoog] }

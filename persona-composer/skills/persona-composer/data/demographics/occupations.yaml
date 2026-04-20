@@ -1,0 +1,170 @@
+# NL occupations — met SES + education + typical income band
+# Compositie gebruikt deze als validatie: beroep moet matchen bij bundle + education
+
+# Zorg
+- label: Verpleegkundige IG (ziekenhuis)
+  education: MBO-3/4
+  ses: midden
+  income: €2400-3400
+- label: Verpleegkundige specialistisch (OK, IC)
+  education: HBO-V
+  ses: midden
+  income: €3200-4800
+- label: Huisarts (praktijkhouder)
+  education: WO-geneeskunde
+  ses: hoog
+  income: €8000-14000
+- label: Fysiotherapeut (ZZP of praktijk)
+  education: HBO
+  ses: midden
+  income: €3000-5500
+- label: Logopedist
+  education: HBO
+  ses: midden
+  income: €2800-4200
+- label: Verzorgende IG (thuiszorg)
+  education: MBO-3
+  ses: laag
+  income: €2100-2800
+
+# Educatie
+- label: Leerkracht basisonderwijs
+  education: PABO
+  ses: midden
+  income: €2800-4500
+- label: Docent middelbaar onderwijs
+  education: HBO/WO eerstegraads
+  ses: midden
+  income: €3200-5500
+- label: Hoogleraar / UHD
+  education: WO + PhD
+  ses: hoog
+  income: €6500-9500
+
+# ICT
+- label: Software developer (medior)
+  education: HBO-ICT / WO-informatica
+  ses: hoog
+  income: €3800-6500
+- label: Software architect / principal
+  education: WO
+  ses: hoog
+  income: €6500-10000
+
+# Kantoor / bureau
+- label: Marketing-specialist / growth marketer
+  education: HBO/WO
+  ses: midden-hoog
+  income: €3200-6000
+- label: HR-adviseur
+  education: HBO
+  ses: midden
+  income: €3200-4800
+- label: Accountmanager B2B
+  education: HBO
+  ses: midden-hoog
+  income: €3400-5500
+- label: Consultant (Big-4 / Big-3)
+  education: WO
+  ses: hoog
+  income: €4500-8000+
+- label: Projectmanager
+  education: HBO/WO
+  ses: midden-hoog
+  income: €4000-6500
+
+# Handwerk / bouw
+- label: Installateur (loodgieter / elektro) ZZP
+  education: MBO-3/4
+  ses: midden
+  income: €3500-6000 omzet
+- label: Timmerman (vaste aannemer)
+  education: MBO-3
+  ses: midden
+  income: €2600-3800
+- label: Metselaar
+  education: MBO-3
+  ses: midden
+  income: €2600-3800
+- label: Automonteur
+  education: MBO-3
+  ses: midden
+  income: €2400-3400
+- label: Schoonheidsspecialiste (ZZP)
+  education: MBO-3
+  ses: midden
+  income: €2000-4500 omzet
+
+# Transport / logistiek
+- label: Vrachtwagenchauffeur
+  education: MBO-2
+  ses: midden
+  income: €2800-3800
+- label: Magazijnmedewerker
+  education: MBO-2
+  ses: laag
+  income: €2100-2700
+
+# Horeca / retail
+- label: Kok (restaurant)
+  education: MBO-2/3
+  ses: laag-midden
+  income: €2100-3200
+- label: Bakker (eigen zaak)
+  education: MBO
+  ses: midden
+  income: variabel
+
+# Agrarisch
+- label: Melkveehouder
+  education: MBO/HBO agrarisch
+  ses: variabel (grondbezit)
+  income: variabel (€3000-€12000 winst)
+- label: Akkerbouwer
+  education: MBO/HBO agrarisch
+  ses: variabel
+  income: variabel
+
+# Veiligheid / publiek
+- label: Politieagent (executief)
+  education: MBO-4 Politieacademie
+  ses: midden
+  income: €2800-4500
+- label: Brandweerman
+  education: MBO-4
+  ses: midden
+  income: €2800-4200
+- label: Militair (onderofficier)
+  education: MBO-4
+  ses: midden
+  income: €3000-4500
+
+# Overheid / beleid
+- label: Beleidsmedewerker (ministerie)
+  education: WO
+  ses: midden-hoog
+  income: €3500-6000
+- label: Ambtenaar gemeente (uitvoering)
+  education: HBO
+  ses: midden
+  income: €3000-4500
+
+# Zzp creatief
+- label: Grafisch vormgever (ZZP)
+  education: HBO-art
+  ses: midden
+  income: variabel €2500-4500
+- label: Journalist (freelance)
+  education: HBO/WO
+  ses: midden
+  income: variabel
+
+# Financial
+- label: Senior accountant (Big-4)
+  education: WO + RA
+  ses: hoog
+  income: €5500-9000
+- label: Boekhouder (MKB)
+  education: HBO
+  ses: midden
+  income: €2800-4200

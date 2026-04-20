@@ -1,0 +1,25 @@
+# Attitudes — health
+
+- id: actief-preventief
+  label: Actief preventief (sport, voeding, slaap, jaarlijkse check-up, gezondheids-apps)
+  tags: { age: [25-65], ses: [midden, hoog] }
+
+- id: pragmatisch-reactief
+  label: Pragmatisch reactief (bij klachten naar huisarts, geen uitgebreide preventie)
+  tags: { age: [30-75], ses: [all] }
+
+- id: alternatief-complementair
+  label: Complementair open (acupunctuur, osteopathie, kruiden, mindfulness)
+  tags: { age: [30-65], ses: [midden, hoog] }
+
+- id: zorg-skeptisch
+  label: Sceptisch over zorgsysteem (wachtlijsten, farmalobby, overbehandeling)
+  tags: { age: [30-70], ses: [all] }
+
+- id: mental-health-open
+  label: Open over mentale gezondheid (therapie, medicatie, praat erover)
+  tags: { age: [20-55], ses: [midden, hoog], political: [progressief] }
+
+- id: traditioneel-niet-klagen
+  label: 'Niet klagen doorgaan — aarzelt om naar arts te gaan, bagatelliseert klachten'
+  tags: { age: [55-85], ses: [all] }

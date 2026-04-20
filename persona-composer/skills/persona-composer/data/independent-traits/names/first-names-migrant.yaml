@@ -1,0 +1,154 @@
+# First names — NL-migrant achtergronden
+# Per culturele achtergrond. Bij compositie: match met bundle migration-generation-culture
+
+marokkaans-m:
+  - Mohammed
+  - Youssef
+  - Hassan
+  - Rachid
+  - Ahmed
+  - Said
+  - Karim
+  - Yassin
+  - Omar
+  - Idris
+
+marokkaans-v:
+  - Fatima
+  - Aicha
+  - Noor
+  - Samira
+  - Khadija
+  - Yasmine
+  - Soraya
+  - Nadia
+  - Amina
+  - Leila
+
+turks-m:
+  - Emre
+  - Mustafa
+  - Ali
+  - Deniz
+  - Kerem
+  - Hasan
+  - Yusuf
+  - Baran
+  - Mehmet
+  - Burak
+
+turks-v:
+  - Ayse
+  - Zeynep
+  - Merve
+  - Aylin
+  - Nur
+  - Derya
+  - Sema
+  - Elif
+  - Selin
+
+surinaams-creools-m:
+  - Johan
+  - Etienne
+  - Orlando
+  - Gilbert
+  - Edilson
+  - Marciano
+
+surinaams-creools-v:
+  - Gwendolyn
+  - Akosua
+  - Ingeborg
+  - Marciana
+  - Stella
+  - Ingrid
+
+surinaams-hindoestaans-m:
+  - Rajesh
+  - Vishal
+  - Sanjay
+  - Harish
+  - Pradeep
+
+surinaams-hindoestaans-v:
+  - Anjali
+  - Priya
+  - Nisha
+  - Deepika
+  - Sushila
+
+pools-m:
+  - Krzysztof
+  - Piotr
+  - Tomasz
+  - Marek
+  - Janusz
+
+pools-v:
+  - Katarzyna
+  - Anna
+  - Magdalena
+  - Agnieszka
+
+japans-m:
+  - Hiroshi
+  - Kenji
+  - Takeshi
+  - Haruki
+
+japans-v:
+  - Ayu
+  - Yuki
+  - Sakura
+
+indiaas-m:
+  - Arjun
+  - Rohan
+  - Vikram
+
+indiaas-v:
+  - Priya
+  - Kavita
+  - Shreya
+
+chinees-m:
+  - Wei
+  - Lin
+  - Cheng
+
+chinees-v:
+  - Mei
+  - Li
+  - Xiaoyu
+
+somalisch-m:
+  - Abdi
+  - Ahmed
+  - Mohamed
+
+somalisch-v:
+  - Halima
+  - Fardosa
+  - Ayaan
+
+molukse-m:
+  - Johannes
+  - Boy
+  - Patrick
+  - Ronaldo
+
+molukse-v:
+  - Christina
+  - Rosalin
+
+syrisch-m:
+  - Ahmad
+  - Mahmoud
+  - Omar
+  - Bashar
+
+syrisch-v:
+  - Rania
+  - Layla
+  - Zeinab

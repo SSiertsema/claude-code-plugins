@@ -1,0 +1,61 @@
+# Tech profiles — mini-clusters van device + services + literacy
+
+- id: apple-ecosystem-full
+  label: Apple-ecosystem volledig (iPhone, MacBook, iPad, AirPods, Apple Watch, Spotify-familie)
+  tags: { age: [20-55], ses: [midden, hoog], literacy: hoog }
+
+- id: apple-iphone-pragmatisch
+  label: iPhone + Windows-laptop of iPad + standaard-banking-app
+  tags: { age: [25-65], ses: [midden], literacy: gemiddeld-hoog }
+
+- id: android-midrange-standaard
+  label: Android-midrange (Samsung / Xiaomi) + Windows-laptop + Smart TV + Ziggo/KPN
+  tags: { age: [30-75], ses: [all], literacy: gemiddeld }
+
+- id: android-budget-whatsapp
+  label: Android-budget (<€200) + WhatsApp + NS-app + DigiD + bank-app — functioneel minimum
+  tags: { age: [50-90], ses: [laag, midden], literacy: laag-gemiddeld }
+
+- id: power-user-dev
+  label: MacBook Pro + meerdere monitors + terminal + iPhone + Mechanical keyboard + Notion/Obsidian
+  tags: { age: [22-50], ses: [hoog], literacy: zeer-hoog, occupation: [dev, designer, creator] }
+
+- id: productiviteit-pro
+  label: iPhone + MacBook + Notion/Obsidian + Kindle + AirPods + noise-canceling
+  tags: { age: [25-55], ses: [midden, hoog], literacy: hoog }
+
+- id: iot-smart-home-early-adopter
+  label: Smart home (Hue, Nest, Google Home, slimme meter-monitor, Tesla auto)
+  tags: { age: [30-55], ses: [hoog], literacy: hoog }
+
+- id: praktisch-offline-first
+  label: Android-budget + oude TV + WhatsApp + telefoon-bellen (geen Netflix, geen Instagram)
+  tags: { age: [60-95], ses: [all], literacy: laag }
+
+- id: boer-agro-tech
+  label: Melkrobot + GPS-trekker + WhatsApp-boerengroep + Facebook + mobiele-bank — praktisch specialistisch
+  tags: { age: [35-65], ses: [midden, hoog], literacy: praktisch-specialistisch, bundle-affinity: [work-family-housing-wfh-003] }
+
+- id: tiener-android-tiktok
+  label: Android / iPhone-hand-me-down + TikTok-Instagram-Snapchat-WhatsApp + gaming
+  tags: { age: [13-20], ses: [all], literacy: zeer-hoog-maar-onbewust }
+
+- id: creative-social-media
+  label: iPhone + iPad-pro + Procreate + VSCO + Instagram-creator-account + Pinterest
+  tags: { age: [18-40], ses: [midden, hoog], literacy: hoog, occupation: [creative, artist] }
+
+- id: senior-tablet-primary
+  label: iPad als primair device (NOS, bank-app, FaceTime kleinkinderen, NRC-app) + Android-telefoon
+  tags: { age: [60-85], ses: [midden, hoog], literacy: gemiddeld }
+
+- id: privacy-bewust-minimaal
+  label: iPhone + Signal + ProtonMail + alleen noodzakelijke apps (geen Facebook/Instagram/TikTok)
+  tags: { age: [25-60], ses: [midden, hoog], literacy: hoog, attitude-privacy: hoog }
+
+- id: gezins-gedeeld
+  label: Android-telefoons voor alle ezvinsleden + gezinstablet + Netflix-familie + Ziggo
+  tags: { age: [35-50], ses: [midden], literacy: gemiddeld, bundle-affinity: [parenthood-partnership-timepoverty-ppt-002, ppt-003] }
+
+- id: vakman-praktisch
+  label: Android-degelijk + WhatsApp-vakgroepen + YouTube-vakinhoudelijk + standaard Samsung-TV
+  tags: { age: [25-65], ses: [all], literacy: praktisch-specialistisch, bundle-affinity: [expertise-information-trust-eit-003] }

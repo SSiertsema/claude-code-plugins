@@ -1,0 +1,41 @@
+# Social style patterns
+
+- id: borrel-regular
+  label: Borrel-regulars (vrijdag werkborrel, weekend café, brede kring)
+  tags: { age: [22-40], ses: [midden, hoog], region: [G4, middelgroot] }
+
+- id: familie-first
+  label: Familie-first (weekend familie-diners, verjaardagen belangrijk, kring primair verwanten)
+  tags: { age: [all], ses: [all] }
+
+- id: dorpsgemeenschap
+  label: Dorpsgemeenschap (iedereen kent iedereen, vereniging-leven, spontaan langs)
+  tags: { age: [30-80], ses: [all], bundle-affinity: [regional-rootedness-rr-002, regional-rootedness-rr-003] }
+
+- id: online-only
+  label: Online-primair (Discord, Twitch, subreddits, kleine vertrouwde groep IRL)
+  tags: { age: [15-35], ses: [all] }
+
+- id: religieuze-gemeenschap
+  label: Religieuze gemeenschap (kerk / moskee / tempel als sociaal anker)
+  tags: { age: [all], bundle-affinity: [faith-routine-worldview-frw-002, frw-003, regional-rootedness-rr-003] }
+
+- id: fragmented-post-divorce
+  label: Fragmented post-scheiding (oude vrienden weg, nieuwe single-parent-kringen)
+  tags: { age: [30-55], bundle-affinity: [parenthood-partnership-timepoverty-ppt-002] }
+
+- id: klein-intiem
+  label: Klein-intiem (2-4 hechte vrienden, introvert, diepte > breedte)
+  tags: { age: [all], ses: [midden, hoog] }
+
+- id: netwerk-pro
+  label: Netwerk-professioneel (LinkedIn, industry-events, collega-vriendschappen)
+  tags: { age: [25-55], ses: [hoog] }
+
+- id: ouder-van-kind-vriendschappen
+  label: Vriendschappen via kinderen (ouders-klasgenoten, sportveld)
+  tags: { age: [30-50], bundle-affinity: [caregiving-boundary-cgb-002, parenthood-partnership-timepoverty-ppt-003] }
+
+- id: expat-bubbel
+  label: Expat-bubbel (internationaal netwerk, Engels primair, korte vriendschappen)
+  tags: { age: [25-50], ses: [hoog] }

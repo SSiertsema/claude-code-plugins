@@ -1,0 +1,121 @@
+# Media consumption — NL-context
+
+- id: nrc
+  label: NRC (digitaal of papier)
+  tags: { age: [30-80], ses: [midden, hoog], political: [progressief, liberaal, centrum] }
+
+- id: volkskrant
+  label: De Volkskrant
+  tags: { age: [30-80], ses: [midden, hoog], political: [progressief, centrum] }
+
+- id: fd
+  label: Het Financieele Dagblad
+  tags: { age: [30-70], ses: [hoog], political: [liberaal, centrum] }
+
+- id: trouw
+  label: Trouw
+  tags: { age: [35-85], ses: [midden, hoog], political: [sociaal-christelijk, centrum] }
+
+- id: telegraaf
+  label: De Telegraaf (digitaal of papier)
+  tags: { age: [40-85], ses: [laag, midden], political: [rechts, conservatief] }
+
+- id: ad
+  label: AD (Algemeen Dagblad) regionaal
+  tags: { age: [30-75], ses: [all], political: [centrum, rechts] }
+
+- id: nu-nl
+  label: NU.nl (quick nieuws-scans op telefoon)
+  tags: { age: [20-50], ses: [all], political: [all] }
+
+- id: de-correspondent
+  label: De Correspondent
+  tags: { age: [25-55], ses: [midden, hoog], political: [progressief] }
+
+- id: nos
+  label: NOS (journaal, NOS.nl)
+  tags: { age: [all], ses: [all], political: [all] }
+
+- id: nos-radio-1
+  label: NPO Radio 1 (auto, thuis)
+  tags: { age: [35-80], ses: [all], political: [all] }
+
+- id: bnr
+  label: BNR Nieuwsradio
+  tags: { age: [35-70], ses: [midden, hoog], political: [liberaal] }
+
+- id: rtl-nieuws
+  label: RTL Nieuws (TV, 19:30)
+  tags: { age: [40-85], ses: [all], political: [centrum, rechts] }
+
+- id: hart-van-nederland
+  label: Hart van Nederland (SBS6)
+  tags: { age: [45-85], ses: [laag, midden], political: [centrum, rechts] }
+
+- id: reformatorisch-dagblad
+  label: Reformatorisch Dagblad
+  tags: { age: [30-85], ses: [all], political: [SGP, CU], bundle-affinity: [faith-routine-worldview-frw-002, regional-rootedness-rr-003] }
+
+- id: nederlands-dagblad
+  label: Nederlands Dagblad
+  tags: { age: [30-80], ses: [midden, hoog], political: [CU, CDA], bundle-affinity: [faith-routine-worldview-frw-002] }
+
+- id: eo-uitzending
+  label: EO programma's (TV, radio)
+  tags: { age: [25-75], ses: [all], political: [christelijk], bundle-affinity: [faith-routine-worldview-frw-002] }
+
+- id: vpro-tegenlicht
+  label: VPRO Tegenlicht / documentaires
+  tags: { age: [30-65], ses: [midden, hoog], political: [progressief] }
+
+- id: ongehoord-nl
+  label: Ongehoord Nederland
+  tags: { age: [35-70], ses: [laag, midden], political: [PVV, FVD, rechts] }
+
+- id: omroep-zwart
+  label: Omroep Zwart (Ziggo On Demand / NPO)
+  tags: { age: [20-45], ses: [midden, hoog], political: [progressief] }
+
+- id: al-jazeera
+  label: Al Jazeera (Engels)
+  tags: { age: [25-55], ses: [midden, hoog], bundle-affinity: [migration-generation-culture-mgc-002, migration-generation-culture-mgc-003] }
+
+- id: economist
+  label: The Economist
+  tags: { age: [35-70], ses: [hoog], political: [liberaal] }
+
+- id: podcasts-nl-politiek
+  label: NL-podcasts politiek (Hoe gaat het met jou, Betrouwbare bronnen, Haagse Zaken)
+  tags: { age: [25-65], ses: [midden, hoog], political: [all] }
+
+- id: podcasts-economie
+  label: NL-podcasts economie/tech (BNR Cryptocast, Het Uur)
+  tags: { age: [25-55], ses: [midden, hoog] }
+
+- id: instagram
+  label: Instagram dagelijks (volgen + scrollen)
+  tags: { age: [18-45], ses: [all] }
+
+- id: tiktok
+  label: TikTok dagelijks (>30 min/dag)
+  tags: { age: [14-35], ses: [all] }
+
+- id: linkedin
+  label: LinkedIn (werk-netwerk, dagelijks check)
+  tags: { age: [25-65], ses: [midden, hoog] }
+
+- id: facebook
+  label: Facebook (buurt-groepen, familie)
+  tags: { age: [35-80], ses: [all] }
+
+- id: whatsapp-groepen
+  label: WhatsApp-groepen als primaire info-kanaal (buurt, sport, familie)
+  tags: { age: [25-85], ses: [all] }
+
+- id: youtube-vakinhoudelijk
+  label: YouTube vakinhoudelijk (how-to, hobby, politiek-commentaar)
+  tags: { age: [20-65], ses: [all] }
+
+- id: netflix-streaming
+  label: Netflix / Disney+ / Videoland (avonden)
+  tags: { age: [15-70], ses: [all] }

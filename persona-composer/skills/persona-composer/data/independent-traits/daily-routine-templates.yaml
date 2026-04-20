@@ -1,0 +1,49 @@
+# Daily routine templates
+
+- id: hybride-9-tot-5
+  label: Hybride 9-17u (kantoor-dagen 2-3x, rest thuis, normaal weekend vrij)
+  tags: { age: [25-60], ses: [midden, hoog] }
+
+- id: zzp-flexibel
+  label: ZZP flexibel (eigen schema, klanten-calls, projecten-blokken)
+  tags: { age: [25-65], ses: [all] }
+
+- id: ploegendienst-zorg
+  label: Ploegendienst zorg (dagdienst/avonddienst/nachtdienst 5-dagen blokken)
+  tags: { age: [22-60], ses: [laag, midden], occupation: [zorg, verzorging, verpleging] }
+
+- id: schooldag-leraar
+  label: Schooldag leraar (7:30-16:30 + avond-correctie, vakanties volop)
+  tags: { age: [25-65], ses: [midden], occupation: [onderwijs] }
+
+- id: boerderij-7-dagen
+  label: Boerderij 7-dagen (koeien 2x/dag, akker volgens seizoen, weekend werken)
+  tags: { age: [30-70], ses: [midden, hoog], bundle-affinity: [work-family-housing-wfh-003] }
+
+- id: thuiswerker-parttime
+  label: Thuiswerker parttime (energie-beperkt, pacing, pauzes)
+  tags: { age: [30-65], ses: [midden], bundle-affinity: [health-work-arrangement-hwa-002] }
+
+- id: scholier
+  label: Scholier (middelbare, 8:30-15u, huiswerk avond, vrienden + sport)
+  tags: { age: [12-18], ses: [all] }
+
+- id: student-uitwonend
+  label: Student uitwonend (colleges flexibel, avond vaak wakker, onregelmatig)
+  tags: { age: [18-28], ses: [all] }
+
+- id: gepensioneerd-ritme
+  label: Gepensioneerd (vroeg op, wandelen, krant, kleinkinderen/vrijwilligerswerk, middagrust)
+  tags: { age: [65-90], ses: [all], bundle-affinity: [life-stage-transition-lst-003] }
+
+- id: mantelzorger-onderbroken
+  label: Mantelzorger (onderbroken door zorgtaken, korte eigen-momenten)
+  tags: { age: [35-65], bundle-affinity: [health-work-arrangement-hwa-003, caregiving-boundary-cgb-003] }
+
+- id: gezin-jong-druk
+  label: Gezin-jong (5:30-22:30 met kinderen-taken, weinig rust)
+  tags: { age: [28-42], bundle-affinity: [caregiving-boundary-cgb-002] }
+
+- id: vroege-vogel-fysiek
+  label: Vroege start (5:30-15u, fysiek werk, vroeg naar bed)
+  tags: { age: [25-65], ses: [laag, midden], occupation: [vakman, transport, landbouw, visserij] }

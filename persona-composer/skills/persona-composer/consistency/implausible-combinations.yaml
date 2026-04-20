@@ -1,0 +1,190 @@
+# Implausible combinations — expliciete blacklist
+# Format:
+#   bundles: [lijst van bundle-ids die NIET samen mogen]
+#   reason: korte uitleg
+#   severity: hard | soft
+# Elke entry wordt gecheckt in Fase 7. Hard = re-roll. Soft = log in Notes.
+
+- bundles: [frw-003, mgc-001]
+  reason: "Islamitisch-praktiserend-Marokkaans vereist migratie-achtergrond; mgc-001 is NL-native zonder migratie"
+  severity: hard
+
+- bundles: [frw-002, ipc-001]
+  reason: "PKN-provincie-nuchter-gelovig en progressief-stedelijk-hoogopgeleid botsen cultureel en ritme-matig"
+  severity: hard
+
+- bundles: [ipc-001, rr-003]
+  reason: "Progressief-stedelijk vs biblebelt-rooted — geografisch en ideologisch incompatibel"
+  severity: hard
+
+- bundles: [wfh-003, ipc-001]
+  reason: "Boerderij-multigenerationeel vs progressief-stedelijk — geen overlap in leef-context"
+  severity: hard
+
+- bundles: [wfh-001, rr-003]
+  reason: "G4-scale-up-dual-income vs biblebelt-rooted — G4 is niet biblebelt"
+  severity: hard
+
+- bundles: [wfh-001, mgc-001-plus-ecm-002]
+  reason: "G4-scale-up vereist hoger-opgeleide variant; combinatie met VMBO-MBO beperkt de role-fit"
+  severity: soft
+
+- bundles: [fpc-003, ecm-002]
+  reason: "Welgesteld-asset-rich via uitsluitend VMBO-MBO-carrière is zeldzaam (wel mogelijk via ondernemerschap)"
+  severity: soft
+
+- bundles: [hwa-002, cgb-002]
+  reason: "Chronisch ziek + jonge kinderen intensief: energie-budget mogelijk ontoereikend"
+  severity: soft
+
+- bundles: [ppt-001, cgb-002]
+  reason: "Dual-income-no-kids conflicteert met jonge-kinderen-intensief"
+  severity: hard
+
+- bundles: [ppt-001, cgb-003]
+  reason: "Dual-income-no-kids en dementerende-ouder-sandwich: zorgtaak kan, maar gezinsstructuur moet matchen"
+  severity: soft
+
+- bundles: [lst-001, lst-002]
+  reason: "Geen-transitie-stabiel en burnout-herstel zijn wederzijds uitsluitend"
+  severity: hard
+
+- bundles: [lst-001, lst-003]
+  reason: "Geen-transitie-stabiel en recent-gepensioneerd zijn wederzijds uitsluitend"
+  severity: hard
+
+- bundles: [lst-002, lst-003]
+  reason: "Burnout-herstel en recent-gepensioneerd zijn wederzijds uitsluitend"
+  severity: hard
+
+- bundles: [cgb-001, cgb-002]
+  reason: "Geen-zorgtaken en jonge-kinderen-intensief zijn wederzijds uitsluitend"
+  severity: hard
+
+- bundles: [cgb-001, cgb-003]
+  reason: "Geen-zorgtaken en dementerende-ouder-sandwich zijn wederzijds uitsluitend"
+  severity: hard
+
+- bundles: [cgb-002, cgb-003]
+  reason: "Jonge-kinderen-intensief en dementerende-ouder kunnen samen (sandwich) maar zijn zwaar; soft flag"
+  severity: soft
+
+- bundles: [fpc-001, fpc-002]
+  reason: "Middelklasse-stabiel en precariteit-solo zijn wederzijds uitsluitend"
+  severity: hard
+
+- bundles: [fpc-001, fpc-003]
+  reason: "Middelklasse-stabiel en welgesteld-asset-rich zijn wederzijds uitsluitend"
+  severity: hard
+
+- bundles: [fpc-002, fpc-003]
+  reason: "Precariteit-solo en welgesteld-asset-rich zijn wederzijds uitsluitend"
+  severity: hard
+
+- bundles: [eit-001, eit-002]
+  reason: "Kantoor-generalist en diep-specialist zijn wederzijds uitsluitend op expertise-niveau"
+  severity: hard
+
+- bundles: [eit-001, eit-003]
+  reason: "Kantoor-generalist en vakman-praktisch zijn verschillende beroepstypen"
+  severity: hard
+
+- bundles: [eit-002, eit-003]
+  reason: "Diep-specialist-academisch en vakman-praktisch zijn verschillende paden"
+  severity: hard
+
+- bundles: [ecm-001, ecm-002]
+  reason: "HBO-standaard en VMBO-MBO zijn verschillende opleidings-routes"
+  severity: hard
+
+- bundles: [ecm-001, ecm-003]
+  reason: "HBO-standaard en VWO-WO-academisch zijn verschillende opleidings-routes"
+  severity: hard
+
+- bundles: [ecm-002, ecm-003]
+  reason: "VMBO-MBO en VWO-WO zijn verschillende opleidings-routes"
+  severity: hard
+
+- bundles: [mgc-001, mgc-002]
+  reason: "NL-native-geen-migratie en 2e-generatie Marokkaans zijn wederzijds uitsluitend"
+  severity: hard
+
+- bundles: [mgc-001, mgc-003]
+  reason: "NL-native-geen-migratie en Surinaamse-3e-generatie zijn wederzijds uitsluitend"
+  severity: hard
+
+- bundles: [mgc-002, mgc-003]
+  reason: "Marokkaans-2e-gen en Surinaams-3e-gen zijn verschillende migratie-backgrounds"
+  severity: hard
+
+- bundles: [rr-001, rr-002]
+  reason: "Randstad-relocator en dorp-born-and-raised zijn wederzijds uitsluitend"
+  severity: hard
+
+- bundles: [rr-001, rr-003]
+  reason: "Randstad-relocator en biblebelt-rooted zijn wederzijds uitsluitend"
+  severity: hard
+
+- bundles: [rr-002, rr-003]
+  reason: "Dorp-born-and-raised en biblebelt-rooted overlappen gedeeltelijk; soft check — biblebelt is specifieker"
+  severity: soft
+
+- bundles: [ppt-002, ppt-003]
+  reason: "Single-parent en getrouwd-gezin zijn wederzijds uitsluitend"
+  severity: hard
+
+- bundles: [ppt-001, ppt-002]
+  reason: "Dual-income-no-kids en single-parent zijn wederzijds uitsluitend"
+  severity: hard
+
+- bundles: [ppt-001, ppt-003]
+  reason: "Dual-income-no-kids en gezin-twee-tieners zijn wederzijds uitsluitend"
+  severity: hard
+
+- bundles: [hwa-001, hwa-002]
+  reason: "Gezond-voltijd en chronisch-ziek-WIA zijn wederzijds uitsluitend"
+  severity: hard
+
+- bundles: [hwa-001, hwa-003]
+  reason: "Gezond-voltijd-hybride en mantelzorger-parttime kunnen botsen (mantelzorger impliceert parttime)"
+  severity: soft
+
+- bundles: [hwa-002, hwa-003]
+  reason: "Chronisch-ziek en mantelzorger kunnen samengaan maar zijn extreem belastend; soft flag"
+  severity: soft
+
+- bundles: [ipc-001, ipc-002]
+  reason: "Progressief-stedelijk en BBB-platteland zijn wederzijds uitsluitend"
+  severity: hard
+
+- bundles: [ipc-001, ipc-003]
+  reason: "Progressief-stedelijk en PVV-volkswijk zijn wederzijds uitsluitend"
+  severity: hard
+
+- bundles: [ipc-002, ipc-003]
+  reason: "BBB-platteland en PVV-volkswijk zijn beide rechts maar cultureel verschillend; soft flag"
+  severity: soft
+
+- bundles: [frw-001, frw-002]
+  reason: "Seculier-stedelijk en PKN-gelovig zijn wederzijds uitsluitend"
+  severity: hard
+
+- bundles: [frw-001, frw-003]
+  reason: "Seculier-stedelijk en islamitisch-praktiserend zijn wederzijds uitsluitend"
+  severity: hard
+
+- bundles: [frw-002, frw-003]
+  reason: "PKN en islamitisch-praktiserend zijn verschillende religies"
+  severity: hard
+
+- bundles: [wfh-001, wfh-002]
+  reason: "G4-scale-up en middelgroot-gezin-koophuis zijn wederzijds uitsluitend"
+  severity: hard
+
+- bundles: [wfh-001, wfh-003]
+  reason: "G4-scale-up en boerderij zijn wederzijds uitsluitend"
+  severity: hard
+
+- bundles: [wfh-002, wfh-003]
+  reason: "Middelgroot-gezin en boerderij zijn verschillende woon-werk-patronen"
+  severity: hard

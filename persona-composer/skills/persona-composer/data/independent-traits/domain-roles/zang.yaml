@@ -1,0 +1,64 @@
+# Domein-rollen voor zang (interessegebied)
+# Gebruikt als overlay na bundel-lock + independent-overlay
+
+- id: zangleraar-muziekschool
+  label: Zangleraar bij muziekschool, geeft privé-les + groepslessen
+  tags: { age: [28-65], ses: [midden], education: [HBO-conservatorium / zang-docent] }
+  nudges:
+    hobby: [koorzang, solozang-thuis, muziek-maken-band]
+    occupation-override: "Zangdocent / stemcoach bij muziekschool <plaats>"
+
+- id: koorlid-beginner
+  label: Amateur-koorlid, recent begonnen (1-3 jaar), gemengd koor lokaal
+  tags: { age: [25-70], ses: [all], region: [all] }
+  nudges:
+    hobby: [koorzang]
+
+- id: koorlid-ervaren
+  label: Amateur-koorlid ervaren (>5 jaar), soms kleine solo-partijen
+  tags: { age: [30-80], ses: [all], region: [all] }
+  nudges:
+    hobby: [koorzang]
+
+- id: koordirigent-vrijwillig
+  label: Koordirigent (vrijwilligerswerk, amateur-koor, 1x/week)
+  tags: { age: [35-75], ses: [midden], education: [muzikaal achtergrond / zelf gestudeerd] }
+  nudges:
+    hobby: [koorzang, vrijwilligerswerk-kerk]
+    occupation-override: null
+
+- id: conservatoriumstudent
+  label: Zangstudent conservatorium (klassiek / jazz / pop / musical)
+  tags: { age: [18-30], ses: [midden, hoog], region: [G4, middelgroot] }
+  nudges:
+    hobby: [solozang-thuis, muziek-maken-band]
+
+- id: semi-prof-vocalist
+  label: Semi-professionele vocalist (coverband, musical-ensemble, bruiloftszangen)
+  tags: { age: [22-55], ses: [midden], region: [all] }
+  nudges:
+    hobby: [muziek-maken-band, solozang-thuis]
+
+- id: hobby-karaoke
+  label: Hobby-zanger thuis (douche, karaoke, TikTok-covers)
+  tags: { age: [15-45], ses: [all], region: [all] }
+  nudges:
+    hobby: [solozang-thuis, gamen]
+
+- id: logopedist-stem
+  label: Logopedist met focus op stemtherapie
+  tags: { age: [25-60], ses: [midden], education: [HBO-logopedie] }
+  nudges:
+    occupation-override: "Logopedist / stemtherapeut"
+
+- id: ouder-zangambitie-kind
+  label: Ouder van kind met zang-ambitie (muziekschool, musical-auditie, Junior Songfestival)
+  tags: { age: [32-50], ses: [midden, hoog], region: [all] }
+  nudges:
+    hobby: [voetbal-kinderen-kant]  # parallel aan sport-langs-de-lijn
+
+- id: stemrevalidatie-volwassene
+  label: Volwassene in stemrevalidatie (na operatie/ziekte/langdurig stemverlies)
+  tags: { age: [40-75], ses: [all], region: [all], bundle-affinity: [health-work-arrangement-hwa-002] }
+  nudges:
+    attitude-health: [alternatief-complementair, pragmatisch-reactief]

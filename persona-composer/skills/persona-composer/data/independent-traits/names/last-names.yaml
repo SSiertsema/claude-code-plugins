@@ -1,0 +1,99 @@
+# Last names — NL mix
+
+nl-common:
+  - de Vries
+  - Jansen
+  - van den Berg
+  - Bakker
+  - Janssen
+  - Visser
+  - Smit
+  - Meijer
+  - de Boer
+  - Mulder
+  - de Groot
+  - Bos
+  - Vos
+  - Peters
+  - Hendriks
+  - van Leeuwen
+  - Dekker
+  - Brouwer
+  - de Wit
+  - Dijkstra
+  - Smits
+  - de Graaf
+  - van der Meer
+  - van der Linden
+  - Koning
+  - Prins
+  - Huisman
+  - Peeters
+  - Timmermans
+  - Kuipers
+
+nl-regional-friesland:
+  - Dijkstra
+  - de Boer
+  - Hoekstra
+  - Algra
+  - Foppen
+  - Wiersema
+  - Reitsma
+  - Postma
+  - Terpstra
+
+nl-regional-limburg:
+  - Peeters
+  - Jansen
+  - Hendriks
+  - Smeets
+  - Bemelmans
+  - Dassen
+  - Curfs
+  - Vandermeulen
+
+marokkaans:
+  - El Hassani
+  - Bouzaggou
+  - El Idrissi
+  - Haddad
+  - El Amrani
+  - Bouchra
+  - Ouazzani
+
+turks:
+  - Yildirim
+  - Ozdemir
+  - Aydin
+  - Akbulut
+  - Kaya
+
+surinaams:
+  - Pinas
+  - Tjokrohadinoto
+  - Jankipersad
+  - Martina
+  - Ramkhelawan
+  - Ramautar
+  - Doerdjan
+  - Tehupeiory
+  - Boateng
+
+pools:
+  - Nowak
+  - Lewandowska
+  - Kowalski
+  - Wiśniewski
+
+japans:
+  - Tanaka
+  - Nakamura
+  - Yamada
+  - Sato
+
+molukse:
+  - Patipeilohy
+  - Tehupeiory
+  - Tahapary
+  - Tavares

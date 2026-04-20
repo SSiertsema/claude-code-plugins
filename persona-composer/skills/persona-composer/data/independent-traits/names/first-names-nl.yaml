@@ -1,0 +1,135 @@
+# First names — NL native, gewogen naar generatie (geboortejaar)
+# Bij compositie: kies uit juiste leeftijdsband
+
+# Vrouwelijk — geboren 1935-1960 (nu 65+)
+vrouw-65plus:
+  - Greetje
+  - Annie
+  - Truus
+  - Trijntje
+  - Henny
+  - Diny
+  - Riek
+  - Ineke
+  - Marjan
+  - Corrie
+  - Wil
+  - Jannie
+  - Elisabeth
+  - Jopie
+
+# Vrouwelijk — geboren 1961-1980 (nu 45-64)
+vrouw-45-64:
+  - Monique
+  - Petra
+  - Miranda
+  - Jacqueline
+  - Esther
+  - Saskia
+  - Yvette
+  - Marja
+  - Karin
+  - Linda
+  - Suzanne
+  - Ria
+  - Annelies
+  - Wendy
+  - Chantal
+
+# Vrouwelijk — geboren 1981-2000 (nu 25-44)
+vrouw-25-44:
+  - Anouk
+  - Femke
+  - Marit
+  - Lotte
+  - Anne
+  - Sanne
+  - Lieke
+  - Eline
+  - Nienke
+  - Marloes
+  - Fleur
+  - Daphne
+  - Noa
+  - Yara
+  - Evi
+
+# Vrouwelijk — geboren 2001-2010 (nu 15-24)
+vrouw-15-24:
+  - Julia
+  - Emma
+  - Sophie
+  - Tess
+  - Fay
+  - Nora
+  - Lynn
+  - Sara
+  - Ella
+  - Isa
+
+# Mannelijk — geboren 1935-1960 (nu 65+)
+man-65plus:
+  - Gerrit
+  - Jan
+  - Henk
+  - Cornelis
+  - Piet
+  - Bram
+  - Willem
+  - Wim
+  - Bertus
+  - Herman
+  - Hendrik
+  - Jaap
+  - Evert
+  - Klaas
+  - Theo
+
+# Mannelijk — geboren 1961-1980 (nu 45-64)
+man-45-64:
+  - Martin
+  - Paul
+  - Ronald
+  - Edwin
+  - Marcel
+  - Dennis
+  - Frank
+  - Erwin
+  - Michel
+  - Patrick
+  - Richard
+  - Rene
+  - Arjan
+  - Rob
+  - Peter
+
+# Mannelijk — geboren 1981-2000 (nu 25-44)
+man-25-44:
+  - Bram
+  - Tim
+  - Sander
+  - Jeroen
+  - Bas
+  - Joost
+  - Thomas
+  - Stijn
+  - Niels
+  - Rutger
+  - Martijn
+  - Lars
+  - Ruben
+  - Robbert
+  - Hidde
+
+# Mannelijk — geboren 2001-2010 (nu 15-24)
+man-15-24:
+  - Sem
+  - Daan
+  - Lucas
+  - Milan
+  - Thijs
+  - Noah
+  - Levi
+  - Finn
+  - Sven
+  - Luuk

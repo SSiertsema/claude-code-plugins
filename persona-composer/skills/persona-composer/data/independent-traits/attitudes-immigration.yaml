@@ -1,0 +1,21 @@
+# Attitudes — immigration
+
+- id: open-welkomend
+  label: Open, "vluchtelingen zijn welkom", pro-kennismigranten, pro-diversiteit
+  tags: { age: [20-60], ses: [midden, hoog], political: [GL-PvdA, D66, Volt], bundle-affinity: [identity-politics-social-trust-ipc-001] }
+
+- id: genuanceerd-regie
+  label: "Ja, maar met regie — te veel tegelijk is niet houdbaar"
+  tags: { age: [30-70], ses: [midden], political: [CDA, VVD, centrum] }
+
+- id: kritisch-beperken
+  label: Nederland is vol — immigratie beperken, verplichte integratie, strenger
+  tags: { age: [40-80], ses: [laag, midden], political: [VVD, PVV, FVD, BBB] }
+
+- id: anti-immigratie-fel
+  label: Stop immigratie, remigratie-bevorderen, "eigen volk eerst"
+  tags: { age: [45-80], ses: [laag, midden], political: [PVV, FVD], bundle-affinity: [identity-politics-social-trust-ipc-003] }
+
+- id: migratie-bg-zelfbewust
+  label: Eigen migratie-ervaring kleurt perspectief (empathisch-nuanceerd, kritisch op "wij-zij"-framing)
+  tags: { migration-bg: [1st, 2nd, 3rd] }

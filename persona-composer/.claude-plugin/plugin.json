@@ -1,0 +1,12 @@
+{
+  "name": "persona-composer",
+  "version": "0.1.0",
+  "description": "Compose Dutch-context personas on-demand from external trait pools and pre-authored coupled archetype bundles. Combines 12 coupled-trait families (work-family-housing, faith-routine-worldview, health-work-arrangement, identity-politics-social-trust, education-career-mobility, migration-generation-culture, regional-rootedness, parenthood-partnership-timepoverty, life-stage-transition, expertise-information-trust, caregiving-boundary, financial-precarity-coping) with independent trait pools (hobbies, media, tech, attitudes, diet, social style, daily routine, domain-roles) to produce plausible NL personas at runtime. Callable by other skills (ontdek-kansen, business-case-management, user-research) via the Skill tool.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["persona", "composition", "trait-pools", "archetype-bundles", "nl-context", "compositional"],
+  "skills": "./skills"
+}

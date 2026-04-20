@@ -1,0 +1,162 @@
+# Hobbies & interests — NL-context
+# Gebruik: composer kiest 2-4 entries per persona, gefilterd op tags en bundle-hooks
+
+- id: wandelen
+  label: Wekelijks wandelen (natuur, duinen, bos, polder)
+  tags: { age: [all], ses: [all], region: [all] }
+
+- id: fietsen-recreatief
+  label: Recreatief fietsen (weekendtochten, 30-50km)
+  tags: { age: [26-45, 46-65, 65+], ses: [all], region: [all] }
+
+- id: wielrennen
+  label: Wielrennen (racefiets, clubritten, Mont Ventoux-bucket-list)
+  tags: { age: [26-45, 46-65], ses: [midden, hoog], region: [G4, middelgroot] }
+
+- id: hardlopen
+  label: Hardlopen (3x/week, incidenteel halve marathon)
+  tags: { age: [20-45], ses: [all], region: [all] }
+
+- id: yoga
+  label: Yoga (wekelijks, studio of thuis)
+  tags: { age: [20-55], ses: [midden, hoog], region: [G4, middelgroot] }
+
+- id: padel
+  label: Padel (2x/week met vrienden)
+  tags: { age: [25-50], ses: [midden, hoog], region: [G4, middelgroot] }
+
+- id: tennis
+  label: Tennis (club, dubbelspel op zondagochtend)
+  tags: { age: [35-70], ses: [midden, hoog], region: [all] }
+
+- id: voetbal-amateur
+  label: Voetbal bij amateurclub (lid zaterdag of zondag)
+  tags: { age: [20-55], ses: [all], region: [all] }
+
+- id: voetbal-kinderen-kant
+  label: Voetbal langs de lijn bij kinderen (zaterdagochtend, rijden, kleedkamer-gesprekken)
+  tags: { age: [30-50], ses: [all], region: [all] }
+
+- id: korfbal
+  label: Korfbal (typisch NL, gemengd, club)
+  tags: { age: [20-65], ses: [all], region: [middelgroot, dorp] }
+
+- id: zwemmen-baantjes
+  label: Baantjes zwemmen wekelijks
+  tags: { age: [all], ses: [all], region: [all] }
+
+- id: crossfit-gym
+  label: CrossFit of gym-training 3-4x/week
+  tags: { age: [20-45], ses: [midden, hoog], region: [G4, middelgroot] }
+
+- id: koorzang
+  label: Koorzang (wekelijks amateur-koor)
+  tags: { age: [26-45, 46-65, 65+], ses: [all], region: [all], bundle-affinity: [faith-routine-worldview, regional-rootedness] }
+
+- id: solozang-thuis
+  label: Thuis zingen (douche, karaoke, TikTok)
+  tags: { age: [15-45], ses: [all], region: [all] }
+
+- id: muziek-maken-band
+  label: Band of ensemble (oefent wekelijks, soms optreden)
+  tags: { age: [18-55], ses: [all], region: [G4, middelgroot] }
+
+- id: klussen
+  label: Klussen eigen huis (renovatie, schilderen, tuin)
+  tags: { age: [30-65], ses: [all], region: [middelgroot, dorp] }
+
+- id: tuinieren
+  label: Tuinieren (eigen tuin, moestuin, volkstuin)
+  tags: { age: [35-75], ses: [all], region: [all] }
+
+- id: vrijwilligerswerk-kerk
+  label: Vrijwilligerswerk bij kerk of moskee
+  tags: { age: [all], ses: [all], region: [all], bundle-affinity: [faith-routine-worldview] }
+
+- id: vrijwilligerswerk-sport
+  label: Vrijwilligerswerk bij sportclub (bestuur, kantine, training)
+  tags: { age: [30-70], ses: [all], region: [all] }
+
+- id: vrijwilligerswerk-wijk
+  label: Vrijwilligerswerk wijk (voedselbank, buurthuis, taallesje)
+  tags: { age: [40-80], ses: [all], region: [all] }
+
+- id: lezen
+  label: Lezen (fictie, non-fictie, 1-2 boeken per maand)
+  tags: { age: [all], ses: [midden, hoog], region: [all] }
+
+- id: koken-hobby
+  label: Uitgebreid thuis koken (weekenden, uitproberen recepten)
+  tags: { age: [all], ses: [midden, hoog], region: [all] }
+
+- id: jagen
+  label: Jagen (met vergunning, wildbeheer-context)
+  tags: { age: [40-70], ses: [midden, hoog], region: [dorp], bundle-affinity: [work-family-housing-wfh-003, regional-rootedness-rr-002] }
+
+- id: vissen
+  label: Vissen (kanaal, meer, visvergunning)
+  tags: { age: [30-75], ses: [all], region: [middelgroot, dorp] }
+
+- id: schaken
+  label: Schaken (club of online)
+  tags: { age: [15-75], ses: [midden, hoog], region: [all] }
+
+- id: bordspellen
+  label: Bordspellen (club, vriendenavonden, familiekring)
+  tags: { age: [20-50], ses: [all], region: [all] }
+
+- id: gamen
+  label: Videogames (single-player, online, 4-12u/week)
+  tags: { age: [15-40], ses: [all], region: [all] }
+
+- id: festivals
+  label: Festivals en concerten (zomer, 3-5 per jaar)
+  tags: { age: [18-40], ses: [midden, hoog], region: [all] }
+
+- id: cultuur-musea
+  label: Musea, theater, klassieke concerten
+  tags: { age: [30-80], ses: [midden, hoog], region: [G4, middelgroot] }
+
+- id: reizen-ver
+  label: Jaarlijks verre reis (Azië, Zuid-Amerika, Afrika)
+  tags: { age: [25-65], ses: [hoog], region: [all] }
+
+- id: reizen-europa
+  label: EU-reizen (stedentrip, camping, wandelen)
+  tags: { age: [25-70], ses: [midden, hoog], region: [all] }
+
+- id: caravan-kamperen
+  label: Caravan of camper (zomer 3-4 weken)
+  tags: { age: [40-75], ses: [all], region: [all] }
+
+- id: volleybal
+  label: Volleybal of beachvolleybal recreatief
+  tags: { age: [20-45], ses: [midden, hoog], region: [all] }
+
+- id: hockey
+  label: Hockey (club, dames of heren, competitie)
+  tags: { age: [20-55], ses: [hoog], region: [G4, middelgroot] }
+
+- id: fietssleutelen
+  label: Fietsen of motoren sleutelen
+  tags: { age: [30-70], ses: [all], region: [middelgroot, dorp] }
+
+- id: vogelen
+  label: Vogelen (verrekijker, natuurgebieden)
+  tags: { age: [40-80], ses: [all], region: [all] }
+
+- id: scouting-leiding
+  label: Scouting leiding bij jeugdvereniging
+  tags: { age: [20-40], ses: [all], region: [all] }
+
+- id: podcasts-luisteren
+  label: Podcasts luisteren (10+ uur/week, diverse topics)
+  tags: { age: [20-55], ses: [midden, hoog], region: [all] }
+
+- id: kinderboerderij-familie
+  label: Familie-uitstapjes (kinderboerderij, Efteling, dierentuin)
+  tags: { age: [25-45], ses: [all], region: [all], bundle-affinity: [caregiving-boundary-cgb-002] }
+
+- id: sociaal-dorpsfeest
+  label: Dorpsfeesten, carnaval, kermis, Sinterklaas-commissie
+  tags: { age: [25-70], ses: [all], region: [dorp, middelgroot] }

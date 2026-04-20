@@ -1,0 +1,45 @@
+# Diet patterns — NL
+
+- id: traditional-nl
+  label: 'Traditioneel NL — AVG-patroon (aardappels-vlees-groente, soep-brood-lunch, zondagse kip)'
+  tags: { age: [50-90], ses: [all], region: [middelgroot, dorp] }
+
+- id: flexitarisch
+  label: Flexitarisch (2-4 vegetarische maaltijden/week, bewust kiezen)
+  tags: { age: [25-60], ses: [midden, hoog] }
+
+- id: vegetarisch
+  label: Vegetarisch consistent
+  tags: { age: [20-50], ses: [midden, hoog] }
+
+- id: vegan
+  label: Vegan (ethisch / gezondheid / klimaat)
+  tags: { age: [18-45], ses: [midden, hoog], political: [progressief] }
+
+- id: mediterraan
+  label: Mediterraan (olijfolie, vis, groente, vers brood, minder vlees)
+  tags: { age: [30-70], ses: [midden, hoog] }
+
+- id: halal-vleesconsument
+  label: Halal-vleesconsument (traditionele Marokkaanse/Turkse/Surinaamse keuken)
+  tags: { age: [all], bundle-affinity: [migration-generation-culture-mgc-002, faith-routine-worldview-frw-003] }
+
+- id: hindoestaans-vegetarisch
+  label: Hindoestaans-vegetarisch (roti, bruine bonen, massala, lamsvlees special-occasion)
+  tags: { age: [all], bundle-affinity: [migration-generation-culture-mgc-003] }
+
+- id: snel-goedkoop
+  label: Snel/goedkoop (kant-en-klaar, Lidl-basics, weinig tijd)
+  tags: { age: [25-50], ses: [laag, midden], bundle-affinity: [parenthood-partnership-timepoverty-ppt-002, financial-precarity-coping-fpc-002] }
+
+- id: bewust-fit
+  label: Bewust-fit (eiwitrijk, macro's, whey, weinig suiker)
+  tags: { age: [20-45], ses: [midden, hoog] }
+
+- id: zuinig-bulk
+  label: Zuinig-bulk (zelf koken in voorraad, vriezer, boodschappen-week-planning)
+  tags: { age: [30-65], ses: [laag, midden] }
+
+- id: culinair-hobby
+  label: Culinair-hobby (weekend uitgebreid koken, sous-vide, vers vis, wijnmenu's)
+  tags: { age: [35-70], ses: [hoog] }

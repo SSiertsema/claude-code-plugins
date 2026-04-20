@@ -1021,6 +1021,18 @@
       "source": "./generate-realistic-person",
       "description": "Generate a simulation-ready fictional present-day person profile. Combines a narrative layer (demographics, work, family, social life, health, personality, beliefs, motivations, hobbies) with an explicit behavioral layer (decision style, behavioral thresholds, scenario response, stress response, trust model, social influence, value-behavior tensions, action readiness, adaptability, routine dependency, priority logic, certainty markers, stable vs. dynamic traits, triggers, inhibitors, information processing style, likely first response, recovery pattern) plus hour-by-hour weekday and weekend. Works fully autonomously or accepts any subset of constraints.",
       "category": "productivity"
+    },
+    {
+      "name": "ontdek-kansen",
+      "source": "./ontdek-kansen",
+      "description": "Orchestreert een pipeline van skills (trend-analysis, competitive-analysis, jtbd-analysis, hmw-framing, opportunity-scoring) om per interessegebied een gerangschikte lijst van softwareproduct-kansen op te leveren. Nederlandse marktfocus, twee strategische lenzen (goedkopere her-implementatie + niet-beeldscherm-interfaces).",
+      "category": "planning"
+    },
+    {
+      "name": "persona-composer",
+      "source": "./persona-composer",
+      "description": "Compose Dutch-context personas on-demand from external trait pools and pre-authored coupled archetype bundles. Combines 12 coupled-trait families with independent trait pools (hobbies, media, tech, attitudes, diet, social style, daily routine, domain-roles) to produce plausible NL personas at runtime. Callable by other skills via the Skill tool.",
+      "category": "productivity"
     }
   ]
 }

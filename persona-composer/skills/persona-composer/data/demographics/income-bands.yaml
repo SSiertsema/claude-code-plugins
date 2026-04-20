@@ -1,0 +1,29 @@
+# NL income bands — individueel bruto per maand (indicatief 2026)
+
+individueel:
+  onder-modaal: "€1800-€2800"
+  modaal: "€2800-€3800"
+  bovenmodaal: "€3800-€5500"
+  hoog: "€5500-€8500"
+  zeer-hoog: "€8500+"
+
+huishouden-dual-income:
+  laag: "€3500-€5000"
+  midden: "€5000-€8000"
+  bovenmodaal: "€8000-€12000"
+  hoog: "€12000-€20000"
+  zeer-hoog: "€20000+"
+
+# Woonlasten als % van netto (indicatief "gezond")
+woonlasten-gezond: "20-30%"
+woonlasten-knellend: "35%+"
+
+# Spaarquote indicatief
+spaarquote:
+  laag: "0-5%"
+  midden: "10-20%"
+  hoog: "20-35%"
+
+# Pensioen
+pensioen-standaard: "werkgever 5-8% + werknemer 4-6% (pijler 2)"
+pensioen-zzp: "eigen keuze (FOR / bancair / lijfrente / niets)"

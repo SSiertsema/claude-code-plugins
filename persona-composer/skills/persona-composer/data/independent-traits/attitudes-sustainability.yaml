@@ -1,0 +1,29 @@
+# Attitudes — sustainability
+
+- id: activistisch-consistent
+  label: Activistisch consistent (vegan, geen vliegen, tweedehands, klimaatmarsen)
+  tags: { age: [18-45], ses: [midden, hoog], political: [progressief, groen] }
+
+- id: bewust-maar-inconsistent
+  label: Bewust en probeert, maar vliegt wel, koopt soms nieuw (gematigd-groen cognitieve dissonantie)
+  tags: { age: [25-55], ses: [midden, hoog], political: [progressief, centrum-links] }
+
+- id: pragmatisch-kosten-driven
+  label: Duurzaam alleen als het goedkoper is (tweedehands uit noodzaak, zuinige auto voor kosten)
+  tags: { age: [30-65], ses: [laag, midden], political: [all] }
+
+- id: traditionele-rentmeester
+  label: Rentmeesterschap vanuit geloof of platteland-identiteit (nuchter zuinig, natuur-waarderend)
+  tags: { age: [35-80], ses: [all], bundle-affinity: [faith-routine-worldview-frw-002, regional-rootedness-rr-002, rr-003] }
+
+- id: klimaat-skeptisch
+  label: Klimaatbeleid als overdreven / oneerlijk verdeeld. "Boeren opofferen voor Haagse ideeën"
+  tags: { age: [40-75], ses: [laag, midden], political: [BBB, PVV, FVD] }
+
+- id: techno-optimist
+  label: Techniek lost het op (kernenergie, CCS, innovatie). Geen individueel gedragsaanpassen nodig
+  tags: { age: [25-60], ses: [midden, hoog], political: [liberaal, VVD, Volt] }
+
+- id: ecofascism-rand-vermijden
+  label: Bezorgd maar voorzichtig met "mens-als-probleem"-retoriek, nuanceerd
+  tags: { age: [25-55], ses: [midden, hoog], political: [progressief] }

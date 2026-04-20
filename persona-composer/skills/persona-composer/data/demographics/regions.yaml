@@ -1,0 +1,74 @@
+# NL regions — mapping naar CBS-stedelijkheid + provincie + type
+
+G4:
+  - Amsterdam (Noord-Holland)
+  - Rotterdam (Zuid-Holland)
+  - Den Haag (Zuid-Holland)
+  - Utrecht (Utrecht)
+
+middelgroot-universiteitsstad:
+  - Leiden (Zuid-Holland)
+  - Delft (Zuid-Holland)
+  - Groningen (Groningen)
+  - Nijmegen (Gelderland)
+  - Wageningen (Gelderland)
+  - Maastricht (Limburg)
+  - Tilburg (Noord-Brabant)
+  - Enschede (Overijssel)
+
+middelgroot:
+  - Eindhoven (Noord-Brabant)
+  - Breda (Noord-Brabant)
+  - "'s-Hertogenbosch (Noord-Brabant)"
+  - Arnhem (Gelderland)
+  - Apeldoorn (Gelderland)
+  - Deventer (Overijssel)
+  - Zwolle (Overijssel)
+  - Haarlem (Noord-Holland)
+  - Almere (Flevoland)
+  - Amersfoort (Utrecht)
+  - Leeuwarden (Friesland)
+  - Dordrecht (Zuid-Holland)
+  - Venlo (Limburg)
+  - Roermond (Limburg)
+  - Heerlen (Limburg)
+
+dorp:
+  - Nunspeet (Gelderland)
+  - Putten (Gelderland)
+  - Staphorst (Overijssel)
+  - Rijssen (Overijssel)
+  - Urk (Flevoland)
+  - Volendam (Noord-Holland)
+  - Marken (Noord-Holland)
+  - Edam (Noord-Holland)
+  - Barneveld (Gelderland)
+  - Ede (Gelderland)
+  - Oisterwijk (Noord-Brabant)
+  - Boxtel (Noord-Brabant)
+
+krimpregio:
+  - Zeeuws-Vlaanderen (Zeeland)
+  - Oost-Groningen (Groningen)
+  - Zuid-Limburg (Limburg)
+  - Delfzijl-omgeving (Groningen)
+  - Achterhoek-oosthoek (Gelderland)
+
+biblebelt:
+  - Nunspeet
+  - Putten
+  - Staphorst
+  - Rijssen
+  - Urk
+  - Elburg
+  - Ede
+  - Veenendaal
+  - Alblasserwaard-dorpen
+  - Tholen (Zeeland)
+
+agrarisch:
+  - Friesland-binnenland
+  - Drenthe
+  - Achterhoek
+  - Betuwe
+  - Zeeuws-Vlaanderen

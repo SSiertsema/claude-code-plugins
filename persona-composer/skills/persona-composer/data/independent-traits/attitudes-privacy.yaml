@@ -1,0 +1,21 @@
+# Attitudes — privacy
+
+- id: hoog-alert
+  label: Zeer privacy-bewust (Signal, VPN, geen cookies-accept, DuckDuckGo, geen FaceID)
+  tags: { age: [25-55], ses: [midden, hoog], occupation: [tech, activist, journalist] }
+
+- id: matig-alert
+  label: Matig bewust (Signal met bepaalde mensen, cookies weigert, bank 2FA, maar WhatsApp hoofd)
+  tags: { age: [25-55], ses: [midden, hoog] }
+
+- id: functioneel-niets-te-verbergen
+  label: 'Niets te verbergen-houding — gebruikt wat werkt (WhatsApp, Google, Facebook)'
+  tags: { age: [40-80], ses: [all] }
+
+- id: bezorgd-hulpeloos
+  label: 'Bezorgd maar voelt hulpeloos (ze hebben toch al alle data). Gebruikt mainstream apps'
+  tags: { age: [30-65], ses: [all] }
+
+- id: anti-overheid-surveillance
+  label: Specifiek wantrouwen richting overheid-data (Toeslagenaffaire-schaduw)
+  tags: { age: [30-70], ses: [all], bundle-affinity: [identity-politics-social-trust-ipc-003, migration-generation-culture-mgc-002, mgc-003] }
