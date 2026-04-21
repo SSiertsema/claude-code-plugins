@@ -161,6 +161,55 @@ Test-resultaten: redeneer vanuit de persona's in de briefing + walkthrough-outpu
 
 **Verplicht**: de `wireframing`-skill wordt altijd gedraaid als spoor 4 gekozen is. Geen markdown-alternatief.
 
+#### VitePress-embed (verplicht als sub-site aanwezig is)
+
+Als `solutions/<slug>/.vitepress/` bestaat, moet de wireframe ook bereikbaar zijn via de docs-site — anders krijgt de lezer een dood pad of een 404. Voer na de `wireframing`-scaffold de volgende vier stappen uit:
+
+1. **Wireframe-app aan workspaces toevoegen** (root `package.json`):
+   ```json
+   "workspaces": ["solutions/*", "solutions/*/04-prototype/wireframe-app"]
+   ```
+   Zonder dit installeert `npm install` op de hub geen wireframe-deps en faalt de CI-build.
+
+2. **Sub-site `docs:build` uitbreiden** (`solutions/<slug>/package.json`) zodat hij de wireframe bouwt en naar `.vitepress/dist/wireframe/` kopieert:
+   ```json
+   "docs:build": "vitepress build && npm run wireframe:build && node -e \"require('node:fs').cpSync('04-prototype/wireframe-app/dist', '.vitepress/dist/wireframe', {recursive: true, force: true})\"",
+   "wireframe:build": "npm --prefix 04-prototype/wireframe-app run build"
+   ```
+   De root-build (`npm run build` op de hub) draait per workspace `docs:build --if-present` en kopieert `.vitepress/dist/` naar `dist/solutions/<slug>/` — dus de wireframe landt automatisch op `/solutions/<slug>/wireframe/`.
+
+3. **Embed-pagina** `solutions/<slug>/04-prototype/wireframe.md` met een **relatieve** iframe-src (niet `/wireframe/` — dat valt buiten de sub-site-base en serveert de hub-404):
+   ```markdown
+   ---
+   title: Wireframe (live)
+   ---
+
+   # Wireframe — interactieve demo
+
+   Open in [nieuw tabblad](../wireframe/) of bekijk hieronder.
+
+   <div class="wireframe-embed">
+     <iframe src="../wireframe/" title="Wireframe" loading="lazy"></iframe>
+   </div>
+
+   <style scoped>
+   .wireframe-embed { position: relative; padding-top: 75%; border: 1px solid var(--vp-c-divider); border-radius: 8px; overflow: hidden; }
+   .wireframe-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+   </style>
+   ```
+
+4. **Sidebar-link** in `solutions/<slug>/.vitepress/config.mts` onder de spoor-4-items:
+   ```ts
+   { text: '🎨 Wireframe (live)', link: '/04-prototype/wireframe' }
+   ```
+
+**Waarom deze drie details kritisch zijn:**
+- `base: './'` en hash-history in `vite.config.ts` + router zijn al boilerplate-default uit `wireframing` v1.1.1+ — zonder die twee breken asset-paden en routes onder een subpath.
+- De iframe-src moet relatief (`../wireframe/`) — absoluut (`/wireframe/`) resolved naar de domain-root en mist de sub-site-base.
+- `04-prototype/wireframe-app/**` zit in VitePress `srcExclude`, anders probeert VitePress de Vue-app te renderen als markdown.
+
+Test lokaal na de embed-stap: `npm run build` op de hub en controleer dat `dist/solutions/<slug>/wireframe/index.html` én `dist/solutions/<slug>/04-prototype/wireframe.html` beide bestaan.
+
 Exit-gate-vraag: *"Valideert de gesimuleerde prototype-evaluatie de kernaannames? Ga door naar spoor 5?"*
 
 ### Spoor 5 — GTM + launch-klaar
@@ -225,6 +274,7 @@ Vóór het afsluiten van elk spoor:
 [] Briefing-blok is aan elke sub-skill meegegeven
 [] Lifecycle-status in solution-README is bijgewerkt
 [] Exit-gate-vraag is gesteld aan de gebruiker
+[] Spoor 4 specifiek: als sub-site bestaat, is wireframe embedded (workspace + docs:build + wireframe.md + sidebar) en bouwt de hub-build `dist/solutions/<slug>/wireframe/index.html`
 ```
 
 Vóór het afsluiten van de hele run (spoor 5 of eerder):
@@ -263,9 +313,9 @@ Vóór het afsluiten van de hele run (spoor 5 of eerder):
 **Input**: `/kans-uitwerken opportunities/zang-2026-04-21/ O09`, gebruiker kiest "alleen spoor 3" zonder dat spoor 1+2 bestaan
 **Verwacht gedrag**: weigeren: *"Spoor 3 (MVP-spec) vereist output van spoor 1 (probleem) en 2 (markt). Start eerst spoor 1+2, of kies een spoor-set die met 1 begint."*
 
-### Voorbeeld 7 — Spoor 4 verplichte wireframe
-**Input**: opportunity gekozen, spoor 4 in selectie
-**Verwacht gedrag**: `wireframing`-skill draait altijd; produceert Vue 3 + Vite-app in `04-prototype/wireframe-app/`. Start-instructie in spoor-README: `cd solutions/<slug>/04-prototype/wireframe-app && npm install && npm run dev`. Dev-server sluiten na gebruik.
+### Voorbeeld 7 — Spoor 4 verplichte wireframe + VitePress-embed
+**Input**: opportunity gekozen, spoor 4 in selectie, `solutions/<slug>/.vitepress/` bestaat
+**Verwacht gedrag**: `wireframing`-skill draait en produceert Vue 3 + Vite-app in `04-prototype/wireframe-app/` met `base: './'` + hash-history (boilerplate-default). Daarna worden de 4 VitePress-embed-stappen uitgevoerd: wireframe-app aan root-workspaces toegevoegd, `docs:build` uitgebreid met build+copy naar `.vitepress/dist/wireframe/`, `04-prototype/wireframe.md` aangemaakt met relatieve iframe-src (`../wireframe/`), sidebar-link toegevoegd. Start-instructie in spoor-README: `cd solutions/<slug>/04-prototype/wireframe-app && npm install && npm run dev` (standalone) of `/solutions/<slug>/04-prototype/wireframe` (embedded na `npm run build` op hub). Dev-server sluiten na gebruik.
 
 ### Voorbeeld 8 — No-Go op exit-gate
 **Input**: spoor 1 voltooid, gebruiker geeft No-Go ("segment is niet scherp genoeg")

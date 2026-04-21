@@ -1,6 +1,6 @@
 {
   "name": "kans-uitwerken",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Orchestreert een 5-sporen pipeline (probleem → markt → MVP-spec → prototype → GTM) die één opportunity omvormt tot een launch-klare solution-map. Roept ~20 bestaande skills aan met Go/No-Go-gates tussen sporen. Nederlandse marktfocus, de logische stap na /ontdek-kansen.",
   "author": {
     "name": "Sven Siertsema"

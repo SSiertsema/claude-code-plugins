@@ -22,6 +22,7 @@ This skill is **scaffold + per-screen generation + click-through wiring**, not p
 - **Filename = route** — `<PascalCase>.Page.vue` in `src/pages/`. Auto-discovered by router via `import.meta.glob`. No router edit needed.
 - **Boilerplate is canonical** — copy from `${CLAUDE_PLUGIN_ROOT}/skills/wireframing/assets/boilerplate/` verbatim. Do not improvise the scaffold.
 - **Kit `^1.0.1`** — earlier versions lack device frames and `--wf-surface`. Reject if pinned lower.
+- **Subpath-ready build** — boilerplate ships with `base: './'` in `vite.config.ts` and `createWebHashHistory()` in `src/router/index.ts`. This makes the production build portable under any subpath (e.g. when embedded in a docs site) without server rewrites. **Do not remove either** unless the wireframe is guaranteed to only run on `localhost`.
 
 ## When to use
 
@@ -63,6 +64,8 @@ If the output directory exists and is non-empty, ask before overwriting.
 Copy every file from `${CLAUDE_PLUGIN_ROOT}/skills/wireframing/assets/boilerplate/` into the output directory verbatim. Use `cp -r` or equivalent.
 
 The boilerplate's `package.json` declares `@for-the-people-initiative/wireframe-kit: ^1.0.1`. Do not downgrade — the device frames (`PhoneFrame`, `TabletFrame`, `DesktopFrame`, `DeviceFrame`), the `useDevice` composable, and the `--wf-surface` CSS var all require v1.0.1+.
+
+The boilerplate `vite.config.ts` ships with `base: './'` (relative asset paths) and the router uses `createWebHashHistory()` (hash-based routes). Together these make the build work unchanged on `localhost`, under any subpath (`/solutions/<slug>/wireframe/`), and inside an `<iframe>` — no server rewrites required. Keep both.
 
 The boilerplate gives you:
 
@@ -363,4 +366,5 @@ After scaffolding + per-screen generation:
 [] Multiple states demonstrated via props on shared instances, not duplicate pages
 [] Run instructions printed; npm install / npm run dev not executed unprompted
 [] Screen-picker nav lists every page (fallback); click-through is primary
+[] vite.config.ts has base: './' and router uses createWebHashHistory() (subpath-embed-ready)
 ```
