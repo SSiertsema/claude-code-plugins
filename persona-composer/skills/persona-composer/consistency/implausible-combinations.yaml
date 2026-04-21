@@ -117,6 +117,18 @@
   reason: "Marokkaans-2e-gen en Surinaams-3e-gen zijn verschillende migratie-backgrounds"
   severity: hard
 
+- bundles: [mgc-001, mgc-004]
+  reason: "NL-native-geen-migratie en Turks-NL zijn wederzijds uitsluitend"
+  severity: hard
+
+- bundles: [mgc-002, mgc-004]
+  reason: "Marokkaans en Turks zijn verschillende migratie-backgrounds"
+  severity: hard
+
+- bundles: [mgc-003, mgc-004]
+  reason: "Surinaams en Turks zijn verschillende migratie-backgrounds"
+  severity: hard
+
 - bundles: [rr-001, rr-002]
   reason: "Randstad-relocator en dorp-born-and-raised zijn wederzijds uitsluitend"
   severity: hard
@@ -129,6 +141,18 @@
   reason: "Dorp-born-and-raised en biblebelt-rooted overlappen gedeeltelijk; soft check — biblebelt is specifieker"
   severity: soft
 
+- bundles: [rr-001, rr-004]
+  reason: "Randstad-relocator en middelstad-geworteld zijn verschillende mobiliteitsprofielen"
+  severity: hard
+
+- bundles: [rr-002, rr-004]
+  reason: "Dorp-born (urb 4-5) en middelstad-geworteld (urb 3-4) zijn verschillende schalen"
+  severity: hard
+
+- bundles: [rr-003, rr-004]
+  reason: "Biblebelt-rooted is specifieker dan middelstad-geworteld; soft flag als middelstad op biblebelt-rand ligt"
+  severity: soft
+
 - bundles: [ppt-002, ppt-003]
   reason: "Single-parent en getrouwd-gezin zijn wederzijds uitsluitend"
   severity: hard
@@ -139,6 +163,22 @@
 
 - bundles: [ppt-001, ppt-003]
   reason: "Dual-income-no-kids en gezin-twee-tieners zijn wederzijds uitsluitend"
+  severity: hard
+
+- bundles: [ppt-001, ppt-004]
+  reason: "Dual-income-no-kids en empty-nester zijn wederzijds uitsluitend (empty-nester impliceert eerder kinderen)"
+  severity: hard
+
+- bundles: [ppt-002, ppt-004]
+  reason: "Single-parent-time-poor en empty-nester zijn verschillende levensfases (single-parent impliceert kinderen nog deels in huis)"
+  severity: hard
+
+- bundles: [ppt-003, ppt-004]
+  reason: "Gezin-twee-tieners en empty-nester zijn opeenvolgende levensfases, niet gelijktijdig"
+  severity: hard
+
+- bundles: [ppt-004, lst-003]
+  reason: "Empty-nester pre-pensioen en recent-gepensioneerd: empty-nester is nog werkend, lst-003 is na pensionering"
   severity: hard
 
 - bundles: [hwa-001, hwa-002]
@@ -165,6 +205,26 @@
   reason: "BBB-platteland en PVV-volkswijk zijn beide rechts maar cultureel verschillend; soft flag"
   severity: soft
 
+- bundles: [ipc-001, ipc-004]
+  reason: "Progressief-stedelijk en christelijk-sociaal-middenland zijn ideologisch tegenovergesteld"
+  severity: hard
+
+- bundles: [ipc-002, ipc-004]
+  reason: "BBB-platteland-populistisch en CDA/CU-centrum-christelijk zijn verschillende politieke registers; soft flag waar BBB-lokaal-stem mogelijk is"
+  severity: soft
+
+- bundles: [ipc-003, ipc-004]
+  reason: "PVV-volkswijk en CDA/CU-centrum-christelijk zijn verschillende SES + discoursregisters"
+  severity: hard
+
+- bundles: [ipc-004, frw-001]
+  reason: "Christelijk-sociaal-middenland en seculier-stedelijk-progressief zijn ideologisch conflicterend"
+  severity: hard
+
+- bundles: [ipc-004, frw-003]
+  reason: "CDA/CU-pragmatisch en SGP-biblebelt zijn beide christelijk maar verschillende strengheidsgradaties"
+  severity: hard
+
 - bundles: [frw-001, frw-002]
   reason: "Seculier-stedelijk en PKN-gelovig zijn wederzijds uitsluitend"
   severity: hard
@@ -175,6 +235,42 @@
 
 - bundles: [frw-002, frw-003]
   reason: "PKN en islamitisch-praktiserend zijn verschillende religies"
+  severity: hard
+
+- bundles: [frw-001, frw-004]
+  reason: "Seculier-stedelijk-progressief en rooms-katholiek-cultureel zijn verschillende levensbeschouwingen en milieus"
+  severity: hard
+
+- bundles: [frw-002, frw-004]
+  reason: "PKN-provincie en rooms-katholiek-zuid-NL zijn verschillende denominaties en regio's"
+  severity: hard
+
+- bundles: [frw-003, frw-004]
+  reason: "Islamitisch en rooms-katholiek zijn verschillende religies"
+  severity: hard
+
+- bundles: [frw-004, rr-003]
+  reason: "Rooms-katholiek-Brabant/Limburg en biblebelt-rooted zijn geografisch en theologisch tegenovergesteld"
+  severity: hard
+
+- bundles: [frw-001, frw-005]
+  reason: "Seculier-stedelijk-progressief en seculier-provincie-nuchter zijn beide seculier maar verschillende milieus + discoursregisters"
+  severity: hard
+
+- bundles: [frw-002, frw-005]
+  reason: "PKN-gelovig en seculier-nuchter zijn wederzijds uitsluitend"
+  severity: hard
+
+- bundles: [frw-003, frw-005]
+  reason: "Islamitisch-praktiserend en seculier-nuchter zijn wederzijds uitsluitend"
+  severity: hard
+
+- bundles: [frw-004, frw-005]
+  reason: "Rooms-katholiek-cultureel en seculier-nuchter zijn verschillende cultuur-kaders (ook al kan katholieke cultureel-variant lijken op seculier)"
+  severity: hard
+
+- bundles: [frw-005, rr-003]
+  reason: "Seculier-nuchter en biblebelt-rooted zijn wederzijds uitsluitend"
   severity: hard
 
 - bundles: [wfh-001, wfh-002]
