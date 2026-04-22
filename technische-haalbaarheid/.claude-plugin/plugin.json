@@ -1,0 +1,19 @@
+{
+  "name": "technische-haalbaarheid",
+  "version": "1.0.0",
+  "description": "Autonome technische haalbaarheidstoets per kandidaat-oplossing (HMW-statement). Identificeert benodigde technologieën, beoordeelt maturity (proven/emerging/experimental), schat complexiteit (1-5) en blockers in, en levert een verdict (🟢/🟡/🔴) met ruwe oplossingsrichting. Doet zelf web-research naar tech-maturity. Nederlandse marktfocus.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": [
+    "feasibility",
+    "assessment",
+    "technology-evaluation",
+    "opportunity-discovery",
+    "nl-market",
+    "autonomous-research"
+  ],
+  "skills": "./skills"
+}

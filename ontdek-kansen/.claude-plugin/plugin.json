@@ -1,7 +1,7 @@
 {
   "name": "ontdek-kansen",
-  "version": "0.1.2",
-  "description": "Orchestreert een pipeline van skills (trend-analysis, competitive-analysis, jtbd-analysis, hmw-framing, opportunity-scoring) om per interessegebied een gerangschikte lijst van softwareproduct-kansen op te leveren. Nederlandse marktfocus, twee strategische lenzen (goedkopere her-implementatie + niet-beeldscherm-interfaces).",
+  "version": "0.2.0",
+  "description": "Orchestreert een pipeline van skills (trend-analysis, competitive-analysis, jtbd-analysis, hmw-framing, technische-haalbaarheid, opportunity-scoring) om per interessegebied een gerangschikte lijst van softwareproduct-kansen op te leveren. Nederlandse marktfocus, twee strategische lenzen (goedkopere her-implementatie + niet-beeldscherm-interfaces).",
   "author": {
     "name": "Sven Siertsema"
   },

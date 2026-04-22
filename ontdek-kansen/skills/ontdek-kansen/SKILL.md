@@ -1,6 +1,6 @@
 ---
 name: ontdek-kansen
-description: Orchestreert een pipeline van skills (trend-analysis, competitive-analysis, jtbd-analysis, hmw-framing, opportunity-scoring) om per interessegebied een gerangschikte lijst van softwareproduct-kansen op te leveren. Focus op de Nederlandse markt en twee strategische lenzen (goedkopere her-implementatie + niet-beeldscherm-interfaces).
+description: Orchestreert een pipeline van skills (trend-analysis, competitive-analysis, jtbd-analysis, hmw-framing, technische-haalbaarheid, opportunity-scoring) om per interessegebied een gerangschikte lijst van softwareproduct-kansen op te leveren. Focus op de Nederlandse markt en twee strategische lenzen (goedkopere her-implementatie + niet-beeldscherm-interfaces).
 argument-hint: "[interessegebied — bv. zorg, educatie, voetbal, fitness, zang, overheid, veiligheid]"
 ---
 
@@ -164,6 +164,17 @@ Roep `hmw-framing` aan met:
 
 **Output opslaan**: `opportunities/<domein>-<datum>/04-gap-synthese-hmw.md`
 
+## Fase 2.5 — Technische haalbaarheid (≤10 min)
+
+Roep `technische-haalbaarheid` aan met:
+- Input: het pad naar `04-gap-synthese-hmw.md` (de lens-getagde HMW-lijst uit Fase 2.3)
+- Optionele context: `domeincontext` = pad naar `interessegebieden/<bestand>.md`, `lens_tags` zoals aanwezig in HMW-lijst
+- Focus: per HMW een verdict 🟢 / 🟡 / 🔴, complexiteit (1-5), blockers (Critical), en ruwe oplossingsrichting
+
+**Output opslaan**: `opportunities/<domein>-<datum>/04b-technische-haalbaarheid.md`
+
+**Doorgeven aan Fase 3**: de tech-tag (🟢/🟡/🔴) per HMW. Deze tag wordt **naast** de score in de eindrapport-ranglijst getoond — ze beïnvloedt de scoring-formule **niet**. De gebruiker beoordeelt zelf of een 🔴-kans toch verder moet of dat een lager-gescorde 🟢-kans aantrekkelijker is.
+
 ## Fase 3 — Opportunity-scoring (≤15 min)
 
 Roep `opportunity-scoring` aan met:
@@ -222,16 +233,19 @@ Assembleer een samenvattend rapport:
 - Dubbele-lens-kansen: [N]
 
 ## Top-10 opportunity-ranglijst
-[tabel: rank, HMW, lens-tags, waarde, complexiteit-ratio, afhankelijkheden, totaal-score]
+[tabel: rank, HMW, lens-tags, **tech-tag (🟢/🟡/🔴)**, waarde, complexiteit-ratio, afhankelijkheden, totaal-score]
+
+> Tech-tag komt uit Fase 2.5 en is **informatief** — niet ingerekend in totaal-score. Een hoge totaal-score met 🔴-tag betekent: waarde-positie sterk, maar tech-bouw is risicovol.
 
 ## Per top-5 uitgewerkt
-[per opportunity: HMW, probleem, doelgroep (personas), concurrenten, lens-rationale, solution-hypothesen, belangrijkste aanname om te testen]
+[per opportunity: HMW, probleem, doelgroep (personas), concurrenten, lens-rationale, **tech-haalbaarheid (verdict + 1-regel rationale + ruwe oplossingsrichting uit 04b)**, solution-hypothesen, belangrijkste aanname om te testen]
 
 ## Detailrapporten
 - [link naar 01-trend-analysis.md]
 - [link naar 02-competitive-analysis.md]
 - [link naar 03-jtbd-analysis.md]
 - [link naar 04-gap-synthese-hmw.md]
+- [link naar 04b-technische-haalbaarheid.md]
 - [link naar 05-opportunity-scoring.md]
 
 ## Aannames & beperkingen
@@ -277,6 +291,7 @@ Vóór het presenteren van het eindrapport:
 [] Fase 1: trend-, competitive- én jtbd-output bestaat
 [] Fase 2: elke opportunity heeft een lens-tag (L1, L2, beide, of geen)
 [] Fase 2: elke opportunity heeft minstens één HMW-statement
+[] Fase 2.5: elke opportunity heeft een tech-haalbaarheid-tag (🟢/🟡/🔴) + verdict-rationale
 [] Fase 3: elke opportunity heeft een score op alle vier de criteria
 [] Fase 3: lens-bonus is correct toegepast (+4 / +6 / +10)
 [] Eindrapport heeft een top-10 ranglijst

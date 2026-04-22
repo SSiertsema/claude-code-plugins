@@ -1023,9 +1023,15 @@
       "category": "productivity"
     },
     {
+      "name": "technische-haalbaarheid",
+      "source": "./technische-haalbaarheid",
+      "description": "Autonome technische haalbaarheidstoets per kandidaat-oplossing (HMW-statement). Identificeert benodigde technologieën, beoordeelt maturity (proven/emerging/experimental), schat complexiteit (1-5) en blockers in, en levert verdict (🟢/🟡/🔴) met ruwe oplossingsrichting. Doet zelf web-research naar tech-maturity. Nederlandse marktfocus.",
+      "category": "strategy"
+    },
+    {
       "name": "ontdek-kansen",
       "source": "./ontdek-kansen",
-      "description": "Orchestreert een pipeline van skills (trend-analysis, competitive-analysis, jtbd-analysis, hmw-framing, opportunity-scoring) om per interessegebied een gerangschikte lijst van softwareproduct-kansen op te leveren. Nederlandse marktfocus, twee strategische lenzen (goedkopere her-implementatie + niet-beeldscherm-interfaces).",
+      "description": "Orchestreert een pipeline van skills (trend-analysis, competitive-analysis, jtbd-analysis, hmw-framing, technische-haalbaarheid, opportunity-scoring) om per interessegebied een gerangschikte lijst van softwareproduct-kansen op te leveren. Nederlandse marktfocus, twee strategische lenzen (goedkopere her-implementatie + niet-beeldscherm-interfaces).",
       "category": "planning"
     },
     {
