@@ -1,12 +1,12 @@
 {
   "name": "kans-uitwerken",
-  "version": "0.2.0",
-  "description": "Orchestreert een 5-sporen pipeline (probleem → markt → MVP-spec → prototype → GTM) die één opportunity omvormt tot een launch-klare solution-map. Roept ~20 bestaande skills aan met Go/No-Go-gates tussen sporen. Nederlandse marktfocus, de logische stap na /ontdek-kansen.",
+  "version": "0.3.0",
+  "description": "Orchestreert een 5-sporen pipeline (probleem → markt → MVP-spec → prototype → GTM) die één opportunity omvormt tot een launch-klare solution-map, gevolgd door een verplichte Fase 6 die de output als VitePress sub-site publiek maakt via kans-vitepress-documentation. Roept ~20 bestaande skills aan met Go/No-Go-gates tussen sporen. Nederlandse marktfocus, de logische stap na /ontdek-kansen.",
   "author": {
     "name": "Sven Siertsema"
   },
   "repository": "https://github.com/SSiertsema/claude-code-plugins",
   "license": "MIT",
-  "keywords": ["solution-development", "orchestration", "pipeline", "nl-market", "opportunity-to-launch", "sporen"],
+  "keywords": ["solution-development", "orchestration", "pipeline", "nl-market", "opportunity-to-launch", "sporen", "docs-site"],
   "skills": "./skills"
 }

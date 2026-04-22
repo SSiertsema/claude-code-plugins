@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Collection of plugins for Claude Code",
-    "version": "1.0.0"
+    "version": "1.1.0"
   },
   "plugins": [
     {
@@ -1037,8 +1037,14 @@
     {
       "name": "kans-uitwerken",
       "source": "./kans-uitwerken",
-      "description": "Orchestreert een 5-sporen pipeline (probleem → markt → MVP-spec → prototype → GTM) die één opportunity uit /ontdek-kansen omvormt tot een launch-klare solution-map. Roept ~20 bestaande skills aan met Go/No-Go-gates tussen sporen. Nederlandse marktfocus.",
+      "description": "Orchestreert een 5-sporen pipeline (probleem → markt → MVP-spec → prototype → GTM) die één opportunity uit /ontdek-kansen omvormt tot een launch-klare solution-map, gevolgd door een verplichte Fase 6 die de solution-map publiceert als VitePress sub-site via kans-vitepress-documentation. Roept ~20 bestaande skills aan met Go/No-Go-gates tussen sporen. Nederlandse marktfocus.",
       "category": "planning"
+    },
+    {
+      "name": "kans-vitepress-documentation",
+      "source": "./kans-vitepress-documentation",
+      "description": "Scaffoldt of her-aligneert een VitePress sub-site voor een solution binnen de kans-uitwerken-hub-structuur. Ondersteunt mode met of zonder wireframe-embed. Idempotent — theme/config-bestanden worden her-aligneert naar het huidige patroon; solution-content (01-probleem/, 02-markt/, ...) wordt nooit aangeraakt. Wired ook automatisch het hub-niveau bij: srcExclude, nav-dropdown, SUB_SITES-theme-set en landing-features.",
+      "category": "productivity"
     },
     {
       "name": "persona-composer",
