@@ -1,0 +1,39 @@
+/* {{TITLE}} — custom theme */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap');
+
+:root {
+  /* Brand — {{COLOR_NAME_COMMENT}} */
+  --skp-brand-50:  {{BRAND_50}};
+  --skp-brand-100: {{BRAND_100}};
+  --skp-brand-500: {{BRAND_500}};
+  --skp-brand-600: {{BRAND_600}};
+  --skp-brand-700: {{BRAND_700}};
+
+  --vp-c-brand-1: var(--skp-brand-600);
+  --vp-c-brand-2: var(--skp-brand-700);
+  --vp-c-brand-3: var(--skp-brand-500);
+  --vp-c-brand-soft: var(--skp-brand-100);
+  --vp-c-brand-softer: var(--skp-brand-50);
+
+  --vp-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --vp-font-family-display: 'Fraunces', Georgia, serif;
+
+  /* Ruimte reserveren voor fixed MainHeader (Solution Explorer-balk) */
+  --vp-layout-top-height: 38px;
+}
+
+.VPHero .name,
+.VPHero .text {
+  font-family: var(--vp-font-family-display);
+}
+
+.VPHero .tagline {
+  color: var(--vp-c-text-2);
+}
+
+/* Dark-mode-toggle verhuisd naar MainHeader; verberg default duplicates. */
+.VPNavBarAppearance,
+.VPNavScreenAppearance {
+  display: none !important;
+}

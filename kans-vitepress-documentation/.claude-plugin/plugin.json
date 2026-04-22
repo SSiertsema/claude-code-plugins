@@ -1,0 +1,12 @@
+{
+  "name": "kans-vitepress-documentation",
+  "version": "0.1.0",
+  "description": "Scaffoldt of her-aligneert een VitePress sub-site voor een solution binnen de kans-uitwerken-hub. Ondersteunt mode met of zonder wireframe. Idempotent — her-alignement overschrijft theme/config maar raakt solution-content nooit. Wired ook het hub-niveau (srcExclude, nav, SUB_SITES-set, landing features).",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["vitepress", "documentation", "subsite", "solution-docs", "scaffold", "kans-uitwerken"],
+  "skills": "./skills"
+}

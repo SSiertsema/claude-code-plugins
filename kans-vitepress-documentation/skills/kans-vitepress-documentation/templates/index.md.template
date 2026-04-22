@@ -1,0 +1,53 @@
+---
+layout: home
+
+hero:
+  name: {{TITLE}}
+  text: {{HERO_TEXT}}
+  tagline: {{TAGLINE}}
+  actions:
+    - theme: brand
+      text: Start bij Spoor 1
+      link: /01-probleem/{{HERO_WIREFRAME_ACTION}}
+
+features:
+  - icon: 🎯
+    title: Scherp probleem
+    details: Segment, JTBD, value-prop, problem-solution-fit.
+    link: /01-probleem/
+    linkText: Spoor 1
+  - icon: 📊
+    title: Markt & positionering
+    details: TAM/SAM/SOM, concurrentie, benchmarks, trends, positioning.
+    link: /02-markt/
+    linkText: Spoor 2
+  - icon: 🛠️
+    title: MVP-spec
+    details: Lean canvas, functional-spec, user-stories, acceptance-criteria, pilot-plan.
+    link: /03-mvp/
+    linkText: Spoor 3
+  - icon: 🎨
+    title: Prototype + user-test
+    details: {{PROTOTYPE_DETAILS}}
+    link: /04-prototype/
+    linkText: Spoor 4
+  - icon: 🚀
+    title: GTM + launch
+    details: Vision + PR-FAQ, GTM-plan, communication-plan, launch-metrics.
+    link: /05-gtm/
+    linkText: Spoor 5
+  - icon: 📄
+    title: Opportunity-briefing
+    details: Bron-opportunity met HMW, segment, riskiest assumptions.
+    link: {{OPPORTUNITY_LINK}}
+    linkText: Bron
+---
+
+## Over deze solution-exploratie
+
+Solution-map gegenereerd via [kans-uitwerken](https://github.com/SSiertsema/claude-code-plugins).
+
+- **Slug**: `{{SLUG}}`
+- **Domein**: {{DOMAIN}}
+- **Markt**: {{MARKET}}
+- **Bron**: {{OPPORTUNITY_LINK}}

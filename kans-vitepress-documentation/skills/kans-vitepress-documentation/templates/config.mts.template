@@ -1,0 +1,158 @@
+import { defineConfig } from 'vitepress'
+import { withMermaid } from 'vitepress-plugin-mermaid'
+
+export default withMermaid(
+  defineConfig({
+    title: '{{TITLE}}',
+    description: '{{DESCRIPTION}}',
+    lang: 'nl-NL',
+    base: '/solutions/{{SLUG}}/',
+    cleanUrls: true,
+    lastUpdated: true,
+
+    ignoreDeadLinks: true,
+
+    srcExclude: [
+      '**/node_modules/**'{{WIREFRAME_SRC_EXCLUDE}}
+    ],
+
+    rewrites: {
+      '01-probleem/README.md': '01-probleem/index.md',
+      '02-markt/README.md': '02-markt/index.md',
+      '03-mvp/README.md': '03-mvp/index.md',
+      '04-prototype/README.md': '04-prototype/index.md',
+      '05-gtm/README.md': '05-gtm/index.md'
+    },
+
+    markdown: {
+      lineNumbers: false
+    },
+
+    themeConfig: {
+      siteTitle: '{{TITLE}}',
+
+      search: {
+        provider: 'local',
+        options: {
+          locales: {
+            root: {
+              translations: {
+                button: {
+                  buttonText: 'Zoek',
+                  buttonAriaLabel: 'Zoek in de documentatie'
+                },
+                modal: {
+                  displayDetails: 'Toon details',
+                  resetButtonTitle: 'Wissen',
+                  backButtonTitle: 'Terug',
+                  noResultsText: 'Geen resultaten',
+                  footer: {
+                    selectText: 'selecteer',
+                    navigateText: 'navigeer',
+                    closeText: 'sluiten'
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+
+      outline: {
+        level: [2, 3],
+        label: 'Op deze pagina'
+      },
+
+      docFooter: {
+        prev: 'Vorige',
+        next: 'Volgende'
+      },
+
+      lastUpdatedText: 'Laatst bijgewerkt',
+      returnToTopLabel: 'Terug naar boven',
+      sidebarMenuLabel: 'Menu',
+      darkModeSwitchLabel: 'Thema',
+      lightModeSwitchTitle: 'Naar lichte modus',
+      darkModeSwitchTitle: 'Naar donkere modus',
+
+      nav: [],
+
+      sidebar: [
+        { text: '🏠 Overzicht', link: '/' },
+        {
+          text: 'Spoor 1 — Scherp probleem',
+          collapsed: true,
+          items: [
+            { text: 'Samenvatting', link: '/01-probleem/' },
+            { text: '1.1 Segment-keuze', link: '/01-probleem/segment-keuze' },
+            { text: '1.2 JTBD-deep', link: '/01-probleem/jtbd-deep' },
+            { text: '1.3 Value Proposition Canvas', link: '/01-probleem/value-proposition-canvas' },
+            { text: '1.4 Problem-Solution Fit', link: '/01-probleem/problem-solution-fit' }
+          ]
+        },
+        {
+          text: 'Spoor 2 — Markt & positionering',
+          collapsed: true,
+          items: [
+            { text: 'Samenvatting', link: '/02-markt/' },
+            { text: '2.1 Market sizing (TAM/SAM/SOM)', link: '/02-markt/market-sizing' },
+            { text: '2.2 Competitive deep', link: '/02-markt/competitive-deep' },
+            { text: '2.3 Industry benchmarking', link: '/02-markt/industry-benchmarking' },
+            { text: '2.4 Trend-analyse', link: '/02-markt/trend-analysis' },
+            { text: '2.5 Positioning-statement', link: '/02-markt/positioning' }
+          ]
+        },
+        {
+          text: 'Spoor 3 — MVP-spec',
+          collapsed: true,
+          items: [
+            { text: 'Samenvatting', link: '/03-mvp/' },
+            { text: '3.1 Lean canvas', link: '/03-mvp/lean-canvas' },
+            { text: '3.2 Functional spec', link: '/03-mvp/functional-spec' },
+            { text: '3.3 User stories', link: '/03-mvp/user-stories' },
+            { text: '3.4 Acceptance criteria', link: '/03-mvp/acceptance-criteria' },
+            { text: '3.5 Pricing & ROI', link: '/03-mvp/pricing-roi' },
+            { text: '3.6 Pre-mortem', link: '/03-mvp/pre-mortem' },
+            { text: '3.7 Risk register', link: '/03-mvp/risk-register' },
+            { text: '3.8 Story map', link: '/03-mvp/story-map' },
+            { text: '3.9 Pilot plan', link: '/03-mvp/pilot-plan' }
+          ]
+        },
+        {
+          text: 'Spoor 4 — Prototype + user-test',
+          collapsed: true,
+          items: [
+            { text: 'Samenvatting', link: '/04-prototype/' },
+            { text: '4.1 Hypothesen', link: '/04-prototype/hypothesen' },
+            { text: '4.2 Rapid prototyping', link: '/04-prototype/rapid-proto' },
+            { text: '4.3 Test-protocol', link: '/04-prototype/test-protocol' },
+            { text: '4.4 Cognitive walkthrough', link: '/04-prototype/walkthrough' },
+            { text: '4.5 Test-resultaten (sim.)', link: '/04-prototype/test-resultaten' }{{WIREFRAME_SIDEBAR_ITEM}}
+          ]
+        },
+        {
+          text: 'Spoor 5 — GTM + launch-klaar',
+          collapsed: true,
+          items: [
+            { text: 'Samenvatting', link: '/05-gtm/' },
+            { text: '5.1 Vision + PR-FAQ', link: '/05-gtm/vision-pr-faq' },
+            { text: '5.2 Go-to-market', link: '/05-gtm/go-to-market' },
+            { text: '5.3 Communication plan', link: '/05-gtm/communication-plan' },
+            { text: '5.4 Launch metrics', link: '/05-gtm/launch-metrics' }
+          ]
+        }
+      ],
+
+      socialLinks: [],
+
+      footer: {
+        message: '{{FOOTER_MESSAGE}}',
+        copyright: `Laatst gebouwd: ${new Date().toLocaleDateString('nl-NL')}`
+      }
+    },
+
+    mermaid: {
+      theme: 'default'
+    }
+  })
+)

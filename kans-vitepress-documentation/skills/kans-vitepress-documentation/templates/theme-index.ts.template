@@ -1,0 +1,15 @@
+import { h } from 'vue'
+import DefaultTheme from 'vitepress/theme'
+import type { Theme } from 'vitepress'
+import MainHeader from './MainHeader.vue'
+import './custom.css'
+
+const theme: Theme = {
+  extends: DefaultTheme,
+  Layout: () =>
+    h(DefaultTheme.Layout, null, {
+      'layout-top': () => h(MainHeader)
+    })
+}
+
+export default theme

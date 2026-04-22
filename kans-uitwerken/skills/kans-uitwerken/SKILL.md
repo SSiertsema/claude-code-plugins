@@ -225,6 +225,54 @@ Doel: vision + launch-plan.
 
 Exit-gate-vraag: *"Is de propositie launch-klaar? Solution is voltooid."*
 
+## Fase 6 — Docs-site (verplicht, ongeacht exit-spoor)
+
+**Trigger**: zodra de pipeline eindigt — bij No-Go op exit-gate, bij expliciet stop, of na spoor 5. Dus **altijd** de laatste stap, met exact-één uitvoering per run.
+
+**Skill**: `kans-vitepress-documentation` (eigen plugin; zie github.com/SSiertsema/claude-code-plugins).
+
+**Doel**: de solution-map verpakt als publiekelijk-bereikbare VitePress sub-site onder de hub.
+
+**Automatische mode-bepaling**:
+
+| Laatst voltooide spoor | Wireframe aanwezig? | Mode |
+|---|---|---|
+| 1, 2, 3 | n.v.t. | `without-wireframe` |
+| 4 of 5 | `solutions/<slug>/04-prototype/wireframe-app/` bestaat | `with-wireframe` |
+| 4 of 5 | ontbreekt (skipped) | `without-wireframe` |
+
+**Aanroep**:
+
+```
+Skill: kans-vitepress-documentation
+Argumenten: <solution-slug>
+  --title "<solution-titel uit briefing>"
+  --tagline "<1-regel-propositie uit briefing>"
+  --mode <auto-bepaald>
+  --opportunity <pad naar opportunities/…-briefing>
+  [--color <optioneel; anders neutral-default>]
+```
+
+**Briefing-doorgifte**: zelfde briefing-blok als bij andere sub-skills; plus:
+- `Solution-slug` (verplicht, al bekend uit Fase 0)
+- `Opportunity-pad` (bv. `opportunities/<domein>-<datum>/README.md`)
+
+**Output**:
+- Sub-site-scaffold in `solutions/<slug>/.vitepress/` + `package.json` + `index.md`
+- Hub-wiring in 4 plekken van de hub (srcExclude, nav, SUB_SITES, landing features)
+- Build-validatie (`npm run build` moet slagen op hub-root)
+
+**Solution-README update**: voeg lifecycle-entry toe:
+```markdown
+| Docs-site | ✅ | Live op `/solutions/<slug>/` |
+```
+
+**Her-entry**: de skill is idempotent. Bij een tweede run op dezelfde solution wordt gedetecteerd of theme/config al aligneert met huidige patroon. Alleen diff-wijzigingen worden toegepast; solution-content blijft onaangeraakt.
+
+**Niet overslaan**: ook bij No-Go-scenario wordt de docs-site aangemaakt — de uitkomst van spoor 1/2 is dan zichtbaar publiek, inclusief de No-Go-rationale. Dit vormt het archief.
+
+**Exit-gate-vraag**: géén. Dit is de afronding.
+
 ## Lifecycle-status-conventie
 
 In solution-`README.md`:
@@ -285,6 +333,8 @@ Vóór het afsluiten van de hele run (spoor 5 of eerder):
 [] Taal = Nederlands (tenzij override)
 [] Geen bestaande output overschreven zonder melding
 [] Self-check per spoor is uitgevoerd
+[] Fase 6 (Docs-site) is uitgevoerd via kans-vitepress-documentation
+[] `dist/solutions/<slug>/index.html` bestaat na hub-build
 ```
 
 ## Voorbeelden
@@ -328,3 +378,11 @@ Vóór het afsluiten van de hele run (spoor 5 of eerder):
 ### Voorbeeld 10 — Web-toegang ontbreekt
 **Input**: spoor 2 draait, WebSearch werkt niet
 **Verwacht gedrag**: `market-sizing`, `competitive-analysis`, `trend-analysis` draaien op basis van alleen opportunity-briefing + bestaande `opportunities/*`-data; alle output-claims gelabeld als `[Aanname — geen web-validatie]`. Waarschuwing in spoor-README.
+
+### Voorbeeld 11 — Fase 6 Docs-site verplicht bij No-Go
+**Input**: spoor 1 voltooid met No-Go op exit-gate
+**Verwacht gedrag**: ondanks No-Go wordt `kans-vitepress-documentation` gedraaid met `--mode without-wireframe`. Sub-site toont het No-Go-rationale in `01-probleem/` en markeert overige sporen als ❌ / ⏳. Hub-wiring wordt bijgewerkt; resultaat is publieke archivering van de kill-early-beslissing.
+
+### Voorbeeld 12 — Fase 6 Docs-site op voltooide solution (her-alignement)
+**Input**: alle 5 sporen al ✅, gebruiker draait opnieuw
+**Verwacht gedrag**: `kans-vitepress-documentation` detecteert bestaande sub-site, her-aligneert alleen theme/config-bestanden (MainHeader, AppearanceToggle, sidebar, custom.css, package.json, config.mts). Solution-content (sporen 1-5 markdown, wireframe-app) blijft onaangeraakt. Rapport toont per-bestand `[update]` of `[unchanged]`.

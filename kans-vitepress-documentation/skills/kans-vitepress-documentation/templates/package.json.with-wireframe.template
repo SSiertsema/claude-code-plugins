@@ -1,0 +1,17 @@
+{
+  "name": "{{SLUG}}-docs",
+  "version": "0.1.0",
+  "private": true,
+  "description": "VitePress-site voor {{TITLE}} solution-documentatie",
+  "scripts": {
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build && npm run wireframe:build && node -e \"require('node:fs').cpSync('04-prototype/wireframe-app/dist', '.vitepress/dist/wireframe', {recursive: true, force: true})\"",
+    "wireframe:build": "npm --prefix 04-prototype/wireframe-app run build",
+    "docs:preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.0",
+    "vitepress-plugin-mermaid": "^2.0.17",
+    "mermaid": "^11.4.1"
+  }
+}
