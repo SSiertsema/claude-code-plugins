@@ -1,0 +1,12 @@
+{
+  "name": "personal-values-interview",
+  "version": "1.0.0",
+  "description": "Map a person's personal values through an adaptive, energy-preserving interview combining Personal Values Card Sort, Critical Incident Technique, Laddering, and Schwartz PVQ. Calibrates language to the user (children ~8+ to adults). Produces a markdown profile with core values shortlist, narrative profile, and resumable session metadata.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["values", "interview", "conversation", "self-reflection", "productivity"],
+  "skills": "./skills"
+}

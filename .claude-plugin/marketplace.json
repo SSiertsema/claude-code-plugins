@@ -1051,6 +1051,12 @@
       "source": "./persona-composer",
       "description": "Compose Dutch-context personas on-demand from external trait pools and pre-authored coupled archetype bundles. Combines 12 coupled-trait families with independent trait pools (hobbies, media, tech, attitudes, diet, social style, daily routine, domain-roles) to produce plausible NL personas at runtime. Callable by other skills via the Skill tool.",
       "category": "productivity"
+    },
+    {
+      "name": "personal-values-interview",
+      "source": "./personal-values-interview",
+      "description": "Map a person's personal values through an adaptive, energy-preserving interview combining Personal Values Card Sort, Critical Incident Technique, Laddering, and Schwartz PVQ. Calibrates language to the user (children ~8+ to adults). Produces a markdown profile with core values shortlist, narrative profile, and resumable session metadata.",
+      "category": "productivity"
     }
   ]
 }
