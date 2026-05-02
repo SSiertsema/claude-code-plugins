@@ -1,0 +1,12 @@
+{
+  "name": "kanban-management",
+  "version": "1.0.0",
+  "description": "Transform user stories (from user-story-generator) and user journeys (from user-journey-management) into a central kanban.md file at the project root. Analyzes dependencies and proposes a numerical priority ordering when missing. The kanban.md is the single source of truth for development status with TODO / DOING / DONE sections, manually editable by moving stories between sections. On a re-run the skill iteratively reconciles changes (new / removed / status conflicts / dependency changes) with the user. On request, renders three projections from the data via inline-presentation - progress percentage (P-7 bar), kanban board (P-8 cluster cards), and dependency flowchart (P-1 ASCII). Stops on circular dependencies and asks the user to fix the source. All stories start in TODO on first run.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["kanban", "user-stories", "user-journeys", "dependencies", "priority", "agile", "productivity"],
+  "skills": "./skills"
+}
