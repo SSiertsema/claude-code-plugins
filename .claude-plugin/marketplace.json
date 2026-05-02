@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Collection of plugins for Claude Code",
-    "version": "1.1.0"
+    "version": "1.2.0"
   },
   "plugins": [
     {
@@ -1056,6 +1056,12 @@
       "name": "personal-values-interview",
       "source": "./personal-values-interview",
       "description": "Map a person's personal values through an adaptive, energy-preserving interview combining Personal Values Card Sort, Critical Incident Technique, Laddering, and Schwartz PVQ. Calibrates language to the user (children ~8+ to adults). Produces a markdown profile with core values shortlist, narrative profile, and resumable session metadata.",
+      "category": "productivity"
+    },
+    {
+      "name": "inline-presentation",
+      "source": "./inline-presentation",
+      "description": "Detects when an assistant response contains structured or relational data (process, relational, hierarchical, time-series, comparative, key-value, numeric/proportion, set/categorical) and renders it inline using a fixed catalog of CLI-friendly forms (ASCII flowcharts, tree views, ER-style diagrams, Gantt bars, side-by-side cards, two-column tables, horizontal bars, cluster cards). Operates by default — anticipates the right visual form so the user does not have to ask 'can you make this visual?'. No Mermaid, no LaTeX, no color conventions — purely structural.",
       "category": "productivity"
     }
   ]
