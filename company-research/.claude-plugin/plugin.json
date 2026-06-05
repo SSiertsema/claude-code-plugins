@@ -1,0 +1,12 @@
+{
+  "name": "company-research",
+  "version": "1.0.0",
+  "description": "Autonomous web research that produces a sales/outreach-ready HTML company brief. Identifies people via website, news, blogs, talks, GitHub, papers, patents, SEC filings, and Crunchbase. Public sources only, every claim cited.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["company-research", "sales", "outreach", "people-research", "osint", "prospect-research"],
+  "skills": "./skills"
+}

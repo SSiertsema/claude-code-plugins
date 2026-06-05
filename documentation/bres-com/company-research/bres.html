@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Company Research — BRES B.V. (bres.com)</title>
+<style>
+  :root {
+    --fg: #1f2328;
+    --muted: #57606a;
+    --border: #d0d7de;
+    --bg: #ffffff;
+    --accent: #0969da;
+    --card-bg: #f6f8fa;
+    --conf-high-bg: #dafbe1;
+    --conf-high-fg: #1a7f37;
+    --conf-med-bg: #fff1b8;
+    --conf-med-fg: #9a6700;
+    --conf-low-bg: #eaeef2;
+    --conf-low-fg: #57606a;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.55;
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 2rem 1.25rem 4rem;
+  }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bottom: 2rem; }
+  h1 { font-size: 1.8rem; margin: 0 0 0.25rem; }
+  h2 { font-size: 1.3rem; margin: 2.5rem 0 0.75rem; padding-bottom: 0.3rem; border-bottom: 1px solid var(--border); }
+  h3 { font-size: 1.05rem; margin: 1.5rem 0 0.5rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+  h4 { font-size: 1rem; margin: 0 0 0.15rem; }
+  .subtitle { color: var(--muted); margin: 0; font-size: 0.95rem; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  sup a { font-size: 0.7em; }
+  dl { display: grid; grid-template-columns: max-content 1fr; gap: 0.4rem 1rem; margin: 0; }
+  dt { font-weight: 600; color: var(--muted); }
+  dd { margin: 0; }
+  ol.timeline { list-style: none; padding: 0; margin: 0; }
+  ol.timeline li {
+    display: grid;
+    grid-template-columns: 7.5rem 1fr;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  ol.timeline li:last-child { border-bottom: none; }
+  ol.timeline .date { font-variant-numeric: tabular-nums; color: var(--muted); font-size: 0.9rem; }
+  ul.customer-list { columns: 2; column-gap: 2rem; padding-left: 1.2rem; }
+  ul.customer-list li { break-inside: avoid; margin-bottom: 0.25rem; }
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-top: 0.75rem;
+  }
+  .person-card {
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    border-radius: 6px;
+    padding: 0.85rem 1rem;
+  }
+  .person-card .role { margin: 0 0 0.5rem; color: var(--muted); font-size: 0.9rem; }
+  .person-card blockquote {
+    margin: 0.5rem 0;
+    padding-left: 0.75rem;
+    border-left: 2px solid var(--border);
+    color: var(--muted);
+    font-size: 0.88rem;
+    font-style: italic;
+  }
+  .person-card .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    font-size: 0.8rem;
+    margin: 0.5rem 0 0;
+  }
+  .conf {
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-weight: 600;
+    text-transform: lowercase;
+  }
+  .conf-high { background: var(--conf-high-bg); color: var(--conf-high-fg); }
+  .conf-med  { background: var(--conf-med-bg);  color: var(--conf-med-fg); }
+  .conf-low  { background: var(--conf-low-bg);  color: var(--conf-low-fg); }
+  .recency { color: var(--muted); font-variant-numeric: tabular-nums; }
+  ol#sources-list { font-size: 0.88rem; padding-left: 1.5rem; }
+  ol#sources-list li { margin-bottom: 0.4rem; }
+  ul.gaps { font-size: 0.95rem; }
+  footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+  @media print {
+    body { max-width: none; padding: 0.5in; }
+    .card-grid { break-inside: avoid; }
+    .person-card { break-inside: avoid; }
+    a { color: var(--fg); }
+    sup a { color: var(--muted); }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>BRES B.V.</h1>
+  <p class="subtitle">Sales/outreach research brief — bres.com — generated 2026-05-14</p>
+</header>
+
+<section id="snapshot">
+  <h2>Company snapshot</h2>
+  <dl>
+    <dt>Official name</dt>
+    <dd>BRES B.V. <sup><a href="#src-1">[1]</a></sup></dd>
+
+    <dt>One-liner</dt>
+    <dd>"Hét data en informatieplatform voor de vastgoedportefeuille" — a single-pane data and information layer over a real estate organisation's source systems <sup><a href="#src-1">[1]</a></sup></dd>
+
+    <dt>Sector</dt>
+    <dd>Proptech / real-estate data SaaS — Netherlands; primary buyers are municipalities (gemeenten) and housing corporations (woningcorporaties) <sup><a href="#src-1">[1]</a></sup><sup><a href="#src-7">[7]</a></sup><sup><a href="#src-9">[9]</a></sup></dd>
+
+    <dt>HQ</dt>
+    <dd>Grasweg 69, 1031 HX Amsterdam, Netherlands — former shipyard 'de Groene Draeck' <sup><a href="#src-3">[3]</a></sup></dd>
+
+    <dt>Founder</dt>
+    <dd>Stefan van de Schootbrugge — Founder &amp; Owner <sup><a href="#src-1">[1]</a></sup><sup><a href="#src-3">[3]</a></sup></dd>
+
+    <dt>Co-initiators (project)</dt>
+    <dd>Gilles van der Horst and Joost van Rooijen — initiated the BRES project alongside Stefan; Joost van Rooijen is currently Partner at Bastion Real Estate (no longer at BRES) <sup><a href="#src-7">[7]</a></sup><sup><a href="#src-11">[11]</a></sup></dd>
+
+    <dt>Size signals</dt>
+    <dd>Founder-led small team; website lists only one named person (the founder). Specific headcount not publicly disclosed <sup><a href="#src-1">[1]</a></sup><sup><a href="#src-3">[3]</a></sup><sup><a href="#src-5">[5]</a></sup>. <em>[Assumption]</em>: under ~20 FTE based on web footprint.</dd>
+
+    <dt>Certifications</dt>
+    <dd>ISO/IEC 27001:2022 (information security) <sup><a href="#src-6">[6]</a></sup></dd>
+
+    <dt>Product positioning</dt>
+    <dd>Single viewer over multiple source systems; integrates Spacewell/Axxerion (real estate), JD Edwards (financial), and ArcGIS (GIS) at minimum. Claims "50% besparing op softwarekosten" and 2-week go-live after kickoff <sup><a href="#src-1">[1]</a></sup><sup><a href="#src-7">[7]</a></sup><sup><a href="#src-8">[8]</a></sup></dd>
+
+    <dt>Pricing model</dt>
+    <dd>Multi-year SaaS subscription (4-year contract documented with Gemeente Amsterdam) <sup><a href="#src-9">[9]</a></sup></dd>
+  </dl>
+</section>
+
+<section id="customers">
+  <h2>Known customers</h2>
+  <p style="margin-top: 0; color: var(--muted); font-size: 0.9rem;">Combined picture of municipal + housing-corporation footprint. Useful for social-proof framing and competitive benchmarking.</p>
+  <ul class="customer-list">
+    <li>Gemeente Amsterdam — 4-year SaaS agreement; 6 source systems unified <sup><a href="#src-9">[9]</a></sup></li>
+    <li>Gemeente Arnhem — pilot converted to production <sup><a href="#src-9">[9]</a></sup><sup><a href="#src-2">[2]</a></sup></li>
+    <li>Stadsherstel Amsterdam — listed in product handleiding <sup><a href="#src-12">[12]</a></sup></li>
+    <li>AFWC (Amsterdamse Federatie van Woningcorporaties) — federation-level integration <sup><a href="#src-13">[13]</a></sup></li>
+    <li>Ymere — Amsterdam housing corporation <sup><a href="#src-10">[10]</a></sup></li>
+    <li>Stadgenoot — Amsterdam housing corporation <sup><a href="#src-10">[10]</a></sup></li>
+    <li>De Key (Lieven de Key) — Amsterdam housing corporation <sup><a href="#src-10">[10]</a></sup></li>
+    <li>Eigen Haard — Amsterdam housing corporation <sup><a href="#src-10">[10]</a></sup></li>
+    <li>Rochdale — Amsterdam housing corporation <sup><a href="#src-10">[10]</a></sup></li>
+    <li>de Alliantie — Amsterdam housing corporation <sup><a href="#src-10">[10]</a></sup></li>
+  </ul>
+  <p style="font-size: 0.9rem;">Combined housing-corporation portfolio reportedly ~300,000 units across the six Amsterdam corporations <sup><a href="#src-10">[10]</a></sup>.</p>
+</section>
+
+<section id="timeline">
+  <h2>Recent activity</h2>
+  <ol class="timeline">
+    <li>
+      <span class="date">2025+</span>
+      <span class="event">ISO/IEC 27001:2022 certification announced on the bres.com news feed — security/compliance milestone for the platform <sup><a href="#src-6">[6]</a></sup></span>
+    </li>
+    <li>
+      <span class="date">2025+</span>
+      <span class="event">"Koppeling officiële publicaties" — integration with LVBB / officiële publicaties announced on the news feed (regulatory / public-data ingest) <sup><a href="#src-14">[14]</a></sup></span>
+    </li>
+    <li>
+      <span class="date">recent</span>
+      <span class="event">Stefan van de Schootbrugge featured as speaker by SPRYG Real Estate Academy <sup><a href="#src-15">[15]</a></sup></span>
+    </li>
+    <li>
+      <span class="date">recent</span>
+      <span class="event">Stefan van de Schootbrugge "draait jaar mee in departement" — published on the BRES news feed (precise date not surfaced) <sup><a href="#src-4">[4]</a></sup></span>
+    </li>
+    <li>
+      <span class="date">recent</span>
+      <span class="event">Six Amsterdam corporations (Ymere, Stadgenoot, De Key, Eigen Haard, Rochdale, de Alliantie) agreement for data-driven portfolio and area management — combined ~300,000 units <sup><a href="#src-10">[10]</a></sup></span>
+    </li>
+    <li>
+      <span class="date">recent</span>
+      <span class="event">Gemeente Amsterdam 4-year SaaS agreement — 6 systems unified into BRES viewer <sup><a href="#src-9">[9]</a></sup></span>
+    </li>
+    <li>
+      <span class="date">recent</span>
+      <span class="event">Gemeente Arnhem pilot converted to definitive collaboration <sup><a href="#src-9">[9]</a></sup><sup><a href="#src-2">[2]</a></sup></span>
+    </li>
+    <li>
+      <span class="date">earlier</span>
+      <span class="event">IVVD article "Sturen op vastgoed met BRES" — trade-press coverage in maatschappelijk-vastgoed kennisplatform <sup><a href="#src-8">[8]</a></sup></span>
+    </li>
+  </ol>
+  <p style="font-size: 0.85rem; color: var(--muted);">Most bres.com news posts do not display dates publicly; precise chronology cannot be reconstructed without crawling page metadata or PDFs. See Assumptions.</p>
+</section>
+
+<section id="roster">
+  <h2>People</h2>
+
+  <section class="function-group">
+    <h3>Leadership</h3>
+    <div class="card-grid">
+
+      <article class="person-card">
+        <h4>Stefan van de Schootbrugge</h4>
+        <p class="role">Founder &amp; Owner</p>
+        <blockquote>"Stefan van de Schootbrugge is oprichter van BRES en geeft gemeenten een overzicht van hun vastgoedportefeuille." (SPRYG Real Estate Academy speaker bio). The only person publicly named on bres.com — listed on every key page (home, ons-doel, contact, klantenverhalen, features). Speaker at SPRYG Real Estate Academy.</blockquote>
+        <p class="meta">
+          <span class="conf conf-high">high</span>
+          <span class="recency">2026</span>
+          <sup><a href="#src-1">[1]</a></sup>
+          <sup><a href="#src-3">[3]</a></sup>
+          <sup><a href="#src-5">[5]</a></sup>
+          <sup><a href="#src-15">[15]</a></sup>
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="function-group">
+    <h3>Co-initiators (project history)</h3>
+    <div class="card-grid">
+
+      <article class="person-card">
+        <h4>Gilles van der Horst</h4>
+        <p class="role">Co-initiator of the BRES project (historical)</p>
+        <blockquote>Named alongside Stefan and Joost as one of three real-estate experts who initiated BRES after working together on a previous software system for five years.</blockquote>
+        <p class="meta">
+          <span class="conf conf-med">medium</span>
+          <span class="recency">historical</span>
+          <sup><a href="#src-7">[7]</a></sup>
+        </p>
+      </article>
+
+      <article class="person-card">
+        <h4>Joost van Rooijen</h4>
+        <p class="role">Co-initiator of BRES (historical); now Partner at Bastion Real Estate</p>
+        <blockquote>Listed in his Bastion bio as having worked at "BRES | real estate accuracy" along with other real-estate roles; previously at JVR Vastgoedontwikkeling. Studied Real Estate Management at TU Delft. Now leads Bastion Real Estate alongside John van der Ham and Marianne van Nifterik.</blockquote>
+        <p class="meta">
+          <span class="conf conf-high">high</span>
+          <span class="recency">moved on (2020s)</span>
+          <sup><a href="#src-7">[7]</a></sup>
+          <sup><a href="#src-11">[11]</a></sup>
+        </p>
+      </article>
+
+    </div>
+  </section>
+</section>
+
+<section id="hooks">
+  <h2>Outreach hooks</h2>
+  <ol>
+    <li><strong>Single-decision-maker company.</strong> Stefan van de Schootbrugge is the only publicly named person and is both founder and owner. Sales conversations route directly to him — no gatekeeper, but no procurement layer either. Hook: tie any approach to a concrete municipality or corporation use case. <sup><a href="#src-1">[1]</a></sup><sup><a href="#src-3">[3]</a></sup></li>
+    <li><strong>ISO 27001:2022 just achieved.</strong> Recent compliance milestone — relevant for security-tooling vendors, audit partners, and procurement-focused buyers (gemeenten care). <sup><a href="#src-6">[6]</a></sup></li>
+    <li><strong>LVBB / officiële-publicaties koppeling.</strong> Recent product feature ingesting Dutch official publications — hook for regulatory-data vendors, BAG/PDOK partners, or competitors in regulatory tech. <sup><a href="#src-14">[14]</a></sup></li>
+    <li><strong>Big municipal logos.</strong> Amsterdam (4-year SaaS) and Arnhem are flagship references — use these as analogue case studies when pitching other Dutch municipalities (Utrecht, Rotterdam, Den Haag are the obvious gaps). <sup><a href="#src-9">[9]</a></sup></li>
+    <li><strong>The AFWC + 6 corporaties deal (~300k units)</strong> is unusually large for a founder-led NL proptech and a strong proof point — useful for outreach into other Dutch corporatie federations (DAEB-segment, regional federations). <sup><a href="#src-10">[10]</a></sup></li>
+    <li><strong>Integration ecosystem.</strong> Confirmed integrations with Spacewell/Axxerion, JD Edwards, and ArcGIS — natural conversation starters with partners or competitors in those stacks. <sup><a href="#src-7">[7]</a></sup></li>
+    <li><strong>"50% cost savings" claim + 2-week implementation.</strong> Public positioning that's worth probing with a "how do you measure that?" opener — and a clear target for competitive vendors (e.g., Planon, VBSonline, Fortus) to displace or co-exist with. <sup><a href="#src-1">[1]</a></sup></li>
+    <li><strong>SPRYG Real Estate Academy speaker.</strong> Stefan has a public-speaking footprint in the Dutch real-estate education circuit — possible context for follow-up at SPRYG events. <sup><a href="#src-15">[15]</a></sup></li>
+    <li><strong>"de Groene Draeck" / Grasweg location anecdote</strong> — small but real human hook for opening conversations (former shipyard in Amsterdam-Noord). <sup><a href="#src-3">[3]</a></sup></li>
+  </ol>
+</section>
+
+<section id="sources">
+  <h2>Sources</h2>
+  <ol id="sources-list">
+    <li id="src-1"><a href="https://bres.com">bres.com homepage</a> — accessed 2026-05-14</li>
+    <li id="src-2"><a href="https://bres.com/nl/">bres.com (Dutch) homepage</a> — accessed 2026-05-14</li>
+    <li id="src-3"><a href="https://bres.com/contact/">"Contact" — bres.com</a> — accessed 2026-05-14</li>
+    <li id="src-4"><a href="https://bres.com/nl/nieuws/8-stefan-van-de-schootbrugge-draait-jaar-mee-in-departement">"Stefan van de Schootbrugge draait jaar mee in departement"</a> — bres.com news, accessed 2026-05-14</li>
+    <li id="src-5"><a href="https://bres.com/ons-doel/">"Ons doel" — bres.com</a> — accessed 2026-05-14</li>
+    <li id="src-6"><a href="https://bres.com/news/bres-b-v-is-iso-iec-270012022-gecertificeerd/">"BRES B.V. is ISO/IEC 27001:2022 gecertificeerd"</a> — bres.com news, accessed 2026-05-14</li>
+    <li id="src-7"><a href="https://www.google.com/search?q=BRES+%22Stefan+van+de+Schootbrugge%22+%22Gilles+van+der+Horst%22+%22Joost+van+Rooijen%22">Search aggregating BRES co-initiator references</a> — multiple bres.com and bres.nl/over-* mirrors, accessed 2026-05-14</li>
+    <li id="src-8"><a href="https://www.ivvd.nl/sturen-op-vastgoed-met-bres/">"Sturen op vastgoed met BRES" — IVVD (kennisplatform maatschappelijk vastgoed)</a> — accessed 2026-05-14</li>
+    <li id="src-9"><a href="https://handleiding.bres.com/doku.php?id=gemeente_amsterdam">"Gemeente Amsterdam" — BRES Handleiding</a> — accessed 2026-05-14</li>
+    <li id="src-10"><a href="https://bres.com/nl/nieuws/48-bres-corporaties-amsterdam">"BRES corporaties Amsterdam"</a> — bres.com news, accessed 2026-05-14</li>
+    <li id="src-11"><a href="https://www.bastionrealestate.nl/over-bastion-real-estate/">"Over Bastion Real Estate" — Joost van Rooijen partner bio</a> — accessed 2026-05-14</li>
+    <li id="src-12"><a href="https://handleiding.bres.com/doku.php?id=stadsherstel_amsterdam">"Stadsherstel" — BRES Handleiding</a> — accessed 2026-05-14</li>
+    <li id="src-13"><a href="https://handleiding.bres.com/doku.php?id=afwc">"AFWC" — BRES Handleiding</a> — accessed 2026-05-14</li>
+    <li id="src-14"><a href="https://bres.com/news/bres-koppeling-lvbb/">"Koppeling officiële publicaties (LVBB)"</a> — bres.com news, accessed 2026-05-14</li>
+    <li id="src-15"><a href="https://spryg.com/sprekers/stefan-van-de-schootbrugge">"Stefan van de Schootbrugge" — SPRYG Real Estate Academy speaker page</a> — accessed 2026-05-14</li>
+  </ol>
+</section>
+
+<section id="assumptions">
+  <h2>Assumptions &amp; limitations</h2>
+  <ul class="gaps">
+    <li><strong>News-post dates not displayed publicly.</strong> bres.com /news posts (ISO 27001 certification, LVBB koppeling, Stefan-in-departement, corporaties Amsterdam) carry no visible date on the rendered page. Timeline entries are labeled "recent" or "2025+" rather than precise dates. The post numbering (e.g., "/48-bres-corporaties-amsterdam") suggests chronological ordering but the absolute dates would require deeper crawl.</li>
+    <li><strong>Phone numbers and email addresses are omitted</strong> by skill policy, although <code>stefan@bres.com</code> and <code>info@bres.com</code> are openly published on bres.com. Retrieve directly from <a href="https://bres.com/contact/">the contact page</a> if needed.</li>
+    <li><strong>Headcount and revenue are not publicly disclosed.</strong> The website names only one person (the founder). The "&lt;20 FTE" estimate is marked <em>[Assumption]</em> based on public footprint, not a stated number.</li>
+    <li><strong>KvK registration not retrieved</strong> in this run — the KvK search interface was returned but no specific filing details extracted. Would confirm formal incorporation date and any other officers.</li>
+    <li><strong>F-Facts case (Gemeente Arnhem)</strong> exists at <a href="https://www.f-facts.nl/case/gemeente-arnhem-vastgoedinformatie-leidt-tot-professionele-ondersteuning-van-organisatie-en">this URL</a> but timed out on fetch — likely contains a named customer-side spokesperson at Gemeente Arnhem; should be re-tried.</li>
+    <li><strong>No GitHub, Scholar, arXiv, patent, SEC, or Crunchbase signal.</strong> Expected for a small Dutch private B2B SaaS — flagged here for completeness per skill protocol.</li>
+    <li><strong>Customer-side decision-makers not surfaced.</strong> bres.com /klantenverhalen page lists Gemeente Amsterdam and Gemeente Arnhem but names no customer-side spokespeople. The handleiding.bres.com pages document tenant configs but do not expose contact persons. For customer-side org charts, separate research per municipality is needed.</li>
+    <li><strong>Co-initiator status is historical.</strong> Joost van Rooijen has explicitly moved on to Bastion Real Estate; Gilles van der Horst's current affiliation is not confirmed in the sources consulted.</li>
+  </ul>
+</section>
+
+<footer>
+  <p>Public sources only. No private contact data included. Generated by the <code>company-research</code> skill, 2026-05-14.</p>
+</footer>
+
+</body>
+</html>

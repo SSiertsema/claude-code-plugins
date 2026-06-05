@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Digital footprint audit — Sven Siertsema</title>
+<style>
+  :root {
+    --fg: #1f2328;
+    --muted: #57606a;
+    --border: #d0d7de;
+    --bg: #ffffff;
+    --accent: #0969da;
+    --card-bg: #f6f8fa;
+    --self-bg: #ddf4ff;     --self-fg: #0550ae;
+    --third-bg: #fbefff;    --third-fg: #6639ba;
+    --leaked-bg: #ffebe9;   --leaked-fg: #cf222e;
+    --diff-easy-bg: #dafbe1;     --diff-easy-fg: #1a7f37;
+    --diff-med-bg: #fff1b8;      --diff-med-fg: #9a6700;
+    --diff-hard-bg: #ffe1cc;     --diff-hard-fg: #b35900;
+    --diff-vhard-bg: #ffe2e0;    --diff-vhard-fg: #82071e;
+    --diff-nr-bg: #eaeef2;       --diff-nr-fg: #57606a;
+    --intent-bg: #fff8c5;        --intent-fg: #6b5d00;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.55;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 1.25rem 4rem;
+  }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bottom: 1.5rem; }
+  h1 { font-size: 1.8rem; margin: 0 0 0.25rem; }
+  h2 {
+    font-size: 1.3rem;
+    margin: 2.5rem 0 0.75rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    flex-wrap: wrap;
+  }
+  h4 { font-size: 1rem; margin: 0 0 0.15rem; }
+  .subtitle { color: var(--muted); margin: 0; font-size: 0.95rem; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  sup a { font-size: 0.7em; }
+
+  .intent-banner {
+    background: var(--intent-bg);
+    color: var(--intent-fg);
+    border-left: 4px solid #d4a72c;
+    padding: 0.85rem 1rem;
+    margin: 1rem 0 2rem;
+    border-radius: 4px;
+    font-size: 0.95rem;
+  }
+  .section-note { color: var(--muted); font-size: 0.9rem; margin: 0 0 0.75rem; }
+  .section-note.warn {
+    background: var(--leaked-bg);
+    color: var(--leaked-fg);
+    padding: 0.6rem 0.85rem;
+    border-radius: 4px;
+    border-left: 3px solid var(--leaked-fg);
+    font-style: normal;
+  }
+
+  dl { display: grid; grid-template-columns: max-content 1fr; gap: 0.4rem 1rem; margin: 0; }
+  dt { font-weight: 600; color: var(--muted); }
+  dd { margin: 0; }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+  .footprint-card {
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    border-radius: 6px;
+    padding: 0.85rem 1rem;
+  }
+  .footprint-card.leaked { border-left: 3px solid var(--leaked-fg); }
+  .footprint-card .meta {
+    display: flex; flex-wrap: wrap; gap: 0.45rem; align-items: center;
+    font-size: 0.78rem; margin: 0.4rem 0;
+  }
+  .footprint-card .platform { color: var(--muted); }
+  .footprint-card .date { color: var(--muted); font-variant-numeric: tabular-nums; }
+  .footprint-card .desc { font-size: 0.92rem; margin: 0.5rem 0; }
+  .footprint-card .url { font-size: 0.85rem; margin: 0.4rem 0; word-break: break-all; }
+  .footprint-card .removal {
+    font-size: 0.85rem;
+    background: rgba(0,0,0,0.025);
+    padding: 0.5rem 0.65rem;
+    border-radius: 4px;
+    margin: 0.5rem 0 0;
+  }
+
+  .badge {
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 0.72rem;
+    text-transform: lowercase;
+    letter-spacing: 0.02em;
+  }
+  .origin-self    { background: var(--self-bg);    color: var(--self-fg); }
+  .origin-third   { background: var(--third-bg);   color: var(--third-fg); }
+  .origin-leaked  { background: var(--leaked-bg);  color: var(--leaked-fg); }
+  .diff-easy      { background: var(--diff-easy-bg);  color: var(--diff-easy-fg); }
+  .diff-med       { background: var(--diff-med-bg);   color: var(--diff-med-fg); }
+  .diff-hard      { background: var(--diff-hard-bg);  color: var(--diff-hard-fg); }
+  .diff-vhard     { background: var(--diff-vhard-bg); color: var(--diff-vhard-fg); }
+  .diff-nr        { background: var(--diff-nr-bg);    color: var(--diff-nr-fg); }
+
+  ol.action-list { padding-left: 1.25rem; }
+  ol.action-list li {
+    margin-bottom: 1rem;
+    padding-left: 0.25rem;
+  }
+  ol.action-list .action {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.92rem;
+  }
+
+  ol#sources-list { font-size: 0.88rem; padding-left: 1.5rem; }
+  ol#sources-list li { margin-bottom: 0.4rem; }
+
+  ul.gaps { font-size: 0.95rem; }
+  footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+
+  @media print {
+    body { max-width: none; padding: 0.5in; }
+    .card-grid { grid-template-columns: 1fr; }
+    .footprint-card, ol.action-list li { break-inside: avoid; }
+    a { color: var(--fg); }
+    sup a { color: var(--muted); }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Sven Siertsema</h1>
+  <p class="subtitle">Digital footprint audit — gegenereerd 2026-05-14</p>
+</header>
+
+<div class="intent-banner">
+  <strong>Doel:</strong> Dit document toont alles wat publiek vindbaar is over Sven Siertsema, met per item de herkomst (zelf gepubliceerd / door derden gepubliceerd / leaked-but-public) en, waar bekend, de route om het te laten verwijderen. Bedoeld om door te lopen en gericht actie op te ondernemen.
+</div>
+
+<section id="identity">
+  <h2>Public identity snapshot</h2>
+  <dl>
+    <dt>Confirmed identity</dt>
+    <dd>Sven Siertsema — front-end developer, Nederland — bevestigd via overlap van email (sven.siertsema@gmail.com), GitHub-handle (SSiertsema), persoonlijke domein (sven-siertsema.nl), en KvK-registratie Zaandam.</dd>
+
+    <dt>Publieke rol</dt>
+    <dd>Freelance front-end developer; eenmanszaak ingeschreven sinds 2017 (KvK 68619375) <sup><a href="#src-3">[3]</a></sup><sup><a href="#src-5">[5]</a></sup></dd>
+
+    <dt>Regio</dt>
+    <dd>Woon-/werkregio: Amsterdam (LinkedIn-profiel) <sup><a href="#src-4">[4]</a></sup>; KvK-vestigingsadres in Zaandam <sup><a href="#src-5">[5]</a></sup></dd>
+
+    <dt>Opleiding</dt>
+    <dd>Hogeschool van Amsterdam — Information Engineering <sup><a href="#src-4">[4]</a></sup></dd>
+
+    <dt>Bekende publieke handles</dt>
+    <dd>
+      GitHub: <a href="https://github.com/SSiertsema">SSiertsema</a> <sup><a href="#src-2">[2]</a></sup>;
+      X/Twitter: <a href="https://x.com/svensiertsema">@svensiertsema</a> <sup><a href="#src-6">[6]</a></sup>;
+      LinkedIn: <a href="https://nl.linkedin.com/in/sven-siertsema-54260740">sven-siertsema-54260740</a> <sup><a href="#src-4">[4]</a></sup>;
+      Facebook: <a href="https://www.facebook.com/sven.siertsema">sven.siertsema</a> <sup><a href="#src-7">[7]</a></sup>
+    </dd>
+
+    <dt>Persoonlijk domein</dt>
+    <dd><a href="https://sven-siertsema.nl/">sven-siertsema.nl</a> — actief domein, JS-driven single-page app (statische crawl van bres-pagina returnt 404 / vereist JS) <sup><a href="#src-1">[1]</a></sup></dd>
+  </dl>
+</section>
+
+<section id="self-published">
+  <h2>Self-published <span class="badge origin-self">self-published</span></h2>
+  <p class="section-note">Content die jij direct beheert. Verwijderen is meestal makkelijk — alleen account-instellingen of dashboard nodig.</p>
+  <div class="card-grid">
+
+    <article class="footprint-card">
+      <h4>sven-siertsema.nl</h4>
+      <p class="meta">
+        <span class="platform">eigen domein</span>
+        <span class="date">actief</span>
+        <span class="badge origin-self">self</span>
+        <span class="badge diff-easy">easy</span>
+      </p>
+      <p class="desc">Persoonlijk domein, JS-driven single-page app. Live-fetch zonder JS gaf 404 — content wordt client-side gerenderd.</p>
+      <p class="url"><a href="https://sven-siertsema.nl/">sven-siertsema.nl</a> <sup><a href="#src-1">[1]</a></sup></p>
+      <p class="removal"><strong>Verwijderen:</strong> Bij hostingprovider opzeggen + DNS-registratie laten verlopen of overdragen. Cached versies in Google: gebruik <a href="https://search.google.com/search-console/remove-outdated-content">Google "Remove outdated content"</a> tool.</p>
+    </article>
+
+    <article class="footprint-card">
+      <h4>GitHub — SSiertsema</h4>
+      <p class="meta">
+        <span class="platform">github.com</span>
+        <span class="date">huidig</span>
+        <span class="badge origin-self">self</span>
+        <span class="badge diff-easy">easy</span>
+      </p>
+      <p class="desc">Pro-account met 10 publieke repositories (dutch-weather, index, world-of-frontend, claude-code-plugins, my-health-journey, my-pokemon-tcg-collection, e.a.). Geen bio of locatie. 2 followers. Email niet publiek.</p>
+      <p class="url"><a href="https://github.com/SSiertsema">github.com/SSiertsema</a> <sup><a href="#src-2">[2]</a></sup></p>
+      <p class="removal"><strong>Verwijderen:</strong> Per repo via Settings → "Delete this repository", of het hele account via Settings → Account → Delete account. Let op: forks blijven bestaan; vraag forkers via issue of email.</p>
+    </article>
+
+    <article class="footprint-card">
+      <h4>LinkedIn-profiel</h4>
+      <p class="meta">
+        <span class="platform">linkedin.com</span>
+        <span class="date">actueel (recent gepost)</span>
+        <span class="badge origin-self">self</span>
+        <span class="badge diff-easy">easy</span>
+      </p>
+      <p class="desc">Freelance, Amsterdam. 991 followers, 500+ connecties. Profiel vermeldt werk-historie (CBS, Yachtpaint, AkzoNobel.com, SVB), opleiding Hogeschool van Amsterdam, recente posts over freelance-beschikbaarheid en het "My Health Journey" project.</p>
+      <p class="url"><a href="https://nl.linkedin.com/in/sven-siertsema-54260740">nl.linkedin.com/in/sven-siertsema-54260740</a> <sup><a href="#src-4">[4]</a></sup></p>
+      <p class="removal"><strong>Verwijderen:</strong> Profielzichtbaarheid aanpassen via Privacy & Settings, of profiel volledig sluiten via Account preferences → Close account. Specifieke posts: 3-stippen-menu → Delete post.</p>
+    </article>
+
+    <article class="footprint-card">
+      <h4>X / Twitter — @svensiertsema</h4>
+      <p class="meta">
+        <span class="platform">x.com</span>
+        <span class="date">onbekend</span>
+        <span class="badge origin-self">self</span>
+        <span class="badge diff-easy">easy</span>
+      </p>
+      <p class="desc">Account bestaat onder handle @svensiertsema. Inhoud niet zichtbaar zonder login (X gaf HTTP 402 op directe fetch) — voor de owner volledig zichtbaar na inlog.</p>
+      <p class="url"><a href="https://x.com/svensiertsema">x.com/svensiertsema</a> <sup><a href="#src-6">[6]</a></sup></p>
+      <p class="removal"><strong>Verwijderen:</strong> Settings → Your account → Deactivate account (30 dagen graceperiode). Of selectieve tweet-verwijdering. Voor archiefdownload: Settings → Download an archive.</p>
+    </article>
+
+    <article class="footprint-card">
+      <h4>Facebook-profiel</h4>
+      <p class="meta">
+        <span class="platform">facebook.com</span>
+        <span class="date">onbekend</span>
+        <span class="badge origin-self">self</span>
+        <span class="badge diff-easy">easy</span>
+      </p>
+      <p class="desc">Profiel bestaat op /sven.siertsema. Zonder login is alleen de naam zichtbaar — geen publieke posts of bio leesbaar voor non-ingelogde bezoekers.</p>
+      <p class="url"><a href="https://www.facebook.com/sven.siertsema">facebook.com/sven.siertsema</a> <sup><a href="#src-7">[7]</a></sup></p>
+      <p class="removal"><strong>Verwijderen:</strong> Settings → Your Facebook Information → Deactivation and Deletion → Permanently Delete Account.</p>
+    </article>
+
+  </div>
+</section>
+
+<section id="third-party">
+  <h2>Third-party published <span class="badge origin-third">third-party</span></h2>
+  <p class="section-note">Content die anderen over jou hebben gepubliceerd, of die bij wet/overheid publiek staat. Verwijderen vereist contact met de uitgever of een specifieke procedure.</p>
+  <div class="card-grid">
+
+    <article class="footprint-card">
+      <h4>KvK-registratie — eenmanszaak</h4>
+      <p class="meta">
+        <span class="platform">kvk.nl</span>
+        <span class="date">sinds 2017-05</span>
+        <span class="badge origin-third">third</span>
+        <span class="badge diff-vhard">very-hard</span>
+      </p>
+      <p class="desc">KvK-nummer 68619375. Eenmanszaak "Sven Siertsema", hoofdvestiging Conradwerf 133, 1505KB Zaandam. Activiteit: "Ontwikkelen, produceren en uitgeven van software". 1 werkzaam persoon. Dit is een wettelijke publieke registratie.</p>
+      <p class="url"><a href="https://www.oozo.nl/bedrijven/zaanstad/zaandam-zuid/bomenbuurt/1465312/sven-siertsema">oozo.nl-aggregator</a> <sup><a href="#src-5">[5]</a></sup>;
+        <a href="https://companyinfo.nl/organisatieprofiel/ontwikkelen-produceren-en-uitgeven-van-software/sven-siertsema-zaandam-686193750000">companyinfo.nl</a> <sup><a href="#src-3">[3]</a></sup>;
+        <a href="https://drimble.nl/bedrijf/zaandam/37041827/sven-siertsema.html">drimble.nl</a> <sup><a href="#src-8">[8]</a></sup>;
+        <a href="https://www.telefoonboek.nl/bedrijven/t4733129/zaandam/sven-siertsema/">telefoonboek.nl</a> <sup><a href="#src-9">[9]</a></sup>
+      </p>
+      <p class="removal"><strong>Verwijderen:</strong> Het KvK-handelsregister kan niet "verwijderd" worden zolang de eenmanszaak actief is — registratie is wettelijk verplicht. <em>Maar</em>: KvK-adres kan worden afgeschermd via het <a href="https://www.kvk.nl/inschrijven-en-wijzigen/adres-afschermen/">"Adres afschermen"-formulier</a> (Vestigingsadres en/of woonadres afschermen, gratis, alleen bij dreiging/onveiligheid). Aggregator-sites (Oozo, Drimble, Telefoonboek): contactformulier op die sites + verwijzing naar AVG / verwerkersverplichtingen. Eenmanszaak omzetten naar een BV maakt het vestigingsadres ook minder zichtbaar.</p>
+    </article>
+
+    <article class="footprint-card">
+      <h4>Apollo.io profielvermelding</h4>
+      <p class="meta">
+        <span class="platform">apollo.io</span>
+        <span class="date">historisch</span>
+        <span class="badge origin-third">third</span>
+        <span class="badge diff-med">medium</span>
+      </p>
+      <p class="desc">Apollo.io is een sales-data-aggregator die professionele profielen verkoopt aan sales-teams. Profiel-URL bestond maar gaf HTTP 410 (Gone) bij fetch — mogelijk al verwijderd of niet meer publiek bereikbaar via deze permalink.</p>
+      <p class="url"><a href="https://www.apollo.io/people/Sven/Siertsema/557149e07369642d0d623c00">apollo.io/people/Sven/Siertsema</a> <sup><a href="#src-10">[10]</a></sup></p>
+      <p class="removal"><strong>Verwijderen:</strong> Apollo's <a href="https://www.apollo.io/privacy-requests">"Submit a privacy request"</a>-formulier. Beroep op AVG Art. 17 (recht op vergetelheid). Reactietijd doorgaans 14–30 dagen.</p>
+    </article>
+
+    <article class="footprint-card">
+      <h4>LinkedIn-mirror (Oostenrijk-regio)</h4>
+      <p class="meta">
+        <span class="platform">at.linkedin.com</span>
+        <span class="date">onbekend</span>
+        <span class="badge origin-third">third</span>
+        <span class="badge diff-easy">easy</span>
+      </p>
+      <p class="desc">LinkedIn toont profielen ook op regionale subdomeinen wanneer de bezoeker daar vandaan komt. Dezelfde profielinhoud, andere URL — dezelfde verwijdering vereist (één LinkedIn-profiel beheert al deze mirrors).</p>
+      <p class="url"><a href="https://at.linkedin.com/pub/sven-siertsema/40/607/542?trk=biz_employee_pub">at.linkedin.com/pub/sven-siertsema</a> <sup><a href="#src-11">[11]</a></sup></p>
+      <p class="removal"><strong>Verwijderen:</strong> Profielzichtbaarheid op LinkedIn aanpassen of profiel sluiten — geldt voor alle regionale mirrors tegelijk.</p>
+    </article>
+
+    <article class="footprint-card">
+      <h4>Nuon — voormalig werkgever genoemd in zoekresultaten</h4>
+      <p class="meta">
+        <span class="platform">algemeen web</span>
+        <span class="date">historisch</span>
+        <span class="badge origin-third">third</span>
+        <span class="badge diff-hard">hard</span>
+      </p>
+      <p class="desc">In de WebSearch-samenvatting werd Sven Siertsema gekoppeld aan Nuon (energiebedrijf, nu onderdeel van Vattenfall). Bron in de search-index niet eenduidig vindbaar; mogelijk afgeleid uit een ouder LinkedIn-snapshot. Niet bevestigd op het huidige LinkedIn (dat noemt nu CBS, Yachtpaint, AkzoNobel, SVB als publieke werken — Nuon niet expliciet).</p>
+      <p class="url"><a href="https://www.google.com/search?q=%22Sven+Siertsema%22+Nuon">Google-zoekreferentie</a> <sup><a href="#src-12">[12]</a></sup></p>
+      <p class="removal"><strong>Verwijderen:</strong> Als bron achterhaald wordt: editor / site-owner contacteren, beroep op AVG Art. 17 als info verouderd/onjuist is. Google search-result zelf: gebruik <a href="https://support.google.com/websearch/answer/9673730">Google's "Personal information removal"</a> formulier.</p>
+    </article>
+
+    <article class="footprint-card">
+      <h4>AkzoNobel LinkedIn-post (mention)</h4>
+      <p class="meta">
+        <span class="platform">linkedin.com (corp page)</span>
+        <span class="date">historisch</span>
+        <span class="badge origin-third">third</span>
+        <span class="badge diff-hard">hard</span>
+      </p>
+      <p class="desc">Een LinkedIn-post van AkzoNobel verschijnt in zoekresultaten samen met de naam Sven Siertsema. Inhoud niet bevestigd zonder login. Mogelijk een credit / shoutout voor werk aan AkzoNobel.com.</p>
+      <p class="url"><a href="https://www.linkedin.com/posts/akzonobel_akzonobel-activity-7006151863150485504--iaa">linkedin.com/posts/akzonobel — activity-7006151863150485504</a> <sup><a href="#src-13">[13]</a></sup></p>
+      <p class="removal"><strong>Verwijderen:</strong> AkzoNobel social-team aanschrijven; alternatief: melden bij LinkedIn via Help → Report this post (alleen als post de naam bevat zonder toestemming/grond).</p>
+    </article>
+
+    <article class="footprint-card">
+      <h4>Search-index mentions — verschillende aggregators</h4>
+      <p class="meta">
+        <span class="platform">Google index</span>
+        <span class="date">doorlopend</span>
+        <span class="badge origin-third">third</span>
+        <span class="badge diff-med">medium</span>
+      </p>
+      <p class="desc">Naam komt voor in zoekresultaten via aggregators (Oozo, Drimble, Telefoonboek, Company.info, Apollo). Deze leunen allemaal op het publieke KvK-handelsregister.</p>
+      <p class="url"><a href="https://www.google.com/search?q=%22Sven+Siertsema%22">Google: "Sven Siertsema"</a></p>
+      <p class="removal"><strong>Verwijderen:</strong> Per aggregator een AVG-verzoek indienen (zie KvK-card hierboven voor de bredere strategie). Voor Google Search zelf: <a href="https://support.google.com/websearch/answer/9673730">"Personal information removal"</a>-formulier.</p>
+    </article>
+
+  </div>
+</section>
+
+<section id="leaked">
+  <h2>Leaked-but-public <span class="badge origin-leaked">leaked-but-public</span></h2>
+  <p class="section-note warn">
+    Items uit breach-databases of paste-sites — alléén metadata, nooit wachtwoorden of berichteninhoud. Verwijderen bij de bron is meestal niet mogelijk; rotatie van credentials is wel mogelijk en aangeraden.
+  </p>
+  <div class="card-grid">
+
+    <article class="footprint-card leaked">
+      <h4>HaveIBeenPwned — directe lookup niet voltooid</h4>
+      <p class="meta">
+        <span class="platform">haveibeenpwned.com</span>
+        <span class="date">live check</span>
+        <span class="badge origin-leaked">leaked</span>
+        <span class="badge diff-nr">not-removable</span>
+      </p>
+      <p class="desc">De HIBP-API vereist een API-key voor email-lookups; deze automatische check kon niet voltooid worden. WebSearch op het emailadres returnde geen publieke breach-mentions. De definitieve check moet handmatig.</p>
+      <p class="url"><a href="https://haveibeenpwned.com/">haveibeenpwned.com</a> <sup><a href="#src-14">[14]</a></sup></p>
+      <p class="removal"><strong>Actie:</strong> Voer <code>sven.siertsema@gmail.com</code> handmatig in op <a href="https://haveibeenpwned.com/">haveibeenpwned.com</a>. Per gevonden breach: log in bij die service en wijzig het wachtwoord; activeer 2FA waar mogelijk. HIBP zelf verwijdert geen records (indexeert reeds publieke breaches).</p>
+    </article>
+
+  </div>
+</section>
+
+<section id="takedown">
+  <h2>Takedown-actielijst</h2>
+  <p class="section-note">Gesorteerd op urgentie en dan op gemak. Begin bovenaan met de quick wins; werk daarna naar onderen voor de zware items.</p>
+  <ol class="action-list">
+    <li>
+      <strong>Doe een handmatige HaveIBeenPwned-check</strong> — <span class="badge diff-easy">easy</span>
+      <span class="action">Voer <code>sven.siertsema@gmail.com</code> in op <a href="https://haveibeenpwned.com/">haveibeenpwned.com</a>. Per gevonden breach: wachtwoord roteren bij die service + 2FA aanzetten.</span>
+    </li>
+    <li>
+      <strong>KvK-adres afschermen (indien gewenst)</strong> — <span class="badge diff-med">medium</span>
+      <span class="action">Het Conradwerf-adres staat via meerdere aggregators publiek (Oozo, Drimble, Telefoonboek, Company.info). Vraag op <a href="https://www.kvk.nl/inschrijven-en-wijzigen/adres-afschermen/">kvk.nl/adres-afschermen</a> afscherming aan (gratis bij dreiging/onveiligheid). Daarna AVG-verzoek bij de aggregator-sites zodat zij de oude data verwijderen.</span>
+    </li>
+    <li>
+      <strong>Apollo.io profiel laten verwijderen</strong> — <span class="badge diff-med">medium</span>
+      <span class="action">Apollo.io is een commerciële sales-data-aggregator. Permalink gaf al HTTP 410 (Gone) bij fetch maar profielen blijven vaak in hun database. Dien een <a href="https://www.apollo.io/privacy-requests">privacy-request</a> in met AVG Art. 17.</span>
+    </li>
+    <li>
+      <strong>Aggregator-sites (Oozo, Drimble, Telefoonboek, Company.info) — AVG-verwijderverzoek</strong> — <span class="badge diff-med">medium</span>
+      <span class="action">Per site een contactformulier of privacy-mail: vraag verwijdering of niet-toonbaar maken onder AVG. Geef het KvK-nummer mee zodat zij het juiste record vinden.</span>
+    </li>
+    <li>
+      <strong>Google "Personal information removal" indienen</strong> — <span class="badge diff-med">medium</span>
+      <span class="action">Voor specifieke search results die je niet meer wil tonen: <a href="https://support.google.com/websearch/answer/9673730">Google Personal Info Removal</a>. Specifiek bruikbaar tegen aggregator-pagina's die je woonadres tonen.</span>
+    </li>
+    <li>
+      <strong>Eigen GitHub-repos opschonen of privé maken</strong> — <span class="badge diff-easy">easy</span>
+      <span class="action">10 publieke repos; sommige zijn experiments. Per repo: Settings → "Change visibility" naar Private, of Delete. Forks blijven bestaan — issue openen bij forkers met verwijderverzoek.</span>
+    </li>
+    <li>
+      <strong>LinkedIn-zichtbaarheid bekijken</strong> — <span class="badge diff-easy">easy</span>
+      <span class="action">Profiel is publiek en uitgebreid (werkhistorie, projecten). Onder Settings → Visibility kun je per sectie afschermen. Of profiel naar "private mode" bij twijfel.</span>
+    </li>
+    <li>
+      <strong>X / Twitter @svensiertsema</strong> — <span class="badge diff-easy">easy</span>
+      <span class="action">Beoordeel of dit handle nog actief gebruikt wordt. Inactief account? Beste actie: archief downloaden via Settings → Download archive, daarna deactiveren.</span>
+    </li>
+    <li>
+      <strong>Facebook-profiel</strong> — <span class="badge diff-easy">easy</span>
+      <span class="action">Profiel bestaat maar geen publieke content zichtbaar. Settings → Privacy → zichtbaarheidsinstellingen check; of permanent verwijderen via Account Deletion.</span>
+    </li>
+    <li>
+      <strong>AkzoNobel LinkedIn-post — bron achterhalen</strong> — <span class="badge diff-hard">hard</span>
+      <span class="action">De akzonobel-activity-7006151863150485504 post is niet zonder login te lezen. Login + zoek de specifieke post; als naam expliciet wordt genoemd zonder dat je dat wil, AkzoNobel social-team of LinkedIn-Help: "Report this post".</span>
+    </li>
+    <li>
+      <strong>sven-siertsema.nl — bepaal wat je daar wil</strong> — <span class="badge diff-easy">easy</span>
+      <span class="action">Site is JS-driven en niet leesbaar voor crawlers — dat is op zich al een vorm van afscherming. Beslis bewust: hosten, opzeggen, of vervangen door minimale "contact"-pagina.</span>
+    </li>
+  </ol>
+</section>
+
+<section id="sources">
+  <h2>Sources</h2>
+  <ol id="sources-list">
+    <li id="src-1"><a href="https://sven-siertsema.nl/">sven-siertsema.nl</a> — persoonlijk domein, JS-driven (404 bij directe fetch zonder JS), accessed 2026-05-14</li>
+    <li id="src-2"><a href="https://github.com/SSiertsema">GitHub — SSiertsema</a>, accessed 2026-05-14</li>
+    <li id="src-3"><a href="https://companyinfo.nl/organisatieprofiel/ontwikkelen-produceren-en-uitgeven-van-software/sven-siertsema-zaandam-686193750000">Company.info — Sven Siertsema, Zaandam</a>, accessed 2026-05-14</li>
+    <li id="src-4"><a href="https://nl.linkedin.com/in/sven-siertsema-54260740">LinkedIn — sven-siertsema-54260740</a>, accessed 2026-05-14</li>
+    <li id="src-5"><a href="https://www.oozo.nl/bedrijven/zaanstad/zaandam-zuid/bomenbuurt/1465312/sven-siertsema">Oozo.nl — Sven Siertsema, Zaandam-Zuid</a>, accessed 2026-05-14</li>
+    <li id="src-6"><a href="https://x.com/svensiertsema">X / Twitter — @svensiertsema</a> (account exists; content gated by X paywall — HTTP 402), accessed 2026-05-14</li>
+    <li id="src-7"><a href="https://www.facebook.com/sven.siertsema">Facebook — sven.siertsema</a> (profile exists; no public content visible without login), accessed 2026-05-14</li>
+    <li id="src-8"><a href="https://drimble.nl/bedrijf/zaandam/37041827/sven-siertsema.html">Drimble — Sven Siertsema, Zaandam</a>, accessed 2026-05-14</li>
+    <li id="src-9"><a href="https://www.telefoonboek.nl/bedrijven/t4733129/zaandam/sven-siertsema/">Telefoonboek.nl — Sven Siertsema, Zaandam</a>, accessed 2026-05-14</li>
+    <li id="src-10"><a href="https://www.apollo.io/people/Sven/Siertsema/557149e07369642d0d623c00">Apollo.io profielvermelding</a> (HTTP 410 Gone bij fetch), accessed 2026-05-14</li>
+    <li id="src-11"><a href="https://at.linkedin.com/pub/sven-siertsema/40/607/542?trk=biz_employee_pub">LinkedIn at-region mirror</a>, accessed 2026-05-14</li>
+    <li id="src-12">Google WebSearch result snippet linking Sven Siertsema to Nuon as employer — niet eenduidig terug te leiden naar één bron, accessed 2026-05-14</li>
+    <li id="src-13"><a href="https://www.linkedin.com/posts/akzonobel_akzonobel-activity-7006151863150485504--iaa">AkzoNobel LinkedIn-post activity-7006151863150485504</a>, accessed 2026-05-14 (content gated, niet bevestigd)</li>
+    <li id="src-14"><a href="https://haveibeenpwned.com/">HaveIBeenPwned</a> — public breach lookup (API gated), accessed 2026-05-14</li>
+  </ol>
+</section>
+
+<section id="assumptions">
+  <h2>Assumptions &amp; limitations</h2>
+  <ul class="gaps">
+    <li><strong>Identiteit zeker.</strong> De match tussen email (sven.siertsema@gmail.com, door gebruiker zelf opgegeven), GitHub-handle SSiertsema, persoonlijke domein sven-siertsema.nl, en KvK-Zaandam-registratie geeft hoge zekerheid. Geen mixing van namesakes.</li>
+    <li><strong>sven-siertsema.nl content niet leesbaar zonder JS.</strong> De live site rendert via JavaScript en gaf 404 bij directe fetch. Inhoud werd niet uitgelezen. Wayback Machine kon niet bereikt worden vanuit deze omgeving (web.archive.org blocked).</li>
+    <li><strong>X / Twitter content niet leesbaar.</strong> x.com vereist login (HTTP 402 bij directe fetch). Account-bestaan bevestigd, tweet-inhoud en activiteit niet gemeten.</li>
+    <li><strong>Facebook content niet leesbaar.</strong> Profiel bestaat maar publieke posts zijn niet zichtbaar zonder login.</li>
+    <li><strong>HaveIBeenPwned API gated.</strong> Definitieve breach-lookup voor sven.siertsema@gmail.com kon niet automatisch — handmatige check vereist (zie takedown-lijst item 1). Geen breach-hits gevonden via algemene WebSearch.</li>
+    <li><strong>Apollo.io permalink gaf HTTP 410.</strong> Mogelijk al verwijderd, of de specifieke URL-vorm bestaat niet meer maar het achterliggende record in Apollo's database wel. Privacy-request blijft aan te bevelen.</li>
+    <li><strong>Nuon-koppeling onbevestigd.</strong> Verschijnt in zoekresultaat-samenvatting maar niet expliciet op het huidige LinkedIn (dat noemt CBS, Yachtpaint, AkzoNobel, SVB). Mogelijk een oudere LinkedIn-snapshot of een verwarring.</li>
+    <li><strong>AkzoNobel-post inhoud niet geverifieerd.</strong> Login vereist om de specifieke post te lezen.</li>
+    <li><strong>Bewust uitgesloten / ruled-out:</strong>
+      <ul>
+        <li><a href="https://dev.to/sven">dev.to/sven</a> → Sven Hoffmann (andere persoon, Nederlandse student).</li>
+        <li>svendewit.com, snevver.nl, sventenhove.nl, project12.be, sven.hoenderdaal.net, twine.net/SvenS, sventenhove.nl → andere personen met voornaam Sven.</li>
+        <li>twobarrels.com "Senior Front-End Vue Developer" → generieke vacature, geen relatie met Sven Siertsema.</li>
+      </ul>
+    </li>
+    <li><strong>Niet gezocht (geen signaal verwacht of niet bereikbaar):</strong> Google Scholar / arXiv / ResearchGate / ORCID (geen academische publicaties verwacht voor front-end developer profiel), Google Patents (geen indicatie), rechtspraak.nl (zou alleen relevant zijn bij een specifieke aanwijzing), Mastodon / Bluesky / Threads (geen handles gevonden), Wayback Machine (omgeving blokkeerde fetch), reverse image search (geen image-search interface beschikbaar via WebFetch).</li>
+    <li><strong>KvK-vestigingsadres openlijk publiek.</strong> Het volledige adres staat in meerdere aggregators omdat dit een eenmanszaak-registratie is. Dit is wettelijk publiek tenzij actief afgeschermd. Het hoort dus in dit audit-document, met expliciete bron en verwijderings-/afschermings-route.</li>
+    <li><strong>Geen leak-payload getoond.</strong> Per skill-policy zijn wachtwoorden, privé-berichten en sensitive payload nooit getranscribeerd, alleen meta (welke breach, datum).</li>
+  </ul>
+</section>
+
+<footer>
+  <p>Public sources only. Leaks worden alleen als metadata gerapporteerd — geen payload-inhoud. Gegenereerd door de <code>person-research</code> skill op 2026-05-14.</p>
+</footer>
+
+</body>
+</html>

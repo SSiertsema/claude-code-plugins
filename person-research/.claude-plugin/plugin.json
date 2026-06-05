@@ -1,0 +1,12 @@
+{
+  "name": "person-research",
+  "version": "1.0.0",
+  "description": "Autonomous digital footprint audit for a named person. Surfaces every publicly findable item across self-published channels (own socials, blogs, code, video, audio), third-party publications (news, interviews, conference talks, papers, patents, court/KvK filings, Wikipedia, mentions), and leaked-but-public sources (breach databases, pastebins). Output is a single self-contained HTML brief with origin badges per item and a prioritized takedown action list so the subject can request removal. Public sources only.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["person-research", "digital-footprint", "osint", "right-to-erasure", "gdpr", "privacy-audit", "reputation"],
+  "skills": "./skills"
+}

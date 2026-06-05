@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Collection of plugins for Claude Code",
-    "version": "1.2.0"
+    "version": "1.4.0"
   },
   "plugins": [
     {
@@ -1068,6 +1068,24 @@
       "name": "kanban-management",
       "source": "./kanban-management",
       "description": "Transform user stories (from user-story-generator) and user journeys (from user-journey-management) into a central kanban.md file at the project root. Analyzes dependencies and proposes a numerical priority ordering when missing. The kanban.md is the single source of truth for development status with TODO / DOING / DONE sections, manually editable by moving stories between sections. On a re-run the skill iteratively reconciles changes (new / removed / status conflicts / dependency changes) with the user. On request, renders three projections from the data via inline-presentation - progress percentage (P-7 bar), kanban board (P-8 cluster cards), and dependency flowchart (P-1 ASCII). Stops on circular dependencies and asks the user to fix the source. All stories start in TODO on first run.",
+      "category": "productivity"
+    },
+    {
+      "name": "company-research",
+      "source": "./company-research",
+      "description": "Autonomous web research that produces a sales/outreach-ready HTML company brief. Identifies people via website, news, blogs, conference talks, podcasts, GitHub, Scholar/arXiv, patents, SEC filings, Crunchbase, and trade press. Public sources only, every claim cited with source URL. Output is a single self-contained HTML file with a function-grouped person-card grid (Leadership / GTM / Engineering / Product / Other), recent-activity timeline, and grounded outreach hooks. No private contact data, no login-gated platforms.",
+      "category": "research"
+    },
+    {
+      "name": "person-research",
+      "source": "./person-research",
+      "description": "Autonomous digital footprint audit for a named person. Surfaces every publicly findable item across self-published channels (own socials, blogs, code, video, audio), third-party publications (news, interviews, conference talks, papers, patents, court/KvK filings, Wikipedia, mentions, image search, Wayback Machine), and leaked-but-public sources (breach databases, pastebins — meta only, no payload). Output is a single self-contained HTML brief with origin badges (self/third/leaked) and removal difficulty per item, plus a prioritized takedown action list so the subject can request removal. Public sources only. Refuses dossiers on minors without consent or adversarial research requests.",
+      "category": "research"
+    },
+    {
+      "name": "frontend-docs-architect",
+      "source": "./frontend-docs-architect",
+      "description": "Research a frontend codebase end-to-end, propose an approval-gated documentation plan, then generate developer- and LLM-agent-oriented documentation in a consistent house style. Auto-detects framework, routing, state, styling, API, build/deploy, and tests with path:line evidence. Adapts the structure to the techniques actually found. Existing docs are archived under documentation/archive, never blindly overwritten. Nothing is written before the user approves the plan.",
       "category": "productivity"
     }
   ]
