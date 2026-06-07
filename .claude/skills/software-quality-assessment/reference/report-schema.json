@@ -1,0 +1,154 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Software Quality Assessment Scorecard",
+  "description": "Machine-readable scorecard for a static ISO/IEC 25010:2023 + 25023 quality assessment of a codebase",
+  "type": "object",
+  "required": ["id", "skill", "timestamp", "standard", "scope", "summary", "characteristics", "findings"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "UUID v4 for traceability",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "skill": { "type": "string", "const": "software-quality-assessment" },
+    "timestamp": { "type": "string", "format": "date-time", "description": "ISO-8601 generation time" },
+    "standard": {
+      "type": "object",
+      "required": ["model", "measures"],
+      "properties": {
+        "model": { "type": "string", "const": "ISO/IEC 25010:2023" },
+        "measures": { "type": "string", "const": "ISO/IEC 25023" }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "required": ["target", "evidence_basis"],
+      "properties": {
+        "target": { "type": "string", "description": "Repo path / name" },
+        "revision": { "type": "string", "description": "Commit SHA or branch, if known" },
+        "stack": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Detected languages, framework, test + CI tooling"
+        },
+        "focus": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/characteristicKey" },
+          "description": "Characteristics assessed if narrowed via --focus; omit/empty if all 9"
+        },
+        "evidence_basis": {
+          "type": "string",
+          "enum": ["static", "static+metrics"],
+          "description": "Whether runtime metrics were supplied"
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": ["overall_score", "band", "critical", "warning", "info"],
+      "properties": {
+        "overall_score": { "type": "number", "minimum": 0, "maximum": 10, "description": "Mean of characteristic scores (honoring weights if supplied)" },
+        "band": { "type": "string", "enum": ["Excellent", "Good", "Adequate", "Inadequate"] },
+        "critical": { "type": "integer", "minimum": 0 },
+        "warning": { "type": "integer", "minimum": 0 },
+        "info": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "characteristics": {
+      "type": "object",
+      "description": "One entry per ISO/IEC 25010:2023 characteristic (9 total)",
+      "required": [
+        "functional_suitability",
+        "performance_efficiency",
+        "compatibility",
+        "interaction_capability",
+        "reliability",
+        "security",
+        "maintainability",
+        "flexibility",
+        "safety"
+      ],
+      "properties": {
+        "functional_suitability": { "$ref": "#/$defs/characteristic" },
+        "performance_efficiency": { "$ref": "#/$defs/characteristic" },
+        "compatibility": { "$ref": "#/$defs/characteristic" },
+        "interaction_capability": { "$ref": "#/$defs/characteristic" },
+        "reliability": { "$ref": "#/$defs/characteristic" },
+        "security": { "$ref": "#/$defs/characteristic" },
+        "maintainability": { "$ref": "#/$defs/characteristic" },
+        "flexibility": { "$ref": "#/$defs/characteristic" },
+        "safety": { "$ref": "#/$defs/characteristic" }
+      }
+    },
+    "measures": {
+      "type": "array",
+      "description": "ISO/IEC 25023-style measures with derivation basis",
+      "items": {
+        "type": "object",
+        "required": ["name", "characteristic", "value", "basis"],
+        "properties": {
+          "name": { "type": "string" },
+          "characteristic": { "$ref": "#/$defs/characteristicKey" },
+          "value": { "type": "string", "description": "Computed value, static proxy (labeled), or 'not statically measurable'" },
+          "basis": { "type": "string", "enum": ["derived", "static-proxy", "supplied-metric", "not-statically-measurable"] }
+        }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "characteristic", "sub_characteristic", "severity", "location", "finding", "recommendation"],
+        "properties": {
+          "id": { "type": "integer", "minimum": 1 },
+          "characteristic": { "$ref": "#/$defs/characteristicKey" },
+          "sub_characteristic": { "type": "string" },
+          "severity": { "type": "string", "enum": ["Critical", "Warning", "Info"] },
+          "location": { "type": "string", "description": "file:line or precise reference" },
+          "finding": { "type": "string", "description": "Fact: what is wrong" },
+          "recommendation": { "type": "string", "description": "Concrete, actionable fix" }
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Runtime-only measures not computed, low-confidence areas, excluded paths"
+    }
+  },
+  "$defs": {
+    "characteristicKey": {
+      "type": "string",
+      "enum": [
+        "functional_suitability",
+        "performance_efficiency",
+        "compatibility",
+        "interaction_capability",
+        "reliability",
+        "security",
+        "maintainability",
+        "flexibility",
+        "safety"
+      ]
+    },
+    "characteristic": {
+      "type": "object",
+      "required": ["score", "band", "applicable", "passed", "partial", "failed"],
+      "description": "Score for one characteristic. score = ((passed*1 + partial*0.5) / applicable) * 10",
+      "properties": {
+        "score": { "type": "number", "minimum": 0, "maximum": 10 },
+        "band": { "type": "string", "enum": ["Excellent", "Good", "Adequate", "Inadequate", "N/A"] },
+        "applicable": { "type": "integer", "minimum": 0, "description": "Applicable sub-characteristics (denominator; 0 if entire characteristic is N/A)" },
+        "passed": { "type": "integer", "minimum": 0 },
+        "partial": { "type": "integer", "minimum": 0 },
+        "failed": { "type": "integer", "minimum": 0 },
+        "na": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Sub-characteristics marked N/A for this target"
+        },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}

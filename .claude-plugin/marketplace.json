@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Collection of plugins for Claude Code",
-    "version": "1.5.0"
+    "version": "1.6.0"
   },
   "plugins": [
     {
@@ -55,6 +55,12 @@
       "source": "./vue-development-skill",
       "description": "Vue 3/Nuxt 3 development skill with TDD workflow and an ISO/IEC 25010:2023 QA gate (9 characteristics, ~40 sub-characteristics). Produces JSON reports for agent handoff.",
       "category": "vue"
+    },
+    {
+      "name": "software-quality-assessment",
+      "source": "./software-quality-assessment",
+      "description": "Statically assess a codebase against the ISO/IEC 25010:2023 product quality model (9 characteristics, ~40 sub-characteristics) using ISO/IEC 25023 measures. Produces a scored Markdown report + JSON scorecard with file:line evidence, severity-rated findings, and Mermaid radar/bar diagrams.",
+      "category": "planning"
     },
     {
       "name": "owasp-security-audit",
