@@ -53,7 +53,7 @@
     {
       "name": "vue-development-skill",
       "source": "./vue-development-skill",
-      "description": "Vue 3/Nuxt 3 development skill with TDD workflow and QA-first approach. Produces JSON reports for agent handoff.",
+      "description": "Vue 3/Nuxt 3 development skill with TDD workflow and an ISO/IEC 25010:2023 QA gate (9 characteristics, ~40 sub-characteristics). Produces JSON reports for agent handoff.",
       "category": "vue"
     },
     {
