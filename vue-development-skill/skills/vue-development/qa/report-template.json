@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Vue Development Skill Report",
-  "description": "Report with TDD, QA checklist, and E2E validation results",
+  "description": "Report with TDD, ISO/IEC 25010:2023 QA checklist, and E2E validation results",
   "type": "object",
   "required": ["id", "skill", "timestamp", "task_description", "files", "tdd", "qa", "e2e_validation", "completion"],
   "properties": {
@@ -101,13 +101,19 @@
     },
     "qa": {
       "type": "object",
-      "required": ["score", "status", "checklist"],
+      "required": ["standard", "score", "status", "checklist"],
+      "description": "QA results against the ISO/IEC 25010:2023 product quality model",
       "properties": {
+        "standard": {
+          "type": "string",
+          "const": "ISO/IEC 25010:2023",
+          "description": "Quality model the checklist is based on"
+        },
         "score": {
           "type": "number",
           "minimum": 0,
           "maximum": 10,
-          "description": "QA score (0-10)"
+          "description": "Overall QA score (0-10), N/A items excluded"
         },
         "status": {
           "type": "string",
@@ -116,14 +122,28 @@
         },
         "checklist": {
           "type": "object",
-          "required": ["component_quality", "reactivity", "composables", "nuxt_specific", "typescript", "unit_tests"],
+          "description": "One entry per ISO/IEC 25010:2023 characteristic (9 total)",
+          "required": [
+            "functional_suitability",
+            "performance_efficiency",
+            "compatibility",
+            "interaction_capability",
+            "reliability",
+            "security",
+            "maintainability",
+            "flexibility",
+            "safety"
+          ],
           "properties": {
-            "component_quality": { "$ref": "#/$defs/checklistCategory" },
-            "reactivity": { "$ref": "#/$defs/checklistCategory" },
-            "composables": { "$ref": "#/$defs/checklistCategory" },
-            "nuxt_specific": { "$ref": "#/$defs/checklistCategory" },
-            "typescript": { "$ref": "#/$defs/checklistCategory" },
-            "unit_tests": { "$ref": "#/$defs/checklistCategory" }
+            "functional_suitability": { "$ref": "#/$defs/checklistCategory" },
+            "performance_efficiency": { "$ref": "#/$defs/checklistCategory" },
+            "compatibility": { "$ref": "#/$defs/checklistCategory" },
+            "interaction_capability": { "$ref": "#/$defs/checklistCategory" },
+            "reliability": { "$ref": "#/$defs/checklistCategory" },
+            "security": { "$ref": "#/$defs/checklistCategory" },
+            "maintainability": { "$ref": "#/$defs/checklistCategory" },
+            "flexibility": { "$ref": "#/$defs/checklistCategory" },
+            "safety": { "$ref": "#/$defs/checklistCategory" }
           }
         }
       }
@@ -223,22 +243,28 @@
   "$defs": {
     "checklistCategory": {
       "type": "object",
+      "description": "Score for one ISO/IEC 25010:2023 characteristic. Each sub-characteristic is one item; N/A items are excluded from total.",
       "required": ["passed", "total", "issues"],
       "properties": {
         "passed": {
           "type": "integer",
           "minimum": 0,
-          "description": "Number of items passed"
+          "description": "Number of sub-characteristic items passed"
         },
         "total": {
           "type": "integer",
           "minimum": 0,
-          "description": "Total applicable items (0 if N/A)"
+          "description": "Total applicable sub-characteristic items (0 if entire characteristic is N/A)"
+        },
+        "na": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Sub-characteristics marked N/A for this task"
         },
         "issues": {
           "type": "array",
           "items": { "type": "string" },
-          "description": "List of issues found or 'N/A' notes"
+          "description": "List of issues found (failing sub-characteristics) or 'N/A' notes"
         }
       }
     }

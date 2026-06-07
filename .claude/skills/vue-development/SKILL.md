@@ -164,14 +164,23 @@ All tests must be green before proceeding.
 
 ### Step 5: QA Validation
 
-Go through the **Vue QA Checklist** (see `qa/vue-checklist.md`):
+Go through the **Vue QA Checklist** (see `qa/vue-checklist.md`). The checklist is structured on the **ISO/IEC 25010:2023 product quality model** — all 9 characteristics, one item per sub-characteristic (~40 items). Validate every applicable item and mark genuinely irrelevant items **N/A** (N/A items are excluded from scoring, never counted as failures).
 
-- [ ] Props typed with TypeScript
-- [ ] Emits typed with `defineEmits<{...}>()`
-- [ ] No `any` types
-- [ ] Computed for derived state
-- [ ] Single responsibility
-- [ ] Tests cover all behaviors
+The 9 characteristics:
+
+| # | Characteristic | Front-end focus |
+|---|---|---|
+| 1 | Functional Suitability | AC→test coverage, correctness, no scope creep |
+| 2 | Performance Efficiency | computed memoization, cleanup, list capacity |
+| 3 | Compatibility | scoped styles, typed public contract |
+| 4 | Interaction Capability | keyboard, WCAG 2.2 AA, feedback states |
+| 5 | Reliability | edge cases, SSR/hydration, error handling, recovery |
+| 6 | Security | no secrets, no XSS sinks, auth guards, input hardening |
+| 7 | Maintainability | SRP, composables, typing, no prop mutation, TDD |
+| 8 | Flexibility | responsive/tokens, scalability, replaceability |
+| 9 | Safety | confirm destructive actions, fail-safe, boundary validation |
+
+Score per characteristic and overall: `score = (items_passed / total_applicable_items) × 10`.
 
 ### Step 6: Write E2E Test Files
 
@@ -341,15 +350,19 @@ Generate a UUID and write the report:
   },
 
   "qa": {
-    "score": 9.0,
+    "standard": "ISO/IEC 25010:2023",
+    "score": 9.1,
     "status": "PASS",
     "checklist": {
-      "component_quality": { "passed": 5, "total": 5, "issues": [] },
-      "reactivity": { "passed": 4, "total": 4, "issues": [] },
-      "composables": { "passed": 0, "total": 0, "issues": ["N/A"] },
-      "nuxt_specific": { "passed": 0, "total": 0, "issues": ["N/A - plain Vue"] },
-      "typescript": { "passed": 4, "total": 4, "issues": [] },
-      "unit_tests": { "passed": 6, "total": 6, "issues": [] }
+      "functional_suitability": { "passed": 3, "total": 3, "issues": [] },
+      "performance_efficiency": { "passed": 3, "total": 3, "issues": [] },
+      "compatibility": { "passed": 2, "total": 2, "issues": [] },
+      "interaction_capability": { "passed": 7, "total": 8, "issues": ["user assistance: no helper text on password field"] },
+      "reliability": { "passed": 4, "total": 4, "issues": [] },
+      "security": { "passed": 4, "total": 4, "na": ["non_repudiation", "accountability"], "issues": ["N/A: pure auth form, no audit trail required"] },
+      "maintainability": { "passed": 5, "total": 5, "issues": [] },
+      "flexibility": { "passed": 4, "total": 4, "issues": [] },
+      "safety": { "passed": 0, "total": 0, "na": ["operational_constraint", "risk_identification", "fail_safe", "hazard_warning", "safe_integration"], "issues": ["N/A: no destructive or irreversible operations"] }
     }
   },
 
@@ -397,7 +410,7 @@ Generate a UUID and write the report:
 
 ## File References
 
-- **QA Checklist:** See `qa/vue-checklist.md` for full criteria
+- **QA Checklist:** See `qa/vue-checklist.md` for full criteria (ISO/IEC 25010:2023, 9 characteristics / ~40 sub-characteristics)
 - **Report Schema:** See `qa/report-template.json` for JSON structure
 - **TDD Guide:** See `tdd/workflow.md` for detailed process
 - **Testing Patterns:** See `tdd/testing-patterns.md` for Vitest examples

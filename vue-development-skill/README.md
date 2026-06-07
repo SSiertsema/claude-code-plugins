@@ -7,7 +7,7 @@ A Claude Code skill for Vue 3 and Nuxt 3 development with **test-driven developm
 This skill enforces quality-driven development by:
 
 1. **Writing tests before implementation** (TDD)
-2. **Validating against a Vue-specific QA checklist**
+2. **Validating against an ISO/IEC 25010:2023 QA checklist** (9 characteristics, ~40 sub-characteristics) mapped to concrete Vue/Nuxt checks
 3. **Executing E2E tests via Playwright MCP** to validate Gherkin acceptance criteria
 4. **Producing JSON reports** with complete validation results
 
@@ -114,18 +114,23 @@ Add this plugin to your Claude Code configuration:
 8. REPORT      → Generate JSON report with all results
 ```
 
-## QA Checklist Categories
+## QA Checklist — ISO/IEC 25010:2023
 
-The skill validates code against these Vue-specific criteria:
+The skill validates code against the **ISO/IEC 25010:2023 product quality model**: all 9 characteristics, with one checklist item per sub-characteristic (~40 total), each expressed as a concrete Vue 3 / Nuxt 3 check. Sub-characteristics that don't apply to a given component are marked **N/A** and excluded from scoring (never counted as failures).
 
-| Category | Items | Focus |
-|----------|-------|-------|
-| Component Quality | 5 | Props, emits, single responsibility |
-| Reactivity | 4 | ref/reactive, computed, no prop mutation |
-| Composables | 4 | Structure, return types, cleanup |
-| Nuxt-Specific | 4 | useFetch, auto-imports, SEO |
-| TypeScript | 4 | No any, interfaces, generics |
-| Unit Tests | 6 | Coverage, TDD compliance |
+| # | Characteristic | Items | Front-end focus |
+|---|----------------|-------|-----------------|
+| 1 | Functional Suitability | 3 | AC→test coverage, correctness, no scope creep |
+| 2 | Performance Efficiency | 3 | computed memoization, cleanup, list capacity |
+| 3 | Compatibility | 2 | scoped styles, typed public contract |
+| 4 | Interaction Capability | 8 | keyboard, WCAG 2.2 AA, feedback states |
+| 5 | Reliability | 4 | edge cases, SSR/hydration, error handling, recovery |
+| 6 | Security | 6 | no secrets, no XSS sinks, auth guards, input hardening |
+| 7 | Maintainability | 5 | SRP, composables, typing, no prop mutation, TDD |
+| 8 | Flexibility | 4 | responsive/tokens, scalability, replaceability |
+| 9 | Safety | 5 | confirm destructive actions, fail-safe, boundary validation |
+
+Score per characteristic and overall: `score = (items_passed / total_applicable_items) × 10`.
 
 ## Completion Report
 
@@ -152,7 +157,8 @@ After completing work, Claude generates a JSON report with all validation result
   },
 
   "qa": {
-    "score": 9.0,
+    "standard": "ISO/IEC 25010:2023",
+    "score": 9.1,
     "status": "PASS"
   },
 
@@ -202,7 +208,7 @@ After completing work, Claude generates a JSON report with all validation result
 - `tdd/testing-patterns.md` - Vitest and Vue Test Utils examples
 
 ### Quality
-- `qa/vue-checklist.md` - Full QA checklist
+- `qa/vue-checklist.md` - Full QA checklist (ISO/IEC 25010:2023)
 - `qa/report-template.json` - JSON schema for reports
 
 ### Debugging

@@ -1,215 +1,222 @@
-# Vue/Nuxt QA Checklist
+# Vue/Nuxt QA Checklist — ISO/IEC 25010:2023
 
-This checklist is specifically designed for Vue 3 and Nuxt 3 development. All items must be validated before generating the handoff report.
+This checklist operationalizes the **ISO/IEC 25010:2023 product quality model** for Vue 3 and Nuxt 3 development. It covers all **9 characteristics**, with **one checklist item per sub-characteristic (~40 items)**, each expressed as a concrete, testable front-end check.
+
+All applicable items must be validated before generating the handoff report.
+
+**Marking N/A:** Many sub-characteristics (especially under Compatibility, Flexibility, and Safety) do not apply to every component. Mark an item **N/A** when it is genuinely irrelevant to the task. N/A items are excluded from scoring (they do not count toward the denominator) — they never count as failures.
 
 ---
 
-## 1. Component Quality (5 items)
+## 1. Functional Suitability (3 items)
 
-- [ ] **Props typed**: All props have TypeScript types via `defineProps<Props>()`
-- [ ] **Props validated**: Required props marked, defaults provided where appropriate
-- [ ] **Emits typed**: All emits defined with `defineEmits<{...}>()`
-- [ ] **Single responsibility**: Component does ONE thing well
-- [ ] **Template simplicity**: No complex logic in template (use computed/methods)
+- [ ] **Functional completeness**: Every acceptance criterion in the user story maps to at least one test (unit or E2E)
+- [ ] **Functional correctness**: Unit and E2E tests assert the correct output/behavior, not just absence of errors
+- [ ] **Functional appropriateness**: The component does exactly what the story requires — no scope creep, no missing capability
+
+### Example
+```typescript
+// completeness: each AC has a named test
+test('AC1: successful login redirects to dashboard', ...)
+test('AC2: invalid password shows error', ...)
+```
+
+---
+
+## 2. Performance Efficiency (3 items)
+
+- [ ] **Time behaviour**: No heavy computation in render; derived values use `computed` (memoized), not method calls or inline expressions
+- [ ] **Resource utilization**: Watchers, intervals, and event listeners are cleaned up in `onUnmounted` / `onScopeDispose`
+- [ ] **Capacity**: Large or unbounded lists are paginated or virtualized; no rendering of thousands of nodes at once
 
 ### Examples
-
-**Good - Typed props:**
+**Good — memoized derived state, cleaned listener:**
 ```typescript
-interface Props {
-  label: string
-  disabled?: boolean
-  variant?: 'primary' | 'secondary'
-}
+const total = computed(() => items.value.reduce((s, i) => s + i.price, 0))
 
-const props = withDefaults(defineProps<Props>(), {
-  disabled: false,
-  variant: 'primary'
+const stop = useEventListener(window, 'resize', onResize)
+onUnmounted(stop)
+```
+**Bad — recomputed every render, leaked listener:**
+```typescript
+function getTotal() { return items.value.reduce((s, i) => s + i.price, 0) }
+window.addEventListener('resize', onResize) // never removed
+```
+
+---
+
+## 3. Compatibility (2 items)
+
+*Mark N/A where the component has no shared/global surface.*
+
+- [ ] **Co-existence**: Styles are `scoped` (or CSS-module/tokenized); no global selector leakage that affects sibling components
+- [ ] **Interoperability**: Public contract (typed `props`/`emits`/`slots`) is explicit and stable so other components can integrate
+
+### Example
+```vue
+<style scoped>
+.card { padding: var(--space-4); } /* no bare `div {}` global rules */
+</style>
+```
+
+---
+
+## 4. Interaction Capability (8 items)
+
+*Formerly "Usability". Target WCAG 2.2 AA for inclusivity items.*
+
+- [ ] **Appropriateness recognizability**: Controls have clear labels/affordances; purpose is obvious without guessing
+- [ ] **Learnability**: Patterns and naming are consistent with the rest of the app (predictable behavior)
+- [ ] **Operability**: Fully keyboard-operable — focusable controls, logical tab order, Enter/Space activate
+- [ ] **User error protection**: Inputs validated; destructive/irreversible actions guarded or confirmed
+- [ ] **User engagement**: Loading, empty, success, and error states give the user feedback (no dead UI)
+- [ ] **Inclusivity**: WCAG 2.2 AA — sufficient color contrast, ARIA roles/attributes, visible focus indicators, `prefers-reduced-motion` respected
+- [ ] **User assistance**: Helper text and error messages are present and programmatically associated (`aria-describedby`)
+- [ ] **Self-descriptiveness**: Semantic HTML and accessible names; the UI explains itself to assistive tech
+
+### Examples
+**Good — accessible, keyboard-operable, associated help:**
+```vue
+<label for="email">Email</label>
+<input id="email" type="email" :aria-invalid="!!error" aria-describedby="email-err" />
+<p id="email-err" v-if="error" role="alert">{{ error }}</p>
+```
+**Bad — div-as-button, no label, no feedback:**
+```vue
+<div @click="submit">Go</div> <!-- not focusable, no role, no aria -->
+```
+
+---
+
+## 5. Reliability (4 items)
+
+- [ ] **Faultlessness**: Edge cases and boundaries are tested (empty, null, max/min, rapid clicks)
+- [ ] **Availability**: SSR/hydration-safe — no `window`/`document` access during SSR; no hydration mismatches (Nuxt)
+- [ ] **Fault tolerance**: Failures are caught; `error` ref from data fetching is handled; error boundaries where appropriate
+- [ ] **Recoverability**: User can recover from failure — retry action or graceful fallback UI, not a hard dead end
+
+### Examples
+**Good — handled error with recovery:**
+```typescript
+const { data, error, refresh } = await useFetch('/api/users')
+```
+```vue
+<button v-if="error" @click="refresh()">Retry</button>
+```
+**Bad — unguarded SSR access:**
+```typescript
+const width = window.innerWidth // crashes during SSR
+```
+
+---
+
+## 6. Security (6 items)
+
+- [ ] **Confidentiality**: No secrets/tokens hard-coded or exposed client-side; no sensitive data in console logs
+- [ ] **Integrity**: No unsanitized `v-html` or other XSS sinks; user content escaped by default
+- [ ] **Non-repudiation**: State-changing actions are recorded/auditable where the story requires it *(N/A for pure display components)*
+- [ ] **Accountability**: User actions are attributable where the story requires it *(N/A for pure display components)*
+- [ ] **Authenticity**: Protected routes/pages enforce auth via middleware/guards before rendering sensitive data
+- [ ] **Resistance** *(new in 2023)*: Input hardened against malformed/malicious data; component degrades safely under abuse (e.g., respects server rate-limit responses)
+
+### Examples
+**Good — escaped output, guarded route:**
+```vue
+<p>{{ userComment }}</p> <!-- escaped by default, no v-html -->
+```
+```typescript
+// middleware/auth.ts
+export default defineNuxtRouteMiddleware(() => {
+  if (!useAuth().isLoggedIn.value) return navigateTo('/login')
 })
 ```
-
-**Bad - Untyped props:**
-```typescript
-const props = defineProps(['label', 'disabled']) // No types!
+**Bad — XSS sink:**
+```vue
+<div v-html="userComment" /> <!-- unsanitized user input -->
 ```
 
 ---
 
-## 2. Reactivity (4 items)
+## 7. Maintainability (5 items)
 
-- [ ] **Correct ref usage**: `ref()` for primitives, `reactive()` for objects
-- [ ] **Computed for derived state**: Not methods or inline calculations
-- [ ] **No prop mutation**: Never modify props directly, emit instead
-- [ ] **Cleanup on unmount**: Watchers/listeners cleaned up in `onUnmounted`
+- [ ] **Modularity**: Single responsibility — the component does one thing well
+- [ ] **Reusability**: Shared/reusable logic extracted into typed `use*.ts` composables returning reactive refs
+- [ ] **Analysability**: Readable and fully typed — no `any`, interfaces for data shapes, explicit return types
+- [ ] **Modifiability**: No prop mutation (emit instead); clear one-way data flow
+- [ ] **Testability**: Tests were written before the implementation (TDD), and the design is test-friendly
 
 ### Examples
-
-**Good - Computed for derived state:**
+**Good — composable + no prop mutation:**
 ```typescript
-const items = ref<Item[]>([])
-const itemCount = computed(() => items.value.length)
-const hasItems = computed(() => itemCount.value > 0)
+const emit = defineEmits<{ update: [value: string] }>()
+function onInput(v: string) { emit('update', v) } // never mutate props
 ```
-
-**Bad - Method for derived state:**
+**Bad — untyped, mutated prop:**
 ```typescript
-function getItemCount() {
-  return items.value.length // Recalculates every render!
-}
+const props = defineProps(['value'])
+props.value = 'x' // mutating a prop
 ```
 
 ---
 
-## 3. Composables (4 items)
+## 8. Flexibility (4 items)
 
-*Mark N/A if no composables are created*
+*Formerly "Portability". Mark N/A where not relevant to the task.*
 
-- [ ] **Extracted reusable logic**: Shared logic in `use*.ts` files
-- [ ] **Returns reactive refs**: Not raw values
-- [ ] **Typed return**: Explicit TypeScript return type
-- [ ] **Side effects cleaned**: Intervals, listeners cleaned on unmount
+- [ ] **Adaptability**: Responsive across breakpoints; spacing/colors use design tokens, not hard-coded values
+- [ ] **Scalability** *(new in 2023)*: Stateless/composable-driven design that scales to more data/instances without rework
+- [ ] **Installability**: Uses standard project dependencies; no hidden environment coupling that blocks install/run
+- [ ] **Replaceability**: Typed public contract lets the component be swapped without breaking callers
 
-### Examples
-
-**Good - Composable structure:**
-```typescript
-// composables/useCounter.ts
-export function useCounter(initial = 0) {
-  const count = ref(initial)
-
-  function increment() {
-    count.value++
-  }
-
-  function decrement() {
-    count.value--
-  }
-
-  return {
-    count: readonly(count),
-    increment,
-    decrement
-  }
-}
+### Example
+```vue
+<style scoped>
+.grid { gap: var(--space-4); grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr)); }
+</style>
 ```
 
 ---
 
-## 4. Nuxt-Specific (4 items)
+## 9. Safety (5 items)
 
-*Mark N/A if not using Nuxt*
+*New top-level characteristic in 2023. Mark N/A for components with no risky or irreversible operations.*
 
-- [ ] **Auto-imports used**: Using Nuxt auto-imports correctly (no manual imports for composables)
-- [ ] **Data fetching**: Using `useFetch` or `useAsyncData` (not raw fetch)
-- [ ] **Error handling**: Handling `.error` ref from data fetching
-- [ ] **SEO configured**: `useSeoMeta` or `useHead` for meta tags on pages
+- [ ] **Operational constraint**: Destructive actions (delete, overwrite, pay) require confirmation or are constrained
+- [ ] **Risk identification**: Risky states are detectable and surfaced (e.g., "unsaved changes", "about to delete N items")
+- [ ] **Fail safe**: On failure the component returns to a safe default state rather than a corrupt/ambiguous one
+- [ ] **Hazard warning**: User is warned before an irreversible or high-impact action proceeds
+- [ ] **Safe integration**: Data crossing the boundary (API responses, route params, props from untrusted callers) is validated before use
 
-### Examples
-
-**Good - Nuxt data fetching:**
-```typescript
-const { data: users, pending, error } = await useFetch('/api/users')
-
-if (error.value) {
-  // Handle error
-}
+### Example
+```vue
+<button @click="confirmDelete">Delete account</button>
 ```
-
-**Bad - Raw fetch in Nuxt:**
 ```typescript
-const users = ref([])
-onMounted(async () => {
-  users.value = await fetch('/api/users').then(r => r.json())
-})
-```
-
----
-
-## 5. TypeScript (4 items)
-
-- [ ] **No `any` types**: Use specific types or `unknown`
-- [ ] **Interfaces defined**: Props, emits, and data shapes have interfaces
-- [ ] **Generics used**: Where reusability benefits (composables, utilities)
-- [ ] **Explicit return types**: Functions have return type annotations
-
-### Examples
-
-**Good - Typed function:**
-```typescript
-interface User {
-  id: number
-  name: string
-  email: string
+function confirmDelete() {
+  if (!window.confirm('This permanently deletes your account. Continue?')) return
+  deleteAccount()
 }
-
-async function fetchUser(id: number): Promise<User> {
-  const response = await fetch(`/api/users/${id}`)
-  return response.json()
-}
-```
-
-**Bad - Untyped:**
-```typescript
-async function fetchUser(id: any) { // any! No return type!
-  return await fetch(`/api/users/${id}`).then(r => r.json())
-}
-```
-
----
-
-## 6. Unit Tests (6 items)
-
-- [ ] **Tests written first**: Tests existed before implementation (TDD)
-- [ ] **Component renders**: Basic render test passes
-- [ ] **Props tested**: Props affect output as expected
-- [ ] **Emits tested**: Events fire correctly with correct payloads
-- [ ] **Edge cases covered**: Empty states, error states, boundaries
-- [ ] **All tests passing**: No failing tests
-
-### Examples
-
-**Good - Comprehensive tests:**
-```typescript
-describe('UserCard', () => {
-  it('renders user name', () => {
-    const wrapper = mount(UserCard, {
-      props: { user: { name: 'John' } }
-    })
-    expect(wrapper.text()).toContain('John')
-  })
-
-  it('emits select event on click', async () => {
-    const wrapper = mount(UserCard, {
-      props: { user: { id: 1, name: 'John' } }
-    })
-    await wrapper.trigger('click')
-    expect(wrapper.emitted('select')).toEqual([[{ id: 1, name: 'John' }]])
-  })
-
-  it('shows placeholder for missing avatar', () => {
-    const wrapper = mount(UserCard, {
-      props: { user: { name: 'John' } } // No avatar
-    })
-    expect(wrapper.find('.avatar-placeholder').exists()).toBe(true)
-  })
-})
 ```
 
 ---
 
 ## Scoring
 
-**Calculate score:**
+Each sub-characteristic is one item. Score per characteristic and overall.
+
 ```
 score = (items_passed / total_applicable_items) × 10
 ```
+
+- **N/A items are excluded** from `total_applicable_items` (they are not failures).
+- Report a per-characteristic breakdown (passed / total / issues) plus the overall score.
 
 **Thresholds:**
 
 | Score | Status | Meaning |
 |-------|--------|---------|
-| 9-10 | PASS | Excellent quality, ready for E2E |
-| 7-8 | ACCEPTABLE | Good quality, minor issues noted |
-| 0-6 | NEEDS_WORK | Must fix issues before handoff |
+| 9–10 | PASS | Excellent quality, ready for E2E |
+| 7–8 | ACCEPTABLE | Good quality, minor issues noted |
+| 0–6 | NEEDS_WORK | Must fix issues before handoff |
 
-**Note:** Mark categories as N/A if not applicable (e.g., "Nuxt-Specific" for plain Vue projects). N/A items don't count toward the total.
+**Total applicable items (max):** 40 sub-characteristics across 9 characteristics — fewer after N/A exclusions for the specific task.
