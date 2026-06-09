@@ -19,7 +19,7 @@ Generate house-style frontend documentation **grounded in the actual code**. The
 | `creativity_level` | low (structure and prose are authored freely; every fact is grounded in the code) |
 | `evidence_mode` | required for all technical claims (`path:line` references); not applicable to authored prose/structure |
 | `tone` | technical / neutral |
-| `version` | 1.0.0 |
+| `version` | 1.1.0 |
 
 ## When to use
 
@@ -64,8 +64,33 @@ The documentation house style is a **strong guideline, not a rigid template**. A
 - **`development/` decision-tree hub** — a `README.md` that routes the reader by file type to specific guides (components, pages, stores/state, composables/hooks, services/API, styling).
 - **Consistent per-guide section template** — `When to use` → `Pattern / Standard structure` → `Real Examples` (pulled from the actual codebase) → `Quick Checklist` → `Next Steps` (cross-links).
 - **Cross-linking** — every guide links back to the hub and to related guides.
-- **ASCII/diagram aids** where the house style uses them (data flow, auth flow), as in `ARCHITECTURE.md`.
+- **Mermaid diagrams** where the house style uses them (data flow, auth flow, component/state relationships, deployment), as in `ARCHITECTURE.md`. Use fenced ` ```mermaid ` blocks — never ASCII art.
 - **Agent-readable** — explicit conventions, predictable headings, code-fenced paths/commands, no implicit knowledge.
+
+### Documentation depth — do not over-document
+
+Document understanding the source cannot give the reader for free. Both humans and LLM agents can read the files directly, so do not restate their mechanical contents.
+
+- **Do not** walk through self-evident files line-by-line — a `Dockerfile`, CI YAML, `package.json`, lockfiles, `tsconfig`, lint/format configs, or `.env` examples. Reproducing what the file already plainly states adds noise, drifts out of date, and buries the signal.
+- **Do** document the *why* behind them — the principles, decisions, conventions, constraints, and non-obvious wiring: why the deploy is split into these stages, why this state pattern was chosen, what a config value affects downstream, how pieces connect that the files alone don't reveal.
+- Reference such files by `path` so the reader can open them; explain intent, not syntax.
+- When in doubt: if removing a passage loses no understanding that isn't already obvious from opening the file, cut it.
+
+## Mermaid diagram conventions
+
+All diagrams use Mermaid in fenced ` ```mermaid ` blocks. No ASCII art.
+
+| Concept | Mermaid diagram |
+|---|---|
+| Data flow, request/response, build/deploy pipeline | `flowchart` (`flowchart LR` / `TD`) |
+| Auth flow, API call sequences, runtime interactions over time | `sequenceDiagram` |
+| Component / store / module relationships and dependencies | `flowchart` or `classDiagram` |
+| State machines (e.g. auth/session, async UI states) | `stateDiagram-v2` |
+| Data model / entity relationships | `erDiagram` |
+
+- Keep diagrams **grounded**: nodes and edges must reflect real modules, routes, stores, or services found in the code — never invented. Label nodes with real names; the surrounding prose cites `path:line`.
+- Prefer several small, focused diagrams over one sprawling one.
+- Diagram structure/layout may be authored freely (per the grounding policy); the entities and relationships shown must be real.
 
 ## Processing rules
 
@@ -85,7 +110,7 @@ Execute in order. Steps 1–4 are research and planning; **no file is created, m
    - Testing (unit, component, e2e) and tooling (lint, format, hooks).
    - Existing documentation: inventory every doc file, note coverage and staleness.
 
-3. **Map findings to the baseline.** Decide which house-style files apply. Add guides for techniques present (e.g. a `hooks/` guide for React); omit guides for techniques absent. Note every adaptation and its reason.
+3. **Map findings to the baseline.** Decide which house-style files apply. Add guides for techniques present (e.g. a `hooks/` guide for React); omit guides for techniques absent. Note every adaptation and its reason. Decide what **not** to document — self-evident files (Dockerfile, CI config, `package.json`, configs) are referenced and explained by intent, not reproduced (see Documentation depth).
 
 4. **Propose the plan and STOP for approval.** Output a plan containing:
    - **Detected stack summary** (table, with evidence).
@@ -100,7 +125,8 @@ Execute in order. Steps 1–4 are research and planning; **no file is created, m
    - Move existing documentation into `documentation/archive/` (preserve relative paths). Never delete or overwrite originals.
    - Generate the approved docs under `documentation/` in the frontend root. Ground every technical claim in the code with `path:line` references. Pull **real examples from the actual codebase** — never invent components, paths, APIs, or commands.
    - Follow the per-guide section template, add checklists, cross-links, and an entry-point index.
-   - Include ASCII/diagram aids where the house style does (data flow, auth flow).
+   - Include Mermaid diagrams (fenced ` ```mermaid ` blocks) where the house style does — data flow, auth flow, component/state relationships, deployment. No ASCII art.
+   - Apply the Documentation depth rule: explain the *why* and non-obvious wiring; do not reproduce self-evident files (Dockerfile, CI config, `package.json`, configs) — reference them by `path` instead.
 
 6. **Self-check and report.** Run the self-check, then output the result report (files created / updated / archived, adaptations, gaps).
 
@@ -108,7 +134,8 @@ Execute in order. Steps 1–4 are research and planning; **no file is created, m
 
 | Aspect | Rule |
 |---|---|
-| **May be invented** | Document structure, section prose, explanatory wording, checklists, cross-links, diagram layout. |
+| **May be invented** | Document structure, section prose, explanatory wording, checklists, cross-links, Mermaid diagram layout. |
+| **Diagram entities** | Mermaid nodes/edges must reflect real code (modules, routes, stores, services); layout is free, the entities shown are not. |
 | **Must be grounded** | Every technical claim — stack, versions, paths, file names, APIs, commands, examples — must come from the code, cited `path:line`. |
 | **Assumptions allowed** | Only where evidence is absent; must be labeled `[Assumption]` with the gap and impact stated. |
 | **Never fabricate** | No invented components, file paths, endpoints, config keys, commands, version numbers, or example code presented as real. |
@@ -186,6 +213,8 @@ Complete / Partial
 □ Was the plan explicitly approved before any write/move?
 □ Does the structure follow the house-style baseline, with adaptations stated and justified?
 □ Does each guide follow the section template + checklist + cross-links?
+□ Are diagrams Mermaid (fenced blocks, no ASCII art), with nodes/edges grounded in real code?
+□ Is over-documentation avoided — no self-evident files (Dockerfile, CI, configs) reproduced line-by-line; the *why* documented instead?
 □ Is there a single entry-point index linking the set?
 □ Is output English and readable by both developers and LLM agents?
 ```
@@ -205,7 +234,8 @@ Complete / Partial
 ## Quality checks
 
 - **Completeness** — every detected aspect is documented, or explicitly marked not present.
-- **Correctness** — claims trace to real code; no fabricated APIs, paths, or examples.
+- **Signal over noise** — no over-documentation; self-evident files (Dockerfile, CI, configs) are referenced and explained by intent, not reproduced; the *why* is captured.
+- **Correctness** — claims trace to real code; no fabricated APIs, paths, or examples; Mermaid diagram entities are real.
 - **House-style consistency** — section template, checklists, real examples, navigable via entry point + cross-links.
 - **Safety** — nothing overwritten without archiving; nothing written before approval.
 - **Agent-readability** — explicit conventions, predictable headings, fenced paths/commands.
