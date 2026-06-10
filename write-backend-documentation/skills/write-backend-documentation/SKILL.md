@@ -1,6 +1,6 @@
 ---
 name: write-backend-documentation
-description: Research a backend codebase end-to-end, propose an approval-gated documentation plan, then generate developer- and LLM-agent-oriented documentation in a consistent house style. Auto-detects language, framework, API surface, data layer, background processing, auth, config, observability, build/deploy, and tests. Existing docs are archived, never blindly overwritten. The entry point is a root-level README.md linking into a documentation/ tree. Nothing is written before the user approves the plan.
+description: Research a backend codebase end-to-end, propose an approval-gated documentation plan, then generate developer- and LLM-agent-oriented documentation in a consistent house style. Auto-detects language, framework, API surface, data layer, background processing, auth, config, observability, build/deploy, and tests. Existing docs are archived, never blindly overwritten. A single README lives in the backend root linking into a documentation/ tree; generated docs use UPPERCASE filenames. Nothing is written before the user approves the plan.
 argument-hint: "[path to backend root, defaults to cwd]"
 ---
 
@@ -19,7 +19,7 @@ Generate house-style backend documentation **grounded in the actual code**. The 
 | `creativity_level` | low (structure and prose are authored freely; every fact is grounded in the code) |
 | `evidence_mode` | required for all technical claims (`path:line` references); not applicable to authored prose/structure |
 | `tone` | technical / neutral |
-| `version` | 1.0.0 |
+| `version` | 1.1.0 |
 
 ## When to use
 
@@ -29,7 +29,7 @@ Generate house-style backend documentation **grounded in the actual code**. The 
 
 ## When not to use
 
-- The target directory is a pure frontend (no server framework, no API surface, no data/service layer). → Use `frontend-docs-architect`.
+- The target directory is a pure frontend (no server framework, no API surface, no data/service layer). → Use `write-frontend-documentation`.
 - A single quick README without research is wanted. → Use `readme-generator` instead.
 - The target is not a recognizable backend (no package/build manifest, no server framework or service entry point). → Return `Cannot proceed`.
 
@@ -58,10 +58,10 @@ Generate house-style backend documentation **grounded in the actual code**. The 
 
 The documentation house style is a **strong guideline, not a rigid template**. Anchor on these conventions; adapt the actual set of files to what the research finds (omit guides for absent techniques, add guides for present ones).
 
-- **Single entry point at the solution root** — a top-level **`README.md` placed in the backend root** (not inside `documentation/`) that introduces the service and links out to every file under `documentation/`. If a root `README.md` already exists, its existing project content is preserved/merged and a clearly delimited "Documentation" section with the links is added or updated; the prior version is archived first.
+- **Single entry point at the solution root** — a top-level **`README.md` placed in the backend root** (not inside `documentation/`) that introduces the service and links out to every file under `documentation/`. This is the only README in the documentation set; there is no README anywhere inside `documentation/`. If a root `README.md` already exists, its existing project content is preserved/merged and a clearly delimited "Documentation" section with the links is added or updated; the prior version is archived first.
 - **Layered, progressive disclosure** — Setup → Architecture → Development guidelines → Operations/Deployment.
 - **`documentation/` tree** with, where applicable: `ARCHITECTURE.md`, `SETUP.md`, `CONTRIBUTING.md`, `DEPLOYMENT.md`, an `API.md` (API surface reference), and a `development/` layer.
-- **`development/` decision-tree hub** — a `README.md` that routes the reader by file type / concern to specific guides:
+- **`development/` decision-tree hub (conditional)** — an `INDEX.md` (never a README) that routes the reader by file type / concern to specific guides. Generate it **only when `development/` holds 4+ guides** — enough to warrant routing; with fewer guides, omit the hub and link to the guides directly from the root `README.md`. Concerns it routes:
   - **API layer** — routes/controllers/handlers, request/response DTOs, validation, error model.
   - **Domain / services** — business logic, use cases, application services.
   - **Data layer** — models/entities, ORM, repositories, migrations, schema.
@@ -72,9 +72,16 @@ The documentation house style is a **strong guideline, not a rigid template**. A
   - **Observability** — logging, metrics, tracing, health/readiness checks.
 - **API surface reference** — an `API.md` mapping each endpoint (`method path` → handler → auth requirement → request/response DTO), grounded in the code. For event-driven services, document the message/topic surface equivalently.
 - **Consistent per-guide section template** — `When to use` → `Pattern / Standard structure` → `Real Examples` (pulled from the actual codebase) → `Quick Checklist` → `Next Steps` (cross-links).
-- **Cross-linking** — every guide links back to the hub and to related guides; the root `README.md` links to the top-level docs.
+- **Cross-linking** — every guide links back to the hub (or the root `README.md` when no hub exists) and to related guides; the root `README.md` links to the top-level docs.
 - **Mermaid diagrams** where the house style uses them (request lifecycle, auth flow, data model, module/dependency relationships, deployment). Use fenced ` ```mermaid ` blocks — never ASCII art.
 - **Agent-readable** — explicit conventions, predictable headings, code-fenced paths/commands, no implicit knowledge.
+
+### File naming convention
+
+- **Every generated documentation file uses an UPPERCASE basename with a lowercase `.md` extension** — `ARCHITECTURE.md`, `SETUP.md`, `API.md`, `DEPLOYMENT.md`, `CONTROLLERS.md`, `MIGRATIONS.md`, `INDEX.md`, and the root `README.md`. Multi-word names uppercase the whole basename and keep the separator: `REQUEST-LIFECYCLE.md`.
+- **Directories stay lowercase** — `documentation/`, `development/`, `archive/`.
+- **The extension stays lowercase `.md`** — only the basename is uppercased.
+- **Archived originals are NOT renamed** — they are preserved verbatim under `documentation/archive/` with their original filenames and relative paths. The uppercase rule governs newly generated docs only.
 
 ### Documentation depth — do not over-document
 
@@ -84,6 +91,15 @@ Document understanding the source cannot give the reader for free. Both humans a
 - **Do** document the *why* behind them — the principles, decisions, conventions, constraints, and non-obvious wiring: why the deploy is split into these stages, why this persistence pattern was chosen, what a config value affects downstream, how a request flows through middleware to a handler to the data layer that the files alone don't reveal.
 - Reference such files by `path` so the reader can open them; explain intent, not syntax.
 - When in doubt: if removing a passage loses no understanding that isn't already obvious from opening the file, cut it.
+
+### Secret files — never read
+
+Document configuration by **key name and purpose**, never by value. Reading real secrets is out of scope and unsafe.
+
+- **Never open or read the contents of secret-bearing files** — `.env` and environment-specific variants that hold real values (`.env.local`, `.env.development`, `.env.production`, `.env.*`), and any credential/key material: `*.pem`, `*.key`, `*.p12`, `*.pfx`, `id_rsa`, `secrets.*`, `credentials*`, service-account JSON, and vault / secret-store files.
+- **May read non-secret templates and examples** — `.env.example`, `.env.sample`, `.env.template`, `.env.dist`, and documented config schemas. Use these (and the source code that references the variables) to recover config **key names and intent**.
+- **Never reproduce a secret value**, even if encountered incidentally. Document the key, where it is read in the code (`path:line`), and what it affects — not its value.
+- If a config key exists only inside a real secret file, mark it `[Assumption]` / `not documentable from non-secret sources` rather than opening that file.
 
 ## Mermaid diagram conventions
 
@@ -116,13 +132,13 @@ Execute in order. Steps 1–4 are research and planning; **no file is created, m
    - **Middleware & cross-cutting** — authentication/authorization, validation, rate limiting, logging, error handling, request context.
    - **Background processing** — jobs, queues, schedulers, workers, event/message brokers, pub/sub.
    - **Integrations** — external API clients, SDKs, third-party services.
-   - **Configuration** — config keys, environment variables, secrets management.
+   - **Configuration** — config keys, environment variables, secrets management — recover key **names** and intent from code and `.env.example`/templates only; never read real `.env` or secret/credential files, and never reproduce a secret value.
    - **Observability** — logging, metrics, tracing, health/readiness/liveness endpoints.
    - Build/deploy and runtime (Docker, orchestration, process manager, CI config).
    - Testing (unit, integration, contract, e2e) and tooling (lint, format, hooks).
    - Existing documentation: inventory every doc file (including any root `README.md`), note coverage and staleness.
 
-3. **Map findings to the baseline.** Decide which house-style files apply. Add guides for techniques present (e.g. a `messaging/` guide when a broker is used); omit guides for techniques absent. Note every adaptation and its reason. Decide what **not** to document — self-evident files (Dockerfile, CI config, manifests, configs) are referenced and explained by intent, not reproduced (see Documentation depth).
+3. **Map findings to the baseline.** Decide which house-style files apply. Add guides for techniques present (e.g. a `messaging/` guide when a broker is used); omit guides for techniques absent. Apply UPPERCASE basenames to every planned file. Decide whether the `development/INDEX.md` hub is warranted (4+ dev guides) or the root `README.md` links to the guides directly. Note every adaptation and its reason. Decide what **not** to document — self-evident files (Dockerfile, CI config, manifests, configs) are referenced and explained by intent, not reproduced (see Documentation depth).
 
 4. **Propose the plan and STOP for approval.** Output a plan containing:
    - **Detected stack summary** (table, with evidence).
@@ -136,8 +152,8 @@ Execute in order. Steps 1–4 are research and planning; **no file is created, m
 5. **Execute (only after approval).**
    - Move existing documentation into `documentation/archive/` (preserve relative paths). Never delete or overwrite originals. If a root `README.md` exists, archive a copy first, then preserve its real project content and add/refresh a clearly delimited "Documentation" section linking into `documentation/`.
    - Write the **root `README.md`** as the single entry point: a short service overview plus a linked index of every generated file under `documentation/`.
-   - Generate the approved docs under `documentation/` in the backend root. Ground every technical claim in the code with `path:line` references. Pull **real examples from the actual codebase** — never invent routes, handlers, entities, paths, APIs, or commands.
-   - Follow the per-guide section template, add checklists, cross-links, and ensure the `development/` hub routes by concern.
+   - Generate the approved docs under `documentation/` in the backend root. Every generated file uses an UPPERCASE basename + lowercase `.md` (root `README.md`, `documentation/API.md`, `documentation/development/CONTROLLERS.md`, etc.); directories stay lowercase. Ground every technical claim in the code with `path:line` references. Pull **real examples from the actual codebase** — never invent routes, handlers, entities, paths, APIs, or commands.
+   - Follow the per-guide section template, add checklists, and cross-links. Generate the `development/INDEX.md` hub only when `development/` holds 4+ guides (routing by concern); otherwise link to the guides directly from the root `README.md`.
    - Include Mermaid diagrams (fenced ` ```mermaid ` blocks) where the house style does — request lifecycle, auth flow, data model (`erDiagram`), module/dependency relationships, deployment. No ASCII art.
    - Apply the Documentation depth rule: explain the *why* and non-obvious wiring; do not reproduce self-evident files (Dockerfile, CI config, manifests, configs) — reference them by `path` instead.
 
@@ -225,6 +241,9 @@ Complete / Partial
 ```
 □ Did research cover every aspect (language/framework, build, API surface, domain/services, data layer, middleware/auth, background processing, integrations, config, observability, build/deploy, tests, existing docs)?
 □ Is the root README.md the single entry point and does it link to every documentation/ file?
+□ Is there exactly one README — at the backend root — and none inside documentation/?
+□ Do all generated files use UPPERCASE basenames with lowercase .md (directories lowercase)?
+□ Was the development/INDEX.md hub generated only when 4+ guides warranted it (else guides linked from the root README)?
 □ Is every technical claim grounded in code with path:line references?
 □ Are no routes, handlers, entities, paths, APIs, commands, or examples fabricated?
 □ Were existing docs (including any prior root README.md) archived (not overwritten/deleted), and was real project content in the root README preserved?
@@ -233,6 +252,7 @@ Complete / Partial
 □ Does each guide follow the section template + checklist + cross-links, and does the development/ hub route by concern?
 □ Are diagrams Mermaid (fenced blocks, no ASCII art), with nodes/edges grounded in real code?
 □ Is over-documentation avoided — no self-evident files (Dockerfile, CI, manifests, configs) reproduced line-by-line; the *why* documented instead?
+□ Were secret files (.env and variants, keys, credentials) left unread — config documented by key name/purpose from code + .env.example only, with no secret values reproduced?
 □ Is output English and readable by both developers and LLM agents?
 ```
 
@@ -247,6 +267,8 @@ Complete / Partial
 | Aspect undetectable | Document it as `[Assumption]` or mark `not present`; never guess silently. |
 | Request to skip approval | Refuse — the approval gate is a fixed processing rule. |
 | Request to overwrite existing docs in place | Refuse — existing docs are archived; explain why. |
+| Request for a README inside `documentation/` or a second README | Refuse — exactly one README lives in the backend root; the dev hub is `INDEX.md`. |
+| Asked to read or inline a real `.env` or secret/credential file | Refuse — secret files are never read; document config keys by name/purpose from code + `.env.example`/templates only. |
 | Existing root README.md with real content | Archive a copy, preserve project content, add/refresh only the "Documentation" links section — never discard it. |
 
 ## Quality checks
@@ -255,15 +277,15 @@ Complete / Partial
 - **Entry point** — a root-level `README.md` exists and links to every file under `documentation/`.
 - **Signal over noise** — no over-documentation; self-evident files (Dockerfile, CI, manifests, configs) are referenced and explained by intent, not reproduced; the *why* is captured.
 - **Correctness** — claims trace to real code; no fabricated routes, handlers, entities, paths, or examples; Mermaid diagram entities are real.
-- **House-style consistency** — section template, checklists, real examples, navigable via root entry point + cross-links.
-- **Safety** — nothing overwritten without archiving; existing root README content preserved; nothing written before approval.
+- **House-style consistency** — section template, checklists, real examples, navigable via the single root README + cross-links; one README at the backend root only; UPPERCASE filenames for every generated doc.
+- **Safety** — nothing overwritten without archiving; existing root README content preserved; nothing written before approval; secret files (`.env` and variants, keys, credentials) are never read and no secret values are reproduced.
 - **Agent-readability** — explicit conventions, predictable headings, fenced paths/commands.
 
 ## Examples
 
 ### Normal cases
 
-1. **NestJS + TypeORM + PostgreSQL + BullMQ service.** Research detects Nest module/controller routing, TypeORM entities + migrations, a Bull queue with workers, JWT auth guards, Docker deploy. Plan proposes a root `README.md` entry point plus a full `documentation/` tree with `API.md`, a `development/` hub, and guides for controllers/DTOs, services, data/migrations, auth middleware, and jobs/queues. Approved → docs generated with real entity/handler examples cited to `src/**/*.ts`; old `README` archived, its project intro preserved.
+1. **NestJS + TypeORM + PostgreSQL + BullMQ service.** Research detects Nest module/controller routing, TypeORM entities + migrations, a Bull queue with workers, JWT auth guards, Docker deploy. Plan proposes a root `README.md` entry point plus a full `documentation/` tree with `API.md` and five dev guides (controllers/DTOs, services, data/migrations, auth middleware, jobs/queues) — enough to warrant a `development/INDEX.md` hub. Approved → UPPERCASE docs generated with real entity/handler examples cited to `src/**/*.ts`; old `README` archived, its project intro preserved.
 2. **Django + DRF + Celery app.** Baseline adapted: `API.md` built from DRF viewsets/serializers, a `data/` guide from models + migrations, a `messaging/` guide for Celery tasks/broker. Root `README.md` links them. Plan approved → generated accordingly.
 3. **Spring Boot + JPA + Kafka service.** Detects `@RestController` route map, JPA entities, Kafka listeners/producers. Plan proposes `API.md`, `data/` (JPA + Flyway), `messaging/` (Kafka), `config/` (application.yml intent). Generated with `path:line`-cited examples and an `erDiagram`.
 4. **Go (Gin) + sqlc service with existing partial docs.** Research finds an outdated `docs/` folder and a thin root `README`. Plan archives both to `documentation/archive/`, preserves the README intro, regenerates `ARCHITECTURE.md`, `API.md`, `SETUP.md`, data/migration guide. Approved → executed.
@@ -274,10 +296,11 @@ Complete / Partial
 1. **Monorepo with three services.** Skill lists the services and asks which to document; user picks one; plan scoped to that package only, with the root `README.md` and `documentation/` placed inside that service's directory.
 2. **Mixed/unclear stack (legacy PHP scripts + a Laravel module).** Research reports both; plan documents the dominant Laravel service and notes the legacy area as `[Assumption]`/partial with reduced specificity.
 3. **No existing docs and no root README at all.** Archive plan is empty (stated explicitly); per-file table shows `create` for the root `README.md` and all `documentation/` files.
+4. **Small service with only two dev guides.** `development/` would hold just `API.md`-adjacent `CONTROLLERS.md` and `DATA.md` — below the 4-guide threshold, so no `INDEX.md` hub; the root `README.md` links to the two guides directly.
 
 ### Failure cases
 
-1. **Pointed at a static frontend SPA.** No server framework/API surface detected → `Cannot proceed`: reason (no backend framework/manifest), action (provide a backend root, or use `frontend-docs-architect`).
+1. **Pointed at a static frontend SPA.** No server framework/API surface detected → `Cannot proceed`: reason (no backend framework/manifest), action (provide a backend root, or use `write-frontend-documentation`).
 2. **User says "skip the plan, just write the docs."** Skill refuses to bypass the approval gate, presents the plan, and waits — the gate is a fixed rule.
 
-Operating rules: interview the user in their language only when input is missing; always write the generated documentation in English. The root `README.md` is the single entry point and must link into `documentation/`. Never write or move a file before the plan is approved. Ground every technical claim in real code.
+Operating rules: interview the user in their language only when input is missing; always write the generated documentation in English. Keep exactly one README — the root `README.md` single entry point that links into `documentation/` — and give every generated file an UPPERCASE basename with a lowercase `.md` extension. Never write or move a file before the plan is approved. Ground every technical claim in real code.

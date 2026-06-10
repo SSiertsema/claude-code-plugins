@@ -1,0 +1,12 @@
+{
+  "name": "write-frontend-documentation",
+  "version": "1.2.0",
+  "description": "Research a frontend codebase end-to-end, propose an approval-gated documentation plan, then generate developer- and LLM-agent-oriented documentation in a consistent house style. Auto-detects the stack; a single README lives in the frontend root, generated docs use UPPERCASE filenames, existing docs are preserved in an archive.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["documentation", "frontend", "generation", "planning", "research", "vue", "react", "agent-readable"],
+  "skills": "./skills"
+}
