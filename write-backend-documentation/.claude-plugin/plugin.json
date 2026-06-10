@@ -1,0 +1,12 @@
+{
+  "name": "write-backend-documentation",
+  "version": "1.0.0",
+  "description": "Research a backend codebase end-to-end, propose an approval-gated documentation plan, then generate developer- and LLM-agent-oriented documentation in a consistent house style. Auto-detects language, framework, API surface, data layer, background processing, auth, config, observability, build/deploy, and tests with path:line evidence. The entry point is a root-level README.md linking into a documentation/ tree. Existing docs are archived, never blindly overwritten.",
+  "author": {
+    "name": "Sven Siertsema"
+  },
+  "repository": "https://github.com/SSiertsema/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["documentation", "backend", "api", "generation", "planning", "research", "agent-readable"],
+  "skills": "./skills"
+}
